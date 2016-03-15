@@ -1,0 +1,91 @@
+#first-big-container{
+  background-image: url("../core/assets/banner-top.jpg");
+  background-size: auto;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#form{
+  border-radius: 5px ;
+  margin: 1px auto;
+  width: 350px;
+  height: 350px;
+  background-color: #FFFFFF;
+}
+
+#form>h3 {
+  position: relative;
+  top: 10px;
+  left: 45px;
+}
+
+#form>p:nth-child(2){
+  color: #8c8c8c;
+  text-align: center;
+}
+
+#form>p:nth-child(3){
+  color: #b3b3b3;
+  font-size: 12px;
+  text-align: center;
+
+}
+
+#text-areas{
+  position: relative;
+  top: 10px;
+  left: 45px;
+}
+
+input{
+    background-color : #f2f2f2;
+}
+
+#button{
+	padding:		7px 40px;
+	font-size:		14px;
+	background-color:	#0099ff;
+	font-weight:lighter;;
+	color:			#FFFFFF;
+  border: 1px solid;
+  border-radius: 3px;
+
+}
+
+.buttonContainer{
+  text-align: center;
+}
+
+#small-left-container{
+  color: #f2f2f2;
+}
+
+#small-left-container>h3{
+  color: #cccccc;
+}
+#logo-top{
+  height: 50px;
+}
+
+a:link{ color: #f2f2f2;}
+
+a:visited { color: #f2f2f2;}
+
+#second-big-container{
+  background-color: #FFFFFF;
+}
+
+#third-big-container{
+  background-image: url("../core/assets/stars-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: center;
+}
+
+#forth-big-container{
+  background-color: #FFFFFF;
+}
+
+#fifth-big-container{
+  background-color: #e6e6e6;
+}
