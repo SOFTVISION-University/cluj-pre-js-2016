@@ -1,0 +1,20 @@
+#cont{
+  background-image:url("../../core/assets/banner-app.jpg");
+  position: relative;
+}
+
+
+#box{
+  background-color: #FFF;
+  font-size: 15px;
+  width: 250px;
+  padding: 20px;
+  margin: auto;
+  color: #000;
+}
+
+#button{
+  background-color: #4169E1;
+  border-radius: 8px;
+
+}
