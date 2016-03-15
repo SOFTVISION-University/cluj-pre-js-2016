@@ -1,0 +1,75 @@
+body{
+  margin:0px;
+}
+
+div.up{
+  background-image: url("images/banner-top.jpg");
+  height:500px;
+
+}
+
+div.upleft{
+  float: left;
+}
+
+div.upright{
+  float:right;
+}
+ div.middle2{
+   background-image: url("images/stars-bg.jpg");
+   height:400px;
+
+ }
+h1{
+  margin-left: 300px;
+  color: white;
+}
+
+#logo{
+  display: block;
+  margin-left: 300px;
+}
+
+#par1{
+  margin-left: 300px;
+  font-size: large;
+  color:white;
+}
+#par2{
+  margin-left: 300px;
+  font-size: medium;
+  color:#B0B0B0;
+}
+
+a{
+  color:white;
+  font-size: small;
+}
+
+#tnw{
+  display: inline-block;
+  margin-left: 300px;
+}
+#forbes{
+  display: inline-block;
+margin-left:20px;
+}
+#ng{
+  display: inline-block;
+margin-left: 20px;
+}
+#finex{
+  display: inline-block;
+margin-left:20px;
+}
+
+#pargalaxy{
+  text-align: center;
+  color:white;
+  font-size: large;
+  }
+
+#headgalaxy{
+  text-align: center;
+  color:white;
+}
