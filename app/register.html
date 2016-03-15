@@ -1,66 +1,85 @@
 <html>
 <head>
   <title>register</title>
+  <link rel="stylesheet" type="text/css" href="css.css">
 </head>
 
 <body>
-<div style="background-image: url(Img/banner-app.jpg)">
-  <img src="Img/logo-gray.png" >
-  <h1>Startup Landing Page <br>For your Product</h1>
-  <div>The world's leading Lorem ipsum dolor sit amet,
-       consectetur adipscing elit,sed do
-    <a href="www.google.ro">Learn more</a>
-  </div>
-  <div id="form_reg" style=" background:#75CE;border:1px dotted ">
-    <h2>Sign up for an ACME account</h2>
-    <div id='div1'>Get Started Absolutely FREE</div>
-    <div id='div2'>NO CREDIT CARD NEEDED</div>
+<div id="header_reg" class="pag_reg">
+   <div class="position1">
+      <div class="inline-block">
+        <img src="../core/assets/logo-gray.png" >
+        <h1>Startup Landing Page <br>For your Product</h1>
+        <p>   The world's leading Lorem ipsum dolor sit amet,
+              consectetur adipscing elit,sed do</p>
+        <a href="www.google.ro">Learn more</a>
+        <div class="inline-block1">
+          <img src="../core/assets/tnw-logo.png" >
+          <img src="../core/assets/forbes-logo.png" >
+          <img src="../core/assets/natgeo-logo.png" >
+          <img src="../core/assets/finextra-logo.png" >
+       </div>
+     </div>
+  <div class="inline-block">
+    <div id="form">
+        <h2>Sign up for an ACME account</h2>
+        <p>Get Started Absolutely FREE</p>
+        <p>NO CREDIT CARD NEEDED</p>
 
 
-    <form  action="login.html" method="post">
-       Your name <br>
-       <input type="text" name="name" required=""><br>
-       Email <br>
-       <input type="email" name="email" required=""><br>
-       Password <br>
-       <input type="password" name="pwd" required=""><br>
-       <input type="submit" value="Sign up free">
-   </form>
+        <form  action="login.html" method="post" id="form1">
+           Your name <br>
+           <input type="text" name="name" required=""><br>
+           Email <br>
+           <input type="email" name="email" required=""><br>
+           Password <br>
+           <input type="password" name="pwd" required=""><br>
+           <input type="submit" value="Sign up free">
+        </form>
 
-   <div id="div3">By clicking 'Sign Up Free' I agree to ACME's
-     <a href="www.google.com">Terms of Service</a>
+        <p>By clicking 'Sign Up Free' I agree to ACME's
+          <a href="www.google.com">Terms of Service</a>
+        <p>
+
    </div>
-
-
   </div>
+ </div>
 </div>
 
-<div>
-  <div>A stunning and robust app showcase</div>
-  <div>Lorem ipsum dolor sit amet consectetur adipisicing elit,sed do eiusmod
-     tempor incididunt ul tempor et dolore magna aliqua</div>
+<div  id="mijloc1">
+  <div class="position1">
+    <span id="span_mij1"><h2>A stunning and robust app showcase</h2></span>
+    <span id="span_mij2">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit,sed do </p>
+    <p>eiusmod tempor incididunt ul tempor et dolore magna aliqua</p>
+  </span>
 
-  <div>
-      <img src="Img/business-icon.png">
-      <div>Good Business</div>
-      <div>Lorem ipsum dolor amet consectuer adipiscing</div>
-  </div>
-  <div>
-      <img src="Img/robot-icon.png">
-      <div>Amazing functionality</div>
-      <div>Lorem ipsum dolor amet consectuer adipiscing</div>
-  </div>
-  <div>
-      <img src="Img/performance-icon.png">
-      <div>Optimized for performance</div>
-      <div>Lorem ipsum dolor amet consectuer adipiscing</div>
-  </div>
+     <div class="float_left">
+      <img src="../core/assets/business-icon.png">
+      <h3>Good Business</h3>
+      <p>Lorem ipsum dolor amet consectuer adipiscing</p>
+    </div>
+    <div class="float_left">
+      <img src="../core/assets/robot-icon.png">
+      <h3>Amazing functionality</h3>
+      <p>Lorem ipsum dolor amet consectuer adipiscing</p>
+   </div>
+   <div class="float_left">
+      <img src="../core/assets/performance-icon.png"><br>
+      <h3>Optimized for performance</h3>
+      <p>Lorem ipsum dolor amet consectuer adipiscing</p>
+   </div>
+</div>
 
 </div>
 
-<div style="background-image: url(Img/stars-bg.jpg)">
-  <div>More awesome stuff</div>
-  <div>Add up to 50,000 apps from our store to all your devices</div>
+<div class="clear"></div>
+
+
+<div id="mijloc2">
+  <div class="position1">
+  <h3>More awesome stuff</h3>
+  <p>Add up to 50,000 apps from our store to all your devices</p>
   <img src="Img/phone-app.png">
   <img src="Img/photo-app.png">
   <img src="Img/location-app.png">
@@ -68,10 +87,15 @@
   <img src="Img/mail-app.png">
   <img src="Img/weather-app.png">
   <img src="Img/time-app.png">
+ </div>
 </div>
 
-<div>
-   <div>What you'll get</div>
+
+
+
+<div id="mijloc3">
+  <div class="position1">
+   <h2>What you'll get</h2>
    <table>
  <tr>
    <th>Free goodies</th>
@@ -135,10 +159,17 @@
    <td><img src="Img/check-icon.png"></td>
  </tr>
 </table>
-<input type="button" value="Sign up free">
+<input type="submit" value="Sign up free">
 </div>
 
+<div id="footer">
+  <div>
+    <img src="../core/assets/logo-gray.png" >
+  </div>
+  <div>
+    <img src="../core/assets/devices.jpg" >
+
+</div>
 
 </body>
-
 </html>
