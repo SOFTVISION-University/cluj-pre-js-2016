@@ -3,25 +3,38 @@
   <head>
     <meta charset="utf-8">
     <title>Acme Division</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
+  <div id="mainDiv">
 
-    <div id="divmain" style="background-image: url(../core/assets/banner-top.jpg); height: 500px; ">
-    <div id="div1" style="background-image: url(../core/assets/logo-gray.png); height:60px; width:145px; float:left"></div>
-    <div id="div2" align="center">
-          <form class="" action="index.html" method="post">
-          <input type="text" name="searchtext" placeholder="Search music">
-          </form>
-    </div>
-    <div id="div3" style="float:right">
-        <a href="signIn.html" style="color:blue; float:right"> <spam >Sign In</spam> </a>
-    </div>
+      <div id="headerDiv">
+          <div id="logoTopDiv" class="banner">
+          </div>
 
-    <div id="div4" align="center">
-        <p style="color:white; font-weight: bold;">Ready to listen the endless music on your favorite device</p>
-        <a href="signUp.html">JOIN NOW</a>
-        <p style="color:white;font-weight: bold;">Epic and debouched party mixes</p>
-    </div>
-    </div>
+        <div id="searchDiv" class="banner">
+          <div id="searchImg" class="banner" >
+          </div>
+          <div class="banner">
+              <form class="" action="index.html" method="post">
+              <input type="text" name="searchtext" placeholder="Search music">
+              </form>
+          </div>
+        </div>
+
+        <div id="signInDiv" class="banner">
+          <button type="button" name="button" id="signInButton"><a href="signIn.html"> <span >Sign In</span> </a></button>
+        </div>
+
+      <div id="underBanner">
+          <p>Ready to listen the endless music on your favorite device</p>
+          <button type="button" name="button" id="joinButton"><a href="signUp.html"> <span>JOIN NOW</span> </a></button>
+
+          <h1>Epic and debouched party mixes</h1>
+      </div>
+
+      </div>
+
+  </div>
   </body>
 </html>
