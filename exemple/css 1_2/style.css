@@ -1,0 +1,11 @@
+ol {
+	background-color: #F9DBBD;
+	list-style: none;
+	float: right;
+}
+
+ol > li {
+	display: inline-block;
+	color: #9A348E;
+	width: 100px;
+}
