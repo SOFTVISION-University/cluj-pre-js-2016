@@ -1,0 +1,94 @@
+#container{
+  overflow:auto;
+}
+
+
+#formular2{
+  font-family:"Arial";
+  border: 1px solid white;
+
+
+  background-color: white;
+  border-radius: 2px;
+  float: right;
+  margin: 10px 300px 10px 100px;
+
+
+}
+
+#startup{
+  padding-left:350px;
+  padding-top:50px;
+}
+
+
+
+#icon1{
+  width: 150px;
+  height: 50px;
+  box-sizing: border-box;
+  border: 1px white;
+  display: inline-block;
+  vertical-align: top;
+
+}
+
+#icon2{
+  width: 150px;
+  height: 50px;
+  box-sizing: border-box;
+  border: 1px white;
+  display: inline-block;
+  vertical-align: top;
+}
+
+#icon3{
+  width: 150px;
+  height: 50px;
+  box-sizing: border-box;
+  border: 1px white;
+  display: inline-block;
+  vertical-align: top;
+}
+
+#icon4{
+  width: 150px;
+  height: 50px;
+  box-sizing: border-box;
+  border: 1px white;
+  display: inline-block;
+  vertical-align: top;
+}
+
+h1{
+  color:white;
+}
+
+p{
+  color:white;
+}
+
+h5,h6 {color: grey;
+  text-align: center;
+}
+
+input{
+    margin: auto 0;
+    background-color: #eaeae1;
+    align-self: center;
+  	border-radius: 2px;
+    padding: 5px 20px;
+    width:70%;
+}
+input[type=submit]{
+    color: white;
+    font-weight: bold;
+    border: #0099ff;
+    border-radius: 3px;
+    padding: 10px 25px;
+    background-color: #0099ff;
+    width: 40%;
+}
+form{
+    text-align: center;
+}
