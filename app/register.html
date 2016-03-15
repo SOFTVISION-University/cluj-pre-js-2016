@@ -2,72 +2,82 @@
 <html>
 <head>
 <title>Register</title>
+<link rel="stylesheet" type="text/css" href="register.css">
 </head>
 
 <body>
-<div>
-  <div>
-    <img src="/home/robert.cosma/work/cluj-pre-js-2016/app/images/logo-gray.png"  />
-    <h1>Startup Langing Page For Your Product</h1>
-    <p>The world's leading  Lorem ipsum dolor sit amet,consectetur adipisicing elit,sed do</p><br>
-    <a href="">Learn more</a>
-    <br>
-    <p>AS FEATURED IN:</p>
+<div class="body">
+  <div class="topbar">
+    <div id="leftside">
+      <img src="/home/robert.cosma/work/cluj-pre-js-2016/core/assets/logo-top.png" id="logo-top" />
+      <h1>Startup Langing Page For Your Product</h1>
+      <p>The world's leading  Lorem ipsum dolor sit amet,consectetur adipisicing elit,sed do</p><br>
+      <a href="" id="learn">Learn more</a>
+      <p id="featured">AS FEATURED IN:</p>
+      <img src="/home/robert.cosma/work/cluj-pre-js-2016/core/assets/tnw-logo.png" />
+      <img src="/home/robert.cosma/work/cluj-pre-js-2016/core/assets/forbes-logo.png" />
+      <img src="/home/robert.cosma/work/cluj-pre-js-2016/core/assets/natgeo-logo.png" />
+      <img src="/home/robert.cosma/work/cluj-pre-js-2016/core/assets/finextra-logo.png" />
+    </div>
+
+  <div id="rightside">
+      <p id="signup">Sign up for an ACME account</p>
+      <p id="getstarted">Get Started Absolutely FREE</p>
+      <p id="nocredit">NO CREDIT CARD NEEDED</p>
+      <br>
+      <form action="">
+        Your Name<br>
+        <input type="text" name="firstname" required><br>
+        Email<br>
+        <input type="email" name="email" required><br>
+        Password<br>
+        <input type="password" name="password" required><br><br>
+        <input type="submit" value="Sign up free" class="button">
+      </form>
+      <p id="terms">By clicking 'Sign Up Free' I agree to ACME's <a href="">Terms of Service.</a></p>
+    </div>
   </div>
+</div>
 
-  <br><br>
 
+<div class="secondbar">
   <div>
-    <h1>Sign up for an ACME account</h1>
-    <h3>Get Started Absolutely FREE</h3>
-    <h5>NO CREDIT CARD NEEDED</h5>
-    <br>
-    <form action="">
-      Your Name<br>
-      <input type="text" name="firstname"required><br>
-      Email<br>
-      <input type="email" name="email" required><br>
-      Password<br>
-      <input type="password" name="password" required><br><br>
-      <input type="submit" value="Sign up free">
-    </form>
-    <p>By clicking 'Sign Up Free' I agree to ACME's <a href="">Terms of Service.</a></p>
+    <p id="intro">A stunning and robust app showcase.</p>
+    <p id="presentation">Lorem ipsum dolor sit amet,consectetur adipisicing elit,sed do <br> eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+  </div>
+  <div class="div3">
+    <div class="next">
+      <img src="/home/robert.cosma/work/cluj-pre-js-2016/core/assets/business-icon.png" />
+      <h3>Good Business</h3>
+      <p>Lorem ipsum dolor sit amet,consectetur <br> adipisicing elit,sed do eiusmod tempor</p>
+    </div>
+    <div class="next">
+      <img src="/home/robert.cosma/work/cluj-pre-js-2016/core/assets/robot-icon.png" />
+      <h3>Amazing functionality</h3>
+      <p>Lorem ipsum dolor sit amet,consectetur <br> adipisicing elit,sed do eiusmod tempor</p>
+    </div>
+    <div class="next">
+      <img src="/home/robert.cosma/work/cluj-pre-js-2016/core/assets/performance-icon.png" />
+      <h3>Optimized for performance</h3>
+      <p>Lorem ipsum dolor sit amet,consectetur <br> adipisicing elit,sed do eiusmod tempor</p>
+    </div>
   </div>
 </div>
 
-<br><br>
-
-<div>
-  <h2>A stunning and robust app showcase.</h2>
-  <p>Lorem ipsum dolor sit amet,consectetur adipisicing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-</div>
-
-<div>
-  <img src="/home/robert.cosma/work/cluj-pre-js-2016/app/images/business-icon.png" />
-  <h3>Good Business</h3>
-  <p>Lorem ipsum dolor sit amet,consectetur adipisicing elit,sed do eiusmod tempor</p>
-  <br><br>
-  <img src="/home/robert.cosma/work/cluj-pre-js-2016/app/images/robot-icon.png" />
-  <h3>Amazing functionality</h3>
-  <p>Lorem ipsum dolor sit amet,consectetur adipisicing elit,sed do eiusmod tempor</p>
-  <br><br>
-  <img src="/home/robert.cosma/work/cluj-pre-js-2016/app/images/performance-icon.png" />
-  <h3>Optimized for performance</h3>
-  <p>Lorem ipsum dolor sit amet,consectetur adipisicing elit,sed do eiusmod tempor</p>
-</div>
-
-<br><br>
-
-<div>
-  <img src="/home/robert.cosma/work/cluj-pre-js-2016/app/images/phone-app.png" />
-  <img src="/home/robert.cosma/work/cluj-pre-js-2016/app/images/time-app.png" />
-  <img src="/home/robert.cosma/work/cluj-pre-js-2016/app/images/location-app.png" />
-  <img src="/home/robert.cosma/work/cluj-pre-js-2016/app/images/music-app.png" />
-  <img src="/home/robert.cosma/work/cluj-pre-js-2016/app/images/weather-app.png" />
-  <img src="/home/robert.cosma/work/cluj-pre-js-2016/app/images/photo-app.png" />
-  <img src="/home/robert.cosma/work/cluj-pre-js-2016/app/images/mail-app.png" />
-  <h2>More awesome stuff</h2>
-  <p>Add up to 50,000 apps from our store to all your devices.</p>
+<div class="thirdbar">
+  <div class="icons">
+    <img src="/home/robert.cosma/work/cluj-pre-js-2016/core/assets/phone-app.png" />
+    <img src="/home/robert.cosma/work/cluj-pre-js-2016/core/assets/time-app.png" />
+    <img src="/home/robert.cosma/work/cluj-pre-js-2016/core/assets/location-app.png" />
+    <img src="/home/robert.cosma/work/cluj-pre-js-2016/core/assets/music-app.png" id="music"/>
+    <img src="/home/robert.cosma/work/cluj-pre-js-2016/core/assets/weather-app.png" />
+    <img src="/home/robert.cosma/work/cluj-pre-js-2016/core/assets/photo-app.png" />
+    <img src="/home/robert.cosma/work/cluj-pre-js-2016/core/assets/mail-app.png" />
+  </div>
+  <div class="text">
+    <p id="stuff">More awesome stuff</p>
+    <p id="add">Add up to 50,000 apps from our store to all <br> your devices.</p>
+  </div>
 </div>
 
 </body>
