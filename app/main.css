@@ -1,0 +1,98 @@
+body{
+margin: 0px;
+font-family: Arial, Helvetica, sans-serif;
+}
+
+div.divup{
+  position:relative;
+  background-image: url("../core/assets/banner-app.jpg");
+  height:600px;
+}
+
+div.divdown{
+  position:relative;
+  background-color: #E5E5E5;
+  height:500px;
+}
+div.cleardiv{
+  clear:both;
+}
+
+#pmain{
+
+}
+
+#buttonS{
+  position: absolute;
+  background-color: #63D1F4;
+  text-align: center;
+  font-size: large;
+  color: white;
+  border:blue;
+  width:10em;
+  height: 2em;
+  top:50px;
+  left: 1500px;
+  -webkit-border-radius: 7px;
+
+}
+
+#buttonJ{
+  position: absolute;
+  background-color: #67DE94	;
+  text-align: center;
+  font-size: large;
+  color: white;
+  border:blue;
+  width:15em;
+  height: 3em;
+  top:270px;
+  left: 700px;
+  -webkit-border-radius: 7px;
+}
+
+#logomain{
+  position: absolute;
+  top:50px;
+  left: 200px;
+}
+
+#h1main{
+  position: absolute;
+  top:350px;
+  left: 600px;
+  color: white;
+}
+
+#h2main{
+  position: absolute;
+  top:150px;
+  left: 650px;
+  color:white;
+}
+#spmain{
+  position: absolute;
+  top:300px;
+  left: 300px;
+  font-size: small;
+}
+
+
+
+form{
+  position: absolute;
+  top:50px;
+  left: 550px;
+  border: 5px solid grey;
+  -webkit-border-radius: 7px;
+  opacity: 0.2;
+  filter: alpha(opacity=20);
+
+}
+
+input{
+  color: black;
+  height: 25px;
+  width:600px;
+  -webkit-border-radius: 7px;
+}
