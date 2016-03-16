@@ -1,0 +1,25 @@
+.mainDiv{
+  width: 1200px;
+  background-color: #ff0000;
+  height: auto;
+  margin: 10px auto;
+}
+.secondDiv
+{
+  float: left;
+  margin-left: 50px;
+  background-color: #cccccc;
+  height: 500px;
+  width: 500px;
+}
+.thirdDiv
+{
+  background-color: #333999;
+  display: inline-block;
+  margin-left: 20px;
+  height: 500px;
+  width: 500px;
+}
+.clearDiv{
+  clear: both;
+}
