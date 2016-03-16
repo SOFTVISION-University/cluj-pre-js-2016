@@ -1,0 +1,38 @@
+body {
+	position: relative;
+}
+
+@specialItemColor: #FCA17D;
+@specialItemBorder: #BEBEBE;
+@preBackground: #F9DBBD;
+
+.preStyle(@background:#999999) {
+	pre {
+		position: absolute;
+		top: 20px;
+		right: 20px;
+		width: 300px;
+		height: 500px
+		padding: 5px;
+		border: 1px solid #333333;
+		border-radius: 30px;
+		background-color: @background;
+	}
+}
+
+#ordered-list {
+	background-color: #F9DBBD;
+
+	& > li {
+		color: #9A348E;
+	}
+}
+
+.special-item {
+	color: $specialItemColor;
+	font-size: 18px;
+	border: 1px dashed @specialItemBorder;
+	line-height: 25px;
+}
+
+.preStyle(@preBackground);

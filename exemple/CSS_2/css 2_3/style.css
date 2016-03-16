@@ -1,0 +1,50 @@
+.cube {
+	margin: 20px auto;
+	width: 200px;
+	height: 200px;
+}
+
+@keyframes color-change {
+    from {background-color: #4897D4;}
+    to {background-color: yellow;}
+}
+
+@keyframes multi-color {
+    0%   {background-color: #2B3D5C;}
+    25%  {background-color: yellow;}
+    50%  {background-color: blue;}
+    100% {background-color: #2B3D5C;}
+}
+
+.cube1 {
+	background-color: #4897D4;
+	animation-name: color-change;
+    animation-duration: 4s;
+    animation-delay: 2s;
+}
+
+.cube2 {
+	background-color: #2B3D5C;
+	animation-name: multi-color;
+    animation-duration: 4s;
+    animation-delay: 2s;
+}
+
+.cube3 {
+	background-color: #EBE26A;
+	transition: all 1s linear;
+}
+
+.cube3:hover {
+	width: 300px;
+	height: 300px;
+}
+
+.cube4 {
+	background-color: #EBE26A;
+	transition-duration: 1s;
+}
+
+.cube4:hover {
+	 transform: rotate(60deg);
+}
