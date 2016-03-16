@@ -9,9 +9,7 @@ body {
 
 }
 
-.banner{
-	display: inline-block;
-}
+
 .bannerBlock{
 	display: block;
 }
@@ -75,7 +73,7 @@ overflow: hidden;
 ::-webkit-input-placeholder {
    color: #ffffff;
 }
-input[type="text"]{
+/*input[type="text"]{
 
 	position: relative;
   background-color: transparent;
@@ -88,7 +86,7 @@ input[type="text"]{
 	left: 10px;
 	outline: none;
 }
-
+*/
 #searchImg{
 	position: relative;
 	background-image: url(../core/assets/search-icon.png);
@@ -141,32 +139,315 @@ input[type="text"]{
 	width: 100%;
 	height: 600px;
 }
+.headerSI{
+	background-image: url(../core/assets/banner-top.jpg);
+	background-size:cover;
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 600px;
+}
+
 .header{
-	width: 900px;
+	width: 1200px;
+	/*height: 1600px;*/
 	margin:0 auto;
-	background-color: #ff0000;
+	/*background-color: #ff0000;*/
 }
 .leftTextDiv{
-	display: inline-block;
-	width: 50%;
-	background-color: #cccc00;
-	margin: 0 auto;
+	float: left;
+	/*display: inline-block;*/
+	/*background-color: #cccc00;*/
 }
-.SignUpDiv{
-	display: inline-block;
-	width: 50%;
+.wrapper{
+	display: block;
+	padding-top: 150px;
+}
+.signInDiv{
+	display: block;
+	width: 300px;
 	margin: 0 auto;
+	background-color: #ffffff;
+	padding-bottom: 15px;
+	border-radius: 5px;
+}
+.signInDiv p{
+	text-align: center;
+}
+.siDivForm{
+	display: block;
+	margin: 0 auto;
+	width: 200px;
+
+}
+.signInDiv span{
+	text-align: left;
+}
+.signInDiv img{
+	display: block;
+	margin: auto;
+	padding-top: 20px;
+	padding-bottom: 20px;
+
+}
+
+.SignUpDiv{
+	float: left;
+	/*display: inline-block;*/
+	background-color: none;
+	border-radius: 3px;
+	width: 150px;
 }
 .banner{
-	display: inline-block;
+	display: block;
 	width: 47%;
+	margin-top: 30px;
+}
+.inlineBlock{
+	display: inline-block;
+}
+.block{
+	display: block;
+}
+.white{
+	color: #ffffff;
+}
+.lightBlue{
+	color: #63D8FF;
+}
+.gray{
+	color: #333333;
+}
+.marginText{
+	margin: 30px 30px 30px 0;
+}
+.button{
+	background-color: #00bfff;
+	color: #ffffff;
+	width: 200px;
+	height: 50px;
+	border: 0px;
+	border-radius: 3px;
+	font-size: 20px;
+	box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+	margin:25px auto;
+}
+.buttonSI{
+	background-color: #00bfff;
+	color: #ffffff;
+	width: 105px;
+	height: 30px;
+	border: 0px;
+	border-radius: 3px;
+	font-size: 10px;
+	box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+	margin:25px auto;
 }
 
 
 
+.buttonDiv{
+	text-align: center;
+	padding-bottom: 15px;
+}
+.marginAutoLeft{
+	margin: 0 8px;
+}
+
+.big{
+	font-size: 40px;
+}
+.medium{
+	font-size: 20px;
+}
+.medium-2{
+	font-size: 15px;
+}
+.small{
+	font-size: 10px;
+}
+.marginTop{
+	margin: 80px 0;
+}
+.marginCenter{
+	display: block;
+	margin: 50px auto 50px auto;
+}
+.titleDivMargin{
+	display: block;
+	text-align: center;
+	padding-bottom: 25px;
+}
+
+.titleTextPadding{
+	display: block;
+	margin: 50px auto;
+	padding-top: 25px;
+	text-align: center;
+}
+.signUpForm{
+	width: 400px;
+	background-color: #ffffff;
+	border-radius: 5px;
+	height: auto;
+
+}
+.signInTexfFields{
+	background-color: #D8E7F5;
+	border: 5px;
+	border-radius: 5px;
+	font-size: 20px;
+	color: #ffffff;
+	width: 200px;
+	height: 37px;
+	top: auto;
+	left: 40px;
+	outline: none;
+}
+.signUpTexfFields{
+	background-color: #D8E7F5;
+	border: 5px;
+	border-radius: 5px;
+	font-size: 20px;
+	color: #ffffff;
+	width: 300px;
+	height: 37px;
+	top: auto;
+	left: 40px;
+	outline: none;
+}
+.signUpElems{
+	width: 300px;
+	margin: 10px auto;
+}
+.smallWidth{
+	display: block;
+	width: 60%;
+	margin: 0 auto;
+	padding-bottom: 15px;
+}
+.midlePictures{
+	text-align: center;
+	display: inline-block;
+	margin:auto;
+	width: 33%
+
+}
+.midPictDiv{
+	width: 900px;
+	display: block;
+	margin: 0 auto;
+}
+.iosDiv{
+	display: block;
+	text-align: center;
+	margin: 50px auto;
+	background: url(../core/assets/stars-bg.jpg);
+	height: 400px;
+}
+.iosDivText{
+	display: block;
+	/*height: 200px;
+	padding-top: 200px;*/
+}
+.picture1{
+	display: inline-block;
+	margin-top: 150px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	margin-right: -50px;
+}
+.picture2{
+	display: inline-block;
+	margin-top: 50px;
+	margin-left: 150px;
+	margin-right: -50px;
+	margin-bottom: 50px;
+}
+.picture3{
+	display: inline-block;
+	margin-top: 50px;
+	margin-left: 150px;
+	margin-right: -50px;
+	margin-bottom: 50px;
+}
+.picture4{
+	display: inline-block;
+	margin-top: 100px;
+	margin-left: 150px;
+	margin-right: -50px;
+	margin-bottom: 50px;
+}
+.picture5{
+	display: inline-block;
+	margin-top: 50px;
+	margin-left: 150px;
+	margin-right: -50px;
+	margin-bottom: 0px;
+}
+.picture6{
+	display: inline-block;
+	margin-top: 50px;
+	margin-left: 150px;
+	margin-right: -140px;
+	margin-bottom: 50px;
+}
+.picture7{
+	display: inline-block;
+	margin-top: 50px;
+	margin-left: 150px;
+	margin-right: -50px;
+	margin-bottom: -50px;
+}
 
 
+.tableDiv{
+	display: block;
+	width: 900px;
+	margin: 10px auto;
+}
+.tableClass{
+	width: 100%;
 
+}
+.alignCenter{
+	display: inline-block;
+
+}
+table{
+	border-collapse: collapse;
+	border: 1px solid #D5EBF2;
+}
+tr {
+		border: 1px solid #D5EBF2;
+		height: 50px;
+		background-color: #E6EFF2;
+}
+th{
+	background-color: #ffffff;
+}
+td > img{
+	display: block;
+	margin: 0 auto;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+tr .bigTr{
+		background-color: #ffffff;
+}
+
+.footerDiv{
+	display: block;
+	background-color: #CFCEB8;
+	height: 500px;
+	margin: 20px auto;
+}
+.footerMiddleDiv{
+	display: block;
+	background-color: #ff0000;
+	margin: 20px auto;
+	height: 300px;
+	width: 1200px;
+}
 
 
 
