@@ -21,6 +21,7 @@ input{
   border-radius: 3px;
   padding-right: 100px;
   padding-bottom: 12px;
+  border-width: 0px;
 }
 
 button{
@@ -28,6 +29,7 @@ button{
   color: #fff;
   border-radius: 5px;
   padding: 10px 50px ;
+  border-width: 0px; 
 }
 
 a:link, a:visited{
