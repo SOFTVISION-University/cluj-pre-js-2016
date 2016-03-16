@@ -1,0 +1,220 @@
+#first-big-container{
+  background-image: url("../core/assets/banner-top.jpg");
+  background-size: auto;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#container-in-first-container{}
+
+div.small-left-container{
+  color: #f2f2f2;
+  width: 45%;
+
+  display: inline;
+
+}
+
+div.small-left-container>h3{
+  color: #cccccc;
+}
+
+div.small-left-container img{
+  height: 23px;
+  padding: 20px;
+}
+
+div.small-left-container img:first-child{
+  height: 39px;
+  padding: 20px;
+}
+
+#form{
+  border-radius: 5px ;
+  //margin: 1px auto;
+  display: inline;
+  width: 55%;
+  //height: 350px;
+  background-color: #FFFFFF;
+
+}
+
+#form>h3 {
+  text-align: center;
+}
+
+#form>p:nth-child(3){
+  color: #8c8c8c;
+  text-align: center;
+  font-size: 14px;
+  margin: 2px;
+}
+
+#form>p:nth-child(4){
+  color: #b3b3b3;
+  font-size: 10px;
+  text-align: center;
+  margin: 0;
+}
+
+#form>p:nth-child(6){
+  color: #b3b3b3;
+  font-size: 11px;
+  text-align: center;
+  margin: 25px;
+}
+
+a:link, a:visited { color: #0099ff; text-decoration: none}
+
+label{
+  line-height: 2;
+}
+
+#text-areas{
+  position: relative;
+  top: 10px;
+  left: 45px;
+}
+
+input{
+    background-color : #f2f2f2;
+    border: 0px solid;
+    height: 25px;
+
+}
+
+#button{
+	padding:		9px 40px;
+	font-size:		14px;
+	background-color:	#0099ff;
+	font-weight:lighter;;
+	color:			#FFFFFF;
+  border: 1px solid;
+  border-radius: 4px;
+
+}
+
+.buttonContainer{
+  text-align: center;
+  font-weight: 900;
+  margin: 12px;
+}
+
+div.second-big-container{
+  background-color: #FFFFFF;
+  text-align: center;
+  height: 300px;
+}
+
+
+div.second-big-container h2 {
+  font-size: 28px;
+}
+
+div#inner-cont{
+  overflow: hidden;
+}
+
+div.second-big-container>p{
+  color: #b3b3b3;
+  font-size: 15px;
+
+}
+
+div#first-cont{
+  float: left;
+  width: 33.333%;
+
+}
+
+div#inner-cont p:first-of-type{
+  font-weight: bold;
+  font-size: 18px;
+}
+
+div#inner-cont p:last-of-type{
+  font-size: 15px;
+  color: #b3b3b3;
+}
+
+div#second-cont{
+  float: left;
+  width: 33.333%;
+}
+
+div#third-cont{
+    float: left;
+    width: 33.333%;
+
+}
+
+#third-big-container{
+  background-image: url("../core/assets/stars-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: center;
+  font-size: 22px;
+  text-align: center;
+  color:  #ffffff;
+  height: 300px;
+}
+
+#third-big-container p:first-of-type{
+  font-weight: bold;
+
+}
+
+#third-big-container p:last-of-type{
+  //width: 400px;
+
+}
+
+
+img#phone-logo{
+  vertical-align: top;
+  margin-top: 90px;
+  margin-left: -70px;
+}
+
+img#clock-logo{
+  vertical-align: bottom;
+  margin-top: 150px;
+  margin-left: -20px;
+}
+
+img#position-logo{
+  vertical-align: bottom;
+  margin-left: 20px;
+  margin-bottom: 30px;
+}
+
+img#music-logo{
+  vertical-align: top;
+  margin-top: 70px;
+  margin-left: 50px;
+}
+
+img#weather-logo{
+  vertical-align: top;
+  margin-top: 90px;
+  margin-left: 50px;
+
+}
+
+img#phtot-logo{
+  margin-top: px;
+  margin-left: px;
+}
+
+img#mail-logo{
+  margin-top: px;
+  margin-left: px;
+}
+
+#forth-big-container{
+  background-color: #FFFFFF;
+}
+
+#fifth-big-container{
+  background-color: #e6e6e6;
+}
