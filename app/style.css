@@ -1,0 +1,166 @@
+body {
+  background-color: white;
+  }
+
+#father_up{
+  width:900px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  }
+
+#father_down{
+    width:900px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    }
+#father_images{
+  width:900px;
+  margin: 0 auto;
+  box-sizing: border-box;
+
+  }
+
+
+.banner{
+  display: inline-block;
+  width: 47%;
+  vertical-align: top;
+  margin-top: 20px;
+}
+
+.form{
+  background-color: white;
+  width: 48%;
+  margin: 10px 20px 10px 20px;
+  padding: 50px;
+  box-sizing: border-box;
+  display: inline-block;
+  }
+
+.footer_images{
+  display: inline-block;
+/*  width: 33%; */
+  text-align: center;
+  white-space: nowrap;
+  padding: 50px;
+  font-size: 12px;
+ overflow: hidden;
+}
+
+.color
+  {
+    color:#FFFFFF;
+    font-family:arial-black;
+    font-weight: bold;
+    }
+.left{
+  text-align:left;
+  font-family: sans-serif;
+  margin:0px 10px 0px 30px;
+}
+
+.images-style
+  {
+    display: inline-block;
+    padding-right: 20px;
+  }
+.grey{
+  color:rgba(152, 160, 163, 0.6);
+  font-family: arial;
+  text-align: center;
+}
+
+.black{
+<<<<<<< HEAD
+  color:rgba(5,5,5,0.9);
+=======
+  color:rgba(5,5,5,0.8);
+>>>>>>> b389319... css2
+  font-family: arial;
+  font-weight: bold;
+}
+
+.button{
+<<<<<<< HEAD
+  background-color:#008ae6;
+  color: rgb(252, 252, 252);
+  font-family: sans-serif;
+  border-radius: 2px;
+  padding: 10px 30px;
+=======
+  background-color: rgba(54, 184, 227, 0.9);
+  color: rgb(252, 252, 252);
+  font-family: sans-serif;
+  border-radius: 2px;
+  padding: 10px;
+}
+
+.tabs{
+  background-color: rgba(152, 160, 163, 0.1);
+  border-radius: 2px;
+  width:90%;
+  }
+
+
+#footer_image{
+  background-image: url(../core/assets/stars-bg.jpg);
+  height: 220px;
+  text-align: center;
+  padding: 200px 50px 10px 50px;
+}
+
+#table{
+    text-align: center;
+          }
+table{
+  border: 1px solid blue;
+  border-collapse: collapse;
+  margin: 0 auto;
+  }
+
+th, td{
+  padding: 5px;
+  text-align: left;
+>>>>>>> b389319... css2
+}
+
+.tabs{
+  background-color: rgba(152, 160, 163, 0.1);
+  border-radius: 2px;
+  width:90%;
+  }
+
+
+#footer_image{
+  background-image: url(../core/assets/stars-bg.jpg);
+  height: 220px;
+  text-align: center;
+  padding: 200px 50px 10px 50px;
+}
+
+#table{
+    text-align: center;
+    }
+table{
+  border: 1px solid #99e6ff;
+  margin: 0 auto;
+  border-collapse: collapse;
+  width: 750px;
+  background-color: #e6f9ff;
+  font-size: 0.8em;
+  }
+
+th, td{
+  padding: 15px;
+  text-align: left;
+  border-collapse: collapse;
+
+}
+
+tr{
+  border: 1px solid #99e6ff;
+}
+
+.tr{
+  border-bottom: 1px solid #ffffff;
+  }
