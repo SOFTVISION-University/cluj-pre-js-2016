@@ -1,0 +1,285 @@
+body {
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #2B2B2B;
+}
+::-webkit-input-placeholder {
+    color:    white;
+}
+:-moz-placeholder {
+    color:    white;
+}
+::-moz-placeholder {
+    color:    white;
+}
+:-ms-input-placeholder {
+    color:    white;
+}
+
+
+#header{
+  background:url('../core/assets/banner-top.jpg');
+  height: 650px;
+  width: auto;
+  color:white;
+}
+
+.footer{
+  height: 650px;
+  position: relative;
+  background-color: #E5E5E5;
+  background-image:url('../core/assets/devices.jpg');
+  background-repeat:no-repeat;
+  background-position:right bottom;
+}
+.divFooter{
+  width: 500px;
+  height: 400px;
+  background-color: #E5E5E5;
+  padding-top: 150px;
+  padding-bottom: 100px;
+  padding-left: 15%;
+  text-align: left;
+  z-index: 100;
+}
+.appStoreButton{
+  display: block;
+  width: 162px;
+  height: 48px;
+  background-image: url('../core/assets/app-store.png');
+  background-repeat: no-repeat;
+  float:left;
+  margin-right: 30px;
+}
+#googlePlayButton{
+  background-image: url('../core/assets/google-play.png');
+}
+.devicesImage{
+  display: block;
+  position: absolute;
+  width: 1014;
+  height: 549;
+  bottom: 0;
+  right: 0;
+}
+#signUpDiv{
+  width:450px;
+  height:500px;
+  background-color: white;
+  border-radius: 5px;
+  float:left;
+  text-align: center;
+  margin-left: 10px;
+  margin-top: 100px;
+
+}
+.clearFloat{
+  clear:both;
+}
+
+.textHeader{
+  width:600px;
+  height:500px;
+  margin-left: 20%;
+  border-radius: 5px;
+  text-align: left;
+  float:left;
+  margin-top: 100px;
+  color:white;
+}
+#signUpForm{
+  padding: 80px 50px 50px 15%;
+  text-align: left;
+
+}
+.SU-input{
+  height: 35px;
+  width: 300px;
+  border-radius: 5px;
+  border:1px solid #EBEDED;
+  font-size: 1.2em;
+  padding: 2px;
+  background-color: #EBEDED;
+  color:grey;
+}
+.submitSignUp{
+  background-color: #1DBFF5;
+  height: 50px;
+  width: 180px;
+  border: none;
+  color: white;
+  font-size: 1.2em;
+  border-radius: 5px;
+  margin-left: 60px;
+  margin-top:20px;
+  display:block;
+}
+a.submitSignUp {
+  padding-top: 15px;
+  text-align: center;
+  text-decoration: none;
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 100px;
+}
+#signUpforACME{
+  font-weight: bold;
+  font-size: 1.2em;
+  display: block;
+  margin-top: 20px;
+}
+#getStarted{
+  color:grey;
+  display:block;
+  margin-top: 30px;
+}
+.ByClicking{
+  font-size: small;
+  color: grey;
+}
+#textHeader a:visited,#textHeader a:link{
+  color:white;
+  font-size: small;
+  font-weight: bold;
+}
+#textHeader img{
+  margin-right: 20px;
+}
+#textHeader p{
+  font-size: 1.4em;
+}
+#textHeader div{
+  color:lightgrey;
+  font-size: small;
+  font-weight: bold;
+  margin-top: 50px;
+}
+.centeredWrapper{
+  background-color: pink;
+  width:1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.BlackTextBold{
+  font-size: 1.6em;
+  font-weight: bold;
+
+}
+.textMediuGri{
+  font-size: 0.9em;
+  color:grey;
+}
+.textBiggerGri{
+  font-size: 1.2em;
+}
+.bottomDiv{
+  margin-top: 60px;
+  margin-bottom: 50px;
+  width:400px;
+  float:left;
+}
+#starsDiv{
+  background:url('../core/assets/stars-bg.jpg');
+  height: 350px;
+  padding-top: 100px;
+}
+.textMareAlbBold{
+  font-weight: bold;
+  font-size: 1.6em;
+  color:white;
+}
+
+.perksTable{
+  margin-left: 25%;
+  margin-right: 25%;
+  margin-bottom: 50px;
+
+
+}
+.perksTable table {
+  border: 1px solid lightblue;
+  border-collapse: collapse;
+  height: 30px;
+  vertical-align: middle;
+  background-color: #E8FFFF;
+  text-align: left;
+  margin-left: auto;
+  margin-left: auto;
+}
+.perksTable th, td {
+  height: 30px;
+  border-left: none;
+  border-right: none;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.perksTable table th:nth-of-type(2){
+  width: 500px;
+
+}
+.perksTable table th:nth-of-type(1){
+  width: 200px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+.perksTableImg{
+
+  margin: 60px 10px 60px 0px;
+
+}
+.perksTableImg img{
+  vertical-align: middle;
+}
+.checkImage{
+  margin-left: 20px;
+}
+#signInButton{
+  float: right;
+  margin-right: 10px;
+  width:100px;
+  height: 40px;
+}
+.floatLeft{
+  margin-left: 10px;
+  margin-top: 10px;
+  float: left;
+}
+.searchBar{
+  box-sizing: border-box;
+  height: 40px;
+  width: 50%;
+  padding: 10px;
+  margin-top: 20px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  background: rgba(255, 255, 255, .3);
+  font-size: 1.2em;
+  color:white;
+  margin-left:  auto;
+  margin-right: auto;
+}
+#joinNow{
+  background-color: #67DE94;
+  margin-bottom: 60px;
+}
+.playlists{
+  background-color: pink;
+  height: 100px;
+  width: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  float:left;
+}
+.bookThumbail{
+  width: 200px;
+  height: 150px;
+  background:url('../core/assets/massive-pop-hits.png');
+  background-repeat: no-repeat;
+
+}
