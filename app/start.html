@@ -6,150 +6,9 @@
     <meta charset="utf-8" />
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="mystyle.css">
     <style type="text/css">
-    body {
-        background-color: white;
-        margin: 0;
-        padding: 0;
-        text-align: center;
-        font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
-        color: #2B2B2B;
-    }
 
-
-    #header{
-      background:url('../core/assets/banner-top.jpg');
-      height: 650px;
-
-
-    }
-    #signUpDiv{
-      width:450px;
-      height:500px;
-      background-color: white;
-      border-radius: 5px;
-      float:left;
-      text-align: center;
-      margin-left: 10px;
-      margin-top: 100px;
-
-    }
-    .clearFloat{
-      clear:both;
-    }
-
-    #textHeader{
-      width:600px;
-      height:500px;
-      margin-left: 20%;
-      border-radius: 5px;
-      text-align: left;
-      float:left;
-      margin-top: 100px;
-      color:white;
-    }
-    #signUpForm{
-      padding: 80px 50px 50px 15%;
-      text-align: left;
-
-    }
-    .SU-input{
-      height: 35px;
-      width: 300px;
-      border-radius: 5px;
-      border:1px solid #EBEDED;
-      font-size: 1.2em;
-      padding: 2px;
-      background-color: #EBEDED;
-      color:grey;
-    }
-    #submitSignUp{
-      background-color: #1DBFF5;
-      height: 50px;
-      width: 180px;
-      border: none;
-      color: white;
-      font-size: 1.2em;
-      border-radius: 5px;
-      margin-left: 60px;
-      margin-top:20px;
-    }
-    #signUpforACME{
-      font-weight: bold;
-      font-size: 1.2em;
-      display: block;
-      margin-top: 20px;
-    }
-    #getStarted{
-      color:grey;
-      display:block;
-      margin-top: 30px;
-    }
-    #ByClicking{
-      font-size: small;
-      color: grey;
-    }
-    #textHeader a:visited,#textHeader a:link{
-      color:white;
-      font-size: small;
-      font-weight: bold;
-    }
-    #textHeader img{
-      margin-right: 20px;
-    }
-    #textHeader p{
-      font-size: 1.4em;
-    }
-    #textHeader div{
-      color:lightgrey;
-      font-size: small;
-      font-weight: bold;
-      margin-top: 50px;
-    }
-    .centeredWrapper{
-      background-color: pink;
-      width:1200px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .BlackTextBold{
-      font-size: 1.6em;
-      font-weight: bold;
-
-    }
-    .textMediuGri{
-      font-size: 0.9em;
-      color:grey;
-    }
-    .textBiggerGri{
-      font-size: 1.2em;
-    }
-    .bottomDiv{
-      margin-top: 60px;
-      margin-bottom: 50px;
-      width:400px;
-      float:left;
-    }
-    #starsDiv{
-      background:url('../core/assets/stars-bg.jpg');
-      height: 350px;
-      padding-top: 100px;
-    }
-    .textMareAlbBold{
-      font-weight: bold;
-      font-size: 1.6em;
-      color:white;
-    }
-
-
-
-    .perksTable{
-      margin-left: 10%;
-    }
-    .perksTable table{
-      border: 1px solid grey;
-
-    }
     </style>
 
 
@@ -182,9 +41,9 @@
             <input type="email" required="true" class="SU-input"><br>
             Password<br>
             <input type="password" required="true" class="SU-input"><br>
-            <input type="submit" id="submitSignUp"value="Sign Up free">
+            <input type="submit" class="submitSignUp"value="Sign Up free">
         </form>
-        <span id="ByClicking">By clicking 'Sign Up Free' I agree to ACME's Terms of Service</span>
+        <span class="ByClicking">By clicking 'Sign Up Free' I agree to ACME's Terms of Service</span>
     </div>
 
   </div>
@@ -222,48 +81,83 @@
   <span class="BlackTextBold" style="display:block; margin-top:50px;">What you'll get</span>
   <br>
   <div class="perksTable">
-    <table border="1" bordercolor="green">
-      <tr>
-      <th>Column 1</th>
-      <th>Column 2</th>
-      <th>Column 3</th>
+    <table border="1" bordercolor="green" class="textMediuGri">
+      <tr style="background-color:white;">
+        <th>Column 1</th>
+        <th>Column 2</th>
+        <th >Column 3</th>
+        <th>Column 3</th>
       </tr>
         <tr>
-          <td rowspan="8">Row 1 Cell 1</td>
-          <td>Row 1 Cell 2</td>
-          <td>Row 1 Cell 3</td>
-        </tr>
-        <tr>
-          <td>Row 2 Cell 2</td>
-          <td>Row 2 Cell 3</td>
-        </tr>
-        <tr>
-          <td>Row 2 Cell 2</td>
-          <td>Row 2 Cell 3</td>
-        </tr>
-        <tr>
-          <td>Row 2 Cell 2</td>
-          <td>Row 2 Cell 3</td>
-        </tr>
-        <tr>
-          <td>Row 2 Cell 2</td>
-          <td>Row 2 Cell 3</td>
-        </tr>
-        <tr>
-          <td>Row 2 Cell 2</td>
-          <td>Row 2 Cell 3</td>
-        </tr>
-        <tr>
-          <td>Row 2 Cell 2</td>
-          <td>Row 2 Cell 3</td>
-        </tr>
-        <tr>
-          <td>Row 2 Cell 2</td>
-          <td>Row 2 Cell 3</td>
-        </tr>
+          <td rowspan="8" style="background-color:white;">
+            <div class="perksTableImg">
+              <img src="../core/assets/galaxy-icon.png" > Row 1 Cell 1<br>
+            </div>
+            <div class="perksTableImg">
+              <img src="../core/assets/galaxy-icon.png" > Row 1 Cell 1<br>
+            </div>
+            <div class="perksTableImg">
+              <img src="../core/assets/galaxy-icon.png" > Row 1 Cell 1<br>
+            </div>
 
+
+          </td>
+          <td>Listen on Android,iOS and the web</td>
+          <td><img src="../core/assets/check-icon.png" class="checkImage"></td>
+          <td><img src="../core/assets/check-icon.png"class="checkImage"></td>
+        </tr>
+        <tr>
+          <td>Row 2 Cell 2</td>
+          <td><img src="../core/assets/check-icon.png"class="checkImage"></td>
+          <td><img src="../core/assets/check-icon.png"class="checkImage"></td>
+        </tr>
+        <tr>
+          <td>Row 2 Cell 2</td>
+          <td></td>
+          <td><img src="../core/assets/check-icon.png"class="checkImage"></td>
+        </tr>
+        <tr>
+          <td>Row 2 Cell 2</td>
+          <td></td>
+          <td><img src="../core/assets/check-icon.png"class="checkImage"></td>
+        </tr>
+        <tr>
+          <td>Row 2 Cell 2</td>
+          <td></td>
+          <td><img src="../core/assets/check-icon.png"class="checkImage"></td>
+        </tr>
+        <tr>
+          <td>Row 2 Cell 2</td>
+          <td></td>
+          <td><img src="../core/assets/check-icon.png"class="checkImage"></td>
+        </tr>
+        <tr>
+          <td>Row 2 Cell 2</td>
+          <td></td>
+          <td><img src="../core/assets/check-icon.png"class="checkImage"></td>
+        </tr>
+        <tr>
+          <td>Row 2 Cell 2</td>
+          <td></td>
+          <td><img src="../core/assets/check-icon.png"class="checkImage"></td>
+        </tr>
       </table>
   </div>
+  <a href="#" class="submitSignUp" class="textMareAlbBold">Sign up free</a>
+  <div class="footer">
+    <div class="divFooter">
+       <img src="../core/assets/logo-gray.png"></img>
+       <br><br>
+       <p class="BlackTextBold">
+         All your favorite apps on<br>
+         all your favorite devices
+       </p>
+       <a href="#" class="appStoreButton"></a>
+       <a href="#" class="appStoreButton" id="googlePlayButton"></a>
+       <div class="clearFloat"></div>
+       <span class="ByClicking" style="display:block; margin-top:200px;">2016 ACME DIVISION. ALL RIGHTS RESERVED</span>
+    </div>
+
 
 
 
