@@ -109,5 +109,12 @@ img {
   color: #999999;
   padding-left:57px;
   padding-top: 100px;
-  
+}
+
+.playlist {
+  background-color: #33ccff;
+  color:#ffffff;
+  border:1px  #0000ff;
+  font-size: 20px;
+
 }
