@@ -1,0 +1,120 @@
+body{
+  font-family: arial;
+  background-color: #f6f6f6;
+}
+.wrapper{
+  height: 650px;
+  background-image: url("../core/assets/banner-app.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  box-sizing: border-box;
+}
+.search-container{
+  height:550px;
+  width:1600px ;
+  margin:0 auto;
+  padding-top: 40px;
+}
+
+.logo{
+  display: inline-block;
+  vertical-align: top;
+
+}
+
+.search-input{
+  display: inline-block;
+  margin-left: 200px;
+  width: 60%;
+  vertical-align: top;
+}
+
+input{
+  height: 40px;
+  width: 700px;
+  font-size: 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+  background-image: url('../core/assets/search-icon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  border-radius: 3px;
+  border-width: 0px;
+  border-color: rgba(255, 255, 255, 0.1);
+  margin-top: 20px;
+  margin-left: 50px;
+  padding-left:  40px;
+}
+
+.button-signIn{
+  display: inline-block;
+  vertical-align: top;
+}
+
+.button-signIn button{
+  background-color: #3399ff;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 50px ;
+  border-width: 0px;
+  font-weight: bold;
+  margin-top: 27px;
+}
+
+.join-now{
+  margin: 100px auto;
+  width: 60%;
+  text-align: center;
+  color: #fff;
+}
+
+.join-now button{
+  width: 200px;
+  height: 50px;
+  background-color: #6f6;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 50px ;
+  border-width: 0px;
+  font-weight: bold;
+  margin-top: 27px;
+
+}
+
+body p{
+  padding-left: 100px;
+  padding-top: 250px;
+}
+
+.join-now span{
+  width: 300px;
+  display: inline-block;
+}
+
+.wrapper-image{
+  height: 350px;
+  width: 1200px;
+  background-color: transparent;
+  margin: -150px auto;
+}
+
+.wrapper-image .image{
+  display: inline-block;
+  width:30%;
+  border-radius: 3px;
+  box-shadow: 10px 10px 5px #888888;
+  margin-left: 30px;
+  background-color: #fff;
+  padding-bottom: 20px;
+  transition: height 3s linear;
+}
+
+.wrapper-image .image:hover{
+  transform: translate(0, -100px);
+}
+
+
+.wrapper-image .image span{
+  color: gray;
+}
+
+}
