@@ -26,11 +26,13 @@ overflow: hidden;
 
 .logoTopDiv {
 	display: inline-block;
+
 	margin-top: 50px;
 	margin-left: 40px;
 	margin-right: 40px;
 	background-image: url(../core/assets/logo-top.png);
 	background-repeat: no-repeat;
+	width: 100%;
 
 	/*background-color: #ff0000;*/
 
@@ -46,7 +48,8 @@ overflow: hidden;
 }
 .searchDiv {
 	display: inline-block;
-	margin-left: 300px;
+	/*float: left;*/
+	margin-left: 600px;
 	margin-top: 10px;
 	vertical-align: top;
 	background-color :rgba(136,160,168,0.4);
@@ -55,8 +58,15 @@ overflow: hidden;
 	width: 600px;
 }
 
-.signInIndexDiv{
+.signInindexDiv{
 	display: inline-block;
+	vertical-align: top;
+	width: 200px;
+	margin: auto;
+	/*float: left;*/
+	margin-top: 10px;
+	padding-left: 150px;
+	/*width: 10%;*/
 }
 
 /*.signInDiv{
@@ -69,7 +79,8 @@ overflow: hidden;
 
 .signInButton{
 	background-color: #00bfff;
-	display: inline-block;
+	/*display: inline-block;*/
+	float: left;
 	width: 100px;
 	height: 30px;
 	border: 0px;
@@ -77,6 +88,76 @@ overflow: hidden;
 	box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
 	margin:0 auto;
 }
+.listHolder{
+	width: 1200px;
+	margin: -100px auto;
+}
+.playListDivTemplate
+{
+	display: inline-block;
+	width: 25%;
+	margin: auto 15px;
+	height: 300px;
+	text-align: center;
+	background-color: #ffffff;
+	background-image: url("../core/assets/dj-killer-mixes.png");
+	background-repeat: no-repeat;
+}
+.viewPlayList{
+	background-color: #00bfff;
+
+	border: 5px;
+	border-radius: 5px;
+	font-size: 20px;
+	color: #ffffff;
+	width: 200px;
+	height: 37px;
+	margin-top: 100px;
+	outline: none;
+}
+
+.textPLDiv{
+	margin-top: 90px;
+}
+
+
+.listHolder div{
+position: relative;
+}
+.hidden{
+visibility: hidden;
+}
+.listHolder > div:hover{
+		transition-duration: 0.5s;
+		transform: translate(0,-15px);
+		box-shadow: 2px 10px 5px rgba(0, 0, 0, 0.3);
+
+}
+.listHolder div:hover button{
+	visibility: visible;
+
+}
+.clearDiv{
+	clear: both;
+}
+
+#playList{
+	position: fixed;
+	bottom: 0;
+	height: 0;
+	background-color: #56c222;
+	width: 500px;
+	/*height: 500px;*/
+
+
+	visibility: visible;
+}
+.class1{
+	background-color: #888888;
+	height: 500px;
+	margin-top: -200px;
+}
+
 #signInButton a{
 	color: #ffffff;
 }
@@ -90,6 +171,7 @@ overflow: hidden;
 .formIndex{
 	display: inline-block;
 }
+
 .formIndex input[type="text"]{
 
 	position: relative;
