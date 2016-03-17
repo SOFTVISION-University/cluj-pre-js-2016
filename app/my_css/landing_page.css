@@ -1,0 +1,200 @@
+body {
+background-color: red;
+
+  margin: 0px;
+  padding: 0px;
+}
+body > div{
+  width: auto;
+}
+/* SECTION ONE ----------------------------------*/
+.section_1 {
+  background-image: url("../../core/assets/banner-top.jpg");
+  padding-left: 15%;
+  padding-right: 15%;
+  padding-bottom: 3%;
+  margin: 0px;
+  width: 70%;
+}
+.section_1 > div {
+  display: inline-block;
+}
+.section_1_1 {
+  color : white;
+    width: 49%;
+}
+.section_1_1 h1 {
+    width: 80%;
+}
+.section_1_1 p {
+  font-size: 1.2em;
+  width:80%;
+}
+.section_1_1 a {
+  font-size: 0.8em;
+  color: inherit;
+  padding-left: 5px;
+}
+.section_1_1 h5{
+  opacity: 0.4;
+  margin: 0px 0px 5px 0px;
+}
+.section_1_2 {
+  background-color: #FFFFFF;
+  text-align: center;
+  width: 34%;
+}
+.section_1_2 div{
+  width:90%;
+}
+.section_1_2 p {
+font-size: 1em;
+opacity: 0.7;
+margin: 0px 0px 3px 0px;
+}
+
+.section_1_2 span {
+  font-size: 0.8em;
+  opacity: 0.5;
+
+}
+.form_signUp {
+ width: 80%;
+ text-align: center;
+ margin-left: 10%;
+}
+.form_signUp > p {
+  text-align: left;
+  width: 70%;
+}
+
+#singInformButton {
+   margin-top: 5%;
+   width: 35%;
+   height: 3%;
+   background-color: #1E90FF;
+   opacity: 0.8;
+   color: white;
+   text-align: center;
+}
+.section_1_2 > p {
+  font-size: 0.8em;
+  opacity: 0.6;
+}
+/* SECTION TWO ----------------------------------*/
+.section_2 {
+  padding-top: 1px;
+  background-color: white;
+  text-align: center;
+}
+.section_2 h2{
+  margin-top: 2%;
+}
+.section_2 p {
+  font-size:  1em;
+  opacity: 0.6;
+  margin: 0px;
+}
+.section_2 > div {
+   display: inline-block;
+   width: inherit;
+   margin-top: 3%;
+   margin-bottom: 5%;
+}
+.section_2 > div div{
+     display: inline-block;
+ width: 30%;
+}
+.section_2 > div div p{
+    opacity: 1;
+    margin: 0px;
+    text-align: center;
+    width: 80%;
+    margin-left: 10%;
+}
+
+/* SECTION THREE*/
+.section_3 {
+  background-image: url("../../core/assets/stars-bg.jpg");
+  color:white;
+  margin: 0px;
+  text-align: center;
+  padding-bottom: 6%;
+}
+.section_3 div img{
+  position: relative;
+ display: float;
+}
+.section_3 h1{
+  margin: 0px;
+  padding-top: 7%;
+}
+.section_3 p{
+  font-size: 1.4em;
+}
+/* SECTION FOUR*/
+.section_4 {
+  padding-top: 1px;
+  text-align: center;
+  text-decoration: none;
+  background-color: white;
+}
+.section_4 h1 {
+  padding-top: 3%;
+  padding-bottom: 2%;
+}
+.section_4 div {
+  padding-left: 25%;
+  display: block;
+  text-align: left;
+}
+.section_4 table {
+border: 2px solid 	#0080ff;
+border-collapse: collapse;
+text-align: center;
+width: 60%;
+height: 40%;
+}
+.section_4 table tr{
+  border-bottom: 1px solid #0080ff;
+}
+.section_4 table tr td{
+background-color: #ccffff;
+}
+.head-table {
+  border-bottom: 2px solid 	#b3d9ff;
+}
+.head-table *{
+      width: 30%;
+      text-align: left;
+}
+.in-table-titles * {
+  display: inline-block;
+}
+.in-table-titles h4 {
+  word-wrap: normal;
+  width: 35%;
+  margin-right: 0px;
+}
+.section_4 button{
+  text-align: center;
+  font-size: 100%;
+  color: white;
+  width: 15%;
+  height: 4%;
+  background-color: #0066ff;
+  margin-top: 3%;
+  margin-bottom: 5%;
+  margin-left: 20%;
+}
+.section_5 {
+background-color: #E5E5E5;
+padding-top: 5%;
+padding-left: 15%;
+}
+.section_5 > div{
+  display: inline-block;
+}
+.section_5_1{
+  vertical-align: top;
+}

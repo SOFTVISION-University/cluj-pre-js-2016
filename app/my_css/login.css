@@ -1,0 +1,46 @@
+body {
+  height: 100%;
+  width: 100%;
+  background-image: url("../../core/assets/banner-top.jpg");
+  text-align: center;
+}
+
+.content {
+
+  width: 400px;
+  height: 400px;
+  margin-left: 35%;
+  margin-top: 10%;
+  background-color: white;
+  border-radius: 10px;
+
+}
+
+.formular {
+}
+.formular input {
+ height: 7%;
+ width: 50%;
+}
+
+.formular > p {
+  margin-top: 10px;
+  margin-bottom: 0px;
+  margin-left: 25%;
+  text-align: left;
+}
+
+.form_actions  {
+
+  display: inline-block;
+  margin-top: 5%;
+  margin-left: 0px;
+}
+#bPass {
+  width: 30%;
+  margin-left: 5%;
+}
+
+.sign-up *{
+    display: inline-block;
+}
