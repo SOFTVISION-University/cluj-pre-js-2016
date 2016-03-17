@@ -17,11 +17,14 @@ img{
 }
 
 input{
+  width: 300px;
+  height: 30px;
   background-color: #f2f2f2;
   border-radius: 3px;
-  padding-right: 100px;
-  padding-bottom: 12px;
   border-width: 0px;
+  width: 300px;
+  padding-right: 10px;
+
 }
 
 button{
@@ -29,7 +32,7 @@ button{
   color: #fff;
   border-radius: 5px;
   padding: 10px 50px ;
-  border-width: 0px; 
+  border-width: 0px;
 }
 
 a:link, a:visited{

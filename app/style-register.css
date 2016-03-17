@@ -61,7 +61,7 @@ button{
 .second-div-register{
   width:750px;
   height:400px;
-  margin-left:450px;
+  margin:0 auto;;
   padding-top: 70px;
 }
 
@@ -130,24 +130,33 @@ td.image{
 }
 
 .fifth-div-register{
-  height: 600px;
+  height: 550px;
   background-color: #c0c0c0;
+  box-sizing: border-box;
 }
+
+
 
 .child1-fifth-div{
   height: 500px;
-  width: 40%;
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 20px;
+  width: 30%;
   margin-left: 200px;
+  vertical-align: top;
+  display: inline-block;
 }
+
 .child2-fifth-div{
   height: 500px;
+  width: 55%;
   display: inline-block;
-
-  margin-bottom: 1px;
-
+  margin-left: 30px;
+  margin-top: 50px;
+  box-sizing: border-box;
 }
 
+.final-image{
+  width: 90%;
+  height: 90%;
+  margin-left: 137px;
+}
 }
