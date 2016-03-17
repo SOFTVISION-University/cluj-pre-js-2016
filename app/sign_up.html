@@ -4,7 +4,7 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <title>Sign up form</title>
   </head>
-  <body>
+  <body onload="copyright()">
     <div id="top" align="center">
       <div id="start_up">
         <a href="home.html"><img src="../core/assets/logo-top.png" id="sign_up_logo" alt="Image not found"/></a>
@@ -24,13 +24,13 @@
       <p>NO CREDIT CARD NEEDED</p>
         <form action="sign_up.php" method="post" id="sign_up_form">
           <label for="name">Your name</label><br/>
-          <input type="text" name="name" required/><br/><br/>
+          <input id="your_name" type="text" name="name" required/><br/><br/>
           <label for="email">Email</label><br/>
           <input type="email" name="email" required/><br/><br/>
           <label for="password">Password</label><br/>
           <input type="password" name="password" required/>
         </form><br/><br/>
-        <input id="sign_up" type="submit" name="submit" form="sign_up_form" value="Sign up free"/><br/><br/>
+        <input class="sign_up" type="submit" name="submit" form="sign_up_form" value="Sign up free"/><br/><br/>
         <p id="terms">By clicking  "Sign Up Free" I agree to ACME's <a href="">Terms of Service</a></p>
       </div>
     </div><br/><br/><br/>
@@ -70,12 +70,12 @@
     </div><br/><br/><br/><br/>
     <div id="benefits">
       <strong> What you'll get</strong><br/><br/><br/>
-      <table border="1px" align="center" cellpadding="10px">
+      <table align="center" cellpadding="10px">
         <tr>
-          <th>
+          <th colspan="2" id="goodies_th">
             Free goodies
           </th>
-          <th>
+          <th id="feature_th">
               Features
           </th>
           <th>
@@ -86,121 +86,129 @@
           </th>
         </tr>
         <tr>
-          <td>
-
+          <td rowspan="3">
+            <img src="../core/assets/galaxy-icon.png" alt="Image not found"/>
           </td>
-          <td>
+          <td rowspan="3" align="left">
+            Acces 35 million<br/> songs on-demand<br/> and ad-free
+          </td>
+          <td class="feature">
             Listen  on Android, iOS, and the web
           </td>
-          <td>
+          <td class="check">
             <img src="../core/assets/check-icon.png" class="benefits" alt="Image not found"/>
           </td>
-          <td>
+          <td class="check">
             <img src="../core/assets/check-icon.png" class="benefits" alt="Image not found"/>
           </td>
         </tr>
         <tr>
-          <td>
-
-          </td>
-          <td>
+          <td class="feature">
             Store up to 50,000 of your iTunes songs
           </td>
-          <td>
+          <td class="check">
             <img src="../core/assets/check-icon.png" class="benefits" alt="Image not found"/>
           </td>
-          <td>
+          <td class="check">
             <img src="../core/assets/check-icon.png" class="benefits" alt="Image not found"/>
           </td>
         </tr>
         <tr>
-          <td>
-
-          </td>
-          <td>
+          <td class="feature">
             Get recommendations based on your taste
           </td>
-          <td>
+          <td class="check">
             <img src="../core/assets/check-icon.png" class="benefits" alt="Image not found"/>
           </td>
-          <td>
+          <td class="check">
             <img src="../core/assets/check-icon.png" class="benefits" alt="Image not found"/>
           </td>
         </tr>
         <tr>
-          <td>
-
+          <td rowspan="2">
+            <img src="../core/assets/swiss-army-knife-icon.png" alt="Image not found"/>
           </td>
-          <td>
+          <td rowspan="2" align="left">
+            Over 50 free<br/> premium tools
+          </td>
+          <td class="feature">
             Curated radio for anything you want to hear
           </td>
-          <td>
+          <td class="check">
 
           </td>
-          <td>
+          <td class="check">
             <img src="../core/assets/check-icon.png" class="benefits" alt="Image not found"/>
           </td>
         </tr>
         <tr>
-          <td>
-
-          </td>
-          <td>
+          <td class="feature">
             On-demand access to over 35 million songs
           </td>
-          <td>
+          <td class="check">
 
           </td>
-          <td>
+          <td class="check">
             <img src="../core/assets/check-icon.png" class="benefits" alt="Image not found"/>
           </td>
         </tr>
         <tr>
-          <td>
-
+          <td rowspan="3">
+            <img src="../core/assets/storage-icon.png" alt="Image not found"/>
           </td>
-          <td>
+          <td rowspan="3" align="left">
+            5 GB of free<br/> storage space
+          </td>
+          <td class="feature">
             Ad-free,uninterrupted listening
           </td>
-          <td>
+          <td class="check">
 
           </td>
-          <td>
+          <td class="check">
             <img src="../core/assets/check-icon.png" class="benefits" alt="Image not found"/>
           </td>
         </tr>
         <tr>
-          <td>
-
-          </td>
-          <td>
+          <td class="feature">
             Download music to play when you're not connected
           </td>
-          <td>
+          <td class="check">
 
           </td>
-          <td>
+          <td class="check">
             <img src="../core/assets/check-icon.png" class="benefits" alt="Image not found"/>
           </td>
         </tr>
         <tr>
-          <td>
-
-          </td>
-          <td>
+          <td class="feature">
             Skip as many songs as you want
           </td>
-          <td>
+          <td class="check">
 
           </td>
-          <td>
+          <td class="check">
             <img src="../core/assets/check-icon.png" class="benefits" alt="Image not found"/>
           </td>
         </tr>
-      </table><br/>
-      <form action="sign_up.php" method="post">
-        <input id="sign_up" type="submit" name="submit" value="Sign up free"/><br/><br/>
-      </form><br/><br/>
+      </table><br/><br/>
+        <button id="sign_up_button" class="sign_up" type="button" name="sign_up_button" onclick="goTop()">Sign up free</button>
     </div>
+    <div id="footer">
+      <div id="apps">
+        <img src="../core/assets/logo-gray.png" alt="Image not found"/><br/><br/><br/><br/>
+        <h1>All your favorite apps on<br/> all your favorite devices</h1>
+        <a href="https://itunes.apple.com/us/genre/ios/id36?mt=8" target="_blank">
+          <img src="../core/assets/app-store.png" alt="Image not found"/></a>&nbsp;&nbsp;&nbsp;
+        <a href="https://play.google.com/store" target="_blank">
+          <img src="../core/assets/google-play.png" alt="Image not found"/></a>
+        <p id="copyright"></p>
+      </div>
+      <div id="devices" align="center">
+        <img src="../core/assets/devices.jpg" alt="Image not found"/>
+      </div>
+    </div>
+    <script type="text/javascript" src="javascript.js">
+    </script>
   </body>
 </html>

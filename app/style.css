@@ -3,8 +3,19 @@ body{
   padding:0px;
 }
 
-body#login{
-  background-image: url();
+body#home{
+  background-color: rgba(211,211,211,0.6);
+}
+
+body.login{
+  background-image: url("../core/assets/banner-top.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+}
+
+html.login{
+  height: 100%;
 }
 
 a#sign_up{
@@ -33,13 +44,13 @@ div#login_div{
   border:1px solid grey;
   padding:40px;
   border-radius: 3px 3px 3px 3px;
-  margin-top: 50px;
+  margin-top: 90px;
   background-color: white;
 }
 
 div#main{
   background-image: url("../core/assets/banner-app.jpg");
-  height: 600px;
+  height: 550px;
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -90,6 +101,8 @@ button#sign_in_button{
   box-shadow: 1px 4px 8px rgba(0,0,0,0.2);
   color:white;
   font-weight: bold;
+  vertical-align: top;
+  margin-top: 58px;
 }
 
 div#search{
@@ -100,18 +113,23 @@ div#search{
   padding: 7px;
   border-radius: 3px;
   border: 0px;
-  margin-left: -70px;
+  margin-left: -60px;
   margin-right: -200px;
   display:inline-block;
+  vertical-align: top;
+  margin-top: 50px;
 }
 
 img#logo{
-  margin-top: 20px;
+  margin-top: 32px;
   margin-left: 80px;
+  vertical-align: top;
 }
 
 img#search_img{
   display: inline-block;
+  vertical-align: middle;
+  margin-top: -3px;
 }
 
 
@@ -185,7 +203,7 @@ div#sign_up_div input[type=text],div#sign_up_div input[type=email],div#sign_up_d
   font-weight: bold;
 }
 
-input[type=submit]#sign_up{
+.sign_up{
   background-color:	#00bfff;
   border-color: #00bfff;
   border-radius: 3px;
@@ -315,6 +333,90 @@ margin-right: 70px;
 }
 
 div#benefits{
-  height: 650px;
+  height: 580px;
   text-align: center;
+}
+
+table{
+  text-align:center;
+  border-collapse: collapse;
+  border: 1px solid lightblue;
+  width:800px;
+}
+
+th{
+  text-align: left;
+  border-bottom: 1px solid lightblue;
+}
+
+th#goodies_th{
+  padding-left: 15px;
+}
+
+th#feature_th{
+  padding-left: 30px;
+}
+
+td.feature{
+  text-align: left;
+  border-bottom: 1px solid lightblue;
+  background-color: #F0F8FF;
+  padding-left: 30px;
+}
+
+td.check{
+  border-bottom: 1px solid lightblue;
+  background-color: #F0F8FF;
+}
+
+div#footer{
+  height: 610px;
+  background-color:rgba(211,211,211,0.6);
+  text-align: center;
+}
+
+div#apps{
+  display: inline-block;
+  text-align: left;
+  vertical-align: top;
+  margin-top: 110px;
+  margin-right: 180px;
+}
+
+div#devices{
+  margin-right: -288px;
+  padding:60px 0px 0px 0px;
+  display: inline-block;
+}
+
+p#copyright{
+  margin-top: 130px;
+}
+
+div#playlists{
+  text-align: center;
+  margin-top: 80px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+div.card{
+  display: inline-block;
+  max-width: 360px;
+  background-color: white;
+  border-radius: 3px 3px 3px 3px;
+  box-shadow: 1px 4px 10px rgba(0,0,0,0.2);
+  margin-left: 25px;
+  margin-bottom: 30px;
+}
+
+div.card p{
+  text-align: left;
+  padding: 5px 15px 5px 15px;
+}
+
+div.card:hover{
+  transition: 0.7s;
+  transform: translate(0,-15px);
+  box-shadow: 1px 10px 15px rgba(0,0,0,0.2);
 }
