@@ -1,4 +1,4 @@
-var playlists = {
+var playlistsJSON = {
   "title": "Playlists",
   "playlists": [
     {
