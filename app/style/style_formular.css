@@ -1,0 +1,38 @@
+body{
+  background-image:url("../../core/assets/banner-app.jpg");
+  background-size: cover;
+}
+
+.cont{
+  position: relative;
+  height: 1000px;
+  text-align: center;
+  /*display: inline-block;*/
+}
+
+
+
+
+
+.box{
+  /*display: inline;*/
+  position: relative;;
+  background-color: #FFF;
+  font-size: 15px;
+  width: 300px;
+
+  color: #000;
+  margin: 200px auto;
+  padding: 20px;
+
+}
+
+.text_form{
+  margin-left: -130px;
+}
+
+#button{
+  background-color: #00BFFF;
+  border-radius: 5px;
+
+}
