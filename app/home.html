@@ -4,7 +4,7 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <title>Home page</title>
   </head>
-  <body id="home">
+  <body id="home" onload="copyrighthome()">
     <div id="main">
       <div id="logo_div">
         <a href="home.html"><img src="../core/assets/logo-top.png" id="logo" alt="Image not found"/></a>
@@ -20,23 +20,44 @@
       </div>
       <div id="content" align="center">
         <p style="color:white"><strong>Ready to listen to endless music<br/> on your favorite device?</strong></p>
-        <a href="sign_up.html"><button id="join_now_button" type="button" name="join_now">JOIN NOW</button></a><br/><br/><br/><br/>
-        <p style="color:white">Epic and debauched party mixes</p>
+        <a href="sign_up.html"><button id="join_now_button" type="button" name="join_now">JOIN NOW</button></a><br/><br/><br/>
+        <p style="color:white">Epic and debauched party mixes</p><br/><br/>
       </div>
-      <div id="playlists">
+      <div id="playlist">
+        <span id="close" onclick="closePlaylist()">CLOSE<img id="close-icon" src="../core/assets/close-icon.png" alt="Image not found"/></span>
+        <div id="playing-from">
+
+        </div>
+        <div id="playlist-header">
+
+        </div>
+        <div id="playlist-songs">
+
+        </div>
+      </div>
+      <div id="card-area">
         <div class="card">
+          <div class="mat">
+          </div>
+          <button class="explore" type="button" name="explore_playlist" onclick="explorePlaylist()"><img src="../core/assets/play-icon.png" alt="Image not found"/> Explore playlist</button>
           <img src="../core/assets/massive-pop-hits.png" alt="Image not found"/>
           <p><strong>Massive pop hits vol 1</strong></p>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do
             eiusmod tempor incididunt ut labore et</p>
         </div>
         <div class="card">
+          <div class="mat">
+          </div>
+          <button class="explore" type="button" name="explore_playlist"><img src="../core/assets/play-icon.png" alt="Image not found"/> Explore playlist</button>
           <img src="../core/assets/up-all-night.png" alt="Image not found"/>
           <p><strong>Massive pop hits vol 1</strong></p>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do
             eiusmod tempor incididunt ut labore et</p>
         </div>
         <div class="card">
+          <div class="mat">
+          </div>
+          <button class="explore" type="button" name="explore_playlist"><img src="../core/assets/play-icon.png" alt="Image not found"/> Explore playlist</button>
           <img src="../core/assets/dj-killer-mixes.png" alt="Image not found"/>
           <p><strong>Massive pop hits vol 1</strong></p>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do
@@ -46,6 +67,13 @@
           <img src="../core/assets/massive-pop-hits.png" alt="Image not found"/>
         </div>
       </div>
+      <p id="copyrighthome"></p>
     </div>
+    <script type="text/javascript" src="../core/data/playlists.js">
+    </script>
+    <script type="text/javascript" src="../core/data/users.js">
+    </script>
+    <script type="text/javascript" src="javascript.js">
+    </script>
   </body>
 </html>

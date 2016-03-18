@@ -191,6 +191,8 @@ div#login_div input[type=email],div#login_div input[type=password]{
   border: 0px;
   height:20px;
   font-weight: bold;
+  outline: none;
+  border: 1px solid rgba(128,128,128 ,0.2);
 }
 
 div#sign_up_div input[type=text],div#sign_up_div input[type=email],div#sign_up_div input[type=password]{
@@ -393,8 +395,8 @@ p#copyright{
   margin-top: 130px;
 }
 
-div#playlists{
-  text-align: center;
+div#card-area{
+  text-align: left;;
   margin-top: 80px;
   max-width: 1200px;
   margin: 0 auto;
@@ -408,6 +410,8 @@ div.card{
   box-shadow: 1px 4px 10px rgba(0,0,0,0.2);
   margin-left: 25px;
   margin-bottom: 30px;
+  transition: 1s;
+  position: relative;
 }
 
 div.card p{
@@ -416,7 +420,106 @@ div.card p{
 }
 
 div.card:hover{
-  transition: 0.7s;
+
   transform: translate(0,-15px);
   box-shadow: 1px 10px 15px rgba(0,0,0,0.2);
+  visibility:visible;
+}
+
+button.explore{
+  background-color:	#00bfff;
+  border-color: #00bfff;
+  border-radius: 3px;
+  width: 200px;
+  height: 40px;
+  border:0px;
+  font-size: 16px;
+  box-shadow: 1px 4px 8px rgba(0,0,0,0.2);
+  color:white;
+  font-weight: bold;
+  position: absolute;
+  margin-left: 80px;
+  margin-top: 100px;
+  visibility: hidden;
+  z-index: 1;
+}
+
+div.card:hover button{
+  visibility:visible;
+}
+
+div.card:hover div.mat{
+  position: absolute;
+  width: 360px;
+  height: 224px;
+  background-color:rgba(70,130,180,0.6);
+}
+
+div#playlist{
+  position: fixed;
+  left: 60px;
+  border: 1px solid white;
+  box-shadow: 1px 4px 8px rgba(0,0,0,0.2);
+  border-radius: 3px 3px 3px 3px;
+  width:760px;
+  height:0;
+  z-index: 3;
+  background-color: white;
+  bottom: -11px;
+  display: inline-block;
+  padding: 5px;
+  transition: 1s;
+  overflow: hidden;
+}
+
+span#close{
+display: inline-block;
+color:#00bfff;
+float:right;
+cursor: pointer;
+}
+
+img#close-icon{
+  margin-top: 2px;
+  display: inline-block;
+  margin-left: 5px;
+}
+
+p#copyrighthome{
+  margin-top: 90px;
+  margin-left: 340px;
+  margin-bottom: 40px;
+}
+
+div#playlist.playlist-expand{
+  height: 791px;
+  transition: 1s;
+}
+
+div#playing-from{
+  border:1px solid black;
+  margin-top: 20px;
+  height:135px;
+}
+
+div#playlist-header{
+  border:1px solid black;
+  margin-top: 20px;
+  margin-left:auto;
+  margin-right: auto;
+  width:730px;
+  height: 20px;
+}
+
+div#playlist-songs{
+  border:1px solid black;
+  margin-top: 20px;
+  margin-left:auto;
+  margin-right: auto;
+  width:730px;
+}
+
+span#error{
+  color:red;
+  font-weight: bold;
 }

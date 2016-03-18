@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="login"> 
+<html class="login">
   <head>
     <link rel="stylesheet" type="text/css" href="style.css">
     <title>Login form</title>
@@ -7,17 +7,24 @@
   <body class="login">
     <div id="login_div" align="center">
     <img src="../core/assets/logo-color.png" alt="Image not found"/>
-    <p><b>Sign into your ACME account</b></p><br/>
-      <form action="login.php" method="post">
+    <p><b>Sign into your ACME account</b></p>
+    <span id="error"></span>
+      <form action="" method="post" onsubmit="return validateUser()">
         <label for="email">Email</label><br/>
-        <input type="email" name="email" required/><br/><br/>
+        <input id="email" type="email" name="email" onfocus="getFocus(this)" onblur="getBlur(this)" required/><br/><br/>
         <label for="password">Password</label><br/>
-        <input type="password" name="password" required/><br/><br/>
+        <input id="password" type="password" name="password" onfocus="getFocus(this)" onblur="getBlur(this)" required/><br/><br/>
         <a href="" id="forgot_pass">Forgot password ?</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <input id="sign_in" type="submit" name="submit" value="Sign in"/><br/><br/><br/>
       </form><br/>
       <span>Don't have an account ?<a id="sign_up" href="sign_up.html"> Sign up here</a>
       </span><br/><br/>
     </div>
+    <script type="text/javascript" src="../core/data/playlists.js">
+    </script>
+    <script type="text/javascript" src="../core/data/users.js">
+    </script>
+    <script type="text/javascript" src="javascript.js">
+    </script>
   </body>
 </html>
