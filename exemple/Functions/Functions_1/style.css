@@ -1,0 +1,23 @@
+body {
+	position: relative;
+}
+
+button {
+	color: #DA627D;
+}
+
+#card-area {
+	overflow: hidden;
+	border: 1px dashed #ff4dd2;
+	margin-top: 100px;
+	min-height: 100px;
+}
+
+.card {
+	margin-left: 10px;
+	float: left;
+	height: 50px;
+	width: 50px;
+	background-color: #66ff33;
+	border: 1px solid #ffb3ff;
+}
