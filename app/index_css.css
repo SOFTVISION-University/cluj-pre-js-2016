@@ -1,0 +1,216 @@
+body{
+	margin:0px;
+	background-color:#EEEEEE;
+
+}
+
+input{
+
+
+	  padding: 5px 20px;
+	  border: none;
+	  border-radius: 4px;
+	  background-color: #f8f8f8;
+  }
+
+.container{
+	background-image: url(../core/assets/banner-app.jpg);
+	height:65%;
+background-size: cover;
+	text-align:center;
+
+}
+
+  .search_text{
+	  display:block;
+	  font-size:x-large;
+	  color:white;
+	  font-weight: bold;
+  }
+
+  .playlist{
+	float:left;
+	  width:30%;
+	  height:95%;
+
+		margin-top:2%;
+		margin-left:3%;
+
+	  background-color:white;
+	  }
+
+		.playlist1{
+      background-color: rgba(0, 0, 0, 0);
+		  width:60%;
+		  height:35%;
+     	margin:-170px auto 0 auto;
+		  }
+
+
+.clear{
+  clear:both;
+}
+
+
+
+.playlist:hover{
+  transform: translate(0,-15px);
+	transition:0.5s;
+	box-shadow: 10px 10px 5px #888888;
+
+}
+.playlist:hover form input{
+	visibility:visible;
+
+}
+
+input[type=submit],input[type=button]{
+
+	  background-color:  #08BAFC;
+	  border:none;
+	  color:white;
+	  text-decoration: none;
+      margin: 5px auto;
+	  border-radius: 4px;
+		font-weight: bold;
+}
+#button_signin{
+
+	  margin: 35% auto 15% auto;
+	  width:100%;
+	  height:30%;
+}
+ #search{
+		 color:white;
+		 font-size: 20px;
+	   width:100%;
+	   margin-top:5%;
+	   height:8%;
+	   padding:6px 15px 6px 35px;
+	   border:1px solid;
+	   background: url('../core/assets/search-icon.png') no-repeat 8px;
+	   border-radius:4px;
+	   background-color:transparent;
+	   opacity:1;
+     color:#bcbcbc;
+}
+   #span_search{
+	   margin-top:9%;
+ }
+   #span_search1{
+	   margin-top:8%;
+	   font-size:xx-large;
+		 padding-bottom: 2%;
+
+   }
+   #button_join{
+		 font-size: 17px;
+	   margin-top:25px;
+	   width:180px;
+	   height:50px;
+	   background-color:#67DE94;
+		 font-weight: bold;
+}
+#position_centred{
+	margin: 20% auto 15% auto;
+	display:block;
+	width:100%;
+   }
+#left{
+	margin-left:3%;
+	float:left;
+  width:8%;
+	height:20%;
+     }
+#right{
+	margin-right:3%;
+	float:right;
+  width:7%;
+	height:20%;
+}
+#center{
+	float:left;
+	margin-left:14%;
+	width:50%;
+	height:80%;
+   }
+.img_blc1{
+  width:100%;
+	height:70%;
+}
+.text_blc{
+	  margin-left:15px;
+	  margin-top:15px;
+	  display:block;
+	  font-size:medium;
+	  color:black;
+	  font-weight: bold;
+}
+ .form_playlist{
+  background-color: rgba(0, 0, 0 ,0.4);
+  position: absolute;
+	z-index:0;
+	top:0;
+	left:0;
+	width:100%;
+	height: 70%;
+
+}
+
+.button_playlist{
+	display:block;
+visibility: hidden;
+ margin-left: 20%;
+ height: 23%;
+ width: 60%;
+}
+#button_playlist_top{
+ margin-top: 30%;
+}
+#position_relative{
+position:relative;
+height:100%;
+
+}
+#text_blc2{
+    font-size:small;
+	  color:#ADADAD;
+	  font-weight: none;
+	  margin-top:5px;
+}
+
+
+
+.pop_playlist2{
+	height:50%;
+
+}
+
+.pop_playlist{
+
+
+ position:absolute;;
+ background-color: white;
+ width:40%;
+ height: 0;
+ left:5%;
+ bottom: 0;
+}
+#close_button{
+ 
+  width:100%;
+	height: 3%;
+}
+#footer_playlist{
+
+	background-color: blue;
+	width:100%;
+	height: 15%;
+}
+#name_songs{
+	margin:3% auto 0 auto;
+	background-color: black;
+	width:95%;
+	height: 5%;
+
+}

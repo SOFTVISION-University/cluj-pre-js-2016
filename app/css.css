@@ -153,9 +153,7 @@ text-align: center;
   }
 
 
-#footer div{
-  display: inline-block;
-}
+
 
  .align_left{
 	  text-align:left;
@@ -193,11 +191,6 @@ overflow: hidden;
 }
 
 
-}
-#footer_image1{
-	float: left;
-
-}
 
 
 
