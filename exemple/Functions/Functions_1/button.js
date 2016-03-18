@@ -53,6 +53,7 @@ function createCards(iterations, container) {
       myDiv = document.createElement('div');
       myDiv.innerText
       myDiv.className = 'card';
+      myDiv.style= "margin-left:200px"
       myDiv.addEventListener('click', listenClicks(iterations));
       container.appendChild(myDiv);
       createCards(iterations - 1, container)
