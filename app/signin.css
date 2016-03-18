@@ -74,6 +74,7 @@ img {
   width: 430px;
   margin-left: 240px;
   margin-top: -150px;
+
 }
 
 .box2 {
@@ -99,11 +100,21 @@ img {
   color: #a6a6a6;
 }
 
+.explore {
+  display: none;
+}
+
+.container div:hover .explore {
+  display: block;
+}
+
 .container > div:hover{
   transition-duration: 1s;
   transition-timing-function: ease-in;
   transform: translateY(-60px);
 }
+
+
 
 #copyright {
   font-weight: lighter;
@@ -113,7 +124,7 @@ img {
   padding-top: 100px;
 }
 
-.playlist {
+.explore {
   background-color: #33ccff;
   background-image: url("/home/robert.cosma/work/cluj-pre-js-2016/core/assets/play-icon.png");
   background-position: left;
