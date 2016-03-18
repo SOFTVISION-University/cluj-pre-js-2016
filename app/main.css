@@ -1,0 +1,371 @@
+body{
+margin: 0px;
+font-family: Arial, Helvetica, sans-serif;
+}
+
+div.divup{
+  margin-left: auto;
+  margin-right: auto;
+  position:relative;
+  background-image: url("../core/assets/banner-app.jpg");
+  height:600px;
+
+}
+
+div.divdown{
+  margin-left: auto;
+  margin-right: auto;
+  position:relative;
+  background-color: #E5E5E5;
+  height:500px;
+
+}
+div.cleardiv{
+  clear:both;
+}
+div.leftimg{
+    position:absolute;
+    left: 300px;
+    top: 570px;
+    margin-left: -100px;
+    margin-top: -100px;
+    z-index: 10;
+    box-shadow: 0px 3px 3px #000000;
+    transition-duration: 1.5s;
+
+}
+div.leftimg:hover{
+  margin-top: -175px;
+  box-shadow: 0px 20px 20px #888888;
+}
+
+div.leftup{
+  width:360px;
+  height:224px;
+  background-image: url("../core/assets/massive-pop-hits.png");
+}
+
+div.leftdown{
+  width:360px;
+  height:100px;
+  background-color: white;
+}
+
+div.rightimg{
+    position:absolute;
+    left: 1300px;
+    top: 570px;
+    margin-left: -100px;
+    margin-top: -100px;
+    z-index: 10;
+    box-shadow: 0px 3px 3px #000000;
+    transition-duration: 1.5s;
+}
+div.rightimg:hover{
+  margin-top: -175px;
+  box-shadow: 0px 20px 20px #888888;
+}
+div.rightup{
+  width:360px;
+  height:224px;
+  background-image: url("../core/assets/dj-killer-mixes.png");
+}
+
+div.rightdown{
+  width:360px;
+  height:100px;
+  background-color: white;
+}
+
+div.midimg{
+    position:absolute;
+    left: 800px;
+    top: 570px;
+    margin-left: -100px;
+    margin-top: -100px;
+    z-index: 10;
+    box-shadow: 0px 3px 3px #000000;
+    transition-duration: 1.5s;
+}
+
+div.midimg:hover{
+  margin-top: -175px;
+  box-shadow: 0px 20px 20px #888888;
+}
+
+div.midup{
+  width:360px;
+  height:224px;
+  background-image: url("../core/assets/up-all-night.png");
+}
+
+div.middown{
+  width:360px;
+  height:100px;
+  background-color: white;
+}
+
+
+
+#buttonS{
+  position: absolute;
+  background-color: #33CCFF;
+  text-align: center;
+  font-size: large;
+  color: white;
+  border:blue;
+  width:10em;
+  height: 2em;
+  top:50px;
+  left: 1500px;
+  -webkit-border-radius: 7px;
+  box-shadow: 0px 3px 3px #000000;
+
+}
+
+#buttonJ{
+  position: absolute;
+  background-color: #67DE94	;
+  text-align: center;
+  font-size: large;
+  color: white;
+  border:blue;
+  width:15em;
+  height: 3em;
+  top:270px;
+  left: 750px;
+  -webkit-border-radius: 7px;
+  box-shadow: 0px 3px 3px #000000;
+}
+
+#explorebtn{
+  background-color: #63D1F4;
+  text-align: center;
+  font-size: large;
+  color: white;
+  border:blue;
+  width:10em;
+  height: 2em;
+  margin-left:90px;
+  margin-top: 120px;
+  opacity: 0.8;
+  -webkit-border-radius: 5px;
+  box-shadow: 0px 3px 3px #000000;
+
+}
+
+
+#logomain{
+  position: absolute;
+  top:50px;
+  left: 200px;
+}
+
+#h1main{
+  position: absolute;
+  top:350px;
+  left: 650px;
+  color: white;
+}
+
+#h2main{
+  position: absolute;
+  top:150px;
+  left: 700px;
+  color:white;
+}
+#spmain{
+  position: absolute;
+  top:300px;
+  left: 200px;
+  font-size: small;
+  opacity: 0.4;
+}
+
+
+
+form{
+  position: absolute;
+  top:50px;
+  left: 550px;
+
+  -webkit-border-radius: 7px;
+  opacity: 0.2;
+  filter: alpha(opacity=20);
+
+}
+
+input{
+  color: black;
+  height: 25px;
+  width:600px;
+  -webkit-border-radius: 7px;
+}
+
+span.headerscris{
+  font-size: x-large;
+  padding-left: 10%;
+  font-family: Arial, Helvetica, sans-serif;
+  opacity: 0.8;
+}
+
+span.textscris{
+  font-size: small;
+  text-align: left;
+  padding-left: 10%;
+  opacity: 0.5;
+}
+
+#playlist2{
+  width:700px;
+  height:800px;
+  position:fixed;
+  left: 200px;
+  top: 300px;
+  margin-left: -100px;
+  margin-top: -100px;
+  z-index: 10;
+  background-color: white;
+
+  display:none;
+
+}
+
+#playlist1{
+  width:700px;
+  height:800px;
+  position:fixed;
+  left: 200px;
+  top: 300px;
+  margin-left: -100px;
+  margin-top: -100px;
+  z-index: 10;
+  background-color: white;
+
+  display:none;
+
+}
+#playlist3{
+  width:700px;
+  height:800px;
+  position:fixed;
+  left: 200px;
+  top: 300px;
+  margin-left: -100px;
+  margin-top: -100px;
+  z-index: 10;
+  background-color: white;
+
+  display:none;
+
+}
+
+
+
+div.close{
+  height:22px;
+  background-color: white;
+
+}
+
+div.headerplaylist{
+  width:700px;
+  height:135px;
+  background-color: #E5E5E5;
+
+
+}
+
+
+div.playlisttitles{
+    height:30px;
+    width:670px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #E5E5E5;
+    margin-top:10px;
+}
+
+div.song{
+  height:70px;
+  width:670px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top:5px;
+  background-color: #E5E5E5;
+}
+
+#buttonCLOSE{
+  float:right;
+  background-color: white;
+  color:#63D1F4;
+  border:white;
+}
+#playlistimg{
+float:left;
+}
+
+#headersmall{
+  float:left;
+margin-left: 20px;
+margin-top:30px;
+    }
+#headerbig{
+  float:left;
+  margin-left: -95px;
+  margin-top:70px;
+  font-size: x-large;
+  font-weight:bold;
+}
+
+#titleleft{
+    float:left;
+    opacity: 0.4;
+    margin-left: 10px;
+    margin-top:5px;
+
+}
+
+#titleright{
+  float:right;
+  opacity: 0.4;
+  margin-right: 10px;
+  margin-top:5px;
+
+}
+
+#titlemid{
+  opacity: 0.4;
+  margin-right: 30px;
+  margin-top:5px;
+  float:right;
+}
+
+#songleft{
+  float:left;
+  background:blue;
+  height:64px;
+  margin-left: 3px;
+  margin-top: 3px;
+  width:460px;
+
+}
+
+div.songright{
+  float:right;
+  background:yellow;
+  margin-top: 3px;
+  margin-right:3px;
+  height:64px;
+  width:100px;
+
+}
+
+div.songmid{
+  float:right;
+  background:green;
+  margin-top: 3px;
+  margin-right:5px;
+  height:64px;
+  width:90px;
+}
