@@ -1,4 +1,4 @@
-{
+var playlists = {
   "title": "Playlists",
   "playlists": [
     {
