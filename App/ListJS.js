@@ -10,10 +10,7 @@ var jsonObj = {
                 "value2",
                 "value3",
                 "value4",
-                "value5",
-                "val6",
-                "val7",
-                "val8"
+                "value5"
             ],
             songPict:["../core/assets/beats-like-birds.png",
             "../core/assets/chill-vibes.png",
@@ -29,6 +26,8 @@ var jsonUserName={
       password:"password"
 }
 
+var playList= JSON.parse(playlistsJSON);
+console.log(playList[1].songs);
 
 document.addEventListener("DOMContentLoaded", function(event) {
     console.log("DOM fully loaded and parsed");
@@ -42,29 +41,43 @@ document.addEventListener("DOMContentLoaded", function(event) {
   });
 
 
-  
+
 
 
 function myFunction(){
-console.log(document.getElementById('playList').style.top);
+
   document.getElementById('playList').style.visibility="visible";
   document.getElementById('playList').style.transition= "0.5s";
   document.getElementById('playList').style.height="400px"
 
+// var songsList =
 
   // console.log(obj);
-  for (var i = 0; i <  jsonObj.playlist.songs.length; i++)
+  for (var i = 0; i <  playList[1].songs.length; i++)
   {
     var nr=i+1;
-    var div = document.getElementById('toClone');
+
+    // var tabContainer = ;
+    // console.log("tb+"+tabContainer);
+    // var div = getFirstChild();
+    var div1 = document.getElementById('TestDiv1');
+    console.log("first:"+div1.nodeName);
+    console.log("first:"+div1.firstChild);
+
+    var div = document.createElement("div");
+    div.innerHTML=div1.innerHTML;
 
 
-    clonedDiv = div.cloneNode(true); // true means clone all childNodes and all event handlers
+
+    clonedDiv = div.cloneNode(true);
+     console.log("type2: "+typeof div);
+
     clonedDiv.id = "song"+nr;
     document.getElementById('playList').appendChild(clonedDiv);
+    console.log("type3: "+clonedDiv);
 
     document.getElementById('song'+nr).style.visibility='visible';
-    var imgPath =jsonObj.playlist.songPict[i];
+    var imgPath =playList[1].songs[i].image;
     var img=clonedDiv.getElementsByTagName('img')[0];
     img.style.float="left";
     img.style.backgroundImage='url("'+imgPath+'")';
@@ -74,21 +87,27 @@ console.log(document.getElementById('playList').style.top);
     tempDiv.style.width="50%";
     tempDiv.style.display="inline-block";
     var span=tempDiv.getElementsByTagName('span')[0];
-    span.innerText=jsonObj.playlist.songs[i];
+    span.innerText=playList[1].songs[i].songTitle;
 
     var tempDiv =clonedDiv.getElementsByTagName('div')[1];
     tempDiv.style.textAlign="center";
     tempDiv.style.width="10%";
     tempDiv.style.display="inline-block";
     var span=tempDiv.getElementsByTagName('span')[0];
-    span.innerText=jsonObj.playlist.songs[i];
+    span.innerText=convertToMin(playList[1].songs[i].songLength);
 
     var tempDiv =clonedDiv.getElementsByTagName('div')[2];
     tempDiv.style.textAlign="center";
     tempDiv.style.width="20%";
     tempDiv.style.display="inline-block";
     var span=tempDiv.getElementsByTagName('span')[0];
-    span.innerText=jsonObj.playlist.songs[i];
+    span.innerText=playList[1].songs[i].songListened;
 
   }
+}
+
+
+function convertToMin()
+{
+
 }

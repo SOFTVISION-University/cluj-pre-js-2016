@@ -18,9 +18,9 @@
 
             <form>
             <span>Email</span>:<br>
-            <input type="email" name="email" required  class="signInTexfFields" id="username"><br>
+            <input type="email" name="email" required  class="signInTexfFields" id="username" onfocus="focusIt(this)" onblur="focusOut(this)"><br>
             <span>Password</span>:<br>
-            <input type="password" name="password" required class="signInTexfFields" id="password">
+            <input type="password" name="password" required class="signInTexfFields" id="password" onfocus="focusIt(this)" onblur="focusOut(this)">
             </form>
             <span class="small lightBlue">Forgot your pasword?</span>
             <input type="submit" value="Sign In" class="buttonSI" onclick="validate()">

@@ -34,3 +34,19 @@ function validate()
      }
   }
 }
+
+function focusOut(id){
+  console.log(id);
+  id.style.borderWidth="0px";
+  id.style.borderColor="#D8E7F5";
+
+}
+
+
+function focusIt(id){
+  console.log(id);
+  id.style.borderWidth="2px";
+  id.style.borderColor="#1AB8ED";
+  id.style.borderStyle="solid";
+
+}
