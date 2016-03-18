@@ -1,144 +1,171 @@
-{
+var playlistsJSON = {
   "title": "Playlists",
   "playlists": [
     {
       "id": 0,
+      "title": "Playlist 1",
+      "image": "../core/assets/up-all-night-small.png",
       "songs": [
         {
           "image": "../core/assets/2015-best-music.png",
-          "songTitle": "money ea money el",
+          "songTitle": "el money pierdut ea",
+          "songAuthor": "Eminem",
+          "songLength": 409,
+          "songListened": 3
+        },
+        {
+          "image": "../core/assets/2015-best-music.png",
+          "songTitle": "money ea buletin enemies",
+          "songAuthor": "Andra",
+          "songLength": 371,
+          "songListened": 79
+        },
+        {
+          "image": "../core/assets/2015-best-music.png",
+          "songTitle": "el love pierdut money",
           "songAuthor": "Dr. Dre",
-          "songLength": 473
+          "songLength": 22,
+          "songListened": 23
         },
         {
           "image": "../core/assets/2015-best-music.png",
-          "songTitle": "enemies enemies ea enemies",
+          "songTitle": "money pierdut buletin el",
+          "songAuthor": "Dr. Dre",
+          "songLength": 361,
+          "songListened": 32
+        },
+        {
+          "image": "../core/assets/2015-best-music.png",
+          "songTitle": "el el ea pierdut",
           "songAuthor": "Eminem",
-          "songLength": 442
+          "songLength": 466,
+          "songListened": 96
         },
         {
           "image": "../core/assets/2015-best-music.png",
-          "songTitle": "money enemies ea love",
-          "songAuthor": "Smiley",
-          "songLength": 388
+          "songTitle": "love enemies enemies buletin",
+          "songAuthor": "Dr. Dre",
+          "songLength": 362,
+          "songListened": 23
         },
         {
           "image": "../core/assets/2015-best-music.png",
-          "songTitle": "love money pierdut money",
-          "songAuthor": "Smiley",
-          "songLength": 224
-        },
-        {
-          "image": "../core/assets/2015-best-music.png",
-          "songTitle": "el pierdut el ea",
-          "songAuthor": "Eminem",
-          "songLength": 115
-        },
-        {
-          "image": "../core/assets/2015-best-music.png",
-          "songTitle": "enemies pierdut pierdut money",
-          "songAuthor": "Eminem",
-          "songLength": 339
-        },
-        {
-          "image": "../core/assets/2015-best-music.png",
-          "songTitle": "ea enemies pierdut enemies",
-          "songAuthor": "Smiley",
-          "songLength": 450
-        },
-        {
-          "image": "../core/assets/2015-best-music.png",
-          "songTitle": "money enemies el love",
+          "songTitle": "love love money buletin",
           "songAuthor": "Andra",
-          "songLength": 269
+          "songLength": 280,
+          "songListened": 1
         },
         {
           "image": "../core/assets/2015-best-music.png",
-          "songTitle": "love pierdut pierdut love",
-          "songAuthor": "Eminem",
-          "songLength": 342
+          "songTitle": "ea pierdut ea enemies",
+          "songAuthor": "Smiley",
+          "songLength": 50,
+          "songListened": 87
         },
         {
           "image": "../core/assets/2015-best-music.png",
-          "songTitle": "money money love ea",
-          "songAuthor": "Andra",
-          "songLength": 146
+          "songTitle": "love el el ea",
+          "songAuthor": "Smiley",
+          "songLength": 157,
+          "songListened": 48
         }
       ]
     },
     {
       "id": 1,
+      "title": "Playlist 2",
+      "image": "../core/assets/up-all-night-small.png",
       "songs": [
         {
           "image": "../core/assets/2015-best-music.png",
-          "songTitle": "love enemies el enemies",
+          "songTitle": "money money buletin buletin",
+          "songAuthor": "Smiley",
+          "songLength": 122,
+          "songListened": 41
+        },
+        {
+          "image": "../core/assets/2015-best-music.png",
+          "songTitle": "buletin money enemies buletin",
+          "songAuthor": "Eminem",
+          "songLength": 159,
+          "songListened": 5
+        },
+        {
+          "image": "../core/assets/2015-best-music.png",
+          "songTitle": "buletin enemies el buletin",
+          "songAuthor": "Eminem",
+          "songLength": 20,
+          "songListened": 76
+        },
+        {
+          "image": "../core/assets/2015-best-music.png",
+          "songTitle": "buletin pierdut money ea",
+          "songAuthor": "Andra",
+          "songLength": 230,
+          "songListened": 52
+        },
+        {
+          "image": "../core/assets/2015-best-music.png",
+          "songTitle": "pierdut el love el",
+          "songAuthor": "Smiley",
+          "songLength": 120,
+          "songListened": 40
+        },
+        {
+          "image": "../core/assets/2015-best-music.png",
+          "songTitle": "ea el enemies love",
+          "songAuthor": "Andra",
+          "songLength": 285,
+          "songListened": 15
+        },
+        {
+          "image": "../core/assets/2015-best-music.png",
+          "songTitle": "pierdut el pierdut pierdut",
           "songAuthor": "Dr. Dre",
-          "songLength": 30
-        },
-        {
-          "image": "../core/assets/2015-best-music.png",
-          "songTitle": "enemies love enemies ea",
-          "songAuthor": "Andra",
-          "songLength": 162
-        },
-        {
-          "image": "../core/assets/2015-best-music.png",
-          "songTitle": "money love money pierdut",
-          "songAuthor": "Eminem",
-          "songLength": 363
-        },
-        {
-          "image": "../core/assets/2015-best-music.png",
-          "songTitle": "money pierdut ea pierdut",
-          "songAuthor": "Andra",
-          "songLength": 205
-        },
-        {
-          "image": "../core/assets/2015-best-music.png",
-          "songTitle": "el ea ea money",
-          "songAuthor": "Eminem",
-          "songLength": 437
+          "songLength": 194,
+          "songListened": 93
         }
       ]
     },
     {
       "id": 2,
+      "title": "Playlist 3",
+      "image": "../core/assets/up-all-night-small.png",
       "songs": [
         {
           "image": "../core/assets/2015-best-music.png",
-          "songTitle": "enemies love pierdut love",
-          "songAuthor": "Smiley",
-          "songLength": 122
-        },
-        {
-          "image": "../core/assets/2015-best-music.png",
-          "songTitle": "ea ea enemies el",
-          "songAuthor": "Eminem",
-          "songLength": 72
-        },
-        {
-          "image": "../core/assets/2015-best-music.png",
-          "songTitle": "enemies pierdut el enemies",
-          "songAuthor": "Smiley",
-          "songLength": 42
-        },
-        {
-          "image": "../core/assets/2015-best-music.png",
-          "songTitle": "money love ea money",
+          "songTitle": "pierdut love ea buletin",
           "songAuthor": "Dr. Dre",
-          "songLength": 200
+          "songLength": 418,
+          "songListened": 8
         },
         {
           "image": "../core/assets/2015-best-music.png",
-          "songTitle": "money ea el enemies",
-          "songAuthor": "Smiley",
-          "songLength": 328
+          "songTitle": "pierdut el pierdut enemies",
+          "songAuthor": "Dr. Dre",
+          "songLength": 439,
+          "songListened": 85
         },
         {
           "image": "../core/assets/2015-best-music.png",
-          "songTitle": "enemies money el enemies",
-          "songAuthor": "Andra",
-          "songLength": 229
+          "songTitle": "enemies love ea buletin",
+          "songAuthor": "Dr. Dre",
+          "songLength": 382,
+          "songListened": 30
+        },
+        {
+          "image": "../core/assets/2015-best-music.png",
+          "songTitle": "ea enemies pierdut ea",
+          "songAuthor": "Eminem",
+          "songLength": 143,
+          "songListened": 69
+        },
+        {
+          "image": "../core/assets/2015-best-music.png",
+          "songTitle": "enemies enemies pierdut enemies",
+          "songAuthor": "Dr. Dre",
+          "songLength": 479,
+          "songListened": 72
         }
       ]
     }
