@@ -338,6 +338,7 @@ a.submitSignUp {
   position: absolute;
   bottom:10px;
   left: -600px;
+  overflow: scroll;
 
 }
 #closeButton{
@@ -365,6 +366,7 @@ a.submitSignUp {
   width: auto;
   vertical-align: middle;
   margin-right: 10px;
+  float: left;
 }
 .songNumbers{
   width: 15%;
@@ -378,11 +380,18 @@ a.submitSignUp {
   font-weight: bold;
 }
 .songTitle{
-  
+  font-weight: bold;
+  display: block;
+  margin-top: 2px;
+  margin-bottom: 3px;
 }
+
 .songDiv:hover{
   background-color: lightblue;
 }
 .songDiv:hover {
   background-color: lightblue;
+}
+.songDiv:hover .songTitle{
+  color: #007bff;
 }
