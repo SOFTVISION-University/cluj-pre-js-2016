@@ -25,14 +25,14 @@
       <p id="getstarted">Get Started Absolutely FREE</p>
       <p id="nocredit">NO CREDIT CARD NEEDED</p>
       <br>
-      <form action="">
+      <form id="form" action="">
         Your Name<br>
-        <input type="text" name="firstname" required><br>
+        <input type="text" name="firstname" id="firstname" required><br>
         Email<br>
-        <input type="email" name="email" required><br>
+        <input type="email" name="email" id="email" required><br>
         Password<br>
-        <input type="password" name="password" required><br><br>
-        <input type="submit" value="Sign up free" class="button">
+        <input type="password" name="password" id="password" required><br><br>
+        <input type="submit" value="Sign up free" class="button" />
       </form>
       <p id="terms">By clicking 'Sign Up Free' I agree to ACME's <a href="">Terms of Service.</a></p>
     </div>
@@ -138,7 +138,7 @@
     </table>
   </div>
   <form action="">
-    <input type="button" value="Sign up free" class="second-button" id="second-button">
+    <input type="button" value="Sign up free" class="second-button" id="second-button" onclick="signupfree()">
   </form>
 </div>
 
@@ -156,7 +156,9 @@
 
 </div>
 
+
 <script type="text/javascript" src="register.js"></script>
+
 
 </body>
 </html>
