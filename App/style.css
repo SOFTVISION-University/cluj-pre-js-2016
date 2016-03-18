@@ -115,7 +115,12 @@ overflow: hidden;
 	margin-top: 100px;
 	outline: none;
 }
-
+.songImg{
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	margin-left: 10px;
+}
 .textPLDiv{
 	margin-top: 90px;
 }
@@ -131,7 +136,13 @@ visibility: hidden;
 		transition-duration: 0.5s;
 		transform: translate(0,-15px);
 		box-shadow: 2px 10px 5px rgba(0, 0, 0, 0.3);
-
+}
+.SongsModelDiv{
+	width: 100%;
+	margin-top: 10px;
+	height: 50px;
+	background-color: rgba(255, 255, 255, 0.5);
+	visibility: hidden;
 }
 .listHolder div:hover button{
 	visibility: visible;
@@ -147,6 +158,7 @@ visibility: hidden;
 	height: 0;
 	background-color: #56c222;
 	width: 500px;
+	overflow-y: scroll;
 	/*height: 500px;*/
 
 

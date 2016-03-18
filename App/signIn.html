@@ -18,12 +18,12 @@
 
             <form>
             <span>Email</span>:<br>
-            <input type="email" name="email" required  class="signInTexfFields"><br>
+            <input type="email" name="email" required  class="signInTexfFields" id="username"><br>
             <span>Password</span>:<br>
-            <input type="password" name="password" required class="signInTexfFields">
+            <input type="password" name="password" required class="signInTexfFields" id="password">
             </form>
             <span class="small lightBlue">Forgot your pasword?</span>
-            <input type="submit" value="Sign In" class="buttonSI">
+            <input type="submit" value="Sign In" class="buttonSI" onclick="validate()">
             <br>
             <span class="medium-2 gray">Don't have an account ?</span>
             <a href="signUp.html" style="color:CornflowerBlue">Sign up</p>
@@ -33,4 +33,5 @@
       </div>
     </div>
   </body>
+    <script type="text/javascript" src="LoginValidate.js" ></script>
 </html>
