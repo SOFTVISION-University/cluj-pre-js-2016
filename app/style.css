@@ -461,7 +461,7 @@ div#playlist{
   border: 1px solid white;
   box-shadow: 1px 4px 8px rgba(0,0,0,0.2);
   border-radius: 3px 3px 3px 3px;
-  width:760px;
+  width:40%;
   height:0;
   z-index: 3;
   background-color: white;
@@ -492,7 +492,7 @@ p#copyrighthome{
 }
 
 div#playlist.playlist-expand{
-  height: 791px;
+  height: 70%;
   transition: 1s;
 }
 
@@ -519,7 +519,8 @@ div#playlist-songs{
   width:730px;
 }
 
-span#error{
+p#error{
   color:red;
   font-weight: bold;
+  font-size: 14px;
 }
