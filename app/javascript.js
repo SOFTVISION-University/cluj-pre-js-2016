@@ -1,3 +1,4 @@
+'use strict';
 var playlists=JSON.parse(playlistsJSON);
 var users=JSON.parse(usersJSON);
 
@@ -63,5 +64,34 @@ function validateUser(){
     }
     return bool;
   }
+}
 
+function createCards(){
+  var count=0;
+  for (var j=0; j<playlists.length; j++){
+  var cardDiv=document.createElement('div');
+  var matDiv=document.createElement('div');
+  var button=document.createElement('button');
+  var img=document.createElement('img');
+  var paragraph=document.createElement('p');
+  var songTitle=document.createElement('strong');
+  var container=document.getElementById('card-area')
+
+
+
+    cardDiv.className = 'card';
+    matDiv.className = 'mat';
+    button.className = 'explore';
+    button.innerText = 'Explore playlist';
+    button.setAttribute("onclick", "explorePlaylist()");
+    img.src=playlists[j].image;
+    songTitle.innerText=playlists[j].title;
+    container.appendChild(cardDiv);
+    cardDiv.appendChild(matDiv);
+    cardDiv.appendChild(button);
+    cardDiv.appendChild(img);
+    cardDiv.appendChild(paragraph);
+    paragraph.appendChild(songTitle);
+
+  }
 }
