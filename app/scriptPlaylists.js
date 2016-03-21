@@ -17,7 +17,12 @@ var jsonObject = JSON.parse(playlistsJSON);
 
                   var songLength = document.createElement("div");
                   songLength.setAttribute("class","songNumbers");
+<<<<<<< HEAD
                   songLength.appendChild(document.createTextNode(Math.floor(songsList[i].songLength/60)+":"+(songsList[i].songLength%60<10?"0":"")+(songsList[i].songLength%60)));
+=======
+                  // songLength.appendChild(document.createTextNode(Math.floor(songsList[i].songLength/60)+":"+(songsList[i].songLength%60<10?"0":"")+(songsList[i].songLength%60)));
+                  songLength.appendChild(document.createTextNode(lengthFormat(songsList[i].songLength)));
+>>>>>>> d2d5495e406d81636d0f2a9ccf85b99085c01cb7
 
                   var songPlayed = document.createElement("div");
                   songPlayed.setAttribute("class","songNumbers");
@@ -48,3 +53,13 @@ var jsonObject = JSON.parse(playlistsJSON);
                 songsListDiv.removeChild(songsListDiv.firstChild);
               }
           }
+<<<<<<< HEAD
+=======
+
+          function lengthFormat(length){
+            var minutes,seconds;
+            minutes = Math.floor(length/60);
+            seconds = (length%60<10?"0":"")+(length%60);
+            return minutes+":"+seconds;
+          }
+>>>>>>> d2d5495e406d81636d0f2a9ccf85b99085c01cb7
