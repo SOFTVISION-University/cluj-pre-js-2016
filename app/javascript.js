@@ -21,8 +21,10 @@ function goTop(){
   document.getElementById("your_name").focus();
 }
 
-function explorePlaylist(){
+function explorePlaylist(playlistNumber){
   document.getElementById('playlist').className="playlist-expand";
+  var playlist = new Playlist(playlists[playlistNumber]);
+  console.log(playlist);
 }
 
 function closePlaylist(){
@@ -60,38 +62,43 @@ function validateUser(){
       document.getElementById('password').style.borderColor="rgb(255,0,0)";
       document.getElementById('password').style.borderStyle="solid";
       document.getElementById('password').style.borderWidth="1px";
-      bool=false;
+      bool = false;
     }
     return bool;
   }
 }
 
 function createCards(){
-  var count=0;
-  for (var j=0; j<playlists.length; j++){
-  var cardDiv=document.createElement('div');
-  var matDiv=document.createElement('div');
-  var button=document.createElement('button');
-  var img=document.createElement('img');
-  var paragraph=document.createElement('p');
-  var songTitle=document.createElement('strong');
-  var container=document.getElementById('card-area')
-
-
+  var count = 0;
+  for (var i = 0; i < playlists.length; i++){
+    var cardDiv = document.createElement('div');
+    var matDiv = document.createElement('div');
+    var button = document.createElement('button');
+    var img = document.createElement('img');
+    var playIcon = document.createElement('img');
+    var paragraph = document.createElement('p');
+    var desc = document.createElement('p');
+    var buttonText = document.createElement('span');
+    var songTitle = document.createElement('strong');
+    var container = document.getElementById('card-area')
 
     cardDiv.className = 'card';
     matDiv.className = 'mat';
     button.className = 'explore';
-    button.innerText = 'Explore playlist';
-    button.setAttribute("onclick", "explorePlaylist()");
-    img.src=playlists[j].image;
-    songTitle.innerText=playlists[j].title;
+    buttonText.innerText = ' Explore playlist';
+    button.setAttribute("onclick", "explorePlaylist("+ i +")");
+    img.src=playlists[i].imageLarge;
+    playIcon.src = "../core/assets/play-icon.png"
+    songTitle.innerText = playlists[i].title;
+    desc.innerText = playlists[i].description;
     container.appendChild(cardDiv);
     cardDiv.appendChild(matDiv);
     cardDiv.appendChild(button);
     cardDiv.appendChild(img);
     cardDiv.appendChild(paragraph);
+    cardDiv.appendChild(desc);
     paragraph.appendChild(songTitle);
-
+    button.appendChild(playIcon);
+    button.appendChild(buttonText);
   }
 }

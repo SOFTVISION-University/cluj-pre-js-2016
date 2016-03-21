@@ -417,10 +417,10 @@ div.card{
 
 div.card p{
   text-align: left;
-  padding: 5px 15px 5px 15px;
+  padding: 0px 15px 0px 15px;
 }
 
-div.card:hover{
+  div.card:hover{
 
   transform: translate(0,-15px);
   box-shadow: 1px 10px 15px rgba(0,0,0,0.2);
