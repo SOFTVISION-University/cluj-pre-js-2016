@@ -26,58 +26,77 @@ var jsonUserName={
       password:"password"
 }
 
-var playList= JSON.parse(playlistsJSON);
-// console.log(playList[1].songs);
+var playListFromJS= JSON.parse(playlistsJSON);
+
 
 document.addEventListener("DOMContentLoaded", function(event) {
-    // console.log("DOM fully loaded and parsed");
 
-    // var obj = JSON.parse(jsonObj);
     var path = jsonObj.playlist.picture1;
-    // console.log(path);
+
     document.getElementById('playL1').style.backgroundImage='url("'+path+'")';
     var a=  Array.prototype.slice.call(jsonObj);
-    // console.log(a);
+
   });
+// playlist class
+function Playlist(data) {
+  this.playlistName="test";
+  this.image= data.image;
+  this.songsList=[];
+}
+Playlist.prototype.setName= function(name){
+  this.playlistName = name;
+}
+Playlist.prototype.addSong= function(song){
+    this.songsList.push(song);
+}
+//end Playlist class
+
+// Song Class
+function Song(data){
+  this.image=data.image;
+  this.songName=data.songTitle;
+  this.artistName=data.songAuthor;
+  this.duration=data.songLength;
+  this.count=data.songListened;
+}
+// end Song Class
 
 
-
-
-
-function myFunction(){
+//start click explore playlist
+function myFunction(playlistNr){
 
   document.getElementById('playList').style.visibility="visible";
   document.getElementById('playList').style.transition= "0.5s";
-  document.getElementById('playList').style.height="400px"
+  document.getElementById('playList').style.height="400px";
 
-// var songsList =
+  var songsArray=[];
+  var selectedPlaylist=playListFromJS[playlistNr];
+  var playListObject= new Playlist(selectedPlaylist);
+  playListObject.setName(selectedPlaylist.title);
+  console.log(selectedPlaylist.title);
 
-  // console.log(obj);
-  for (var i = 0; i <  playList[1].songs.length; i++)
+
+  for (var i = 0; i <  selectedPlaylist.songs.length; i++)
+  {
+      var song= new Song(selectedPlaylist.songs[i]);
+      playListObject.addSong(song);
+  }
+
+  console.log(playListObject);
+
+  for (var i = 0; i <  playListObject.songsList.length; i++)
   {
     var nr=i+1;
-
-    // var tabContainer = ;
-    // console.log("tb+"+tabContainer);
-    // var div = getFirstChild();
-    // var div1 = document.getElementById('TestDiv1');
-    // console.log("first:"+div1.nodeName);
-    // console.log("first:"+div1.firstChild);
-
     var div = document.getElementsByClassName("divToClone")[0];
-    // div.innerHTML=div1.innerHTML;
-
-
+    var tempSong = playListObject.songsList[i];
 
     clonedDiv = div.cloneNode(true);
-    //  console.log("type2: "+typeof div);
 
     clonedDiv.id = "song"+nr;
     document.getElementById('playList').appendChild(clonedDiv);
-    // console.log("type3: "+clonedDiv);
 
     document.getElementById('song'+nr).style.visibility='visible';
-    var imgPath =playList[1].songs[i].image;
+    var imgPath =tempSong.image;
     var img=clonedDiv.getElementsByTagName('img')[0];
     img.style.float="left";
     img.style.backgroundImage='url("'+imgPath+'")';
@@ -87,34 +106,30 @@ function myFunction(){
     tempDiv.style.width="50%";
     tempDiv.style.display="inline-block";
     var span=tempDiv.getElementsByTagName('span')[0];
-    span.innerText=playList[1].songs[i].songTitle;
+    span.innerText=tempSong.songName;
 
     var tempDiv =clonedDiv.getElementsByTagName('div')[1];
     tempDiv.style.textAlign="center";
     tempDiv.style.width="10%";
     tempDiv.style.display="inline-block";
     var span=tempDiv.getElementsByTagName('span')[0];
-    span.innerText=convertToMin(playList[1].songs[i].songLength);
+    span.innerText=convertToMin(tempSong.duration);
 
     var tempDiv =clonedDiv.getElementsByTagName('div')[2];
     tempDiv.style.textAlign="center";
     tempDiv.style.width="20%";
     tempDiv.style.display="inline-block";
     var span=tempDiv.getElementsByTagName('span')[0];
-    span.innerText=playList[1].songs[i].songListened;
+    span.innerText=tempSong.count;
 
-   var newBr =  document.createElement("br");
-   clonedDiv.appendChild(newBr);
   }
 }
-
+//end click explore playlist
 
 function convertToMin(nr)
 {
-  console.log(nr);
   var min = Math.floor(nr / 60);
   var sec = nr % 60;
-  console.log((sec % 10));
 
   if (sec<10)
   {

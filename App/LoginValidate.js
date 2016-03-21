@@ -1,13 +1,74 @@
+var LOGIN_SUCCESFULLY = 0;
+var INVALID_PASSWORD =1;
+var INVALID_USERNAME =2;
 
+var usernameJson= JSON.parse(usersJSON);
+console.log(usernameJson);
+// Users class
+function User(data) {
+  this.name=data.userName;
+  this.email=data.email;
+  this.password=data.password;
+}
+//end User class
+
+
+// AccountService class
+function AccountService() {
+  this.username="";
+  this.password="";
+  this.usersArray=[];
+}
+AccountService.prototype.setUsername= function(username){
+  this.username=username;
+}
+AccountService.prototype.setPassword= function(password){
+  this.password=password;
+}
+AccountService.prototype.addUser= function(user){
+  this.usersArray.push(user);
+}
+AccountService.prototype.checkLogin = function(){
+  var toReturn = false;
+  for (var i = 0; i < this.usersArray.length; i++) {
+    var tempUser= this.usersArray[i];
+    console.log(tempUser.userName," ? ", this.username);
+    if(tempUser.userName==this.username)
+    {
+      if(tempUser.password==this.password){
+        toReturn=LOGIN_SUCCESFULLY;
+        break;
+      }
+      else{
+        toReturn=INVALID_PASSWORD;
+      }
+    }
+    else {
+      toReturn=INVALID_USERNAME;
+    }
+  }
+  return toReturn;
+}
+
+// end AccountService class
+
+var accountService= new AccountService();
+for (var i = 0; i < usernameJson.length; i++) {
+  var user = new User(usernameJson[i]);
+  accountService.addUser(user);
+}
 
 function validate()
 {
   var username = document.getElementById("username").value;
   var password = document.getElementById("password").value;
-  if ( username == "username" && password == "password")
+  accountService.setUsername(username);
+  accountService.setPassword(password);
+
+  if (accountService.checkLogin()==0)
   {
     alert ("Login successfully");
-    window.location = "index.html";
+    //window.location = "index.html";
     return false;
   }
   else {
