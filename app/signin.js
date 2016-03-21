@@ -27,8 +27,15 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
 
-var lista=JSON.parse(playlistsJSON);
+var list=JSON.parse(playlistsJSON);
 
+var song_playlist = new Playlist ();
+
+for (i=0 ; i<list.songs.length ; i++) {
+
+  var song = new Song();
+  
+}
 
 
 
