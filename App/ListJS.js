@@ -27,17 +27,17 @@ var jsonUserName={
 }
 
 var playList= JSON.parse(playlistsJSON);
-console.log(playList[1].songs);
+// console.log(playList[1].songs);
 
 document.addEventListener("DOMContentLoaded", function(event) {
-    console.log("DOM fully loaded and parsed");
+    // console.log("DOM fully loaded and parsed");
 
     // var obj = JSON.parse(jsonObj);
     var path = jsonObj.playlist.picture1;
-    console.log(path);
+    // console.log(path);
     document.getElementById('playL1').style.backgroundImage='url("'+path+'")';
     var a=  Array.prototype.slice.call(jsonObj);
-    console.log(a);
+    // console.log(a);
   });
 
 
@@ -60,21 +60,21 @@ function myFunction(){
     // var tabContainer = ;
     // console.log("tb+"+tabContainer);
     // var div = getFirstChild();
-    var div1 = document.getElementById('TestDiv1');
-    console.log("first:"+div1.nodeName);
-    console.log("first:"+div1.firstChild);
+    // var div1 = document.getElementById('TestDiv1');
+    // console.log("first:"+div1.nodeName);
+    // console.log("first:"+div1.firstChild);
 
-    var div = document.createElement("div");
-    div.innerHTML=div1.innerHTML;
+    var div = document.getElementsByClassName("divToClone")[0];
+    // div.innerHTML=div1.innerHTML;
 
 
 
     clonedDiv = div.cloneNode(true);
-     console.log("type2: "+typeof div);
+    //  console.log("type2: "+typeof div);
 
     clonedDiv.id = "song"+nr;
     document.getElementById('playList').appendChild(clonedDiv);
-    console.log("type3: "+clonedDiv);
+    // console.log("type3: "+clonedDiv);
 
     document.getElementById('song'+nr).style.visibility='visible';
     var imgPath =playList[1].songs[i].image;
@@ -103,11 +103,23 @@ function myFunction(){
     var span=tempDiv.getElementsByTagName('span')[0];
     span.innerText=playList[1].songs[i].songListened;
 
+   var newBr =  document.createElement("br");
+   clonedDiv.appendChild(newBr);
   }
 }
 
 
-function convertToMin()
+function convertToMin(nr)
 {
+  console.log(nr);
+  var min = Math.floor(nr / 60);
+  var sec = nr % 60;
+  console.log((sec % 10));
 
+  if (sec<10)
+  {
+    sec +="0";
+  }
+  var str = min+":"+sec;
+  return str;
 }

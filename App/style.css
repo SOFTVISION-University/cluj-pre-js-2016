@@ -137,11 +137,10 @@ visibility: hidden;
 		transform: translate(0,-15px);
 		box-shadow: 2px 10px 5px rgba(0, 0, 0, 0.3);
 }
-.song{
+.divToClone{
+	display: block;
 	width: 100%;
-	margin-top: 10px;
-	height: 50px;
-	background-color: rgba(255, 255, 255, 0.5);
+	height: 70px;
 	visibility: hidden;
 }
 .listHolder div:hover button{
@@ -156,7 +155,7 @@ visibility: hidden;
 	position: fixed;
 	bottom: 0;
 	height: 0;
-	background-color: #56c222;
+	background-color: #ffffff;
 	width: 500px;
 	overflow-y: scroll;
 	/*height: 500px;*/
