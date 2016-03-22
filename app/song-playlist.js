@@ -1,3 +1,5 @@
+var list = JSON.parse(playlistsJSON);
+
 function Song(data) {
 
   this.image = data.image;
@@ -5,35 +7,7 @@ function Song(data) {
   this.songAuthor = data.songAuthor;
   this.songLength = data.songLength;
   this.songListened = data.songListened;
-<<<<<<< HEAD
 
-}
-
-Song.prototype.getImage = function () {
-
-  return this.image ;
-}
-
-Song.prototype.getSongTitle = function () {
-
-  return this.songTitle;
-}
-
-Song.prototype.getSongAuthor = function () {
-
-  return this.songAuthor;
-}
-
-Song.prototype.getSongLength = function () {
-
-  return this.songLength;
-}
-
-Song.prototype.getSongListened = function () {
-=======
->>>>>>> day7
-
-  return this.songListened;
 }
 
 Song.prototype.getImage = function () {
