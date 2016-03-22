@@ -1,0 +1,35 @@
+<html>
+<head>
+  <title>login</title>
+  <link rel="stylesheet" type="text/css" href="login_css.css">
+  <script  src="login.js"></script>
+  <script  src="mebers.js"></script>
+  <script  src="account-service.js"></script>
+</head>
+
+<body onload="onLoad()">
+<div id="login_form">
+
+  <img src="../core/assets/logo-color.png" alt="altceva">
+
+  <span id="title_span">Sign into your ACME account</span>
+
+  <div id="error_message"></div>
+
+<form   method="get" onsubmit="return Beggin()">
+  <div class="align_left">Email</div>
+  <input type="text" name="email"  id="e-mail"><br>
+  <div class="align_left">Password </div>
+  <input type="text" name="pwd"  id="pass" ><br>
+  <a class="size" href="www.google.ro" >Forgot password?</a>
+  <input type="submit" value="Sign in")  >
+</form>
+
+<div class="size" id="bottom1">Don't have an acount?
+<a href="www.google.com">Sign up here</a>
+</div>
+</div>
+
+</body>
+
+</html>
