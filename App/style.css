@@ -1,0 +1,658 @@
+body {
+
+}
+
+.mainDiv {
+	/*background-color: #ffffff;*/
+	margin: 0 auto;
+	/*width: 1600px;*/
+
+}
+
+
+.bannerBlock{
+	display: block;
+}
+
+
+#topDiv{
+width: 100%;
+height: auto;
+overflow: hidden;
+
+}
+
+
+
+.logoTopDiv {
+	display: inline-block;
+
+	margin-top: 50px;
+	margin-left: 40px;
+	margin-right: 40px;
+	background-image: url(../core/assets/logo-top.png);
+	background-repeat: no-repeat;
+	width: 100%;
+
+	/*background-color: #ff0000;*/
+
+	/*width: 145px;*/
+	height: 62px;
+}
+.headerDiv {
+	background-image: url(../core/assets/banner-app.jpg);
+	background-size:cover;
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 600px;
+}
+.searchDiv {
+	display: inline-block;
+	/*float: left;*/
+	margin-left: 600px;
+	margin-top: 10px;
+	vertical-align: top;
+	background-color :rgba(136,160,168,0.4);
+	border-radius: 3px;
+	height: 40px;
+	width: 600px;
+}
+
+.signInindexDiv{
+	display: inline-block;
+	vertical-align: top;
+	width: 200px;
+	margin: auto;
+	/*float: left;*/
+	margin-top: 10px;
+	padding-left: 150px;
+	/*width: 10%;*/
+}
+
+/*.signInDiv{
+	vertical-align: top;
+	display: inline-block;
+	margin-left: 10px;
+	margin-right: 10px;
+	/*width: 33%;
+}*/
+
+.signInButton{
+	background-color: #00bfff;
+	/*display: inline-block;*/
+	float: left;
+	width: 100px;
+	height: 30px;
+	border: 0px;
+	border-radius: 3px;
+	box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+	margin:0 auto;
+}
+.listHolder{
+	width: 1200px;
+	margin: -100px auto;
+}
+.playListDivTemplate
+{
+	display: inline-block;
+	width: 25%;
+	margin: auto 15px;
+	height: 300px;
+	text-align: center;
+	background-color: #ffffff;
+	background-image: url("../core/assets/dj-killer-mixes.png");
+	background-repeat: no-repeat;
+}
+.viewPlayList{
+	background-color: #00bfff;
+
+	border: 5px;
+	border-radius: 5px;
+	font-size: 20px;
+	color: #ffffff;
+	width: 200px;
+	height: 37px;
+	margin-top: 100px;
+	outline: none;
+}
+
+#playlistImg{
+	width: 100px;
+	height: 100px;
+	margin-left: 5px;
+}
+
+.songImg{
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	margin-left: 10px;
+}
+.textPLDiv{
+	margin-top: 90px;
+}
+
+
+.listHolder div{
+position: relative;
+}
+.hidden{
+visibility: hidden;
+}
+.listHolder > div:hover{
+		transition-duration: 0.5s;
+		transform: translate(0,-15px);
+		box-shadow: 2px 10px 5px rgba(0, 0, 0, 0.3);
+}
+.divToClone{
+	display: block;
+	width: 100%;
+	height: 70px;
+	visibility: hidden;
+}
+.listHolder div:hover button{
+	visibility: visible;
+
+}
+.clearDiv{
+	clear: both;
+}
+
+#closeImg{
+	float: right;
+	display: block;
+}
+
+#playListHeader{
+	/*background-color: #ff0000;*/
+	width: 100%;
+	height: 100px;
+	margin-bottom: 10px;
+	text-align: center;
+}
+
+#playList{
+	position: fixed;
+	bottom: 0;
+	height: 0;
+	background-color: #ffffff;
+	width: 500px;
+	overflow-y: scroll;
+	/*height: 500px;*/
+
+
+	visibility: visible;
+}
+.class1{
+	background-color: #888888;
+	height: 500px;
+	margin-top: -200px;
+}
+
+#signInButton a{
+	color: #ffffff;
+}
+
+
+
+
+::-webkit-input-placeholder {
+   color: #ffffff;
+}
+.formIndex{
+	display: inline-block;
+}
+
+.formIndex input[type="text"]{
+
+	position: relative;
+  background-color: transparent;
+	border: 0px;
+	font-size: 20px;
+	color: #ffffff;
+	width: 540px;
+	height: 37px;
+	top: auto;
+	left: 10px;
+	outline: none;
+}
+
+#class{
+	position: relative;
+	background-image: url(../core/assets/search-icon.png);
+	width: 17px;
+	height: 18px;
+	top: 3px;
+	left: 6px;
+}
+
+
+
+#joinButton {
+
+	margin: 0 auto;
+	background-color: #68DE86;
+	width: 200px;
+	height: 50px;
+	border: 0px;
+	border-radius: 3px;
+	box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);;
+}
+#joinButton a{
+	color: #ffffff;
+	font-size: 22px;
+
+}
+
+#underBanner{
+	position: relative;
+	width: 600px;
+	margin: 0 auto;
+	top: 100px;
+	text-align: center;
+}
+#underBanner p{
+	color: #ffffff;
+	font-size: 25px;
+
+}
+#underBanner h1{
+	color: #ffffff;
+	font-size: 40px;
+}
+
+
+#headerSU{
+	background-image: url(../core/assets/banner-top.jpg);
+	background-size:cover;
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 600px;
+}
+.headerSI{
+	background-image: url(../core/assets/banner-top.jpg);
+	background-size:cover;
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 600px;
+}
+
+.header{
+	width: 1200px;
+	/*height: 1600px;*/
+	margin:0 auto;
+	/*background-color: #ff0000;*/
+}
+.leftTextDiv{
+	float: left;
+	/*display: inline-block;*/
+	/*background-color: #cccc00;*/
+}
+.wrapper{
+	display: block;
+	padding-top: 150px;
+}
+.signInDiv{
+	display: block;
+	width: 300px;
+	margin: 0 auto;
+	background-color: #ffffff;
+	padding-bottom: 15px;
+	border-radius: 5px;
+}
+.signInDiv p{
+	text-align: center;
+}
+.siDivForm{
+	display: block;
+	margin: 0 auto;
+	width: 200px;
+
+}
+.signInDiv span{
+	text-align: left;
+}
+.signInDiv img{
+	display: block;
+	margin: auto;
+	padding-top: 20px;
+	padding-bottom: 20px;
+
+}
+
+.SignUpDiv{
+	float: left;
+	/*display: inline-block;*/
+	background-color: none;
+	border-radius: 3px;
+	width: 150px;
+}
+.banner{
+	display: block;
+	width: 47%;
+	margin-top: 30px;
+}
+.inlineBlock{
+	display: inline-block;
+}
+.block{
+	display: block;
+}
+.white{
+	color: #ffffff;
+}
+.lightBlue{
+	color: #63D8FF;
+}
+.gray{
+	color: #333333;
+}
+.marginText{
+	margin: 30px 30px 30px 0;
+}
+.button{
+	background-color: #00bfff;
+	color: #ffffff;
+	width: 200px;
+	height: 50px;
+	border: 0px;
+	border-radius: 3px;
+	font-size: 20px;
+	box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+	margin:25px auto;
+}
+.buttonSI{
+	background-color: #00bfff;
+	color: #ffffff;
+	width: 105px;
+	height: 30px;
+	border: 0px;
+	border-radius: 3px;
+	font-size: 10px;
+	box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+	margin:25px auto;
+}
+
+
+
+.buttonDiv{
+	text-align: center;
+	padding-bottom: 15px;
+}
+.marginAutoLeft{
+	margin: 0 8px;
+}
+
+.big{
+	font-size: 40px;
+}
+.medium{
+	font-size: 20px;
+}
+.medium-2{
+	font-size: 15px;
+}
+.small{
+	font-size: 10px;
+}
+.marginTop{
+	margin: 80px 0;
+}
+.marginCenter{
+	display: block;
+	margin: 50px auto 50px auto;
+}
+.titleDivMargin{
+	display: block;
+	text-align: center;
+	padding-bottom: 25px;
+}
+
+.titleTextPadding{
+	display: block;
+	margin: 50px auto;
+	padding-top: 25px;
+	text-align: center;
+}
+.signUpForm{
+	width: 400px;
+	background-color: #ffffff;
+	border-radius: 5px;
+	height: auto;
+
+}
+.signInTexfFields{
+	background-color: #D8E7F5;
+	border: 5px;
+	border-radius: 5px;
+	font-size: 20px;
+	color: #ffffff;
+	width: 200px;
+	height: 37px;
+	top: auto;
+	left: 40px;
+	outline: none;
+}
+.signUpTexfFields{
+	background-color: #D8E7F5;
+	border: 5px;
+	border-radius: 5px;
+	font-size: 20px;
+	color: #ffffff;
+	width: 300px;
+	height: 37px;
+	top: auto;
+	left: 40px;
+	outline: none;
+}
+.signUpElems{
+	width: 300px;
+	margin: 10px auto;
+}
+.smallWidth{
+	display: block;
+	width: 60%;
+	margin: 0 auto;
+	padding-bottom: 15px;
+}
+.midlePictures{
+	text-align: center;
+	display: inline-block;
+	margin:auto;
+	width: 33%
+
+}
+.midPictDiv{
+	width: 900px;
+	display: block;
+	margin: 0 auto;
+}
+.iosDiv{
+	display: block;
+	text-align: center;
+	margin: 50px auto;
+	background: url(../core/assets/stars-bg.jpg);
+	height: 400px;
+}
+.iosDivText{
+	display: block;
+	/*height: 200px;
+	padding-top: 200px;*/
+}
+.picture1{
+	display: inline-block;
+	margin-top: 150px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	margin-right: -50px;
+}
+.picture2{
+	display: inline-block;
+	margin-top: 50px;
+	margin-left: 150px;
+	margin-right: -50px;
+	margin-bottom: 50px;
+}
+.picture3{
+	display: inline-block;
+	margin-top: 50px;
+	margin-left: 150px;
+	margin-right: -50px;
+	margin-bottom: 50px;
+}
+.picture4{
+	display: inline-block;
+	margin-top: 100px;
+	margin-left: 150px;
+	margin-right: -50px;
+	margin-bottom: 50px;
+}
+.picture5{
+	display: inline-block;
+	margin-top: 50px;
+	margin-left: 150px;
+	margin-right: -50px;
+	margin-bottom: 0px;
+}
+.picture6{
+	display: inline-block;
+	margin-top: 50px;
+	margin-left: 150px;
+	margin-right: -140px;
+	margin-bottom: 50px;
+}
+.picture7{
+	display: inline-block;
+	margin-top: 50px;
+	margin-left: 150px;
+	margin-right: -50px;
+	margin-bottom: -50px;
+}
+
+
+.tableDiv{
+	display: block;
+	width: 900px;
+	margin: 10px auto;
+}
+.tableClass{
+	width: 100%;
+
+}
+.alignCenter{
+	display: inline-block;
+
+}
+table{
+	border-collapse: collapse;
+	border: 1px solid #D5EBF2;
+}
+tr {
+		border: 1px solid #D5EBF2;
+		height: 50px;
+		background-color: #E6EFF2;
+}
+th{
+	background-color: #ffffff;
+}
+td > img{
+	display: block;
+	margin: 0 auto;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+tr .bigTr{
+		background-color: #ffffff;
+}
+
+.signUpButtonDiv{
+	display: block;
+	width: 300px;
+	margin: 10px auto;
+}
+.signUpButtonDiv button
+{
+	background-color: #00bfff;
+	color: #ffffff;
+	width: 200px;
+	height: 50px;
+	border: 0px;
+	border-radius: 3px;
+	font-size: 20px;
+	box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.footerDiv{
+	display: block;
+	background-color: #e5e5e5;
+	height: 550px;
+	margin: 20px auto;
+}
+
+.footerSmallDiv{
+	float: left;
+
+	height: 300px;
+	margin-left: 15px;
+	width: 48%;
+}
+
+.footerMiddleDiv{
+	display: block;
+	background-color: none;
+	margin: 20px auto;
+	height: 500px;
+	width: 1200px;
+}
+.logoGrayFooter{
+	display: block;
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+.textFooter{
+	width: 500px;
+}
+.storesPic{
+	display: inline-block;
+	margin-right: 30px;
+	margin-top: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+#ordered-list {
+	background-color: #F9DBBD;
+}
+
+
+ol > li {
+	color: #9A348E;
+}
+
+.special-item {
+	color: #FCA17D;
+	font-size: 18px;
+	border: 1px dashed #BEBEBE;
+	line-height: 25px;
+}
+
+pre {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	width: 300px;
+	height: 500px
+	padding: 5px;
+	border: 1px solid #333333;
+	border-radius: 30px;
+	background-color: #F9DBBD;
+}
