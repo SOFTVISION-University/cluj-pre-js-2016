@@ -2,6 +2,10 @@
 <head>
 <link rel="stylesheet" type="text/css" href="index_css.css">
 <script  src="java_index.js"></script>
+<script  src="playlist-class.js"></script>
+<script  src="search-music.js"></script>
+<script  src="Song-class.js"></script>
+<script  src="time-change.js"></script>
 
 </head>
 <body body onload="Playlist_change()">
@@ -18,25 +22,25 @@
   <div id="center">
 
 
-	
+
 	<label>
 - <datalist id="fruits">
     <select name="fruits" id="search_music" onchange="search_click(name)" >
        <option name="NAme" value="COsmin" id="option_music"> </option>
-	
-   
-    
+
+
+
     </select>
 
     </datalist>
   <input type="text" id="search" placeholder="Search Music" name="fruit" list="fruits" onkeypress="return Search(event)">
 </label>
-    
+
 
   <span id="span_search" class="search_text">Ready to listen to endless music </span>
   <span class="search_text">on your favorite device? </span>
 
-    
+
     <input type="submit" value="JOIN NOW" id="button_join">
   <span id="span_search1" class="search_text">Epic and debauched party mixes</span>
 
@@ -140,7 +144,7 @@
      </span>
    </div>
   <div id ="name_songs">
-   
+
 
 
 
