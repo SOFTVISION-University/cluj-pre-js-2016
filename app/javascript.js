@@ -2,6 +2,7 @@
 var playlists=JSON.parse(playlistsJSON);
 var users=JSON.parse(usersJSON);
 
+//generating footer copyright
 function copyright(){
   var d=new Date();
   var year=d.getFullYear();
@@ -9,6 +10,7 @@ function copyright(){
   " ACME DIVISION ALL RIGHTS RESERVED";
 }
 
+//generating footer copyright in home.html
 function copyrighthome(){
   var d=new Date();
   var year=d.getFullYear();
@@ -16,6 +18,7 @@ function copyrighthome(){
   " ACME DIVISION ALL RIGHTS RESERVED";
 }
 
+//go to top and focus in sign up form
 function goTop(){
   document.body.scrollTop=0;
   document.getElementById("your_name").focus();
@@ -24,7 +27,10 @@ function goTop(){
 function explorePlaylist(playlistNumber){
   document.getElementById('playlist').className="playlist-expand";
   var playlist = new Playlist(playlists[playlistNumber]);
-  console.log(playlist);
+  console.log(Factory.create("Playlist", playlists[playlistNumber]));
+  var song = new Song(playlists[playlistNumber].songs[playlistNumber]);
+  song.attach(playlist);
+  song.getSongTitle();
 }
 
 function closePlaylist(){
@@ -68,6 +74,7 @@ function validateUser(){
   }
 }
 
+//creating cards in home page
 function createCards(){
   var count = 0;
   for (var i = 0; i < playlists.length; i++){
