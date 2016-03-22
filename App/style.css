@@ -115,6 +115,13 @@ overflow: hidden;
 	margin-top: 100px;
 	outline: none;
 }
+
+#playlistImg{
+	width: 100px;
+	height: 100px;
+	margin-left: 5px;
+}
+
 .songImg{
 	display: inline-block;
 	width: 50px;
@@ -149,6 +156,19 @@ visibility: hidden;
 }
 .clearDiv{
 	clear: both;
+}
+
+#closeImg{
+	float: right;
+	display: block;
+}
+
+#playListHeader{
+	/*background-color: #ff0000;*/
+	width: 100%;
+	height: 100px;
+	margin-bottom: 10px;
+	text-align: center;
 }
 
 #playList{
