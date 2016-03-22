@@ -10,8 +10,9 @@ function Song(title,author,imagePath,length){
 // Static loading of songs
 Song.loadSongs = function(){
     alert("Loading Songs");
+    // To be implemented..
 };
-
+// Song class methods
 Song.prototype={
   getTitle:function(){
     return this.title;
