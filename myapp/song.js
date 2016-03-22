@@ -1,4 +1,4 @@
-var lengthPlaylits=playlist.length;
+
 var songList=[];
 
 function Song(data){
@@ -16,3 +16,34 @@ function Song(data){
 //     songList[j]=new Song(playlist[i].songs[j]);
 //     console.log(songList[i]);
 //   }
+
+Song.prototype.setImage=function(image){
+  this.image=image;
+}
+Song.prototype.setTitle=function(title){
+  this.songTitle=title;
+}
+Song.prototype.setAuthor=function(author){
+  this.songAuthor=author;
+}
+Song.prototype.setSongLength=function(songLength){
+  this.songLength=songLength;
+}
+Song.prototype.setListened=function(listened){
+  this.songListened=listened;
+}
+Song.prototype.getImage=function(){
+  return this.image;
+}
+Song.prototype.getTitle=function(){
+  return this.songTitle;
+}
+Song.prototype.getAuthor=function(){
+  return this.songAuthor;
+}
+Song.prototype.getSongLength=function(){
+  return this.songLength;
+}
+Song.prototype.getListened=function(){
+  return this.songListened;
+}

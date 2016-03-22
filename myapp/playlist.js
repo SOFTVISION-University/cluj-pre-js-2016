@@ -4,13 +4,7 @@ var l=songJSON.length;
 var playlist=[];
 var songs=[];
 
-function Song(data){
-  this.image=data.image;
-  this.songTitle=data.songTitle;
-  this.songAuthor=data.songAuthor;
-  this.songLength=data.songLength;
-  this.songListened=data.songListened;
-}
+
 
 function Playlist(data){
   this.id=data.id;
@@ -25,19 +19,49 @@ function Playlist(data){
 
 for(i=0;i<l;i++){
   playlist[i]=new Playlist(songJSON[i]);
-  console.log(playlist[i]);
-  console.log(playlist[i].songs[0]);
+  // console.log(playlist[i]);
+  // console.log(playlist[i].songs[0]);
 }
 
-var lengthSongs=songJSON[0].songs.length;
 
+function removePlaylist(){
+  var parent = document.getElementById( 'plyL' );
+  while ( document.getElementById('song') != null ){
+    var child = document.getElementById( 'song' );
+    parent.removeChild( child );
+  }
+}
+
+var lengthSongs = songJSON[0].songs.length;
 function displaySongs(){
-    var ni = document.getElementById('plyL');
-    for(j=0;j<lengthSongs;j++){
-      var newdiv = document.createElement('div');
-      var divIdName = 'song';
-      newdiv.setAttribute('id',divIdName);
-      newdiv.innerHTML = playlist[0].songs[j].songTitle;
-      ni.appendChild(newdiv);
+    removePlaylist();
+    var playlistElement = document.getElementById('plyL');
+
+    for( j = 0 ; j < lengthSongs ; j++ ){
+
+        var newdiv = document.createElement( 'div' );
+        var divIdName = 'song';
+        newdiv.setAttribute( 'id', divIdName );
+        newdiv.style = "height:70px;vertical-align:top;border-bottom: 1px solid gray";
+
+        var img = document.createElement('img');
+
+        // var parag=document.createElement('p');
+        // var pIdName='text';
+        // parag.setAttribute('id',pIdName);
+        // parag.style="display:inline-block;padding-left:5px ";
+        newdiv.innerHTML = '<img src=' + playlist[0].songs[j].image + '/>' + playlist[0].songs[j].songTitle + "    " +" by " + playlist[0].songs[j].songAuthor + "      " + playlist[0].songs[j].songLength + "    " + playlist[0].songs[j].songListened;
+
+        //newdiv.appendChild(parag);
+        playlistElement.appendChild( newdiv );
+
+    //  var img=new Image();
+      // img.src= playlist[0].songs[j].image;
+      // newdiv.appendChild('img');
+     //newdiv.innerHTML='<img src=' + playlist[0].songs[j].image + '/>';
+    // newdiv.innerHTML = playlist[0].songs[j].songLength;
+    //  newdiv.innerHTML = playlist[0].songs[j].songListened;
+
     }
+
 }
