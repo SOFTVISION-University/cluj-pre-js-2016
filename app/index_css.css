@@ -240,7 +240,7 @@ height:100%;
 	height: 20%;
 }
 #name_songs{
- overflow: scroll;
+    overflow: scroll;
 	margin:3% auto 0 auto;
 
 	width:95%;
@@ -274,10 +274,11 @@ height:100%;
 }
 
 .info_song{
-width:100%;
+margin:3% auto 0 auto;
+
+width:95%;
 height: 30px;
 background-color: #EEEEEE;
-
 
 
 }
@@ -316,11 +317,17 @@ margin-left: 30px;
 
 #container1{
 
-
-
-	height:15%;
+    height:15%;
 	border-bottom: 1px solid #EEEEEE;
 }
+#container1:hover{
+
+	background-color:#E1F7FD;
+	color:#28BEFC;
+
+}
+
+
 #photo_song_small{
   margin-left: 5px;
 	width:10%;
@@ -336,7 +343,8 @@ width:10%;
 
 }
 #time_song_small{
-	width:10%;
+	margin-left: 20px;
+	width:8%;
 }
 
 #title_id{
@@ -345,3 +353,13 @@ font-size:25px;
 #subtitle_id{
 color:#888888;
 }
+
+#ascuns{
+	display:none;
+	position:fixed;
+	width:0px;
+	height:0px;
+
+
+}
+

@@ -18,13 +18,25 @@
   <div id="center">
 
 
-	<form  action="index.html" method="post">
-    <input type="text" id="search" placeholder="Search Music">
+	
+	<label>
+- <datalist id="fruits">
+    <select name="fruits" id="search_music" onchange="search_click(name)" >
+       <option name="NAme" value="COsmin" id="option_music"> </option>
+	
+   
+    
+    </select>
+
+    </datalist>
+  <input type="text" id="search" placeholder="Search Music" name="fruit" list="fruits" onkeypress="return Search(event)">
+</label>
+    
 
   <span id="span_search" class="search_text">Ready to listen to endless music </span>
   <span class="search_text">on your favorite device? </span>
 
-    <form  action="index.html" method="post">
+    
     <input type="submit" value="JOIN NOW" id="button_join">
   <span id="span_search1" class="search_text">Epic and debauched party mixes</span>
 
@@ -108,7 +120,7 @@
 
    <div id="footer_playlist">
     <div id="img_playlist" class="info_playlist">
-      <img src="../core/assets/up-all-night.png" class="img_blc2">
+      <img src="../core/assets/up-all-night.png" class="img_blc2" id="img_play_big">
     </div>
     <div id="text_playlist" class="info_playlist">
         <span id="text_playlist1">Playing from:
@@ -119,9 +131,7 @@
     </div>
 
    </div>
-
-  <div id ="name_songs">
-   <div class="info_song">
+<div class="info_song">
      <span class="display1" id="name_song_size">Song
      </span>
      <span class="display1">Leght
@@ -129,8 +139,20 @@
      <span class="display1" id="name_song_leght">Listened
      </span>
    </div>
+  <div id ="name_songs">
+   
 
-   <div id="container1">
+
+
+  </div>
+
+
+
+
+
+</div>
+
+<span id="ascuns">   <div id="container1">
        <div id="photo_song_small" class="card">
             <img src="../core/assets/up-all-night.png" id="photo_id" class="img_blc2">
 
@@ -156,16 +178,7 @@
 
 
    </div>
-
-  </div>
-
-
-
-
-
-</div>
-
-
+   </span>
 
 </body>
 

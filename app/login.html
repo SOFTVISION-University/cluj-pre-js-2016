@@ -2,6 +2,7 @@
 <head>
   <title>login</title>
   <link rel="stylesheet" type="text/css" href="login_css.css">
+  <script  src="login.js"></script>
 </head>
 
 <body>
@@ -9,15 +10,17 @@
 
   <img src="../core/assets/logo-color.png" alt="altceva">
 
-  <h5>Sign into your ACME account</h5>
+  <span id="title_span">Sign into your ACME account</span>
 
-<form  action="index.html" method="post">
+  <div id="error_message"></div>
+
+<form   method="get" >
   <div class="align_left">Email</div>
-  <input type="email" name="email" required=""><br>
+  <input type="text" name="email"  id="e-mail"><br>
   <div class="align_left">Password </div>
-  <input type="password" name="pwd" required=""><br>
+  <input type="text" name="pwd"  id="pass" ><br>
   <a class="size" href="www.google.ro" >Forgot password?</a>
-  <input type="submit" value="Sign in">
+  <input type="submit" value="Sign in" onclick=("beggin")  >
 </form>
 
 <div class="size" id="bottom1">Don't have an acount?
