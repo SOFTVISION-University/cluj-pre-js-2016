@@ -4,7 +4,7 @@ function time_change(totalSeconds) {
     var minutes = Math.floor((totalSeconds - (hours * 3600)) / 60);
     var seconds = totalSeconds - (hours * 3600) - (minutes * 60);
 
-    seconds = Math.round(seconds * 100) / 100
+    seconds = Math.round(seconds * 100) / 100;
 
     var
         result = (minutes < 10 ? "0" + minutes : minutes);
