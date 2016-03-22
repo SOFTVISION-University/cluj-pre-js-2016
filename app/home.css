@@ -1,0 +1,352 @@
+body{
+  width:auto;
+  height: auto;
+  margin:0px;
+}
+
+div.up{
+  background-image: url("../core/assets/banner-top.jpg");
+  height:500px;
+
+}
+
+div.upleft{
+  float: left;
+}
+
+div.upright{
+  float:right;
+
+}
+div.cleardiv{
+  clear:both;
+}
+div.middle1{
+  position: relative;
+  background-color: white;
+  height:200px;
+}
+div.middle2{
+  position: relative;
+  background-color: white;
+  height:200px;
+
+}
+ div.middle3{
+   position: relative;
+   background-image: url("../core/assets/stars-bg.jpg");
+   height:400px;
+
+ }
+div.middle4{
+  position: relative;
+background-color: white;
+height:100px;
+
+}
+
+div.down{
+  position: relative;
+  background-color: white;
+  height:600px;
+
+}
+
+div.lastdiv{
+  position: relative;
+  background-color: #E5E5E5;
+  height:550px;
+
+}
+ div.mleft{
+      position: relative;
+      float:left;
+   margin-left: 200px;
+   width:auto;
+ }
+ div.mmid{
+   position:relative;
+   float:left;
+   margin-left: 400px;
+   width:auto;
+ }
+
+ div.mright{
+   position:relative;
+   float:left;
+   margin-left: 400px;
+   width: auto;
+
+ }
+
+h1.home{
+  margin-left: 300px;
+  color: white;
+}
+h1.mid4{
+  margin-left: 750px;
+}
+#logo{
+  display: block;
+  margin-left: 300px;
+}
+
+#par1{
+  margin-left: 45px;
+  font-size: large;
+  color:white;
+}
+#par2{
+  margin-left: 0px;
+  font-size: medium;
+  color:#B0B0B0;
+}
+
+a{
+  color:white;
+  font-size: small;
+}
+
+#tnw{
+  display: inline-block;
+  margin-left: 300px;
+}
+#forbes{
+  display: inline-block;
+margin-left:20px;
+}
+#ng{
+  display: inline-block;
+  margin-left: 20px;
+}
+#finex{
+  display: inline-block;
+  margin-left:20px;
+}
+
+p.pargalaxy{
+  position:absolute;
+  margin-left: 700px;
+  margin-top: 250px;
+  color:white;
+  font-size: x-large;
+
+  }
+
+h2.headgalaxy{
+  position:absolute;
+  margin-left: 800px;
+  margin-top: 70px;
+  color:white;
+  font-size: xx-large;
+}
+#home{
+  background-color: #63D1F4;
+  text-align: center;
+  font-size: large;
+  color: white;
+  border:blue;
+  width:15em;
+  height: 3em;
+  margin-left: 750px;
+  margin-top: 100px;
+  margin-bottom: 50px;
+  -webkit-border-radius: 5px;
+  box-shadow: 0px 3px 3px #000000;
+
+}
+#hm1{
+  position: absolute;
+  margin-left:700px;
+  margin-top: 50px;
+}
+#pm1{
+  position: absolute;
+  margin-left:750px;
+  margin-top: 100px;
+  font-size: large;
+}
+
+#music{
+  position:absolute;
+  top:140px;
+  left: 800px;
+
+}
+
+#phone{
+  position:absolute;
+  top:100px;
+  left: 400px;
+
+}
+
+#weather{
+  position:absolute;
+  top:40px;
+  left: 1200px;
+
+}
+
+#photo{
+  position:absolute;
+  top:5px;
+  left: 600px;
+
+}
+
+#mail{
+  position:absolute;
+  top:200px;
+  left: 600px;
+
+}
+
+#location{
+  position:absolute;
+  top:200px;
+  left: 1000px;
+
+}
+
+#time{
+  position:absolute;
+  top:300px;
+  left: 1300px;
+}
+table{
+  border-collapse:  collapse;
+  width:50%;
+  margin-left: 400px;
+  background-color: #00FFFF	;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  border-top:1px solid #63D1F4;
+  border-left: 1px solid #63D1F4;
+  border-right:1px solid #63D1F4;
+  border-bottom:1px solid #63D1F4;
+}
+table,th,td {
+
+
+
+  }
+table,td{
+
+}
+
+tr{
+  height: 50px;
+}
+tr.row1{
+  border-bottom:1px solid #63D1F4;
+
+}
+td.borded{
+  border-bottom:1px solid #63D1F4;
+
+}
+
+#devices{
+  float: right;
+}
+
+#logogray{
+  position:absolute;
+  top:100px;
+  left: 200px;
+}
+
+#appstore{
+  position:absolute;
+  top:400px;
+  left: 200px;
+}
+#googlestore{
+  position:absolute;
+  top:400px;
+  left: 400px;
+}
+
+#lasth2{
+  position:absolute;
+  top:200px;
+  left: 200px;
+}
+
+#lastp{
+  position:absolute;
+  top:500px;
+  left: 200px;
+}
+
+#robot{
+  position: absolute;
+  left:430px;
+}
+
+#hrobot{
+  position: absolute;
+  top:50px;
+  left:370px;
+  width:200px;
+}
+
+#probot{
+  position: absolute;
+  width: auto;
+  top:85px;
+  left:360px;
+  width:200px;
+}
+#chip{
+  position: absolute;
+  left:990px;
+
+}
+
+#hchip{
+  position: absolute;
+  left:900px;
+  top:50px;
+  width:300px;
+
+}
+
+#pchip{
+  position: absolute;
+  left:920px;
+  top:85px;
+  width:200px;
+}
+
+#case{
+  position: absolute;
+  left:110px;
+
+}
+
+#hcase{
+  position: absolute;
+  top:50px;
+  left:80px;
+  width:200px;
+}
+#pcase{
+  position: absolute;
+  left:45px;
+  top:85px;
+  width:200px;
+}
+ td.nocolor{
+   background-color: white;
+ }
+
+ tr.row1{
+   background-color: white;
+ }
+ #imgtbl{
+  float:left;
+   margin-left: 15px;
+   margin-bottom: 35px;
+ }
