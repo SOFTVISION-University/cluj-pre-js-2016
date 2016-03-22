@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Search page</title>
+    <link rel="stylesheet" type="text/css" href="style-search.css">
+    <script type="text/javascript" src="../core/data/playlists.js" ></script>
+    <script type="text/javascript" src="song.js" ></script>
+    <script type="text/javascript" src="playlist.js" ></script>
+    <script type="text/javascript" src="search.js" ></script>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <div class="search-container">
+        <div class="logo">
+          <img src="../core/assets/logo-top.png" class="logo">
+        </div>
+        <div class="search-input">
+          <form>
+            <input type="text" name="search" placeholder="Search Music"><br>
+          </form>
+        </div>
+        <div class="button-signIn">
+          <form action="Login.html">
+            <button type="submit" >Sign In</button>
+          </form>
+        </div>
+        <div class="join-now">
+          <h3><span>Ready to listen to endless music on your favorite device ?</span></h3>
+          <form action="register.html">
+            <button type="submit">JOIN NOW</button>
+          </form>
+          <h1>Epic and debauched party mixes</h1>
+        </div>
+      </div>
+    </div>
+    <div class="wrapper-image">
+      <div class="image">
+        <img src="../core/assets/massive-pop-hits.png">
+        <h3>Massive pop hits vol 1</h3>
+        <span>Lorem ipsum dolor nam molestie nunc praesent euismod. Lectus cursus dui sodales, dui sit nec recusandae nunc</span>
+        <div class="playlist-button">
+          <button type="submit" id="openB" onclick="toggle('plyL')">Explore playlist</button>
+        </div>
+      </div>
+      <div class="image">
+        <img src="../core/assets/up-all-night.png">
+        <h3>Up all night</h3>
+        <span>Lorem ipsum dolor nam molestie nunc praesent euismod. Lectus cursus dui sodales, dui sit nec recusandae nunc</span>
+        <div class="playlist-button">
+          <button type="submit" id="openB" onclick="toggle('plyL')">Explore playlist</button>
+        </div>
+      </div>
+      <div class="image">
+        <img src="../core/assets/dj-killer-mixes.png">
+        <h3>DJ Killer mixes</h3>
+        <span>Lorem ipsum dolor nam molestie nunc praesent euismod. Lectus cursus dui sodales, dui sit nec recusandae nunc</span>
+        <div class="playlist-button">
+            <button type="submit" id="openB" onclick="toggle('plyL')" >Explore playlist</button>
+        </div>
+      </div>
+    </div>
+
+    <p style="color:gray">&#169; 2016 ACME DIVISION. ALL RIGHTS RESERVED</p>
+
+
+    <div id="plyL" class="playlist">
+      <form>
+        <button type="button" id="closeB" class="closeButton" onclick="closePlaylist()"> CLOSE </button>
+      </form>
+      <div class="headerPlaylist">
+        <img src="../core/assets/up-all-night-small.png">
+        <div class="text">
+          <h4>Playing from:</h4>
+          <h2>Up all night:The remixes radio</h2>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
