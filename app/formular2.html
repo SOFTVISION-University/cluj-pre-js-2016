@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Formular2</title>
+  <link rel="stylesheet" type="text/css" href="style/style_formular.css">
+</head>
+<body>
+  <div class="cont">
+  <div class="box">
+   <img alt="this is a image" src="../core/assets/logo-color.png">
+   <p>Sign into your ACME account</p>
+   <p id = "mesageLogin"> </p>
+
+   <form id="formular" method=post onsubmit="return verifica()">
+     <p class="text_form"> Email</p>  <input class="focuss" id="formText1" onclick="change('formText1')" onblur=" changeBack('formText1')" type="mail"  name="formEmail" required/> <br>
+     <p class="text_form">Password</p> <input class="focuss" id="formText2" onclick="change('formText2')"  onblur=" changeBack('formText2')" type="password"  name="formPassword" required/><br><br>
+
+     <a href="link_forgot_password">Forgot password?</a>
+     <!-- <input id="button"  type="submit" onclick="verifica()" value="Sign in"> -->
+     <button id="button" onclick="verifica()"> Sign in</button>
+    </form>
+<p>Don't have an account?
+<a href="first_page.html">Sign up here</a></p>
+</div>
+
+
+</div>
+ <script type="text/javascript" src="js/users.js"></script>
+<script	type="text/javascript" src="js/formular2-script.js"></script>
+<script	type="text/javascript" src="js/first-script.js"></script>
+</body>
+<html>

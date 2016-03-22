@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Playlist</title>
+  <link rel="stylesheet" type="text/css" href="style/style_playlist.css">
+</head>
+<body>
+   <div class="page">
+        <img class="photo_top" alt="this is a image" src="../core/assets/logo-top.png" />
+        <div class="search">
+          <form method=post >
+             <img alt="this is a image" src="../core/assets/search-icon.png" />
+             <input class="search-bar" style="text-indent:80px;" type="text" placeholder="Search Music" />
+             <input class="button1 text_alb_mic" type="submit" value="Sign in">
+          </form>
+        </div>
+
+        <div class="join">
+           <p class="text_alb">Ready to listen to endless music on your favorite device?</p>
+           <form method=post >
+              <input class="button-green text_alb_mic" type="submit" value="JOIN NOW">
+           </form>
+           <p class="text_alb_mare">Epic and debauched party mixes</p>
+        </div>
+
+  </div>
+
+
+<div class="bottom-page">
+  <div  class="toate-playlisturile">  <!-- cuprinde toate playlist-urile -->
+       <!-- playlist1 -->
+       <div class="playlist" id = "playlist1">
+           <img class="pozz" alt="this is a image" src="../core/assets/massive-pop-hits.png"/>
+           <p class="text-negru-mare">Massive pop hits vol 1</p>
+           <p class="text-gri"> Lorem ipsum dolar sit amet consectetur adipisicing elit, sed eiusmod tempor incididunt ut labor et</p>
+           <div class="asezare-buton">
+                  <button class="element-creator" id="afiseaza" onclick="afisare('theDiv')"> Explore playlist</button>
+          </div>
+      </div>
+
+      <!-- playlist2 -->
+      <div class="playlist" id = "playlist2">
+           <img class="pozz" alt="this is a image" src="../core/assets/up-all-night.png"/>
+           <p class="text-negru-mare">Massive pop hits vol 1</p>
+           <p class="text-gri"> Lorem ipsum dolar sit amet consectetur adipisicing elit, sed eiusmod tempor incididunt ut labor et</p>
+           <div class="asezare-buton">
+               <button class="element-creator" id="afiseaza" onclick="afisare('theDiv')"> Explore playlist</button>
+           </div>
+      </div>
+
+      <!-- playlist3 -->
+      <div class="playlist" id = "playlist3">
+
+               <img class="pozz" alt="this is a image" src="../core/assets/dj-killer-mixes.png"/>
+
+                <p class="text-negru-mare">Massive pop hits vol 1</p>
+                <p class="text-gri"> Lorem ipsum dolar sit amet consectetur adipisicing elit, sed eiusmod tempor incididunt ut labor et</p>
+
+                <div class="asezare-buton">
+
+                  <button class="element-creator" id="afiseaza" onclick="afisare('theDiv')"> Explore playlist</button>
+                </div>
+        </div>
+      <!-- </div> -->
+
+</div>
+    <p class= "text-gri footer"><br><br>@2016 ACME DEVISION. ALL RICHTS RESERVED<p>
+    <div class="lista-melodi" id="theDiv">
+         <div class="top-lista" >
+           <!-- <img class= "boxclose" alt= "this is a img" src= "../core/assets/close-icon.png"> -->
+           <img class="playlist-pozz" alt="this is a image" src="../core/assets/up-all-night-small.png" />
+             <p class="playlist-title" >Playing from: </p>
+             <p class="text-negru-playlist" >Up all night: The remixes radio</p>
+         </div>
+
+        <p id = "mySongs"></p>
+      </div>
+
+</div>
+
+      <script	type="text/javascript" src="js/playlists.js"></script>
+		  <script	type="text/javascript" src="js/playlist-script.js"></script>
+</body>
+<html>
