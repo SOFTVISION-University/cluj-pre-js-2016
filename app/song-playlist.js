@@ -5,7 +5,35 @@ function Song(data) {
   this.songAuthor = data.songAuthor;
   this.songLength = data.songLength;
   this.songListened = data.songListened;
+<<<<<<< HEAD
 
+}
+
+Song.prototype.getImage = function () {
+
+  return this.image ;
+}
+
+Song.prototype.getSongTitle = function () {
+
+  return this.songTitle;
+}
+
+Song.prototype.getSongAuthor = function () {
+
+  return this.songAuthor;
+}
+
+Song.prototype.getSongLength = function () {
+
+  return this.songLength;
+}
+
+Song.prototype.getSongListened = function () {
+=======
+>>>>>>> day7
+
+  return this.songListened;
 }
 
 Song.prototype.getImage = function () {
@@ -33,7 +61,7 @@ Song.prototype.getSongListened = function () {
   return this.songListened;
 }
 
-function Playlist() {
+/*function Playlist() {
 
   this.name = title;
   this.songList = [];
@@ -44,4 +72,4 @@ function Playlist() {
 Playlist.prototype.addSong = function (song) {
   this.songList.push(song);
 
-}
+} */
