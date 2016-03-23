@@ -3,6 +3,7 @@
   <head>
     <title>Sign Up</title>
     <link rel="stylesheet" href="style-register.css">
+    <script type="text/javascript" src="user.js" ></script>
     <script src="registerJS.js"></script>
   </head>
 
@@ -32,21 +33,21 @@
         <h3 align="center"> Get Started Absolutely FREE</h3>
         <h5 align="center"> NO CREDIT CARD NEEDED</h5>
 
-        <form>
+        <form name="registerForm" onsubmit="return checkUserName()">
           <label>Your name</label><br>
-          <input class="input" type="text" name="username" id="focusDiv" onclick="color()" required><br>
+          <input class="input" type="text" name="username" id="focusDiv" required><br>
           <br>
 
           <label>Email</label><br>
-          <input class="input" type="email" name="email" onclick="color()" required><br>
+          <input class="input" type="email" name="email" required><br>
           <br>
 
           <label>Password</label><br>
-          <input class="input" type="password" name="Password" onclick="color()" required><br>
+          <input class="input" type="password" name="Password" required><br>
           <br>
 
           <div class="sign-up-button">
-            <button type="submit">Sign up free</button><br>
+          <button type="submit">Sign up free</button><br>
           </div>
           <br>
         </form>

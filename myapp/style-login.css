@@ -1,5 +1,7 @@
 body{
   background-image: url("../core/assets/banner-app.jpg");
+
+  background-size: 100% 100%;
 }
 
 .container{
@@ -27,6 +29,11 @@ input{
   border-width: 0px;
   width: 300px;
   padding-right: 10px;
+}
+
+input:focus{
+  background: rgba( 51,153,255,0.2 );
+  border: 1px solid rgb(51,153,255);
 }
 
 button{

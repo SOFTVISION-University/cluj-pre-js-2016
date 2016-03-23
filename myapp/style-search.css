@@ -63,6 +63,10 @@ input{
   margin-top: 27px;
 }
 
+#searchLogOut{
+  visibility: hidden;
+}
+
 .join-now{
   margin: 100px auto;
   width: 60%;
