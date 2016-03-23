@@ -8,10 +8,11 @@ function Playlist(path){
   this._imageLarge = path.imageLarge;
   this._imageSmall = path.imageSmall;
   this._description = path.description;
-  this.update = function(){
-    console.log("Playlist updated!");
-  }
 }
+
+Playlist.prototype.update = function(){
+  console.log("Playlist updated!");
+};
 
 Playlist.prototype.getPlaylistId = function(){
   return this._id;
