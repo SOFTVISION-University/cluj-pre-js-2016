@@ -7,10 +7,20 @@ var accountService;
 function onLoad() {
 
   accountService = new AccountService();
-  for (i = 0;i < users.length;i++) {
+  /*for (i = 0;i < users.length;i++) {
     var user = new Member(users[i]);
     accountService.addUsers(user);
+  }*/
+
+  var addUser=function (a){
+    var newU = new Member(a);
+    accountService.addUsers(newU);
+    return newU
   }
+  var userInitial = users.map ( addUser );
+
+
+
 
 }
 
@@ -24,7 +34,7 @@ function Beggin() {
     document.getElementById("error_message").innerHTML=
     "Oops!That email/password combination is not valid.";
   else {
-    //go to homepage
+    console.log("ok");
   }
   return false;
 

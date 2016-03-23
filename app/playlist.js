@@ -11,23 +11,41 @@ function Playlist(data) {
 }
 Playlist.prototype.getId = function() {
   return this.id;
+
 };
+
 Playlist.prototype.getTitle = function() {
+
   return this.title;
+
 };
+
 Playlist.prototype.getImageLarge = function() {
+
 	return this.imageLarge;
+
 };
+
 Playlist.prototype.getImageSmall = function() {
+
 	return this.imageSmall;
+
 };
 
 Playlist.prototype.getDescription = function() {
+
 	return this.description;
+
 };
+
 Playlist.prototype.getLengthSongs = function() {
+
 	return this.songs.length;
+
 };
+
 Playlist.prototype.setSong = function(song) {
+
 	this.songs.push(song);
+
 };
