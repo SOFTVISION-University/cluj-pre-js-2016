@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Main page</title>
+      <link rel="stylesheet" type="text/css" href="main.css">
+   </head>
+   <body>
+     <!-- <script>
+      var playlistsJSON = '[{"id":0,"title":"Playlist 1","songs":[{"image":"../core/assets/2015-best-music.png","songTitle":"love love enemies love","songAuthor":"Smiley","songLength":74,"songListened":82},{"image":"../core/assets/2015-best-music.png","songTitle":"love love enemies pierdut","songAuthor":"Dr. Dre","songLength":186,"songListened":78},{"image":"../core/assets/2015-best-music.png","songTitle":"ea money pierdut ea","songAuthor":"Andra","songLength":303,"songListened":94},{"image":"../core/assets/2015-best-music.png","songTitle":"enemies el buletin ea","songAuthor":"Andra","songLength":359,"songListened":23},{"image":"../core/assets/2015-best-music.png","songTitle":"buletin el buletin love","songAuthor":"Eminem","songLength":312,"songListened":11},{"image":"../core/assets/2015-best-music.png","songTitle":"pierdut pierdut enemies ea","songAuthor":"Eminem","songLength":37,"songListened":9},{"image":"../core/assets/2015-best-music.png","songTitle":"ea money enemies enemies","songAuthor":"Dr. Dre","songLength":325,"songListened":13},{"image":"../core/assets/2015-best-music.png","songTitle":"enemies money el money","songAuthor":"Eminem","songLength":58,"songListened":10}],"imageLarge":"../core/assets/up-all-night.png","imageSmall":"../core/assets/up-all-night-small.png","description":"Culpa ipsum adipisicing adipisicing mollit nostrud consequat adipisicing reprehenderit laboris duis cillum reprehenderit velit. Et cupidatat eiusmod reprehenderit cupidatat consectetur est. Aliquip laboris ullamco excepteur deserunt culpa et exercitation labore velit ad."},{"id":1,"title":"Playlist 2","songs":[{"image":"../core/assets/2015-best-music.png","songTitle":"money money love ea","songAuthor":"Dr. Dre","songLength":97,"songListened":100},{"image":"../core/assets/2015-best-music.png","songTitle":"el pierdut pierdut ea","songAuthor":"Smiley","songLength":42,"songListened":86},{"image":"../core/assets/2015-best-music.png","songTitle":"enemies money pierdut enemies","songAuthor":"Dr. Dre","songLength":454,"songListened":23},{"image":"../core/assets/2015-best-music.png","songTitle":"money ea love buletin","songAuthor":"Dr. Dre","songLength":448,"songListened":16},{"image":"../core/assets/2015-best-music.png","songTitle":"buletin pierdut ea el","songAuthor":"Dr. Dre","songLength":363,"songListened":23},{"image":"../core/assets/2015-best-music.png","songTitle":"el love el buletin","songAuthor":"Smiley","songLength":88,"songListened":20}],"imageLarge":"../core/assets/up-all-night.png","imageSmall":"../core/assets/up-all-night-small.png","description":"Culpa ipsum adipisicing adipisicing mollit nostrud consequat adipisicing reprehenderit laboris duis cillum reprehenderit velit. Et cupidatat eiusmod reprehenderit cupidatat consectetur est. Aliquip laboris ullamco excepteur deserunt culpa et exercitation labore velit ad."},{"id":2,"title":"Playlist 3","songs":[{"image":"../core/assets/2015-best-music.png","songTitle":"enemies enemies el love","songAuthor":"Smiley","songLength":192,"songListened":51},{"image":"../core/assets/2015-best-music.png","songTitle":"el enemies pierdut el","songAuthor":"Andra","songLength":232,"songListened":87},{"image":"../core/assets/2015-best-music.png","songTitle":"ea enemies pierdut enemies","songAuthor":"Smiley","songLength":234,"songListened":5},{"image":"../core/assets/2015-best-music.png","songTitle":"enemies ea enemies buletin","songAuthor":"Andra","songLength":123,"songListened":45},{"image":"../core/assets/2015-best-music.png","songTitle":"love money buletin love","songAuthor":"Andra","songLength":299,"songListened":13},{"image":"../core/assets/2015-best-music.png","songTitle":"el love ea love","songAuthor":"Andra","songLength":478,"songListened":34},{"image":"../core/assets/2015-best-music.png","songTitle":"ea el enemies money","songAuthor":"Dr. Dre","songLength":280,"songListened":35}],"imageLarge":"../core/assets/up-all-night.png","imageSmall":"../core/assets/up-all-night-small.png","description":"Culpa ipsum adipisicing adipisicing mollit nostrud consequat adipisicing reprehenderit laboris duis cillum reprehenderit velit. Et cupidatat eiusmod reprehenderit cupidatat consectetur est. Aliquip laboris ullamco excepteur deserunt culpa et exercitation labore velit ad."}]';
+
+        var playl = JSON.parse(playlistsJSON)
+        var song=playl[2].songs;
+
+        console.log(song[0])
+
+        document.getElementById('songleft').innerHTML= song[0].songAuthor;
+
+      </script> -->
+
+      <div class="divup">
+
+        <form>
+            <img id="search" src="../core/assets/search-icon.png" alt="photo">
+            <input type="search" name="googlesearch" placeholder="Search music">
+        </form>
+        <img id="logomain" src="../core/assets/logo-top.png" alt="ACME logo top">
+        <h2 id="h2main">Ready to listen to endless music<br>on your favorite device?</h2>
+        <h1 id="h1main">Epic and debauched party mixes</h1>
+        <button id="buttonS" onclick="myFunction3()">Sign in</button>
+        <button id="buttonJ" onclick="jumpRegistration()">JOIN NOW</button>
+
+      </div>
+
+        <div class="leftimg">
+          <div class="leftup">
+            <button id="explorebtn" onclick="showPlaylist1()">Explore playlist</button>
+          </div>
+          <div class="cleardiv"></div>
+          <div class="leftdown">
+            <span class="headerscris">Massive pop hits vol 1</span><br><br>
+            <span class="textscris"> Lorem ipsum dolor sit amet, consectetur </span><br>
+            <span class="textscris">amet, consectetur adipisicing elit, sed do</span>
+          </div>
+
+        </div>
+
+        <div class="midimg">
+          <div class="midup">
+            <button id="explorebtn" onclick="showPlaylist2()">Explore playlist</button>
+          </div>
+          <div class="cleardiv"></div>
+          <div class="middown">
+            <span class="headerscris">Up all night</span><br><br>
+            <span class="textscris"> Lorem ipsum dolor sit amet, consectetur </span><br>
+            <span class="textscris">amet, consectetur adipisicing elit, sed do</span>
+          </div>
+
+        </div>
+
+        <div class="rightimg">
+          <div class="rightup">
+            <button id="explorebtn" onclick="showPlaylist3()">Explore playlist</button>
+          </div>
+          <div class="cleardiv"></div>
+          <div class="rightdown">
+            <span class="headerscris">DJ Killer mixes</span><br><br>
+            <span class="textscris"> Lorem ipsum dolor sit amet, consectetur </span><br>
+            <span class="textscris">amet, consectetur adipisicing elit, sed do</span>
+          </div>
+
+        </div>
+
+        <div id="playlist2" >
+          <div class="close">
+            <button id="buttonCLOSE" onclick="hidePlaylist2()">
+                <span id="playlistCLOSE">CLOSE<span>
+                <span id="imgCLOSE"> <img id="X" src="../core/assets/close-icon.png"></span>
+            </button>
+
+          </div>
+          <div class="headerplaylist">
+            <img id="playlistimg" src="../core/assets/up-all-night-small.png">
+            <span id="headersmall"> Playing from:</span>
+            <span id="headerbig">Up all night: The remixes radio</span>
+          </div>
+          <div class="playlisttitles">
+            <span id="titleleft"> SONG</span>
+
+            <span id="titleright"> LISTENED</span>
+            <span id="titlemid"> LENGTH</span>
+          </div>
+          <div class="songs">
+          </div>
+        </div>
+
+        <div id="playlist1" >
+          <div class="close">
+            <button id="buttonCLOSE" onclick="hidePlaylist1()">
+                <span id="playlistCLOSE">CLOSE<span>
+                <span id="imgCLOSE"> <img id="X" src="../core/assets/close-icon.png"></span>
+            </button>
+
+          </div>
+          <div class="headerplaylist">
+            <img id="playlistimg" src="../core/assets/up-all-night-small.png">
+            <span id="headersmall"> Playing from:</span>
+            <span id="headerbig">Massive pop hits vol 1</span>
+          </div>
+
+          <div class="playlisttitles">
+            <span id="titleleft"> SONG</span>
+
+            <span id="titleright"> LISTENED</span>
+            <span id="titlemid"> LENGTH</span>
+
+          </div>
+          <div id="song">
+            <div id="songleft"></div>
+            <div id="songright"></div>
+            <div id="songmid"></div>
+          </div>
+        </div>
+
+        <div id="playlist3" >
+          <div class="close">
+            <button id="buttonCLOSE" onclick="hidePlaylist3()">
+                <span id="playlistCLOSE">CLOSE<span>
+                <span id="imgCLOSE"> <img id="X" src="../core/assets/close-icon.png"></span>
+            </button>
+
+          </div>
+          <div class="headerplaylist">
+            <img id="playlistimg" src="../core/assets/up-all-night-small.png">
+            <span id="headersmall"> Playing from:</span>
+            <span id="headerbig">Dj Killer mixes</span>
+          </div>
+          <div class="playlisttitles">
+            <span id="titleleft"> SONG</span>
+
+            <span id="titleright"> LISTENED</span>
+            <span id="titlemid"> LENGTH</span>
+
+          </div>
+          <div class="songs">
+          </div>
+        </div>
+
+
+
+      <div class="cleardiv"></div>
+
+      <div class="divdown">
+        <span id="spmain"> &#169 2016 ACME ALL RIGHTS RESERVED</span>
+      </div>
+
+      <script type="text/javascript" src="anim.js"></script>
+
+
+      <script type="text/javascript" src="playlist.js"></script>
+
+   </body>
+</html>
