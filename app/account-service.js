@@ -7,6 +7,10 @@ function AccountService(path){
   });
 }
 
+AccountService.prototype.getUsers = function(){
+  return this._users;
+}
+
 AccountService.prototype.displayLoginError = function(){
   document.getElementById('error').innerHTML="Oops! That email/password combination is not valid.";
   document.getElementById('email').style.backgroundColor="rgba(255,0,0,0.1)";

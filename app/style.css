@@ -541,9 +541,18 @@ table#playlist-songs thead tr{
 
 table#playlist-songs th{
   border:0px solid;
-  padding-left: 65px;
+  text-align: center;
 }
 
 table#playlist-songs th:nth-child(1){
-  padding-left: 15  px;
+  text-align: left;
+  padding-left: 12px;
+}
+
+table#playlist-songs tr td:nth-child(2){
+  text-align: left;
+}
+
+table#playlist-songs tr td{
+  padding: 10px 0px 6px 0px;
 }

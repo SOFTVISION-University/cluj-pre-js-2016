@@ -38,9 +38,10 @@ function explorePlaylist(playlistNumber){
   var song = new Song(playlists[playlistNumber].songs[playlistNumber]);
   song.attach(playlist);
   song.getSongTitle();
+
   var songs = playlist.getPlaylistSongs();
   for (var i = 0; i < songs.length; i++){
-    var table = document.getElementById('playlist-songs-body');
+    var tableBody = document.getElementById('playlist-songs-body');
     var row = document.createElement('tr');
     var col1 = document.createElement('td');
     var col2 = document.createElement('td');
@@ -53,7 +54,7 @@ function explorePlaylist(playlistNumber){
     col2.innerHTML = songs[i].songTitle + "</br>" + "by " + songs[i].songAuthor;
     col3.innerHTML = convert(songs[i].songLength);
     col4.innerHTML = songs[i].songListened;
-    table.appendChild(row);
+    tableBody.appendChild(row);
     row.appendChild(col1);
     row.appendChild(col2);
     row.appendChild(col3);
@@ -86,17 +87,16 @@ function validateUser(){
   var email = document.getElementById('email').value;
   var password = document.getElementById('password').value;
   var account = new AccountService(users);
-  for(var i = 0; i < users.length; i++){
-    if(users[i].email == email && users[i].password == password){
+  var accountUsers = account.getUsers();
+  for(var i = 0; i < accountUsers.length; i++){
+    if(accountUsers[i].email == email && accountUsers[i].password == password){
       account.login();
-
-    }else{
-
-      account.displayLoginError();
-      bool = false;
+      window.location = "home.html";
+      return bool;
     }
-    return bool;
   }
+  account.displayLoginError();
+  return bool;
 }
 
 //creating cards in home page
