@@ -12,6 +12,8 @@ AccountService.prototype.checkLogin = function ( email , password ) {
 
     if ( email == users[i].email && password == users[i].password ) {
 
+      localStorage.setItem("userData", JSON.stringify(users[i].email));
+
       return check = "1" ;
 
       break ;
@@ -20,7 +22,7 @@ AccountService.prototype.checkLogin = function ( email , password ) {
 
         if ( email == users[i].email && password != users[i].password ) {
 
-            check = "2"
+            return check = "2" ;
 
             break;
         }

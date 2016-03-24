@@ -27,13 +27,3 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
 });
-
-var list=JSON.parse(playlistsJSON);
-
-var song_playlist = new Playlist ();
-
-for (i=0 ; i<list.songs.length ; i++) {
-
-  var song = new Song();
-
-}
