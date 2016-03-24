@@ -6,7 +6,7 @@
 <script  src="search-music.js"></script>
 <script  src="Song.js"></script>
 <script  src="time-change.js"></script>
-
+<script  src="account-service.js"></script>
 </head>
 <body body onload="OnLoad()">
 
@@ -25,7 +25,7 @@
 
 	<label>
 - <datalist id="fruits">
-    <select name="fruits" id="search_music" onchange="search_click(name)" >
+    <select name="fruits" id="search_music" >
        <option name="NAme" value="COsmin" id="option_music"> </option>
 
 
@@ -53,9 +53,10 @@
 
   <div id="right">
 
-       <form  action="index.html" method="post">
+<form action="login.html" method="post">
        <input type="submit" value="Sign in" id="button_signin">
-       </form>
+       <input type="submit" value="Log Out" id="log_out" onclick="logOut()")>
+</form>
   </div>
 
  </div>

@@ -49,6 +49,10 @@ background-size: cover;
   clear:both;
 }
 
+.hidden_button {
+  display:none;
+
+}
 
 
 .playlist:hover{
@@ -362,4 +366,3 @@ color:#888888;
 
 
 }
-

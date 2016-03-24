@@ -7,16 +7,37 @@ function SearchMusic () {
 
 
 SearchMusic.prototype.SearchByValue = function(values,playlist) {
+  playlist.forEach(function(entry) {
+       entry.songs.forEach(function(song) {
+       if (values == song.getTitle()) {
+         clonare(entry.getId());
+       }
+     });
+   });
 
-  for (i = 0;i < playlist.length;i++) {
-    var dim = playlist[i].getLengthSongs();
-    for (y = 0;y < dim;y++){
-      if (values == playlist[i].songs[y].getTitle()) {
-        clonare(i);
-        break;
-      }
-    }
+/* Trying to use map and reduce
+var array_songs = (((playlist.map(getSongList)).reduce(reduceSongList,[])).
+                  map(getSongTitle)).filter(SearchSongTitle);
 
-  }
+function getSongList (val) {
+  return val.songs;
 
 }
+function getSongTitle (val) {
+  return val.songTitle
+}
+
+function reduceSongList(mem,val) {
+  return mem.concat(val);
+
+}
+
+function SearchSongTitle (val) {
+  if(val.indexOf(values) === 0)
+       return val;
+}
+
+
+console.log(array_songs);
+*/
+};

@@ -33,13 +33,13 @@ Song.prototype.setListened = function(Listened) {
 };
 Song.prototype.setImage = function(image) {
 	this.image = image;
-}
+};
 Song.prototype.setTitle = function(title) {
 	this.songTitle = title;
-}
+};
 Song.prototype.setLength = function(length) {
 	this.songLength = length;
-}
+};
 Song.prototype.setAuthor = function(author) {
 	this.songAuthor = author;
-}
+};

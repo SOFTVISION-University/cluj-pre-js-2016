@@ -1,14 +1,16 @@
+
+
 function AccountService() {
 
   var ERROR_MESSAGE = "ERROR";
   var message="ERROR";
   this.members = [];
-  this.user_login=false;
+
 
 
  }
 
-AccountService.prototype.validate = function(mail,password) {
+AccountService.prototype.validate = function (mail,password) {
 /*  for (i = 0;i < this.members.length;i++){
     if ( mail === this.members[i].email  &&
          password === this.members[i].password) {
@@ -18,30 +20,33 @@ AccountService.prototype.validate = function(mail,password) {
     }
 
   }*/
-var control = function(a) {
-  if ( mail === a.email  &&
-       password === a.password){
-       //window.location = "index.html";
-       return "ok";
+  var control = function(a) {
+    if ( mail === a.email  &&
+    password === a.password) {
+      return a;
     }
-  else {
-    return "ERROR";
-  }
-}
+  };
 
-  message = this.members.map(control);
-  return message;
-}
+  var  con = this.members.filter (control);
 
-AccountService.prototype.addUsers = function(user) {
+  con[0].user_login = true;
+  localStorage.setItem('testObject', JSON.stringify(con[0]));
+
+
+  if (con.length == 1)
+    return "ok";
+  return "ERROR";
+};
+
+AccountService.prototype.addUsers = function (user) {
   this.members.push(user);
 
-}
+};
 
 AccountService.prototype.register = function () {
 
-}
-AccountService.prototype.checkUser = function(mail) {
+};
+AccountService.prototype.checkUser = function (mail) {
 
 /*  for (i = 0;i < this.members.length;i++) {
     if (this.members[i].mail === mail)
@@ -51,23 +56,26 @@ AccountService.prototype.checkUser = function(mail) {
     }*/
   var control = function(a) {
     if ( mail === a.email){
-         return "ERROR";
-      }
-  }
+      return a;
+    }
+  };
 
-    this.message = this.members.map(control);
-    return this.message;
-}
+  var con = this.members.filter(control);
+  if  (con.lenth > 0)
+    return "ERROR";
+  return "ok";
+
+};
 
 AccountService.prototype.logIn = function () {
 
-    this.user_login=true;
-}
+
+};
 AccountService.prototype.logOut = function () {
 
-    this.user_login=false;
-}
+    this.user_login = false;
+};
 AccountService.prototype.checkLogIng = function () {
 
     return this.user_login;
-}
+};
