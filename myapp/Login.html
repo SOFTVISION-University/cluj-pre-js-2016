@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sign in</title>
+    <link rel = "stylesheet" type="text/css" href="style-login.css">
+    <script type="text/javascript" src="../core/data/users.js" ></script>
+    <script type="text/javascript" src="user.js" ></script>
+    <script type="text/javascript" src="loginJS.js" ></script>
+
+  </head>
+
+  <body>
+    <div class="container">
+        <img src="../core/assets/logo-color.png" >
+
+        <h3 align="center"> Sign into your ACME acccount </h3>
+        <p id="wrong" style="color:red"></p>
+
+        <form name="myForm" action="search.html" onsubmit="return checkField()" method="post">
+
+        <label>Email</label><br>
+        <input class="input" id="input1" type="email" name="email" onclick="changeInputColor('input1')" onblur="changeBackInputColor('input1')" required ><br>
+        <br>
+
+        <label>Password</label><br>
+        <input  class="input" id="input2" type="password" name="password" onclick="changeInputColor('input2')" onblur="changeBackInputColor('input2')" required ><br>
+        <br>
+
+        <a href="" style="padding-right:50px"> Forgot password? </a>
+        <button type="submit" > Sign In </button>
+
+        </form>
+
+        <p> Don`t have an account? <a href="register.html" >Sign up here</a> </p>
+       </div>
+  </body>
+</html>
+
+<!-- <p class="cell_text" >Your name</p> <input  class="cell focuss" id="focuss1" onclick="change('focuss1')" onblur="changeBack('focuss1')" type="text" name="name" required/> <br>
+        <p class="cell_text">Email</p>  <input class="cell focuss" id="focuss2" onclick="change('focuss2')"  onblur="changeBack('focuss2')" type="mail"  name="email" required/> <br>
+        <p class="cell_text">Password</p> <input class="cell focuss" id="focuss3" onclick="change('focuss3')" onblur="changeBack('focuss3')" type="password"  name="password" required/><br><br> -->
