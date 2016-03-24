@@ -36,8 +36,10 @@ User.prototype.getLoginStatus = function(){
 
 User.prototype.login = function(){
   this.isLoggedIn = true;
+  localStorage.setItem("loggedInUser", this.email);
 };
 
 User.prototype.logout = function(){
   this.isLoggedIn = false;
+  localStorage.setItem("loggedInUser", null);
 };

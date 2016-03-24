@@ -6,17 +6,19 @@ var AccountService = {
   // AccountService Class Methods
   signIn:function(email,password){
     var user = this.returnUserIfExists(email);
-    if (user != null && (user.getPassword()==password)){
+    if (user !== null && (user.getPassword()==password)){
       user.login();
-      return "Login Succesful";
+      console.log("login succesful");
+      return true;
     }
-    return "Email or password incorrect. Check for typos!";
+    console.log("ERROR");
+    return false;
   },
 
   returnUserIfExists: function(mail){
     for (var i=0;i<this.registeredUsers.length;i++){
       var user = this.registeredUsers[i];
-      if(user.getEmail()==mail){
+      if(user.getEmail() === mail){
         return user;
       }
     }
@@ -24,6 +26,12 @@ var AccountService = {
   },
   // function implemented to retrieve logged in user saved in local storage
   getLoggedInUser: function(){
-    //bla bla to be continued..
+    var storedMail = localStorage.getItem("loggedInUser");
+    return this.returnUserIfExists(storedMail);
+  },
+  // removes user from localStorage
+  signOutUser: function(){
+    loggedInUser = this.getLoggedInUser();
+    loggedInUser.logout();
   }
 };

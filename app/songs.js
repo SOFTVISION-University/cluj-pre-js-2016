@@ -17,35 +17,38 @@ Song.prototype={
   getTitle:function(){
     return this.title;
   },
-  setTitle(newTitle){
+  setTitle:function(newTitle){
     this.title = newTitle;
   },
   getAuthor:function(){
     return this.author;
   },
-  setAuthor(newAuthor){
+  setAuthor:function(newAuthor){
     this.author = newAuthor;
   },
-  getImagePath(){
+  getImagePath:function(){
     return this.imagePath;
   },
-  setImagePath(newPath){
+  setImagePath:function(newPath){
     this.imagePath = newPath;
   },
-  getLength(){
+  getLength:function(){
     return this.length;
   },
-  setLength(newLength){
+  setLength:function(newLength){
     this.length = newLength;
   },
-  getPlayCount(){
+  getPlayCount:function(){
     return this.playCount;
   },
-  setPlayCount(playCount){
+  setPlayCount:function(playCount){
     this.playCount = playCount;
+  },
+  increasePlayCount:function(){
+    this.playCount++;
   }
 
-}
+};
 
 
 /*---------------------------------------------------------------------*/

@@ -26,13 +26,18 @@ Playlist.prototype={
   },
   setSongList:function(list){
     //!!! implement to automatically populate playlist with Song objects
+    var songslist=[];
     for(i=0;i<list.length;i++){
-        this.addSong(new Song(list[i].songTitle, list[i].songAuthor, list[i].image, list[i].songLength));
+        songslist.push(new Song(list[i].songTitle, list[i].songAuthor, list[i].image, list[i].songLength));
     }
-    this.songList=list;
+    this.songList=songslist;
   },
   addSong:function(newSong){
-    this.songList.push(newSong);
+    if(newSong instanceof Song){
+      this.songList.push(newSong);
+    }else{
+      console.log("newSong not an instance of Song");
+    }
   },
   getDescription:function(){
     return this.description;

@@ -7,14 +7,11 @@
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" type="text/css" href="mystyle.css">
-    <style type="text/css">
-
-    </style>
-
-    <!-- <script	type="text/javascript" src="../core/data/playlists.js"></script> -->
 
     <script	type="text/javascript" src="playlists.js"></script>
-
+    <script	type="text/javascript" src="songs.js"></script>
+    <script	type="text/javascript" src="user.js"></script>
+    <script	type="text/javascript" src="AccountService.js"></script>
     <script	type="text/javascript" src="scriptPlaylists.js"></script>
 
 </head>
@@ -22,7 +19,17 @@
   <div id="header">
     <img src="../core/assets/logo-top.png" class="floatLeft"></img>
     <a href="#" class="submitSignUp" id="signInButton" style="padding-top:10px;">Sign In</a>
-    <input type="text" class="searchBar" placeholder="Search Music">
+    <form>
+      <input list="searchSongs" class="searchBar" placeholder="Search Music" name="search">
+      <datalist id="searchSongs">
+        <option value="Internet Explorer">
+        <option value="Firefox">
+        <option value="Chrome">
+        <option value="Opera">
+        <option value="Safari">
+      </datalist>
+    </form>
+
     <div class="clearFloat"></div>
 
       <br>
@@ -97,20 +104,20 @@
 <script>
 window.onload = function(){
   document.getElementById('explorePlaylist2').onclick=function(){
-    getJson(1);
+    console.log(playlistsContainer);
+    getJson(1, playlistsContainer);
     slidePlayListIn();
   }
   document.getElementById('explorePlaylist1').onclick=function(){
 
-    getJson(0);
+    getJson(0, playlistsContainer);
     slidePlayListIn();
   }
   document.getElementById('explorePlaylist3').onclick=function(){
 
-    getJson(2);
+    getJson(2, playlistsContainer);
     slidePlayListIn();
   }
-
 
   document.getElementById('closeButton').onclick=function(){
     slidePlayListOut();
