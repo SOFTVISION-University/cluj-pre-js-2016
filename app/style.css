@@ -470,13 +470,17 @@ div#playlist{
   display: inline-block;
   padding: 5px;
   transition: 1s;
-  overflow: hidden;
+  overflow-y: auto;
 }
 
-span#close{
+div#close{
+  background-color: white;
+  text-align: right;
+}
+
+span#close-button{
 display: inline-block;
 color:#00bfff;
-float:right;
 cursor: pointer;
 }
 
@@ -499,29 +503,47 @@ div#playlist.playlist-expand{
 
 div#playing-from{
   border:1px solid black;
-  margin-top: 20px;
   height:135px;
+  background-color: rgba(211,211,211,0.6);
 }
 
-div#playlist-header{
-  border:1px solid black;
+table#playlist-songs{
+  border:0px;
   margin-top: 20px;
   margin-left:auto;
   margin-right: auto;
-  width:730px;
-  height: 20px;
-}
-
-div#playlist-songs{
-  border:1px solid black;
-  margin-top: 20px;
-  margin-left:auto;
-  margin-right: auto;
-  width:730px;
+  width:100%;
 }
 
 p#error{
   color:red;
   font-weight: bold;
   font-size: 14px;
+}
+
+table#playlist-songs tr.newRow:hover{
+  background-color:rgba(0,191,255,0.1);
+  cursor:pointer;
+}
+
+table#playlist-songs tr{
+  border-bottom: 1px solid black;
+}
+
+table#playlist-songs thead{
+  background-color: rgba(211,211,211,0.6);
+}
+
+table#playlist-songs thead tr{
+  border:0px solid;
+}
+
+
+table#playlist-songs th{
+  border:0px solid;
+  padding-left: 65px;
+}
+
+table#playlist-songs th:nth-child(1){
+  padding-left: 15  px;
 }

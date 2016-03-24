@@ -1,13 +1,16 @@
 function Playlist(path){
   this._id = path.id;
   this._title = path.title;
-  this._songs = [];
-  for(var i = 0; i < path.songs.length; i++){
-    this._songs.push(new Song(path.songs[i]));
-  }
   this._imageLarge = path.imageLarge;
   this._imageSmall = path.imageSmall;
   this._description = path.description;
+  this._songs = [];
+  var songObj = new Song(path);
+  //replace for with map
+  this._songs = path.songs.map(function(songObj){
+    return songObj;
+  });
+
 }
 
 Playlist.prototype.update = function(){

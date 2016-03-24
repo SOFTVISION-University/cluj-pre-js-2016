@@ -24,16 +24,29 @@
         <p style="color:white">Epic and debauched party mixes</p><br/><br/>
       </div>
       <div id="playlist">
-        <span id="close" onclick="closePlaylist()">CLOSE<img id="close-icon" src="../core/assets/close-icon.png" alt="Image not found"/></span>
+        <div id="close">
+          <span id="close-button" onclick="closePlaylist()">CLOSE<img id="close-icon" src="../core/assets/close-icon.png" alt="Image not found"/></span>
+        </div>
         <div id="playing-from">
 
         </div>
-        <div id="playlist-header">
-
-        </div>
-        <div id="playlist-songs">
-
-        </div>
+        <table id="playlist-songs" align="center">
+          <thead>
+          <tr>
+            <th colspan="2">
+              SONG
+            </th>
+            <th>
+              LENGTH
+            </th>
+            <th>
+              LISTENED
+            </th>
+          </tr>
+        </thead>
+        <tbody id="playlist-songs-body">
+        </tbody>
+        </table>
       </div>
       <div id="card-area">
         <div class="card">
@@ -52,13 +65,19 @@
     </script>
     <script type="text/javascript" src="../core/data/users.js">
     </script>
-    <script type="text/javascript" src="javascript.js">
+    <script type="text/javascript" src="view.js">
     </script>
-    <script type="text/javascript" src="playlist.js">
+    <script type="text/javascript" src="javascript.js">
     </script>
     <script type="text/javascript" src="song.js">
     </script>
+    <script type="text/javascript" src="playlist.js">
+    </script>
     <script type="text/javascript" src="Factory.js">
+    </script>
+    <script type="text/javascript" src="user.js">
+    </script>
+    <script type="text/javascript" src="account-service.js">
     </script>
   </body>
 </html>
