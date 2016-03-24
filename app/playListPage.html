@@ -1,0 +1,170 @@
+<!doctype html>
+<html>
+<head>
+    <title>Example Domain</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="mystyle.css">
+
+    <script	type="text/javascript" src="playlists.js"></script>
+    <script	type="text/javascript" src="songs.js"></script>
+    <script	type="text/javascript" src="user.js"></script>
+    <script	type="text/javascript" src="AccountService.js"></script>
+    <script	type="text/javascript" src="scriptPlaylists.js"></script>
+
+</head>
+<body style="background-color:#EEEEEE">
+  <div id="header">
+    <img src="../core/assets/logo-top.png" class="floatLeft"></img>
+    <a href="#" class="submitSignUp" id="signInButton" style="padding-top:10px;">Sign In</a>
+    <form>
+      <input list="searchSongs" class="searchBar" placeholder="Search Music" name="search">
+      <datalist id="searchSongs">
+        <option value="Internet Explorer">
+        <option value="Firefox">
+        <option value="Chrome">
+        <option value="Opera">
+        <option value="Safari">
+      </datalist>
+    </form>
+
+    <div class="clearFloat"></div>
+
+      <br>
+      <span class="textMareAlbBold">Ready to listen to endless music<br>
+      on your favorite device ?</span><br>
+      <a href="#" class="submitSignUp" id="joinNow">JOIN NOW</a>
+      <h1>Epic and debauched party mixes</h1><br>
+
+  </div>
+  <div class="centeredWrapper">
+    <div class="cardBottomDiv">
+      <div class="bookThumbail">
+        <a href="#" class="submitSignUp" id="explorePlaylist1">
+          <img src="../core/assets/play-icon.png">
+          Explore playlist
+        </a>
+      </div>
+      <div class="cardText" >
+        <span class="textBiggerGri">Massive pop hits vol1<span><br>
+        <span class="ByClicking">Lorem Upsum dolor sit amet, consecttetr
+          adipiscing elit, sed do elusmod tempor<span>
+      </div>
+    </div>
+    <div class="cardBottomDiv">
+      <div class="bookThumbail">
+        <a href="#" class="submitSignUp" id="explorePlaylist2">
+          <img src="../core/assets/play-icon.png">
+          Explore playlist
+        </a>
+      </div>
+      <div class="cardText" >
+        <span class="textBiggerGri">Massive pop hits vol1<span><br>
+        <span class="ByClicking">Lorem Upsum dolor sit amet, consecttetr
+          adipiscing elit, sed do elusmod tempor<span>
+      </div>
+    </div>
+    <div class="cardBottomDiv">
+      <div class="bookThumbail">
+        <a href="#" class="submitSignUp" id="explorePlaylist3">
+          <img src="../core/assets/play-icon.png">
+          Explore playlist
+        </a>
+      </div>
+      <div class="cardText" >
+        <span class="textBiggerGri">Massive pop hits vol1<span><br>
+        <span class="ByClicking">Lorem Upsum dolor sit amet, consecttetr
+          adipiscing elit, sed do elusmod tempor<span>
+      </div>
+    </div>
+  </div>
+  <div class="clearFloat"></div>
+  <div id="playlists">
+    <div id="closeButton">
+      <img src="../core/assets/close-icon.png" id="closeButton">
+    </div >
+    <div id="playlistHeader">
+    </div>
+    <div id="songs">
+      <!-- <div class="songDiv">
+          <img class="songImg" src="../core/assets/beats-like-birds.png">
+          <div class="songNumbers" >22</div>
+          <div class="songNumbers" >22</div>
+          <span class="songTitle" class="textBiggerGri">Song Title</span>
+          <span class="textMediuGri">song author</span>
+      </div> -->
+      <div class="clearFloat"></div>
+    </div>
+
+  </div>
+
+
+<script>
+window.onload = function(){
+  document.getElementById('explorePlaylist2').onclick=function(){
+    console.log(playlistsContainer);
+    getJson(1, playlistsContainer);
+    slidePlayListIn();
+  }
+  document.getElementById('explorePlaylist1').onclick=function(){
+
+    getJson(0, playlistsContainer);
+    slidePlayListIn();
+  }
+  document.getElementById('explorePlaylist3').onclick=function(){
+
+    getJson(2, playlistsContainer);
+    slidePlayListIn();
+  }
+
+  document.getElementById('closeButton').onclick=function(){
+    slidePlayListOut();
+  }
+
+
+
+
+
+  }
+function slidePlayListIn() {
+    var elem = document.getElementById("playlists");
+    var left = -600;
+    var id = setInterval(frame, 1);
+    function frame() {
+        if (left == 50) {
+            clearInterval(id);
+        } else {
+            left+=5;
+            elem.style.left = left + 'px';
+        }
+    }
+}
+function slidePlayListOut() {
+    var elem = document.getElementById("playlists");
+    var left = 50;
+    var id = setInterval(frame, 1);
+    function frame() {
+        if (left == -600) {
+            clearInterval(id);
+        } else {
+            left-=5;
+            elem.style.left = left + 'px';
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
