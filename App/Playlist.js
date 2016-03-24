@@ -14,19 +14,19 @@ Playlist.prototype.addSong = function(song){
     this.songsList.push(song);
     this.notify(song);
 };
-Playlist.prototype.addObserver = function(observer) {
+Playlist.prototype.register = function(observer) {
   this.observers.push(observer);
 };
 Playlist.prototype.notify = function(song){
   for(var i = 0; i < this.observers.length; i++)
     {
-      this.observers[i].drawUpdate(song);
+      this.observers[i].update(song);
     }
 };
 //getters
 Playlist.prototype.getPlaylistName = function(){
   return this.playlistName;
-}
+};
 Playlist.prototype.getPlaylistImageSmall = function(){
   return this.imageSmall;
 };
