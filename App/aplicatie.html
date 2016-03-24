@@ -1,0 +1,119 @@
+<html>
+<head>
+  <title>Aplicatie</title>
+  <link rel="stylesheet" type="text/css" href="style3.css">
+</head>
+<body>
+    <script src="../core/data/playlists.js"></script>
+    <script src="../core/data/users.js"></script>
+    <script src="threePlaylist.js"></script>
+    <script src="songs.js"></script>
+    <script src="signup.js"></script>
+    <script src="populatePlaylist.js"></script>
+  <div id="top">
+
+    <div id="logo">
+      <img src="../core/assets/logo-top.png">
+    </div>
+
+    <div id="search">
+      <input type="text" value="" placeholder="Search Music">
+    </div>
+
+    <div id="signin">
+        <input type="submit" value="Sign in">
+      </div>
+
+
+
+
+
+
+    <div id="middle">
+
+        <h3>Ready to listen to endless music<br>on your favourite device?</h2>
+
+
+      <input type="submit" value="JOIN NOW" style="background-color: #2db300; width: 200px;"><br><br><br>
+
+      <h1>Epic and debauched party mixes</h2>
+    </div>
+
+  </div>
+
+    <div id="container">
+      <div id="hits">
+        <img src="../core/assets/massive-pop-hits.png">
+        <h2>Massive pop hits vol 1</h2>
+        <h5>Lorem ipsum dolor sit amet, consectetur adipisicing<br> elit, sed do elusmod tempor incididunt ut labore et</h5>
+        <input onclick="unhidePlaylist()" type="button" value="Explore playlist">
+      </div>
+
+
+      <div id="night">
+        <img src="../core/assets/up-all-night.png">
+       <h2>Up all night</h2>
+       <h5>Lorem ipsum dolor sit amet, consectetur adipisicing<br> elit, sed do elusmod tempor incididunt ut labore et</h5>
+      <input type="button" value="Explore playlist">
+      </div>
+
+
+      <div id="djmix">
+        <img src="../core/assets/dj-killer-mixes.png">
+          <h2>DJ killer mixes</h2>
+          <h5>Lorem ipsum dolor sit amet, consectetur adipisicing<br> elit, sed do elusmod tempor incididunt ut labore et</h5>
+          <input onclick="goToPlaylist" type="button" value="Explore playlist">
+        </div>
+
+
+      <div class="bottom">
+        <div id="playlist">
+
+          <div id="header">
+            <div id="image">
+              <img src="../core/assets/up-all-night-small.png">
+            </div>
+            <div id="playingfrom">
+              <h5 style="color: black;">Playing from:</h5>
+              <h2>Up all night: The remixes radio</h2>
+              <input onclick="closePlaylist()" type="button" value="Close" style="color:blue;height:4px;">
+            <!-- </div> -->
+          </div>
+
+          <div id="content">
+            <div id="divSong">
+              <div id="divSongImg">
+              </div>
+              <div id="divSongTitle">
+              </div>
+              <div id="divSongLength">
+              </div>
+              <div id="divSongListened">
+              </div>
+          </div>
+        </div>
+
+        <br><br><br><br><br><br><br><br><br><br><br><br>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+      <p> 2016 ACME DIVISION. ALL RIGHTS RESERVED</p>
+    </div>
+
+
+
+
+
+  </div>
+
+</body>
+</html>
