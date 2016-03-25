@@ -556,3 +556,18 @@ table#playlist-songs tr td:nth-child(2){
 table#playlist-songs tr td{
   padding: 10px 0px 6px 0px;
 }
+
+div#login_div input.focus{
+  background-color: rgba(0,191,255,0.1);
+  border:1px solid rgb(0,191,255);
+}
+
+div#login_div input.blur{
+  background-color: rgba(128,128,128 ,0.2);
+  border:1px solid rgba(128,128,128 ,0.2);
+}
+
+div#login_div input.login-error{
+  background-color: rgba(255,0,0,0.1);
+  border:1px solid rgb(255,0,0);
+}

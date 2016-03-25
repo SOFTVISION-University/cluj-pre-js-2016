@@ -70,16 +70,11 @@ function closePlaylist(){
 }
 
 function getFocus(input){
-  input.style.backgroundColor = "rgba(0,191,255,0.1)";
-  input.style.borderColor = "rgb(0,191,255)";
-  input.style.borderStyle = "solid";
-  input.style.borderWidth = "1px";
+  input.className = "focus";
 }
 
 function getBlur(input){
-  input.style.backgroundColor = "rgba(128,128,128 ,0.2)";
-  input.style.borderWidth = "1px";
-  input.style.borderColor = "rgba(128,128,128 ,0.2)";
+  input.className = "blur";
 }
 
 function validateUser(){

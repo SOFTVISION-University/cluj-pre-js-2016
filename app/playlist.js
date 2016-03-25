@@ -41,22 +41,22 @@ Playlist.prototype.getPlaylistDescription = function(){
   return this._description;
 };
 
-Playlist.prototype.setPlayListId = function(id){
-  this._image = id;
+Playlist.prototype.setPlaylistId = function(id){
+  this._id = id;
 };
 
 Playlist.prototype.setPlaylistTitle = function(title){
   this._title = title;
 };
 
-Playlist.prototype.setPlayListLarge = function(imageLarge){
+Playlist.prototype.setPlaylistLarge = function(imageLarge){
   this._imageLarge = imageLarge;
 };
 
-Playlist.prototype.setPlayListSmall = function(imageSmall){
+Playlist.prototype.setPlaylistSmall = function(imageSmall){
   this._imageSmall = imageSmall;
 };
 
-Playlist.prototype.setPlayListDescription = function(description){
+Playlist.prototype.setPlaylistDescription = function(description){
   this._description = description;
 };
