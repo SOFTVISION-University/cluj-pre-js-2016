@@ -32,6 +32,10 @@ var AccountService = {
   // removes user from localStorage
   signOutUser: function(){
     loggedInUser = this.getLoggedInUser();
-    loggedInUser.logout();
+    if(loggedInUser !== null && loggedInUser !== ""){
+      loggedInUser.logout();
+      return 1;
+    }
+    return 0;
   }
 };

@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" type="text/css" href="mystyle.css">
 
+    <script	type="text/javascript" src="domElementsCreator.js"></script>
     <script	type="text/javascript" src="playlists.js"></script>
     <script	type="text/javascript" src="songs.js"></script>
     <script	type="text/javascript" src="user.js"></script>
@@ -18,7 +19,7 @@
 <body style="background-color:#EEEEEE">
   <div id="header">
     <img src="../core/assets/logo-top.png" class="floatLeft"></img>
-    <a href="#" class="submitSignUp" id="signInButton" style="padding-top:10px;">Sign In</a>
+    <a href="loginForm.html" class="submitSignUp" id="signInButton" style="padding-top:10px;">Sign In</a>
     <form>
       <input list="searchSongs" class="searchBar" placeholder="Search Music" name="search">
       <datalist id="searchSongs">
@@ -105,26 +106,23 @@
 window.onload = function(){
   document.getElementById('explorePlaylist2').onclick=function(){
     console.log(playlistsContainer);
-    getJson(1, playlistsContainer);
+    generatePlayListById(1, playlistsContainer);
     slidePlayListIn();
   }
   document.getElementById('explorePlaylist1').onclick=function(){
 
-    getJson(0, playlistsContainer);
+    generatePlayListById(0, playlistsContainer);
     slidePlayListIn();
   }
   document.getElementById('explorePlaylist3').onclick=function(){
 
-    getJson(2, playlistsContainer);
+    generatePlayListById(2, playlistsContainer);
     slidePlayListIn();
   }
 
   document.getElementById('closeButton').onclick=function(){
     slidePlayListOut();
   }
-
-
-
 
 
   }
@@ -154,16 +152,6 @@ function slidePlayListOut() {
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
 
 </script>
 </body>

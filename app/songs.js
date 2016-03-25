@@ -8,10 +8,10 @@ function Song(title,author,imagePath,length){
   this.playCount = 0;
 }
 // Static loading of songs
-Song.loadSongs = function(){
-    alert("Loading Songs");
-    // To be implemented..
-};
+// Song.loadSongs = function(){
+//     alert("Loading Songs");
+//     // To be implemented..
+// };
 // Song class methods
 Song.prototype={
   getTitle:function(){

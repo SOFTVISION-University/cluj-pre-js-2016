@@ -3,83 +3,66 @@ var usersJSON = '[{"userName":"combs","email":"calinortan@gmail.com","password":
 var jsonObject = JSON.parse(playlistsJSON);
 var usersObject = JSON.parse(usersJSON);
 
-console.log(jsonObject);
-
-
-
 // Array container for playlists
 var playlistsContainer = [];
 
 function getRegisteredUsers(json){
-  for(var i = 0;i<json.length;i++){
-    AccountService.registeredUsers.push(new User(json[i].userName, json[i].email, json[i].password));
-  }
+  json.map(function(key){
+    this.registeredUsers.push(new User(key.userName, key.email, key.password));
+  }, AccountService);
 }
 
 function populatePlayListContainer(json){
-  for(var i = 0;i<json.length;i++){
-    playlistsContainer.push(new Playlist(i,json[i].title,json[i].description,json[i].image)); //  push new playlist into arrayContainer. !! description not yet implemented in JSON
-    playlistsContainer[i].setSongList(json[i].songs);   // setSongList because Playlist does not take songlist as constructor argument
+  json.map(function(value, i){
+    this.push(new Playlist(i,value.title, value.description, value.image));
+    this[i].setSongList(value.songs);
+  }, playlistsContainer);
+}
+
+
+
+function generatePlayListById(id, container){
+  clearPlaylist();
+  var songsList = container[id].getSongList();
+  console.log(songsList);
+  var songsListDiv = document.getElementById('songs');
+
+  for(i = 0;i<songsList.length;i++){
+    var songDiv = document.createElement("div");
+    songDiv.setAttribute("class","songDiv");
+
+    var songImg = DomElementsCreator.createSongImg(songsList[i]);
+    var songLength = DomElementsCreator.createSongNumber(songsList[i], 'length');
+    var songPlayed = DomElementsCreator.createSongNumber(songsList[i], 'count');
+    var songTitle = DomElementsCreator.createSongTitle(songsList[i]);
+    var songAuthor = DomElementsCreator.createSongAuthor(songsList[i]);
+
+
+    songDiv.appendChild(songImg);
+    songDiv.appendChild(songPlayed);
+    songDiv.appendChild(songLength);
+    songDiv.appendChild(songTitle);
+    songDiv.appendChild(songAuthor);
+
+    songsListDiv.appendChild(songDiv);
   }
+}
+
+function clearPlaylist(){
+  var songsListDiv = document.getElementById('songs');
+  while(songsListDiv.firstChild){
+    songsListDiv.removeChild(songsListDiv.firstChild);
+  }
+}
+
+// function to format length as mm:ss
+function lengthFormat(length){
+  var minutes,seconds;
+  minutes = Math.floor(length/60);
+  seconds = (length%60<10?"0":"")+(length%60);
+  return minutes+":"+seconds;
 }
 
 populatePlayListContainer(jsonObject);
 getRegisteredUsers(usersObject);
 console.log(playlistsContainer);
-
-
-  function getJson(id, container){
-      clearPlaylist();
-      var songsList = container[id].getSongList();
-      console.log(songsList);
-      var songsListDiv = document.getElementById('songs');
-      for(i = 0;i<songsList.length;i++){
-        var songDiv = document.createElement("div");
-        songDiv.setAttribute("class","songDiv");
-
-        var songImg = document.createElement("img");
-        songImg.setAttribute("class","songImg");
-        songImg.setAttribute("src",songsList[i].getImagePath());
-
-        var songLength = document.createElement("div");
-        songLength.setAttribute("class","songNumbers");
-        songLength.appendChild(document.createTextNode(lengthFormat(songsList[i].getLength())));
-
-
-        var songPlayed = document.createElement("div");
-        songPlayed.setAttribute("class","songNumbers");
-        songPlayed.appendChild(document.createTextNode(songsList[i].getPlayCount()));
-
-        var songTitle = document.createElement("span");
-        songTitle.classList.add("songTitle");
-        songTitle.classList.add("textBiggerGri");
-        songTitle.appendChild(document.createTextNode(songsList[i].getTitle()));
-
-        var songAuthor = document.createElement("span");
-        songAuthor.classList.add("textMediuGri");
-        songAuthor.appendChild(document.createTextNode("by "+songsList[i].getAuthor()));
-
-        songDiv.appendChild(songImg);
-        songDiv.appendChild(songPlayed);
-        songDiv.appendChild(songLength);
-        songDiv.appendChild(songTitle);
-        songDiv.appendChild(songAuthor);
-
-        songsListDiv.appendChild(songDiv);
-      }
-    }
-
-    function clearPlaylist(){
-      var songsListDiv = document.getElementById('songs');
-      while(songsListDiv.firstChild){
-      songsListDiv.removeChild(songsListDiv.firstChild);
-      }
-    }
-
-    // function to format length as mm:ss
-    function lengthFormat(length){
-      var minutes,seconds;
-      minutes = Math.floor(length/60);
-      seconds = (length%60<10?"0":"")+(length%60);
-      return minutes+":"+seconds;
-    }
