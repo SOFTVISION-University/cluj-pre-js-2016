@@ -11,9 +11,9 @@
 
 function changeInputColor(id) {
   var inputElment = document.getElementById(id);
-  if( inputElment!== null){
+  if( inputElment !== null){
     inputElment.style.backgroundColor = "rgba( 51,153,255,0.2 )";
-    inputElment.style.border="1px solid rgb(51,153,255)";
+    inputElment.style.border = "1px solid rgb(51,153,255)";
   }
 }
 
@@ -21,72 +21,61 @@ function changeBackInputColor(id) {
   var inputElment = document.getElementById(id);
   if( inputElment !== null){
     inputElment.style.backgroundColor = "#f2f2f2";
-    inputElment.style="border: 0px ";
+    inputElment.style = "border: 0px ";
   }
 }
 
 
 
 function changeWrongInputColor(id){
-  var inputElment= document.getElementById(id);
+  var inputElment = document.getElementById(id);
   if( inputElment !== null){
     if(!inputElment.checkValidity()){
     inputElment.style.backgroundColor = "rgba(255,0,0,0.2)";
-    inputElment.style="border: 1px solid red";
+    inputElment.style = "border: 1px solid red";
+    }
   }
-  }
-
 }
 
 function checkField(){
-
-  var mail = document.forms["myForm"]["email"].value;
-  var pas = document.forms["myForm"]["password"].value;
-  var messageElement = document.getElementById('wrong');
-  //messageElement.innerHTML="";
-  for(var i in users ){
-    if( mail == users[i].email  &&  pas == users[i].password ){
-      // window.alert( " User " + users[i].userName + " is loged " );
-       localStorage.setItem("userData", JSON.stringify(users[i]));
-      //console.log();
+    var mail = document.forms["loginForm"]["email"].value;
+    var pas = document.forms["loginForm"]["password"].value;
+    var messageElement = document.getElementById('wrong');
+    messageElement.innerHTML = "";
+    var userExist = users.filter(function(val){
+       if(val.email === mail && val.password === pas)
+       return val;
+    });
+    if( userExist.length !== 0){
+      localStorage.setItem("userData", JSON.stringify(userExist[0]));
       return true;
-    }else if( mail == users[i].email && pas != users[i].password ){
-        //window.alert( " Wrong password " );
-        messageElement.innerHTML= " Wrong password ";
-        return false;
+    } else {
+      messageElement.innerHTML = " Wrong name/password ";
+      return false;
     }
-  }
-  if( i == ( l-1 ) ){
-    //window.alert( " The user is not registered" );
-    messageElement.innerHTML= " The user is not registered ";
-    return false;
-  }
 }
 
-
-
-
 // function checkField(){
-//   var obj = JSON.parse(usersJSON);
-//   var l = obj.length;
+//
 //   var mail = document.forms["myForm"]["email"].value;
 //   var pas = document.forms["myForm"]["password"].value;
-//   for( i in obj ){
-//     if( mail == obj[i].email  &&  pas == obj[i].password ){
-//         window.alert( " User " + obj[i].userName + " is loged " );
-//         // .location.href="search.html";
-//         return true;
-//         // break;
-//     }else if( mail == obj[i].email && pas != obj[i].password ){
-//         window.alert( " Wrong password " );
+//   var messageElement = document.getElementById('wrong');
+//   //messageElement.innerHTML="";
+//   for(var i in users ){
+//     if( mail == users[i].email  &&  pas == users[i].password ){
+//       // window.alert( " User " + users[i].userName + " is loged " );
+//        localStorage.setItem("userData", JSON.stringify(users[i]));
+//       //console.log();
+//       return true;
+//     }else if( mail == users[i].email && pas != users[i].password ){
+//         //window.alert( " Wrong password " );
+//         messageElement.innerHTML= " Wrong password ";
 //         return false;
-//       //  break;
 //     }
 //   }
-//   if( i == ( l-1 ) ){
-//     window.alert( " The user is not registered" );
+//   if( i == ( nrOfUsers-1 ) ){
+//     //window.alert( " The user is not registered" );
+//     messageElement.innerHTML = " The user is not registered ";
 //     return false;
 //   }
-//
-//
 // }

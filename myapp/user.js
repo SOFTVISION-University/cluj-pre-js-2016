@@ -1,19 +1,17 @@
-  var obj = JSON.parse(usersJSON);
-  var l = obj.length;
-  var users = [];
+  var userListParsed = JSON.parse(usersJSON);
+  var nrOfUsers = userListParsed.length;
+
 
 function User(data){
   this.userName = data.userName;
   this.email = data.email;
   this.password = data.password;
-  this.logged=false;
+  this.isLogged = false;
 }
 
-for(i=0;i<l;i++){
-
-  users[i] = new User(obj[i]);
-
-}
+var users = userListParsed.map(function(val){
+    return new User(val);
+});
 
 User.prototype.setUserName = function(userName){
   this.userName = userName;
