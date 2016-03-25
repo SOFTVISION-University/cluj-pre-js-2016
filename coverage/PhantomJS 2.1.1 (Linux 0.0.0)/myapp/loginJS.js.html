@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for myapp/loginJS.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">myapp/</a> loginJS.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">13.33% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>4/30</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/18</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/4</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">13.33% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>4/30</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&nbsp;
+// var usersJSON = '[{"userName":"combs","email":"kathycombs@quailcom.com","password":"orkman5951"},{"userName":"whitley","email":"kathywhitley@quailcom.com","password":"inson2079"},{"userName":"fletcher","email":"kathyfletcher@quailcom.com","password":"rederick8363"}]';
+&nbsp;
+// function color(){
+//   var x = document.getElementsByClassName( "input" );
+//   for( j in x ){
+//     x[j].style.backgroundColor="rgba( 51,153,255,0.2 )";
+//   }
+// }
+&nbsp;
+&nbsp;
+<span class="fstat-no" title="function not covered" >function changeInputColor(id) {</span>
+<span class="cstat-no" title="statement not covered" >  var inputElment = document.getElementById(id);</span>
+<span class="cstat-no" title="statement not covered" >  if( inputElment!== null){</span>
+<span class="cstat-no" title="statement not covered" >    inputElment.style.backgroundColor = "rgba( 51,153,255,0.2 )";</span>
+<span class="cstat-no" title="statement not covered" >    inputElment.style.border="1px solid rgb(51,153,255)";</span>
+  }
+}
+&nbsp;
+<span class="fstat-no" title="function not covered" >function changeBackInputColor(id) {</span>
+<span class="cstat-no" title="statement not covered" >  var inputElment = document.getElementById(id);</span>
+<span class="cstat-no" title="statement not covered" >  if( inputElment !== null){</span>
+<span class="cstat-no" title="statement not covered" >    inputElment.style.backgroundColor = "#f2f2f2";</span>
+<span class="cstat-no" title="statement not covered" >    inputElment.style="border: 0px ";</span>
+  }
+}
+&nbsp;
+&nbsp;
+&nbsp;
+<span class="fstat-no" title="function not covered" >function changeWrongInputColor(id){</span>
+<span class="cstat-no" title="statement not covered" >  var inputElment= document.getElementById(id);</span>
+<span class="cstat-no" title="statement not covered" >  if( inputElment !== null){</span>
+<span class="cstat-no" title="statement not covered" >    if(!inputElment.checkValidity()){</span>
+<span class="cstat-no" title="statement not covered" >    inputElment.style.backgroundColor = "rgba(255,0,0,0.2)";</span>
+<span class="cstat-no" title="statement not covered" >    inputElment.style="border: 1px solid red";</span>
+  }
+  }
+&nbsp;
+}
+&nbsp;
+<span class="fstat-no" title="function not covered" >function checkField(){</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  var mail = document.forms["myForm"]["email"].value;</span>
+<span class="cstat-no" title="statement not covered" >  var pas = document.forms["myForm"]["password"].value;</span>
+<span class="cstat-no" title="statement not covered" >  var messageElement = document.getElementById('wrong');</span>
+  //messageElement.innerHTML="";
+<span class="cstat-no" title="statement not covered" >  for(var i in users ){</span>
+<span class="cstat-no" title="statement not covered" >    if( mail == users[i].email  &amp;&amp;  pas == users[i].password ){</span>
+      // window.alert( " User " + users[i].userName + " is loged " );
+<span class="cstat-no" title="statement not covered" >       localStorage.setItem("userData", JSON.stringify(users[i]));</span>
+      //console.log();
+<span class="cstat-no" title="statement not covered" >      return true;</span>
+    }else <span class="cstat-no" title="statement not covered" >if( mail == users[i].email &amp;&amp; pas != users[i].password ){</span>
+        //window.alert( " Wrong password " );
+<span class="cstat-no" title="statement not covered" >        messageElement.innerHTML= " Wrong password ";</span>
+<span class="cstat-no" title="statement not covered" >        return false;</span>
+    }
+  }
+<span class="cstat-no" title="statement not covered" >  if( i == ( l-1 ) ){</span>
+    //window.alert( " The user is not registered" );
+<span class="cstat-no" title="statement not covered" >    messageElement.innerHTML= " The user is not registered ";</span>
+<span class="cstat-no" title="statement not covered" >    return false;</span>
+  }
+}
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+// function checkField(){
+//   var obj = JSON.parse(usersJSON);
+//   var l = obj.length;
+//   var mail = document.forms["myForm"]["email"].value;
+//   var pas = document.forms["myForm"]["password"].value;
+//   for( i in obj ){
+//     if( mail == obj[i].email  &amp;&amp;  pas == obj[i].password ){
+//         window.alert( " User " + obj[i].userName + " is loged " );
+//         // .location.href="search.html";
+//         return true;
+//         // break;
+//     }else if( mail == obj[i].email &amp;&amp; pas != obj[i].password ){
+//         window.alert( " Wrong password " );
+//         return false;
+//       //  break;
+//     }
+//   }
+//   if( i == ( l-1 ) ){
+//     window.alert( " The user is not registered" );
+//     return false;
+//   }
+//
+//
+// }
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Mar 25 2016 11:19:16 GMT+0200 (EET)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>
