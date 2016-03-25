@@ -1,29 +1,22 @@
 var list = JSON.parse( playlistsJSON ) ;
 
-function Pop_Up () {
-
-  document.getElementById('popup').style.transition = "all 0.5s" ;
-  document.getElementById('popup').style.visibility = "visibile" ;
-  document.getElementById('popup').style.height = "500px" ;
-}
-
-var currentPlaylist = new Playlist( list[0] ) ;
+var currentPlaylist = new Playlist() ;
 
 
-var iDiv = document.createElement( 'div' ) ;
+/*var headerDiv = document.createElement( 'div' ) ;
 
-iDiv.id = 'content' ;
+headerDiv.id = 'content' ;
 
-iDiv.style.width = "300px" ;
+headerDiv.style.width = "100px" ;
 
-iDiv.style.height = "300px" ;
+headerDiv.style.height = "100px" ;
 
-iDiv.style.backgroundColor = "blue" ;
+headerDiv.style.backgroundColor = "blue" ;
 
-document.getElementById( 'popup' ).appendChild( iDiv ) ;
+document.getElementById( 'popup' ).appendChild( headerDiv ) ; */
 
 
-for ( var i = 0 ; i < list[0].songs.length ; i++ ) {
+/*for ( var i = 0 ; i < list[0].songs.length ; i++ ) {
 
   var song = new Song( list[0].songs[i] ) ;
 
@@ -42,7 +35,7 @@ for ( i = 0 ; i < currentPlaylist.songs.length ; i++ ) {
 
   contentDiv.style.backgroundColor = "black" ;
 
-  iDiv.appendChild ( contentDiv ) ;
+  headerDiv.appendChild ( contentDiv ) ;
 
   var song = currentPlaylist.songs[i] ;
 
@@ -51,4 +44,4 @@ for ( i = 0 ; i < currentPlaylist.songs.length ; i++ ) {
   title.innerText = song.getSongTitle() ;
 
   contentDiv.appendChild ( title ) ;
-}
+} */

@@ -4,12 +4,17 @@ function Playlist (item) {
 
   this.title = item.title ;
 
-  this.songs = this.getSongs( item ) ;
+  this.image = item.image ;
+
+  this.songs = item.songs ;
+
+  this.imageLarge = item.imageLarge ;
+
+  this.imageSmall = item.imageSmall ;
+
+  this.description = item.description ;
 
   }
-
-
-
 
 
 Playlist.prototype.getId = function () {
@@ -24,14 +29,7 @@ Playlist.prototype.getTitle = function () {
 
 Playlist.prototype.getSongs = function ( item ) {
 
-  var localSongs = [];
-
-  for (var i = 0 ; i < item.songs.length ; i++ ) {
-
-    localSongs.push( new Song ( item.songs[i] ) ) ;
-  }
-
-  return localSongs ;
+return this.songs;
 };
 
 Playlist.prototype.getImageLarge = function () {

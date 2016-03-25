@@ -1,23 +1,44 @@
 function checkUser () {
 
   var email = document.getElementById( 'email' ).value;
+
   var password = document.getElementById( 'password' ).value;
 
-  if ( accountService.checkLogin (email , password) == "1" ) {
+  var loginResult = accountService.checkLogin (email , password) ;
+
+  switch ( loginResult ) {
+
+    case "1" :  alert ( "Logged in !" ) ;
+
+                return true;
+
+                break;
+
+    case "0" :  alert( "You are not a registered user . Need to sign up first !" );
+
+                return false;
+
+                break;
+
+    }
+
+  }
+
+
+  /*if (  loginResult == "1" ) {
 
     alert ( "Logged in !" ) ;
 
-  }
-  if ( accountService.checkLogin ( email , password ) == "2") {
-
-      alert ( "Wrong  password . Try again !" ) ;
+     return true;
 
   }
 
-  if( accountService.checkLogin ( email , password ) == "0" ) {
+  if( loginResult == "0" ) {
 
     alert( "You are not a registered user . Need to sign up first !" );
 
+    return false;
+
   }
 
-}
+}*/
