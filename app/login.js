@@ -6,21 +6,13 @@ var accountService ;
 
 function onLoad() {
 
-
-  /*for (i = 0;i < users.length;i++) {
-    var user = new Member(users[i]);
-    accountService.addUsers(user);
-  }*/
-accountService= new AccountService();
-  var addUser=function (a){
+  accountService= new AccountService();
+    var addUser=function (a){
     var newU = new Member(a);
     accountService.addUsers(newU);
-    return newU;
   };
-  var userInitial = users.map ( addUser );
 
-
-
+   users.forEach( addUser );
 
 }
 
@@ -34,23 +26,20 @@ function Beggin() {
 }
 
 function Control (mail,password) {
-  var val=accountService.validate(mail,password);
-  if (val === "ERROR"){
+
+  var value_of_verification=accountService.isUserRegistered(mail,password);
+
+  if (value_of_verification === "ERROR"){
     document.getElementById("error_message").innerHTML=
-    "Oops!That email/password combination is not valid.";
-     document.getElementById("e-mail").className = "input_wrong";
-     document.getElementById("e-mail").style.backgroundColor = "red";
-     document.getElementById("pass").className = "input_wrong";
+     "Oops!That email/password combination is not valid.";
+    document.getElementById("e-mail").className = "input_wrong";
+    document.getElementById("pass").className = "input_wrong";
+
 
   }
-  else {
-    accountService.logIn();
-
-    
-
-    //localStorage.store = accountService;
+  else
     window.location.href = 'index.html';
-  }
+
 
 
 }

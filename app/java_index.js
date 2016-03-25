@@ -3,11 +3,13 @@ var playlistsJSON  =  '[{"id":0,"title":"Playlist 1","songs":[{"image":"../core/
 var playlist = JSON.parse(playlistsJSON);
 var playlist_1 = [];
 var obj_accountService = JSON.parse(localStorage.getItem('testObject'));
+var search  ;
+
 
 function clonare(pop) {//onclick event
 
-  clear_play();//clear songs in playlist
-  Playlist_change2(pop);
+  Clear_playlist();//clear songs in playlist
+  PlaylistChangeTitle(pop);
   openPlaylist();
   Update_song(pop);
 
@@ -18,6 +20,7 @@ function OnLoad(obj) { //on load event
   Populate();
   Search_music();
   Update_playlist();
+
 
 }
 function logOut() {
@@ -45,10 +48,10 @@ function control_user() {
   }
 
 }
+
 function Search(e) { //search event on key pressed
   if (e.keyCode  ==  13)	{
     var values  =  document.getElementById("search").value;
-    var search  = new SearchMusic();
     search.SearchByValue(values,playlist_1);
     return false;
   }
@@ -87,7 +90,7 @@ function Update_song(pop){
 
 
 function Populate() {//populate from json
- for (i = 0;i < playlist.length;i++) {
+ /*for (i = 0;i < playlist.length;i++) {
 
     playlist_1[i] = new Playlist(playlist[i]);
     for (y = 0; y < playlist[i].songs.length;y++) {
@@ -95,43 +98,44 @@ function Populate() {//populate from json
       song[y] = new Song(playlist[i].songs[y]);
       playlist_1[i].setSong(song[y]);
     }
+}*/
 
+playlist.map(function (val,i){
 
+  function Songs( vall,y){
+    var song= [];
+    song[y]=new Song(vall);
+    playlist_1[i].setSong(song[y]);
   }
 
-/*playlist_1=playlist.map(populatePlay); //trying to use map
-function populatePlay(val){
-   return new Playlist(val) ;
-}
-var songs = (playlist.map(getSongs)).map(getSongss);
+  playlist_1[i] = new Playlist(val);
 
-function getSongs (val){
-return val;
-}
+  val.songs.map(Songs);
 
-*/
+});
+
+
 }
 
 function Search_music() {
-
-  playlist_1.forEach(function(entry) {
-      entry.songs.forEach(function(song){
+   search  = new SearchMusic();
+   var SongTitleArray = search.PopulateSearchList(playlist_1);
+      SongTitleArray.forEach(function(a){
         var list  =  document.getElementById("search_music");
         var option1  =  document.getElementById("option_music");
         var cloneOption  =  option1.cloneNode(true);
-        option1.value  =  song.getTitle();
+        option1.value  = a;
         list.appendChild(cloneOption);
     });
-  });
 }
 
-function Playlist_change2(pop) {
+function PlaylistChangeTitle(pop) {
   document.getElementById("img_play_big").src  =  playlist_1[pop].getImageLarge();
   document.getElementById("text_playlist2").innerHTML = playlist_1[pop].getTitle();
 
 }
 
-function clear_play() {
+function Clear_playlist() {
 
   var list  =  document.getElementById("name_songs");
   while (list.hasChildNodes()) {

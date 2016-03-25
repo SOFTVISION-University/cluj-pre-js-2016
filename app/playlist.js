@@ -38,11 +38,6 @@ Playlist.prototype.getDescription = function() {
 
 };
 
-Playlist.prototype.getLengthSongs = function() {
-
-	return this.songs.length;
-
-};
 
 Playlist.prototype.setSong = function(song) {
 

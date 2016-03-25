@@ -10,31 +10,22 @@ function AccountService() {
 
  }
 
-AccountService.prototype.validate = function (mail,password) {
-/*  for (i = 0;i < this.members.length;i++){
-    if ( mail === this.members[i].email  &&
-         password === this.members[i].password) {
-      window.location = "index.html";
+AccountService.prototype.isUserRegistered = function (mail,password) {
 
-      return  "OK";
-    }
-
-  }*/
   var control = function(a) {
+
     if ( mail === a.email  &&
-    password === a.password) {
+    password === a.password)
       return a;
-    }
   };
 
-  var  con = this.members.filter (control);
+  var  User_check = this.members.filter (control);
 
-  con[0].user_login = true;
-  localStorage.setItem('testObject', JSON.stringify(con[0]));
-
-
-  if (con.length == 1)
+  if (User_check.length == 1) {
+    localStorage.setItem('testObject', JSON.stringify(User_check[0]));
+    User_check[0].user_login = true;
     return "ok";
+  }
   return "ERROR";
 };
 
@@ -43,39 +34,18 @@ AccountService.prototype.addUsers = function (user) {
 
 };
 
-AccountService.prototype.register = function () {
-
-};
-AccountService.prototype.checkUser = function (mail) {
-
-/*  for (i = 0;i < this.members.length;i++) {
-    if (this.members[i].mail === mail)
-      return ERROR_MESSAGE;
-    else
-      return MESSAGE_OK;
-    }*/
+AccountService.prototype.checkEmail = function (mail) {
   var control = function(a) {
+
     if ( mail === a.email){
       return a;
     }
   };
 
-  var con = this.members.filter(control);
-  if  (con.lenth > 0)
+  var User_mail = this.members.filter(control);
+
+  if  (User_mail.length > 0)
     return "ERROR";
   return "ok";
 
-};
-
-AccountService.prototype.logIn = function () {
-
-
-};
-AccountService.prototype.logOut = function () {
-
-    this.user_login = false;
-};
-AccountService.prototype.checkLogIng = function () {
-
-    return this.user_login;
 };
