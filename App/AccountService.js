@@ -19,7 +19,6 @@ AccountService.getInstance = function(){
 
 AccountService.prototype.setUsername = function(username){
   this.username = username;
-  console.log("AS username:"+this.username);
 };
 AccountService.prototype.setPassword = function(password){
   this.password = password;
@@ -32,18 +31,18 @@ AccountService.prototype.checkLogin = function(){
 
   var username = this.username;
   var password = this.password;
-  var userFound = this.usersArray.filter(function(user){
+  var foundUser = this.usersArray.filter(function(user){
     if(user.name === username && user.password === password)
     {
       return user;
     }
   });
 
-  if (userFound.length>0)
+  if (foundUser.length > 0)
   {
-    AccountService._instance.loggedUser = userFound[0];
-    AccountService._instance.loggedUser.logged = true;
-    localStorage.setItem("nameUser1", JSON.stringify(AccountService._instance.loggedUser));
+    AccountService.getInstance().loggedUser = foundUser[0];
+    AccountService.getInstance().loggedUser.logged = true;
+    localStorage.setItem("nameUser1", JSON.stringify(AccountService.getInstance().loggedUser));
 
     return LOGIN_SUCCESFULLY;
   }

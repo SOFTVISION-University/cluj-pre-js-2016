@@ -7,9 +7,7 @@ function Playlist(data) {
   this.songsList = [];
   this.observers = [];
 }
-Playlist.prototype.setName = function(name){
-  this.playlistName = name;
-};
+
 Playlist.prototype.addSong = function(song){
     this.songsList.push(song);
     this.notify(song);
@@ -18,10 +16,9 @@ Playlist.prototype.register = function(observer) {
   this.observers.push(observer);
 };
 Playlist.prototype.notify = function(song){
-  for(var i = 0; i < this.observers.length; i++)
-    {
-      this.observers[i].update(song);
-    }
+  this.observers.forEach(function(val){
+  val.update(song);
+  });
 };
 //getters
 Playlist.prototype.getPlaylistName = function(){

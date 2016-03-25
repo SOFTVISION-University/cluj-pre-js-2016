@@ -22,7 +22,53 @@ overflow: hidden;
 
 }
 
+.showPlayList{
+	visibility:visible;
+	transition-duration: 0.5s;
+	height: 400px;
+}
 
+.invalidUsername{
+	background-color: rgba(200,0,0,0.3);
+	border-color: #ff0000;
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 5px;
+	font-size: 20px;
+	color: #ffffff;
+	width: 200px;
+	height: 37px;
+	outline: none;
+}
+
+.invalidPassword{
+	background-color: rgba(200,0,0,0.3);
+	border-color: #ff0000;
+	border-style: solid;
+	border-width: 1px;
+}
+
+.loginSucces{
+	border-color: #D8E7F5;
+	border-style: none;
+	border-width: 0px;
+}
+
+.songTitleDiv{
+	text-align: center;
+	width: 70%;
+	display: inline-block;
+}
+.songDurationDiv{
+	text-align: center;
+	width: 10%;
+	display: inline-block;
+}
+.songCountDiv{
+	text-align: center;
+	width: 10%;
+	display: inline-block;
+}
 
 .logoTopDiv {
 	display: inline-block;
@@ -99,13 +145,13 @@ overflow: hidden;
 	margin: auto 15px;
 	height: 300px;
 	text-align: center;
+	border-radius: 4px;
 	background-color: #ffffff;
 	background-image: url("../core/assets/dj-killer-mixes.png");
 	background-repeat: no-repeat;
 }
 .viewPlayList{
 	background-color: #00bfff;
-
 	border: 5px;
 	border-radius: 5px;
 	font-size: 20px;

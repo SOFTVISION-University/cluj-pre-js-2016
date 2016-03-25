@@ -7,7 +7,6 @@ PlaylistView.prototype.beObserver = function(playlist){
 };
 
 PlaylistView.prototype.update = function(song){
-  console.log("drawSong");
 
     var div = document.getElementsByClassName("divToClone")[0];
     var currentSong = song;
@@ -30,34 +29,28 @@ PlaylistView.prototype.drawSongImage = function(clonedDiv , currentSong){
   img.style.backgroundImage = 'url("'+imgPath+'")';
 };
 PlaylistView.prototype.drawSongTitle = function(clonedDiv , currentSong){
-  var tempDiv = clonedDiv.getElementsByTagName('div')[0];
-  tempDiv.style.textAlign = "center";
-  tempDiv.style.width = "70%";
-  tempDiv.style.display = "inline-block";
-  var spanTitle = tempDiv.getElementsByTagName('span')[0];
+  var songTitle = clonedDiv.getElementsByTagName('div')[0];
+  songTitle.className = "songTitleDiv";
+  var spanTitle = songTitle.getElementsByTagName('span')[0];
   spanTitle.className = "gray";
   spanTitle.innerText=currentSong.getSongTitle();
-  var spanAuthor = tempDiv.getElementsByTagName('span')[1];
+  var spanAuthor = songTitle.getElementsByTagName('span')[1];
   spanAuthor.innerText = currentSong.getSongAuthor();
   spanAuthor.className = "small";
 
 };
 
 PlaylistView.prototype.drawSongDuration = function(clonedDiv , currentSong){
-  var tempDiv = clonedDiv.getElementsByTagName('div')[1];
-  tempDiv.style.textAlign = "center";
-  tempDiv.style.width = "10%";
-  tempDiv.style.display = "inline-block";
-  var span = tempDiv.getElementsByTagName('span')[0];
+  var songDurationDiv = clonedDiv.getElementsByTagName('div')[1];
+  songDurationDiv.className = "songDurationDiv";
+  var span = songDurationDiv.getElementsByTagName('span')[0];
   span.innerText = convertToMin(currentSong.getSongDuration());
 };
 
 PlaylistView.prototype.drawSongCount = function(clonedDiv , currentSong){
 
-      var tempDiv = clonedDiv.getElementsByTagName('div')[2];
-      tempDiv.style.textAlign = "center";
-      tempDiv.style.width = "10%";
-      tempDiv.style.display = "inline-block";
-      var span = tempDiv.getElementsByTagName('span')[0];
+      var songCountDiv = clonedDiv.getElementsByTagName('div')[2];
+      songCountDiv.className="songCountDiv";
+      var span = songCountDiv.getElementsByTagName('span')[0];
       span.innerText = currentSong.getSongCount();
 };

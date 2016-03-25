@@ -12,18 +12,14 @@ function getSongTitles(val){
 
 function filterFunc(val){
   if (val.indexOf(document.getElementById("searchStr").value) === 0){
-
     return val;
   }
 }
 
 function searchMusic(e) {
     var songsArray = ((playListFromJS.map(getPlaylistSongs)).reduce(concatSongsArray,[]).map(getSongTitles)).filter(filterFunc);
-    console.log("length:"+songsArray);
     clearMusicResult();
-    for (var i = 0; i < songsArray.length; i++) {
-      drawResults(songsArray[i]);
-    }
+    songsArray.forEach(drawResults);
 }
 
 function clearMusicResult(){

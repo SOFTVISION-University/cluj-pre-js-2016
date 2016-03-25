@@ -7,4 +7,4 @@ function User(data) {
 
 User.prototype.getUserName = function(){
   return this.name;
-}
+};
