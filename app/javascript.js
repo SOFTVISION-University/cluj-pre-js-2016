@@ -31,16 +31,8 @@ function convert(time){
   return minutes.substr(-2) + ":" + seconds.substr(-2);
 }
 
-function explorePlaylist(playlistNumber){
-  document.getElementById('playlist').className = "playlist-expand";
-  var playlist = new Playlist(playlists[playlistNumber]);
-  console.log(ModelFactory.create("Playlist", playlists[playlistNumber]));
-  var song = new Song(playlists[playlistNumber].songs[playlistNumber]);
-  song.attach(playlist);
-  song.getSongTitle();
-
-  var songs = playlist.getPlaylistSongs();
-  for (var i = 0; i < songs.length; i++){
+function createSongRow(songs){
+  songs.forEach (function(item){
     var tableBody = document.getElementById('playlist-songs-body');
     var row = document.createElement('tr');
     var col1 = document.createElement('td');
@@ -50,17 +42,30 @@ function explorePlaylist(playlistNumber){
     var img = document.createElement('img');
 
     row.setAttribute('class','newRow');
-    img.src = songs[i].image;
-    col2.innerHTML = songs[i].songTitle + "</br>" + "by " + songs[i].songAuthor;
-    col3.innerHTML = convert(songs[i].songLength);
-    col4.innerHTML = songs[i].songListened;
+    img.src = item.image;
+    col2.innerHTML = item.songTitle + "</br>" + "by " + item.songAuthor;
+    col3.innerHTML = convert(item.songLength);
+    col4.innerHTML = item.songListened;
     tableBody.appendChild(row);
     row.appendChild(col1);
     row.appendChild(col2);
     row.appendChild(col3);
     row.appendChild(col4);
     col1.appendChild(img);
-  }
+  });
+}
+
+function explorePlaylist(id){
+  var playlistNumber = playlists[id];
+  document.getElementById('playlist').className = "playlist-expand";
+  var playlist = new Playlist(playlistNumber);
+  console.log(ModelFactory.create("Playlist", playlistNumber));
+  var song = new Song(playlistNumber.songs[id]);
+  song.attach(playlist);
+  song.getSongTitle();
+
+  var songs = playlist.getPlaylistSongs();
+  createSongRow(songs);
 }
 
 function closePlaylist(){
@@ -83,48 +88,76 @@ function validateUser(){
   var password = document.getElementById('password').value;
   var account = new AccountService(users);
   var accountUsers = account.getUsers();
-  for(var i = 0; i < accountUsers.length; i++){
-    if(accountUsers[i].email == email && accountUsers[i].password == password){
+  accountUsers.filter(function(user){
+    if(user.email === email && user.password === password){
       account.login();
       window.location = "home.html";
       return bool;
     }
-  }
+  });
   account.displayLoginError();
   return bool;
 }
 
+function drawCard(container,cardDiv){
+  cardDiv.className = 'card';
+  container.appendChild(cardDiv);
+}
+
+function drawMatDiv(matDiv,cardDiv){
+  matDiv.className = 'mat';
+  cardDiv.appendChild(matDiv);
+}
+
+function drawExploreButton(index,button,cardDiv){
+  button.className = 'explore';
+  button.setAttribute("onclick", "explorePlaylist("+ index +")");
+  cardDiv.appendChild(button);
+}
+
+function drawCardImage(item,img,cardDiv){
+  img.src = item.imageLarge;
+  cardDiv.appendChild(img);
+}
+
+function drawPlayIcon(playIcon,button){
+  playIcon.src = "../core/assets/play-icon.png";
+  button.appendChild(playIcon);
+}
+
+function drawButtonText(buttonText,button){
+  buttonText.innerText = ' Explore playlist';
+  button.appendChild(buttonText);
+}
+
+function drawCardDescription(item,songTitle,description,cardDiv,paragraph){
+  songTitle.innerText = item.title;
+  description.innerText = item.description;
+  cardDiv.appendChild(paragraph);
+  cardDiv.appendChild(description);
+  paragraph.appendChild(songTitle);
+}
+
 //creating cards in home page
 function createCards(){
-  for (var i = 0; i < playlists.length; i++){
+  playlists.forEach(function(item,index){
     var cardDiv = document.createElement('div');
     var matDiv = document.createElement('div');
     var button = document.createElement('button');
     var img = document.createElement('img');
     var playIcon = document.createElement('img');
     var paragraph = document.createElement('p');
-    var desc = document.createElement('p');
+    var description = document.createElement('p');
     var buttonText = document.createElement('span');
     var songTitle = document.createElement('strong');
     var container = document.getElementById('card-area');
 
-    cardDiv.className = 'card';
-    matDiv.className = 'mat';
-    button.className = 'explore';
-    buttonText.innerText = ' Explore playlist';
-    button.setAttribute("onclick", "explorePlaylist("+ i +")");
-    img.src = playlists[i].imageLarge;
-    playIcon.src = "../core/assets/play-icon.png";
-    songTitle.innerText = playlists[i].title;
-    desc.innerText = playlists[i].description;
-    container.appendChild(cardDiv);
-    cardDiv.appendChild(matDiv);
-    cardDiv.appendChild(button);
-    cardDiv.appendChild(img);
-    cardDiv.appendChild(paragraph);
-    cardDiv.appendChild(desc);
-    paragraph.appendChild(songTitle);
-    button.appendChild(playIcon);
-    button.appendChild(buttonText);
-  }
+    drawCard(container,cardDiv);
+    drawMatDiv(matDiv,cardDiv)
+    drawExploreButton(index,button,cardDiv);
+    drawCardImage(item,img,cardDiv);
+    drawCardDescription(item,songTitle,description,cardDiv,paragraph);
+    drawPlayIcon(playIcon,button);
+    drawButtonText(buttonText,button);
+  });
 }

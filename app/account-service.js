@@ -1,8 +1,8 @@
-function AccountService(path){
+function AccountService(usersList){
   this._users = [];
-  var userObj = new User(path);
+  var userObj = new User(usersList);
   //replace for with map
-  this._users = path.map(function(userObj){
+  this._users = usersList.map(function(userObj){
     return userObj;
   });
 }
