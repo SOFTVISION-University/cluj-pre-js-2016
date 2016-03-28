@@ -1,47 +1,52 @@
 var list = JSON.parse( playlistsJSON ) ;
 
-var currentPlaylist = new Playlist() ;
+var i;
 
+function createPlaylist ( ) {
 
-/*var headerDiv = document.createElement( 'div' ) ;
+    var currentPlaylist = new Playlist( list[0] ) ;
 
-headerDiv.id = 'content' ;
+    var newDiv = document.createElement ( 'div' ) ;
 
-headerDiv.style.width = "100px" ;
+    newDiv.id = 'new' ;
 
-headerDiv.style.height = "100px" ;
+    newDiv.style.height = "200px" ;
 
-headerDiv.style.backgroundColor = "blue" ;
+    newDiv.style.width = "200px" ;
 
-document.getElementById( 'popup' ).appendChild( headerDiv ) ; */
+    newDiv.style.backgroundColor = "blue" ;
 
+    document.getElementById('new').appendChild('newDiv') ;
 
-/*for ( var i = 0 ; i < list[0].songs.length ; i++ ) {
+    var currentPlaylistsongs = currentPlaylist.songs.map ( function ( data ) {
 
-  var song = new Song( list[0].songs[i] ) ;
+      return new Song ( data.image , data.songTitle , data.songAuthor , data.songAuthor , data.songListened) ;
+
+    });
+
+    for ( i = 0 ; i < currentPlaylistsongs.length ; i++ ) {
+
+      var song = currentPlaylistsongs[i] ;
+
+      var image = document.createElement('div');
+  		image.innerHTML = '<img src="' + song.getImage() + '"/>';
+  		innerDiv.appendChild(image);
+
+      var songTitle = document.createElement('div');
+  		songTitle.innerText = song.getSongTitle();
+  		innerDiv.appendChild(songTitle);
+
+      var songAuthor = document.createElement('div');
+  		songAuthor.innerText = song.getSongAuthor();
+  		innerDiv.appendChild(songAuthor);
+
+  		var songLength = document.createElement('div');
+  		songLength.innerText = convertSecToMin(song.getSongLength());
+  		innerDiv.appendChild(songLength);
+
+  		var songListened = document.createElement('div');
+  		songListened.innerText = song.getSongListened();
+  		innerDiv.appendChild(songListened);
+    }
 
 }
-
-
-for ( i = 0 ; i < currentPlaylist.songs.length ; i++ ) {
-
-  var contentDiv = document.createElement( 'div' ) ;
-
-  contentDiv.id = 'div-song' ;
-
-  contentDiv.style.width = "300px" ;
-
-  contentDiv.style.height = "300px" ;
-
-  contentDiv.style.backgroundColor = "black" ;
-
-  headerDiv.appendChild ( contentDiv ) ;
-
-  var song = currentPlaylist.songs[i] ;
-
-  var title = document.createElement(' head' ) ;
-
-  title.innerText = song.getSongTitle() ;
-
-  contentDiv.appendChild ( title ) ;
-} */
