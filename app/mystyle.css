@@ -199,6 +199,15 @@ a.submitSignUp {
   margin-right: 50px;
   transition: 0.3s;
 }
+.cardOverlay{
+  background-color: gray;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  right: 350px;
+  top: 350px;
+  display: none;
+}
 .cardBottomDiv:hover{
   margin-top: -195px;
   box-shadow: 0px 20px 20px #888888;
@@ -287,8 +296,6 @@ a.submitSignUp {
   background-color: #67DE94;
   margin-bottom: 60px;
 }
-
-
 .bookThumbail{
   width: auto;
   height: 250px;
@@ -309,18 +316,21 @@ a.submitSignUp {
   margin-top: 110px;
   margin-left: 80px;
   display:none;
+  z-index: 100;
 }
 #explorePlaylist2{
   position: absolute;
   margin-top: 110px;
   margin-left: 80px;
   display:none;
+  z-index: 100;
 }
 #explorePlaylist3{
   position: absolute;
   margin-top: 110px;
   margin-left: 80px;
   display:none;
+  z-index: 100;
 }
 .cardBottomDiv:hover #explorePlaylist1 {
   display: block;
@@ -330,6 +340,12 @@ a.submitSignUp {
 }
 .cardBottomDiv:hover #explorePlaylist3 {
   display: block;
+}
+.cardBottomDiv:hover .cardOverlay{
+  display: block;
+  right: 0px;
+  top: 0px;
+  opacity: .7;
 }
 #playlists{
   background-color: white;
