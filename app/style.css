@@ -415,6 +415,12 @@ div.card{
   position: relative;
 }
 
+div.card>img{
+  max-width: 360px;
+  width: 360px;
+  max-height: 224px;
+}
+
 div.card p{
   text-align: left;
   padding: 0px 15px 0px 15px;

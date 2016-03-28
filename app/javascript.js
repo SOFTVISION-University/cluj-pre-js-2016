@@ -228,15 +228,11 @@ $.ajax({
 
       dataType: "jsonp",
 
-      success: function (response) {
+      }).done(function (response) {
 
         document.getElementById('metallica-title').innerHTML = response.query.pages["18787"].title;
         document.getElementById('metallica-description').innerHTML = response.query.pages["18787"].extract;
-
-      },
-
-      error: function (xhr, ajaxOptions, thrownError) {
-
-      }
-
-  });
+        document.getElementById('metallica-image').src = "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Metallica_at_The_O2_Arena_London_2008.jpg/800px-Metallica_at_The_O2_Arena_London_2008.jpg";
+      }).fail(function () {
+        document.getElementById('metallica-title').innerHTML = "Something went wrong!";
+      });
