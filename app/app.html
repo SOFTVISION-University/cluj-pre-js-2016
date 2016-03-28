@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+  <head>
+    <title>App Page</title>
+    <link rel="stylesheet" type="text/css" href="styleApp.css">
+    <script	type="text/javascript" src="../core/data/playlists.js"></script>
+    <script	type="text/javascript" src="utility.js"></script>
+    <script	type="text/javascript" src="Playlist.js"></script>
+	  <script	type="text/javascript" src="Song.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script	type="text/javascript" src="SearchService.js"></script>
+  </head>
+
+  <body>
+    <div class="first-cont">
+      <div id="logo-top">
+        <img src="../core/assets/logo-top.png" alt="logo-icon">
+      </div>
+
+      <div id="text-areas">
+        <input  type="text" name="search" placeholder="Search Music" size="80" required>
+      </div>
+
+      <div class="button-signin">
+        <a href="login.html">
+          <input type="button" value="Sign in" />
+        </a>
+      </div>
+
+      <div id="span-id">
+        <p><span>Ready to listen to endless music on your favorite device?</span></p>
+      </div>
+
+      <div class="button-join" >
+        <a href="register.html">
+          <input type="button" value="JOIN NOW" />
+        </a>
+
+        <p id="quote">Epic and debauched party mixes</p>
+      </div>
+
+    </div>
+
+    <div id="music-container">
+
+      <div class="albums-text" id="massive-pop">
+        <div class="small-imgs-playlist">
+          <img src="../core/assets/massive-pop-hits.png" alt="massive picture">
+       </div>
+        <div id="button-album1" class="button-albums-style"
+          <a>
+            <input type="button" onclick="generatePlaylist(0)" value="    Explore playlist" />
+          </a>
+        </div>
+        <p>Massive pop hits vol 1</p>
+        <p><span>Lorem ipsum dolor sit amet, consectetur adipicing sed do eiusmod tempor
+           incididunt
+        </span></p>
+      </div>
+      <div class="albums-text" id="up-all-night">
+        <div class="small-imgs-playlist">
+          <img src="../core/assets/up-all-night.png" alt="up-all-night picture">
+        </div>
+        <div id="button-album2" class="button-albums-style"
+          <a>
+            <input type="button" onclick="generatePlaylist(1)" value="    Explore playlist" />
+          </a>
+        </div>
+        <p>Up all night</p>
+        <p><span>Lorem ipsum dolor sit amet, consectetur adipicing sed do eiusmod tempor
+           incididunt
+        </span></p>
+      </div>
+      <div class="albums-text" id="dj-killer">
+        <div class="small-imgs-playlist">
+          <img src="../core/assets/dj-killer-mixes.png" alt="dj-killer picture">
+        </div>
+        <div id="button-album3" class="button-albums-style"
+          <a>
+            <input type="button" onclick="generatePlaylist(2)" value="    Explore playlist" />
+          </a>
+        </div>
+        <p>DJ Killer mixes</p>
+        <p><span>Lorem ipsum dolor sit amet, consectetur adipicing sed do eiusmod tempor
+           incididunt
+         </span></p>
+      </div>
+
+    </div>
+
+    <div id="test-playlist-container1">
+
+    </div>
+
+    <p id="footer" >&copy; 2016 ACME DIVISION ALL RIGHTS RESERVED</p>
+
+  </body>
+</html>

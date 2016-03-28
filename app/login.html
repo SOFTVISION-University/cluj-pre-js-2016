@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+  <head>
+    <title>Login Page</title>
+    <link rel="stylesheet" type="text/css" href="styleLogin.css">
+    <script	type="text/javascript" src="../core/data/users.js"></script>
+    <script	type="text/javascript" src="User.js"></script>
+    <script	type="text/javascript" src="AccountService.js"></script>
+    <script	type="text/javascript" src="functionalityLogin.js"></script>
+  </head>
+
+  <body background="../core/assets/banner-top.jpg" alt="background">
+    <div id="container-small">
+      <img  id="logo" src="../core/assets/logo-color.png" alt="logo picture">
+      <br>
+      <br>
+      <h3>Sign into your ACME account</h3>
+      <p id="error-msg"></p>
+
+
+      <form onsubmit="return isLoggedIn()" action="app.html" method="post">
+        <div id="text-areas">
+          <label>Email</label><br>
+          <input  id="email" type="email", name="email", size="30" required><br><br>
+          <label>Password</label><br>
+          <input id="password" type="password", name="pwd", size="30", required><br><br><br>
+        </div>
+        <div id="text-button">
+          <a href="http://www.w3schools.com/html/">Forgot password?</a>&emsp;
+          <input id ="button" type="Submit" value="Sign in" >
+        </div>
+      </form>
+
+      <p>Don't have an account? <a href="register.html">Sign up here</a> </p>
+    </div>
+
+  </body>
+</html>
