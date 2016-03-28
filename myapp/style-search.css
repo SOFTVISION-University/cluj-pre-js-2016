@@ -68,7 +68,7 @@ input{
 }
 
 .join-now{
-  margin: 100px auto;
+  margin: 50px auto;
   width: 60%;
   text-align: center;
   color: #fff;
@@ -83,7 +83,7 @@ input{
   padding: 10px 50px ;
   border-width: 0px;
   font-weight: bold;
-  margin-top: 27px;
+  margin-top: 40px;
 
 }
 
@@ -95,6 +95,16 @@ body p{
 .join-now span{
   width: 300px;
   display: inline-block;
+}
+
+#welcomeText{
+  margin-top: 30px;
+  margin-bottom: -50px;
+  color: rgba(204, 255, 204, 0.9);
+}
+
+#replaceQuote{
+  margin-top: 50px;
 }
 
 .wrapper-image{
@@ -114,12 +124,11 @@ body p{
   background-color: #fff;
   padding-bottom: 20px;
   transition:transform 3s;
-
   box-sizing: border-box;
 }
 
 .wrapper-image .image:hover{
-  transform: translate(0, -100px);
+  transform: translate(0, -50px);
 }
 
 .wrapper-image .image span{
@@ -218,8 +227,29 @@ body p{
   display: inline-block;
 }
 
+.subHeaderPlaylist{
+  height: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-top: 10px;
+  padding-left: 0px;
+  background-color: #f6f6f6;
+}
+.subHeaderPlaylist p{
+  color : gray;
+  display: inline;
+  font-size: 13px;
+  font-weight: bold;
+}
 
-
+#divSong{
+  height:70px;
+  vertical-align:top;
+  border-bottom: 1px solid gray;
+}
+#divSong p{
+  display: inline;
+}
 /*.playlist{
   appearance:none;
   background-color: blue

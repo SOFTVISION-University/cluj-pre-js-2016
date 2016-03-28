@@ -12,12 +12,24 @@
 // // }
 document.addEventListener("DOMContentLoaded", function(event){
   var x = localStorage.getItem("userData");
+  var parsedLocalStorage = JSON.parse(x);
+  var welcomeText = document.getElementById("welcomeText");
   console.log(x);
   if( x !== null){
     document.getElementById('searchLogOut').style.visibility = 'visible';
     document.getElementById('searchLogIn').style.visibility = 'hidden';
-  }else{
-    document.getElementById('searchLogOut').style.visibility = 'hidden';
-    document.getElementById('searchLogIn').style.visibility = 'visible';
+    document.getElementById('joinNowButton').style.visibility = 'hidden';
+    welcomeText.innerHTML = "WELCOME " + "    "+ parsedLocalStorage.userName;
   }
 });
+
+function logOut(){
+  localStorage.removeItem("userData");
+  var welcomeText = document.getElementById("welcomeText");
+  welcomeText.innerHTML = "";
+  if(localStorage.length === 0){
+    document.getElementById('searchLogOut').style.visibility = 'hidden';
+    document.getElementById('searchLogIn').style.visibility = 'visible';
+    document.getElementById('joinNowButton').style.visibility = 'visible';
+  }
+}

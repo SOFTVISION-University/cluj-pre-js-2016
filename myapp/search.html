@@ -23,13 +23,14 @@
             <button type="submit" id="searchLogIn" >Sign In</button>
           </form>
           <form>
-            <button type="submit" id="searchLogOut" >Log out</button>
+            <button type="submit" id="searchLogOut" onclick="logOut()">Log out</button>
           </form>
         </div>
         <div class="join-now" id="divForQuote">
           <h3><span>Ready to listen to endless music on your favorite device ?</span></h3>
+          <h2 id="welcomeText"></h2>
           <form action="register.html">
-            <button type="submit">JOIN NOW</button>
+            <button type="submit" id="joinNowButton">JOIN NOW</button>
           </form>
           <h1 id="replaceQuote">Epic and debauched party mixes</h1>
         </div>
@@ -41,7 +42,7 @@
         <h3>Massive pop hits vol 1</h3>
         <span>Lorem ipsum dolor nam molestie nunc praesent euismod. Lectus cursus dui sodales, dui sit nec recusandae nunc</span>
         <div class="playlist-button">
-          <button type="submit" id="openB" onclick="toggle('plyL')">Explore playlist</button>
+          <button type="submit" id="openB" onclick="toggle('plyL', 0)">Explore playlist</button>
         </div>
       </div>
       <div class="image">
@@ -49,7 +50,7 @@
         <h3>Up all night</h3>
         <span>Lorem ipsum dolor nam molestie nunc praesent euismod. Lectus cursus dui sodales, dui sit nec recusandae nunc</span>
         <div class="playlist-button">
-          <button type="submit" id="openB" onclick="toggle('plyL')">Explore playlist</button>
+          <button type="submit" id="openB" onclick="toggle('plyL', 1)">Explore playlist</button>
         </div>
       </div>
       <div class="image">
@@ -57,7 +58,7 @@
         <h3>DJ Killer mixes</h3>
         <span>Lorem ipsum dolor nam molestie nunc praesent euismod. Lectus cursus dui sodales, dui sit nec recusandae nunc</span>
         <div class="playlist-button">
-            <button type="submit" id="openB" onclick="toggle('plyL')" >Explore playlist</button>
+            <button type="submit" id="openB" onclick="toggle('plyL', 2)" >Explore playlist</button>
         </div>
       </div>
     </div>
@@ -75,6 +76,11 @@
           <h4>Playing from:</h4>
           <h2>Up all night:The remixes radio</h2>
         </div>
+      </div>
+      <div class="subHeaderPlaylist">
+          <p id="headerSong">SONG</p>
+          <p id="headerLength"> LENGTH </p>
+          <p id="headerListened">LISTENED</p>
       </div>
     </div>
 
