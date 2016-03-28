@@ -34,16 +34,15 @@ AccountService.prototype.checkLogin = function(){
   var foundUser = this.usersArray.filter(function(user){
     if(user.name === username && user.password === password)
     {
-      return user;
+      AccountService.getInstance().loggedUser = user;
+      AccountService.getInstance().loggedUser.logged = true;
+      return true;
     }
   });
 
   if (foundUser.length > 0)
   {
-    AccountService.getInstance().loggedUser = foundUser[0];
-    AccountService.getInstance().loggedUser.logged = true;
     localStorage.setItem("nameUser1", JSON.stringify(AccountService.getInstance().loggedUser));
-
     return LOGIN_SUCCESFULLY;
   }
   else {
