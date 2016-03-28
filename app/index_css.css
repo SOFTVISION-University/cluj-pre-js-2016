@@ -106,7 +106,7 @@ input[type=submit],input[type=button]{
 	   margin-top:9%;
  }
    #span_search1{
-	   margin-top:8%;
+	   margin-top:5%;
 	   font-size:xx-large;
 		 padding-bottom: 2%;
 
@@ -365,4 +365,24 @@ color:#888888;
 	height:0px;
 
 
+}
+
+#request{
+
+	margin:60px auto 0 auto;
+	width:1000px;
+	height:300px;
+}
+#photo_form_wiki{
+	float:left;
+	color:black;
+	font-size: 13px;
+	width:450px;
+	height:300px;
+	margin-bottom: 20px;
+}
+#song_form_wiki{
+
+	color:black;
+	font-size: 13px;
 }

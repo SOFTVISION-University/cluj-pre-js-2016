@@ -33,33 +33,30 @@ describe('test HappyFLow', function() {
 
 
 
- it('test getId', function() {
+    it('test getId', function() {
 
-    expect(me.getId()).toEqual('1');
-});
-it('test getTitle', function() {
-    expect(me.getTitle()).toEqual('cosmin');
-});
+      expect(me.getId()).toEqual('1');
+    });
+    it('test getTitle', function() {
+      expect(me.getTitle()).toEqual('cosmin');
+    });
 
-it('test getImageLarge', function() {
-    expect(me.getImageLarge()).toEqual('200');
-});
+    it('test getImageLarge', function() {
+      expect(me.getImageLarge()).toEqual('200');
+    });
 
-it('test getImageSmall', function() {
-    expect(me.getImageSmall()).toEqual('20');
-});
-it('test getDescription', function() {
-    expect(me.getDescription()).toEqual('abcdefg');
-});
-
-
-
-it('test setSong', function() {
-    me.setSong(2);
-   expect(me.songs).toEqual([2]);
-});
+    it('test getImageSmall', function() {
+      expect(me.getImageSmall()).toEqual('20');
+    });
+    it('test getDescription', function() {
+      expect(me.getDescription()).toEqual('abcdefg');
+    });
 
 
 
+    it('test setSong', function() {
+      me.setSong(2);
+      expect(me.songs).toEqual([2]);
+    });
 
 });

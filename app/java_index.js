@@ -20,6 +20,7 @@ function OnLoad(obj) { //on load event
   Populate();
   Search_music();
   Update_playlist();
+  request_from_server();
 
 
 }
@@ -90,15 +91,7 @@ function Update_song(pop){
 
 
 function Populate() {//populate from json
- /*for (i = 0;i < playlist.length;i++) {
 
-    playlist_1[i] = new Playlist(playlist[i]);
-    for (y = 0; y < playlist[i].songs.length;y++) {
-      var song = [];
-      song[y] = new Song(playlist[i].songs[y]);
-      playlist_1[i].setSong(song[y]);
-    }
-}*/
 
 playlist.map(function (val,i){
 
