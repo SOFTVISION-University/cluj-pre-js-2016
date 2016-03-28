@@ -188,7 +188,6 @@ div#login_div input[type=email],div#login_div input[type=password]{
   background-color:rgba(128,128,128 ,0.2);
   padding: 7px;
   border-radius: 3px;
-  border: 0px;
   height:20px;
   font-weight: bold;
   outline: none;
@@ -200,9 +199,10 @@ div#sign_up_div input[type=text],div#sign_up_div input[type=email],div#sign_up_d
   background-color:rgba(128,128,128 ,0.2);
   padding: 7px;
   border-radius: 3px;
-  border: 0px;
   height:20px;
   font-weight: bold;
+  outline: none;
+  border: 1px solid rgba(128,128,128 ,0.2);
 }
 
 .sign_up{
@@ -570,4 +570,14 @@ div#login_div input.blur{
 div#login_div input.login-error{
   background-color: rgba(255,0,0,0.1);
   border:1px solid rgb(255,0,0);
+}
+
+div#sign_up_div input.focus{
+  background-color: rgba(0,191,255,0.1);
+  border:1px solid rgb(0,191,255);
+}
+
+div#sign_up_div input.blur{
+  background-color: rgba(128,128,128 ,0.2);
+  border:1px solid rgba(128,128,128 ,0.2);
 }

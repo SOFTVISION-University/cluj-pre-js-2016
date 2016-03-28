@@ -1,6 +1,28 @@
 'use strict';
 var playlists = JSON.parse(playlistsJSON);
 var users = JSON.parse(usersJSON);
+var json = {
+  "success": {
+      "total": 1
+  },
+  "contents": {
+      "quotes": [
+          {
+              "quote": "Be not afraid of greatness. Some are born great, some achieve greatness, and some have greatness thrust upon 'em....",
+              "length": "116",
+              "author": "William Shakespeare",
+              "tags": [
+                  "inspire"
+              ],
+              "category": "inspire",
+              "date": "2016-03-28",
+              "title": "Inspiring Quote of the day",
+              "background": "https://theysaidso.com/img/bgs/man_on_the_mountain.jpg",
+              "id": "FG7_PlYnhPFaWL79P5076QeF"
+          }
+      ]
+  }
+};
 
 //generating footer copyright
 function copyright(){
@@ -161,3 +183,60 @@ function createCards(){
     drawButtonText(buttonText,button);
   });
 }
+
+function get(url) {
+  // Return a new promise.
+  return new Promise(function(resolve, reject) {
+    // Do the usual XHR stuff
+    var req = new XMLHttpRequest();
+    req.open('GET', url);
+
+    req.onload = function() {
+      // This is called even on 404 etc
+      // so check the status
+      if (req.status == 200) {
+        // Resolve the promise with the response text
+        resolve(req.response);
+      }
+      else {
+        // Otherwise reject with the status text
+        // which will hopefully be a meaningful error
+        reject(json);
+      }
+    };
+
+    // Handle network errors
+    req.onerror = function() {
+      reject(Error("Network Error"));
+    };
+
+    // Make the request
+    req.send();
+  });
+}
+
+get('http://quotes.rest/qod.json').then(function(response) {
+  document.getElementById('promise').innerHTML = response.contents.quotes[0].quote + '<br/>' + response.contents.quotes[0].author;
+}, function(error) {
+  document.getElementById('promise').innerHTML = error.contents.quotes[0].quote + '<br/>' + error.contents.quotes[0].author;
+});
+
+$.ajax({
+      url: "https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro=&explaintext=&titles=metallica",
+
+      type: "GET",
+
+      dataType: "jsonp",
+
+      success: function (response) {
+
+        document.getElementById('metallica-title').innerHTML = response.query.pages["18787"].title;
+        document.getElementById('metallica-description').innerHTML = response.query.pages["18787"].extract;
+
+      },
+
+      error: function (xhr, ajaxOptions, thrownError) {
+
+      }
+
+  });

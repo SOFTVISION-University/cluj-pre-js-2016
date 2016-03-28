@@ -24,11 +24,11 @@
       <p>NO CREDIT CARD NEEDED</p>
         <form action="" method="post" id="sign_up_form">
           <label for="name">Your name</label><br/>
-          <input id="your_name" type="text" name="name" required/><br/><br/>
+          <input id="your_name" type="text" name="name" onfocus="getFocus(this)" onblur="getBlur(this)" required/><br/><br/>
           <label for="email">Email</label><br/>
-          <input type="email" name="email" required/><br/><br/>
+          <input type="email" name="email" onfocus="getFocus(this)" onblur="getBlur(this)" required/><br/><br/>
           <label for="password">Password</label><br/>
-          <input type="password" name="password" required/>
+          <input type="password" name="password" onfocus="getFocus(this)" onblur="getBlur(this)" required/>
         </form><br/><br/>
         <input class="sign_up" type="submit" name="submit" form="sign_up_form" value="Sign up free"/><br/><br/>
         <p id="terms">By clicking  "Sign Up Free" I agree to ACME's <a href="">Terms of Service</a></p>
