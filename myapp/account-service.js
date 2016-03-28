@@ -10,13 +10,14 @@
 // //   var pas = document.forms["registerForm"]["password"].value;
 // //
 // // }
-// document.addEventListener("DOMContentLoaded", function(event){
-//   var x = localStorage.getItem("userData");
-//   if( x !== null){
-//     document.getElementById('searchLogOut').visibility = 'visible';
-//     document.getElementById('searchLogIn').visibility = 'hidden';
-//   }else{
-//     document.getElementById('searchLogOut').visibility = 'hidden';
-//     document.getElementById('searchLogIn').visibility = 'visible';
-//   }
-// });
+document.addEventListener("DOMContentLoaded", function(event){
+  var x = localStorage.getItem("userData");
+  console.log(x);
+  if( x !== null){
+    document.getElementById('searchLogOut').style.visibility = 'visible';
+    document.getElementById('searchLogIn').style.visibility = 'hidden';
+  }else{
+    document.getElementById('searchLogOut').style.visibility = 'hidden';
+    document.getElementById('searchLogIn').style.visibility = 'visible';
+  }
+});

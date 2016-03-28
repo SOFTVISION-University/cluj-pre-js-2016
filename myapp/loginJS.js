@@ -9,13 +9,13 @@
 // }
 
 
-function changeInputColor(id) {
-  var inputElment = document.getElementById(id);
-  if( inputElment !== null){
-    inputElment.style.backgroundColor = "rgba( 51,153,255,0.2 )";
-    inputElment.style.border = "1px solid rgb(51,153,255)";
-  }
-}
+// function changeInputColor(id) {
+//   var inputElment = document.getElementById(id);
+//   if( inputElment !== null){
+//     inputElment.style.backgroundColor = "rgba( 51,153,255,0.2 )";
+//     inputElment.style.border = "1px solid rgb(51,153,255)";
+//   }
+// }
 
 function changeBackInputColor(id) {
   var inputElment = document.getElementById(id);
@@ -37,6 +37,7 @@ function changeWrongInputColor(id){
   }
 }
 
+
 function checkField(){
     var mail = document.forms["loginForm"]["email"].value;
     var pas = document.forms["loginForm"]["password"].value;
@@ -48,6 +49,7 @@ function checkField(){
     });
     if( userExist.length !== 0){
       localStorage.setItem("userData", JSON.stringify(userExist[0]));
+      console.log(userExist[0]);
       return true;
     } else {
       messageElement.innerHTML = " Wrong name/password ";
