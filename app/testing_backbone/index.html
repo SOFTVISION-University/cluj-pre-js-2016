@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="../mystyle.css">
+        <script src="http://backbonejs.org/test/vendor/underscore.js"></script>
+        <script src="http://backbonejs.org/test/vendor/jquery.js"></script>
+        <script src="http://backbonejs.org/docs/js/jquery.lazyload.js"></script>
+        <script src="http://backbonejs.org/backbone.js"></script>
+        <script type="text/template" id="template-SongView">
+          <div class="songDiv">
+            <img class="songImg" src="<%= imgURL%>">
+            <div class="songNumbers" ><%= songLength %></div>
+            <div class="songNumbers" ><%= songCount %></div>
+            <span class="songTitle" class="textBiggerGri"><%= songTitle %></span>
+            <span class="textMediuGri"><%= songAuthor %></span>
+          </div>
+        </script>
+        <script	type="text/javascript" src="../models/song-model.js"></script>
+        <script	type="text/javascript" src="../collections/song-col.js"></script>
+        <script	type="text/javascript" src="../views/song-view.js"></script>
+
+        <script>
+
+          var test = new SongCollection(zongs);
+
+          var zongView = new SongView({
+            el: $('#page')[0]
+          });
+          zongView.render();
+        </script>
+    </head>
+    <body>
+      <p>Hello!</p>
+      <div id="page"></div>
+    </body>
+</html>
