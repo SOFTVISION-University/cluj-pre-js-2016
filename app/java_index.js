@@ -5,7 +5,6 @@ var playlist_1 = [];
 var obj_accountService = JSON.parse(localStorage.getItem('testObject'));
 var search  ;
 
-
 function clonare(pop) {//onclick event
 
   Clear_playlist();//clear songs in playlist
@@ -73,20 +72,81 @@ function Update_playlist() {
   document.getElementById("text_play_3").innerHTML = playlist_1[2].getDescription();
 }
 
-function Update_song(pop){
+function Update_song (pop){
+  var response = JSON.parse(playlistsJSON);
+
+    var Song = Backbone.Model.extend({
+        defaults: {
+        image: 'Robert',
+        songTitle: 23,
+
+        songAuthor: "daaaa",
+        songLength : "daaa",
+        songListened : "dsfdafdsadadasdsadada"
+      }
+
+    });
+    var Songs = Backbone.Collection.extend({
+      model: Song
+    });
+    var songs = new Songs();
+
+    songs.set(response[pop].songs);
+
+    var SongView = Backbone.View.extend({
+
+      className: 'participant-view',
+      renderTemplate: function (selectorString, options) {
+          var templateText = document.querySelector(selectorString).innerText;
+          var compiled = _.template(templateText);
+          if (options !== null) {
+             return compiled(options);
+          }
+          return compiled();
+        },
+      template: function (val) {
+             return this.renderTemplate('#template-FriendInListView',val);},
+      render: function () {
+        this.$el.html(this.template(this.model.attributes));
+        return this;
+      }
+    });
 
 
-  playlist_1[pop].songs.forEach(function(entry) {
-    var container  =  document.getElementById("name_songs");
-    var myDiv  =  document.getElementById("container1");
-    document.getElementById("photo_id").src  =  entry.getImage();
-    document.getElementById("title_id").innerHTML =  entry.getTitle();
-    document.getElementById("subtitle_id").innerHTML =  entry.getAuthor();
-    document.getElementById("leght_song").innerHTML = time_change( entry.getLength());
-    document.getElementById("time_song").innerHTML =  entry.getListened();
-    var divClone  =  myDiv.cloneNode(true);
-    container.appendChild(divClone);
-  });
+    var SongsView = Backbone.View.extend({
+
+      template: _.template("<p></p><div class='user'></div><ul class='participants-view'></ul>"),
+      _nestedView: [],
+      renderNestedView: function(view, el) {
+        this._nestedView.push(view);
+        el.append(view.el);
+      },
+      render: function () {
+        this.$el.html(this.template());
+        var that = this;
+        var partEl = $(this.el.querySelector('.participants-view'));
+        this.collection.forEach(function(model) {
+            var participantView = new SongView({
+              model: model
+            });
+            participantView.render();
+            that.renderNestedView(participantView, partEl);
+        });
+
+
+        return this;
+      }
+    });
+    var pageView = new SongsView({
+      el: document.getElementById('name_songs'),
+      collection: songs
+    });
+    pageView.render();
+
+
+
+
+
 }
 
 
