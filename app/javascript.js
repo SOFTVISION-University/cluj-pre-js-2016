@@ -221,18 +221,44 @@ get('http://quotes.rest/qod.json').then(function(response) {
   document.getElementById('promise').innerHTML = error.contents.quotes[0].quote + '<br/>' + error.contents.quotes[0].author;
 });
 
-$.ajax({
-      url: "https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro=&explaintext=&titles=metallica",
+var promiseContent = $.ajax({
+  url: "https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro=&explaintext=&titles=metallica",
 
-      type: "GET",
+  type: "GET",
 
-      dataType: "jsonp",
+  dataType: "jsonp",
 
-      }).done(function (response) {
+});
 
-        document.getElementById('metallica-title').innerHTML = response.query.pages["18787"].title;
-        document.getElementById('metallica-description').innerHTML = response.query.pages["18787"].extract;
-        document.getElementById('metallica-image').src = "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Metallica_at_The_O2_Arena_London_2008.jpg/800px-Metallica_at_The_O2_Arena_London_2008.jpg";
-      }).fail(function () {
-        document.getElementById('metallica-title').innerHTML = "Something went wrong!";
-      });
+promiseContent.done(function (response) {
+  document.getElementById('metallica-title').innerHTML = response.query.pages["18787"].title;
+  document.getElementById('metallica-description').innerHTML = response.query.pages["18787"].extract;
+  document.getElementById('metallica-image').src = "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Metallica_at_The_O2_Arena_London_2008.jpg/800px-Metallica_at_The_O2_Arena_London_2008.jpg";
+});
+
+promiseContent.fail(function () {
+  document.getElementById('metallica-title').innerHTML = "Something went wrong!";
+});
+
+var promiseImage = $.ajax({
+  url: "https://en.wikipedia.org//w/api.php?action=query&format=json&prop=pageimages%7Cextracts&exintro=&explaintext=&titles=Metallica",
+
+  type: "GET",
+
+  dataType: "jsonp",
+
+});
+
+promiseImage.done(function (response) {
+  var string = response.query.pages["18787"].thumbnail.source;
+  var imageString = string.split('50');
+  document.getElementById('metallica-image').src = imageString[0] + 500 + imageString[1];
+});
+
+promiseImage.fail(function () {
+  document.getElementById('metallica-image').innerHTML = "Something went wrong!";
+});
+
+function searchPlaylist(){
+  searchObj = new SearchService();
+}

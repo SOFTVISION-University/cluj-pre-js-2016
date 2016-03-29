@@ -1,4 +1,59 @@
+<!DOCTYPE html>
 <html>
-<head>
-</head>
+  <head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Home page</title>
+    <script src="http://backbonejs.org/test/vendor/underscore.js"></script>
+    <script src="http://backbonejs.org/test/vendor/jquery.js"></script>
+    <script src="http://backbonejs.org/docs/js/jquery.lazyload.js"></script>
+    <script src="http://backbonejs.org/backbone.js"></script>
+  </head>
+  <body>
+    <div id="index-header"></div>
+    <div id="index-content"></div>
+    <div id="index-card-area"></div>
+    <div id="index-footer"></div>
+
+    <script type="text/template" id="template-HeaderView">
+        <div id="logo_div">
+          <a href="home.html"><img src="../core/assets/logo-top.png" id="logo" alt="Image not found"/></a>
+        </div>
+        <div id="search">
+          <img src="../core/assets/search-icon.png" id="search_img" alt="Image not found"/>
+          <form action="" method="get">
+            <input id="search_box" type="text" name="search" placeholder="Search Music"/>
+          </form>
+        </div>
+        <div id="sign_in_div">
+          <a href="login.html"><button id="sign_in_button" type="button" name="sign_in">Sign in</button></a>
+        </div>
+    </script>
+
+    <script type="text/template" id="template-ContentView">
+        <p style="color:white"><strong>Ready to listen to endless music<br/> on your favorite device?</strong></p>
+        <a href="sign_up.html"><button id="join_now_button" type="button" name="join_now">JOIN NOW</button></a><br/><br/><br/>
+        <p id ="promise" style="color:white">Epic and debauched party mixes</p><br/><br/>
+  	</script>
+
+  	<script type="text/template" id="template-PlaylistView">
+      <div class="card">
+        <div class="mat">
+        </div>
+        <button class="explore" type="button" name="explore_playlist" onclick="explorePlaylist()"><img src="../core/assets/play-icon.png" alt="Image not found"/> Explore playlist</button>
+        <img id="card-image"/>
+        <p><strong id="title">Loading...</strong></p>
+        <p id="description"></p>
+      </div>
+  	</script>
+
+    <script type="text/javascript" src="app_views/header_view.js"></script>
+    <script type="text/javascript" src="app_views/content_view.js"></script>
+    <script type="text/javascript" src="home_views/playlist_view.js"></script>
+
+    <script type="text/javascript">
+      var header_view = new HeaderView({ el: $("#index-header") });
+      var content_view = new ContentView({ el: $("#index-content") });
+      var playlist_view = new PlaylistView({ el: $("#index-card-area") });
+    </script>
+  </body>
 </html>

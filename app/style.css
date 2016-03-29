@@ -48,11 +48,12 @@ div#login_div{
   background-color: white;
 }
 
-div#main{
+div#index-header{
   background-image: url("../core/assets/banner-app.jpg");
   height: 550px;
   background-size: cover;
   background-repeat: no-repeat;
+  text-align: center;
 }
 
 div#logo_div, div#search, div#sign_in_div{
@@ -65,7 +66,7 @@ input#search_box{
   border: 0px;
   color: white;
   font-size: 16px;
-  width:700px;
+  width: 95%;
   height: 35px;
 }
 
@@ -108,21 +109,24 @@ button#sign_in_button{
 div#search{
   color:#F8F8FF;
   background-color:rgba(255, 255, 255,0.3);
-  width:725px;
+  width:40%;
   height: 35px;
   padding: 7px;
   border-radius: 3px;
   border: 0px;
-  margin-left: -60px;
-  margin-right: -200px;
+  margin-left: -120px;
+  margin-right: -140px;
   display:inline-block;
   vertical-align: top;
   margin-top: 50px;
 }
 
+div#search form{
+  width:93%;
+}
+
 img#logo{
   margin-top: 32px;
-  margin-left: 80px;
   vertical-align: top;
 }
 
@@ -133,8 +137,9 @@ img#search_img{
 }
 
 
-div#content{
-  margin-top: 80px;
+div#index-content{
+  margin-top: -350px;
+  text-align: center;
 }
 
 button#join_now_button{
@@ -395,7 +400,7 @@ p#copyright{
   margin-top: 130px;
 }
 
-div#card-area{
+div#index-card-area{
   text-align: left;;
   margin-top: 80px;
   max-width: 1200px;

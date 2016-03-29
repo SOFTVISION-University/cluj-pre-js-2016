@@ -1,7 +1,7 @@
-function User(path){
-  this._userName = path.userName;
-  this._email = path.email;
-  this._password = path.password;
+function User(usersList){
+  this._userName = usersList.userName;
+  this._email = usersList.email;
+  this._password = usersList.password;
 }
 
 

@@ -1,5 +1,5 @@
-function SearchService(){
-
+function SearchService(playlist){
+  var songsList = playlist.reduce()
 }
 
 //SearchService singleton
@@ -10,4 +10,8 @@ SearchService.getInstance = function(){
 
   }
     return SearchService._instance;
+}
+
+SearchService.prototype.search = function(song){
+
 }
