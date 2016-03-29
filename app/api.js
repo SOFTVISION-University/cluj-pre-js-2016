@@ -1,27 +1,5 @@
-/*var obj = document.getElementById('header-text') ;
-
-$.ajax({
-
-  url: "http://quotes.rest/qod.json" ,
-
-  success: function ( result ) {
-
-  },
-
-  error: function ( errorMessage ){
-
-    obj.innerHTML = "Error" ;
-
-  }
-
-}); */
-
-
-
 var text = document.getElementById( 'header-text' ) ;
-
 var metallica = document.getElementById('footer') ;
-
 var obj = {
     "success": {
         "total": 1
@@ -46,42 +24,22 @@ var obj = {
 }
 
 var jqxhr = $.getJSON( "http://quotes.rest/qod.json", function( ) {
-
-  //console.log( "success" );
 })
-
   .done( function (  ) {
-
     text.innerHTML = obj.contents.quotes[0].quote ;
-    //console.log( "second success" );
   })
-
   .fail(function (  ) {
-
     text.innerHTML = obj.contents.quotes[0].quote ;
-    //console.log( "error" );
   })
-
-
-
 
   $.ajax({
       url: "https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro=&explaintext=&titles=metallica",
-
       type: "GET",
-
       dataType: "jsonp",
-
-      success: function (data) {
-
+      success: function ( data ) {
         metallica.innerHTML = data.query.pages["18787"].extract;
-
       },
-
-      error: function (xhr, ajaxOptions, thrownError) {
-
-          //console.log("ERROR");
-
+      error: function ( xhr, ajaxOptions, thrownError ) {
+          metallica.innerHTML = "Error" ;
       }
-
   });
