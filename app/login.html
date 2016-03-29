@@ -1,0 +1,32 @@
+<html>
+  <head>
+<link rel="stylesheet" type="text/css" href="my_css/login.css">
+  </head>
+
+  <body>
+    <div class="content">
+      <div>
+      <img src="../core/assets/logo-color.png">
+     <h2> Sign into your ACME account</h2>
+   </div>
+    <form action="" class="formular" onsubmit="return checkForUser()">
+      <p id="message"> </p>
+    <p>Email: </p>
+    <input id="email_signIn" type="email" name="email" value="" autofocus required><br>
+    <p>Password:</p>
+    <input id="password_signIn" type="password" name="passw" required> <br>
+    <a href="" id="fPass" class="form_actions"> Forgot Password ? </a>
+    <input id="bPass" type="submit" class="form_actions" value="Sign in">
+  </form>
+  <div class="sign-up">
+    <p>Don't have an account? </p>
+    <a href="landing_page.html" id="sUp">Sing up here</a>
+    </div>
+    <script src="../core/data/users.js"></script>
+    <script src="my_jss/dataController/DataController.js"> </script>
+    <script src="my_jss/accounts/User.js"></script>
+    <script src="my_jss/accounts/Users.js"></script>
+    <script src="my_jss/accounts/AccountService.js"></script>
+    <script src="my_jss/accounts/domConnectAccountFunc.js"></script>
+  </body>
+</html>
