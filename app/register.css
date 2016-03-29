@@ -1,0 +1,241 @@
+.body {
+  background-image: url("/home/robert.cosma/work/cluj-pre-js-2016/core/assets/banner-top.jpg ");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#logo-top {
+  color: #ffffff;
+}
+
+#leftside {
+  color: #ffffff;
+  padding-top: 50px;
+  padding-left: 100px;
+}
+
+div > p {
+  font-size: 20px;
+}
+
+#learn {
+  color: #ffffff;
+}
+
+#rightside {
+  border:1px solid #ffffff;
+  background-color: #ffffff;
+  width: 500px;
+  height: 500px;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  margin-left: 100px;
+}
+
+.topbar > div {
+  display: inline-block;
+  width: 49%;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+#signup {
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+#nocredit , #getstarted {
+  color: #808080;
+  text-align: center;
+}
+
+#nocredit {
+  font-size: 15px;
+}
+
+form {
+  text-align: left;
+  padding-left: 90px;
+}
+
+input {
+  margin-bottom: 15px;
+}
+
+.button {
+  background-color: #33ccff;
+  color: #ffffff;
+  border: 1px  #0000ff;
+  font-size: 20px;
+  margin-left: 55px;
+}
+
+#terms {
+  color: #808080;
+  font-size: 16px;
+  padding-left: 40px;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #0099ff;
+  padding-right: 10px;
+}
+
+#featuredtext {
+  padding-top: 100px;
+  color: #808080;
+}
+
+img {
+  padding-right: 20px;
+}
+
+#intro {
+  font-weight: bold;
+  font-size: 30px;
+  text-align: center;
+}
+
+#presentation {
+  text-align: center;
+  color: #808080;
+  font-size: 16px;
+}
+
+.next {
+  display: inline-block;
+  width: 15%;
+  padding-right: 20px;
+  margin-left: 240px;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.next img {
+  padding-left: 100px;
+}
+
+.next h3 {
+  padding-left: 50px;
+}
+
+.next p {
+  color: #808080;
+  font-size: 16px;
+}
+
+.thirdbar {
+  background-image: url("/home/robert.cosma/work/cluj-pre-js-2016/core/assets/stars-bg.jpg");
+}
+
+#stuff{
+  font-size: 30px;
+  color: #ffffff;
+  text-align: center;
+  font-weight: bold;
+  padding-top: 70px;
+  padding-bottom: 30px;
+}
+
+#add {
+  text-align: center;
+  color: #ffffff;
+  font-size: 26px;
+  padding-bottom: 100px;
+}
+
+.icons {
+  padding-left: 670px;
+  }
+
+#titletext {
+  text-align: center;
+  font-weight: bold;
+  font-size: 30px;
+  margin-top: 120px;
+  margin-bottom: 100px;
+}
+
+.table {
+  border: 1px solid #add8e6;
+  margin-left: 230px;
+  width: 80%;
+}
+
+th {
+  font-size: 23px;
+  font-weight: lighter;
+  text-align: left;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #add8e6 ;
+}
+
+#freegoodies {
+  padding-left: 30px;
+}
+
+#feature {
+  padding-left: 70px;
+  padding-right: 90px;
+}
+
+#free {
+  padding-right: 100px;
+}
+
+.light-blue {
+  background-color: #ccffff;
+  }
+
+.second-button {
+  background-color: #33ccff;
+  color: #ffffff;
+  font-size: 20px;
+  margin-left: 755px;
+  margin-top: 100px;
+  border-radius: 2px solid #33ccff;
+}
+
+.footer {
+  background-color: #e6e6e6;
+  margin-top: 10px;
+  height: 650px;
+}
+
+#logo-gray {
+  margin-left: 300px;
+  margin-top: 100px;
+}
+
+#logo-google {
+  margin-left: 290px;
+}
+
+.footer p {
+  font-weight: bold;
+  font-size: 30px;
+  margin-left: 290px;
+  padding-top: 40px;
+}
+
+.left {
+  display: inline-block;
+  width: 40%;
+}
+
+.right {
+  display: inline-block;
+}
+
+#logo-devices {
+  padding-top: 20px;
+}
+
+
+#copyright {
+  font-weight: lighter;
+  font-size: 16px;
+  color: #999999;
+}
