@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <script src="http://backbonejs.org/test/vendor/underscore.js"></script>
+        <script src="http://backbonejs.org/test/vendor/jquery.js"></script>
+        <script src="http://backbonejs.org/docs/js/jquery.lazyload.js"></script>
+        <script src="http://backbonejs.org/backbone.js"></script>
+
+   </head>
+    <body>
+      <script src=text/javascript>
+      $(function(){
+        var playlist = [
+                      {
+                        id: "xxx",
+                        title: "XXX",
+                        song: "lorem ipsum",
+                        imageSmall: "../core/assets/up-all-night.png",
+                        imageLarge: "../core/assets/up-all-night.png",
+                        description:'lorem ipsum'
+                      },
+                      {
+                        id: "xxx",
+                        title: "XXX",
+                        song: "lorem ipsum",
+                        imageSmall: "../core/assets/up-all-night.png",
+                        imageLarge: "../core/assets/up-all-night.png",
+                        description:'lorem ipsum'
+                      },
+                      {
+                        id: "xxx",
+                        title: "XXX",
+                        song: "lorem ipsum",
+                        imageSmall: "../core/assets/up-all-night.png",
+                        imageLarge: "../core/assets/up-all-night.png",
+                        description:"lorem ipsum"
+                      }
+
+                    ];
+
+      var PlaylistView = Backbone.View.extend({
+        tagName: 'div',
+        className: 'playlist-view',
+        render: function(){
+
+        }
+      })
+
+
+
+
+      </script>
+      <p>Hello!</p>
+      <div id="page"></div>
+    </body>
+</html>
