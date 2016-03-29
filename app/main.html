@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Main page</title>
+      <link rel="stylesheet" type="text/css" href="main.css">
+   </head>
+   <body>
+
+
+      <div class="divup">
+
+        <form>
+            <img id="search" src="../core/assets/search-icon.png" alt="photo">
+            <input type="search" name="googlesearch" placeholder="Search music">
+
+        </form>
+        <img id="logomain" src="../core/assets/logo-top.png" alt="ACME logo top">
+        <h2 id="h2main">Ready to listen to endless music<br>on your favorite device?</h2>
+        <h1 id="h1main"></h1>
+        <button id="buttonS" onclick="myFunction3()">Sign in</button>
+        <button id="buttonJ" onclick="jumpRegistration()">JOIN NOW</button>
+
+      </div>
+
+        <div class="leftimg">
+          <div class="leftup">
+            <button id="explorebtn" onclick="showPlaylist1()">Explore playlist</button>
+          </div>
+          <div class="cleardiv"></div>
+          <div class="leftdown">
+            <span class="headerscris">Massive pop hits vol 1</span><br><br>
+            <span class="textscris"> Lorem ipsum dolor sit amet, consectetur </span><br>
+            <span class="textscris">amet, consectetur adipisicing elit, sed do</span>
+          </div>
+
+        </div>
+
+        <div class="midimg">
+          <div class="midup">
+            <button id="explorebtn" onclick="showPlaylist2()">Explore playlist</button>
+          </div>
+          <div class="cleardiv"></div>
+          <div class="middown">
+            <span class="headerscris">Up all night</span><br><br>
+            <span class="textscris"> Lorem ipsum dolor sit amet, consectetur </span><br>
+            <span class="textscris">amet, consectetur adipisicing elit, sed do</span>
+          </div>
+
+        </div>
+
+        <div class="rightimg">
+          <div class="rightup">
+            <button id="explorebtn" onclick="showPlaylist3()">Explore playlist</button>
+          </div>
+          <div class="cleardiv"></div>
+          <div class="rightdown">
+            <span class="headerscris">DJ Killer mixes</span><br><br>
+            <span class="textscris"> Lorem ipsum dolor sit amet, consectetur </span><br>
+            <span class="textscris">amet, consectetur adipisicing elit, sed do</span>
+          </div>
+
+        </div>
+
+        <div id="playlist1" >
+          <div class="close">
+            <button id="buttonCLOSE" onclick="hidePlaylist1()">
+                <span id="playlistCLOSE">CLOSE<span>
+                <span id="imgCLOSE"> <img id="X" src="../core/assets/close-icon.png"></span>
+            </button>
+
+          </div>
+          <div class="headerplaylist">
+            <img id="playlistimg" src="../core/assets/up-all-night-small.png">
+            <span id="headersmall"> Playing from:</span>
+            <span id="headerbig">Massive pop hits vol 1</span>
+          </div>
+
+          <div class="playlisttitles">
+            <span id="titleleft"> SONG</span>
+
+            <span id="titleright"> LISTENED</span>
+            <span id="titlemid"> LENGTH</span>
+
+          </div>
+          <!-- <div id="song">
+            <div id="songleft"></div>
+            <div id="songright"></div>
+            <div id="songmid"></div>
+          </div> -->
+        </div>
+
+
+        <div id="playlist2" >
+          <div class="close">
+            <button id="buttonCLOSE" onclick="hidePlaylist2()">
+                <span id="playlistCLOSE">CLOSE<span>
+                <span id="imgCLOSE"> <img id="X" src="../core/assets/close-icon.png"></span>
+            </button>
+
+          </div>
+          <div class="headerplaylist">
+            <img id="playlistimg" src="../core/assets/up-all-night-small.png">
+            <span id="headersmall"> Playing from:</span>
+            <span id="headerbig">Up all night: The remixes radio</span>
+          </div>
+          <div class="playlisttitles">
+            <span id="titleleft"> SONG</span>
+
+            <span id="titleright"> LISTENED</span>
+            <span id="titlemid"> LENGTH</span>
+          </div>
+        <!-- <div id="song">
+            <div id="songleft"></div>
+            <div id="songright"></div>
+            <div id="songmid"></div>
+          </div> -->
+        </div>
+
+
+        <div id="playlist3" >
+          <div class="close">
+            <button id="buttonCLOSE" onclick="hidePlaylist3()">
+                <span id="playlistCLOSE">CLOSE<span>
+                <span id="imgCLOSE"> <img id="X" src="../core/assets/close-icon.png"></span>
+            </button>
+
+          </div>
+          <div class="headerplaylist">
+            <img id="playlistimg" src="../core/assets/up-all-night-small.png">
+            <span id="headersmall"> Playing from:</span>
+            <span id="headerbig">Dj Killer mixes</span>
+          </div>
+          <div class="playlisttitles">
+            <span id="titleleft"> SONG</span>
+
+            <span id="titleright"> LISTENED</span>
+            <span id="titlemid"> LENGTH</span>
+          </div>
+
+          <div id="song">
+            <div id="songleft"></div>
+            <div id="songright"></div>
+            <div id="songmid"></div>
+          </div>
+
+        </div>
+
+
+
+      <div class="cleardiv"></div>
+
+      <div class="divdown">
+        <span id="spmain"> &#169 2016 ACME ALL RIGHTS RESERVED</span>
+      </div>
+
+      <div id="footer">
+        
+      </div>
+
+
+      <script type="text/javascript" src="jquery-1.12.2.min.js"></script>
+      <script type="text/javascript" src="anim.js"></script>
+
+      <script type="text/javascript" src="api.js"></script>
+      <script type="text/javascript" src="playlist.js"></script>
+
+   </body>
+</html>

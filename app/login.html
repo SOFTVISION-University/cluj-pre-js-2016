@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login page</title>
+    <link rel="stylesheet" type="text/css" href="login.css">
+</head>
+  <body>
+    <div>
+      <br>
+      <img id="img" src="../core/assets/logo-color.png" alt="ACME logo">
+
+      <h2>Sign into your ACME account</h2>
+      <form>
+        <span>
+          Email
+        </span>
+          <br>
+          <input id="email" type="email" name="email" required>
+          <br>
+          <br>
+          <span>
+          Password
+          </span>
+          <br>
+          <input id="password" type="password" name="psw" required>
+          <br>
+          <br>
+          <span> <a href="http://acmepasschange.com">Forgot password?</a>
+          <button onclick="LogIn()">Sign In</button></span>
+      </form>
+      <br>
+      <p>Don't have an account?
+          <a href="http://register.com">Sign up here.</a></p>
+          <br>
+    </div>
+    <script type="text/javascript" src="account.js"></script>
+  </body>
+</html>
