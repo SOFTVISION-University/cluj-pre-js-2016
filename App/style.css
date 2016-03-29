@@ -169,7 +169,7 @@ overflow: hidden;
 }
 
 .songImg{
-	display: inline-block;
+float: left;
 	width: 50px;
 	height: 50px;
 	margin-left: 10px;
@@ -193,8 +193,10 @@ visibility: hidden;
 .divToClone{
 	display: block;
 	width: 100%;
+	/*width: 200px;
+	background-color: red;*/
 	height: 70px;
-	visibility: hidden;
+	visibility: visible;
 }
 .listHolder div:hover button{
 	visibility: visible;
@@ -671,6 +673,12 @@ tr .bigTr{
 	background-color: #aaaaaf;
 	background-color: rgba(100,100,200,0.2);
 
+}
+
+.colorRed {
+	width: 200px;
+	height: 100px;
+	background-color: red;
 }
 
 .imgMetallica{

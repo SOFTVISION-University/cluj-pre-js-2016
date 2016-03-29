@@ -5,6 +5,10 @@
     <title>Acme Division</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://backbonejs.org/test/vendor/underscore.js"></script>
+    <script src="http://backbonejs.org/test/vendor/jquery.js"></script>
+    <script src="http://backbonejs.org/docs/js/jquery.lazyload.js"></script>
+    <script src="http://backbonejs.org/backbone.js"></script>
   </head>
   <body>
   <div class="mainDiv">
@@ -72,9 +76,6 @@
                   <span class="small gray">Lorem ipsum dolor  sit amet  coectrur adispsigind elit se ddo </span>
             </div>
         </div>
-        <div class="clearDiv">
-
-        </div>
       </div>
 
   </div>
@@ -88,7 +89,6 @@
         <span></span>
     </div>
     <div id="songsHolder">
-
     </div>
   </div>
 
@@ -97,25 +97,25 @@
 </div>
 
 
-<!-- <script type="text/template" id="playlist-item"> -->
-<div class="divToClone">
-    <img src="" alt="" id="songImg" class="songImg"/>
+<script type="text/template" id="song-item">
+  <div class="divToClone">
+    <img src="<%= image %>" alt="" id="songImg" class="songImg"/>
 
-    <div class="">
-      <span></span><br>
-      <span></span>
+    <div class="songTitleDiv">
+      <span><%= songTitle %></span><br>
+      <span><%= songAuthor %></span>
     </div>
 
-    <div class="">
-      <span></span>
+    <div class="songDurationDiv">
+      <span><%= songLength %></span>
     </div>
 
-    <div class="">
-      <span></span>
+    <div class="songCountDiv">
+      <span><%= songListened %></span>
     </div>
   </div>
+</script>
 
-<!-- </script> -->
 
 <div id="mettalicaDiv">
   <img src="" alt="" class="imgMetallica"/>
@@ -125,8 +125,13 @@
   </body>
   <script type="text/javascript" src="../core/data/playlists.js" ></script>
   <script type="text/javascript" src="../core/data/users.js" ></script>
-  <script type="text/javascript" src="ListJS.js" ></script>
+  <script type="text/javascript" src="SongCollectionView.js" ></script>
   <script type="text/javascript" src="Song.js" ></script>
+  <script type="text/javascript" src="SongView.js" ></script>
+  <script type="text/javascript" src="SongCollection.js" ></script>
+  <script type="text/javascript" src="PlaylistModel.js" ></script>
+  <script type="text/javascript" src="PlaylistCollection.js" ></script>
+  <script type="text/javascript" src="ListJS.js" ></script>
   <script type="text/javascript" src="Playlist.js" ></script>
   <script type="text/javascript" src="Draw.js" ></script>
   <script type="text/javascript" src="Utils.js" ></script>

@@ -24,8 +24,6 @@ var jsonOffline = {
 };
 
 document.addEventListener("DOMContentLoaded", function(event) {
-
-
   if( AccountService.getInstance().loggedUser !== null){
       document.getElementById('signInButton').style.visibility =  "hidden";
       document.getElementById('logOutButton').style.visibility =  "visible";
@@ -39,9 +37,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 getLinkContent();
 });
 
-
-
-
 $.ajax( {
    url: "https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro=&explaintext=&titles=metallica",
    jsonp: "callback",
@@ -54,14 +49,10 @@ $.ajax( {
    },
 
    success: function(response) {
-     console.log(response);
     var metallicaInfo = response.query.pages["18787"].extract;
      document.getElementById('mettalicaDiv').getElementsByTagName('span')[0].innerText = metallicaInfo;
    }
 });
-
-
-
 
 $.ajax( {
    url: "https://en.wikipedia.org//w/api.php?action=query&format=json&prop=pageimages%7Cextracts&exintro=&explaintext=&titles=metallica",
@@ -86,9 +77,11 @@ function getLinkContent() {
     var linkPromise = new Promise(  function(resolve, reject) {
     var xhr = new XMLHttpRequest();
     xhr.open('GET', link, true);
+
     var objectFromServer = xhr.send();
-    console.log(xhr.status);
-    xhr.onload = function(){
+    xhr.onreadystatechange = function(){
+      console.log(xhr.responseText);
+      var myArr = JSON.parse(xhr.responseText);
       if(xhr.status >= 200 && xhr.status < 300){
         resolve(objectFromServer);
       }
@@ -107,15 +100,12 @@ function getLinkContent() {
 }
 
 function parseResultFromServer(data){
-  var title = data.contents;
-  console.log(title);
+  var title = data.contents.quotes[0].quote;
 }
 function parseResultOffline(data){
- console.log("offline:"+data);
  var title = data.contents.quotes[0].quote;
  var author = data.contents.quotes[0].author;
  drawTitle(title , author);
- console.log(title);
 }
 
 function drawTitle(title , author){
@@ -125,7 +115,6 @@ function drawTitle(title , author){
 
 //function Create playlists
 function createPlayLists(){
-
   (playListFromJS.map(createPlaylists)).map(drawBigPlayList);
 }
 
@@ -136,7 +125,6 @@ function createPlaylists(playListFromJson){
 
 function clearPlaylist(){
   var parentDiv = document.getElementById('songsHolder');
-  var songDivArray = parentDiv.getElementsByClassName('divToClone');
   while (parentDiv.firstChild) {
     parentDiv.removeChild(parentDiv.firstChild);
   }
@@ -158,30 +146,40 @@ function closePlaylist(){
   platListDiv.style.transition = "0.5s";
   platListDiv.style.height = "0px";
 }
-
 //start click explore playlist
 function showPlaylist(playlistNr){
   var songsArray = [];
-  var selectedPlaylist = playListFromJS[playlistNr];
-  var playListObject = new Playlist(selectedPlaylist);
-  var playlistView = new PlaylistView();
-  playListObject.register(playlistView);
-
+  var songCollection = new SongCollection();
+  var playlistCollection = new PlaylistCollection();
   clearPlaylist();
-
-  drawPlayListHeader(playListObject);
-
-//bad practice because addSongs will not be used at all..just wanna try map function...
-  var addSongs = selectedPlaylist.songs.map(function(currentSong){
-    var song = new Song(currentSong);
-    playListObject.addSong(song);
-    return song;
+  playListFromJS.forEach(function(currentPlaylist){
+    console.log(currentPlaylist);
+    var playlistModel = new PlaylistModel(currentPlaylist);
+    var songCollection = new SongCollection();
+    currentPlaylist.songs.forEach(function(currentSong){
+      var songModel = new SongModel(currentSong);
+      songCollection.add(songModel);
+    });
+    playlistModel.songs = songCollection;
+    console.log(playlistModel);
+    playlistCollection.add(playlistModel);
   });
 
+  var selectedPlaylist = playListFromJS[playlistNr];
+  var playListObject = new Playlist(selectedPlaylist);
+  drawPlayListHeader(playListObject);
+  selectedPlaylist.songs.forEach(function(currentSong){
+    var songModel = new SongModel(currentSong);
+    songCollection.add(songModel);
+  });
+  console.log("soncCOll:"+songCollection);
+  var songCollectionView = new SongCollectionView({
+                el: document.getElementById('songsHolder'),
+                collection: songCollection
+              });
+  songCollectionView.render();
 }
-//end click explore playlist
 
-//start draw songs in the playlist
 function drawPlayListHeader(playListObject) {
   var platListDiv =   document.getElementById('playList');
   platListDiv.className = "showPlayList";
