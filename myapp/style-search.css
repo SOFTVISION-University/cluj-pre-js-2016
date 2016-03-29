@@ -247,9 +247,20 @@ body p{
   vertical-align:top;
   border-bottom: 1px solid gray;
 }
-#divSong p{
-  display: inline;
+#element li{
+  display: inline-block;
 }
+/*#divSong p{
+  padding: 0px;
+  width: 22%;
+  height:50px;
+  display: table-cell;
+}
+#divSong span{
+  padding-top: 0px;
+  /*padding-left: 25px;*/
+  display: block;
+}*/
 /*.playlist{
   appearance:none;
   background-color: blue

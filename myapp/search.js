@@ -62,8 +62,8 @@ function displaySongs(index){
         // var pIdName='text';
         // parag.setAttribute('id',pIdName);
         // parag.style="display:inline-block;padding-left:5px ";
-        divSong.innerHTML = '<img src= "' + playlist[index].songs[j].image + '"/>' + '<p>' + playlist[index].songs[j].songTitle + '</p>' + "        " +" by " + playlist[index].songs[j].songAuthor + "        " + transformTime(playlist[index].songs[j].songLength) + "       " + playlist[index].songs[j].songListened;
-
+        divSong.innerHTML = '<ul id= "element"><li><img src= "' + playlist[index].songs[j].image + '"/></li> ' + '<ul><li>' + playlist[index].songs[j].songTitle  +"</li> <li> by " + playlist[index].songs[j].songAuthor + "</li> </ul> " + "<li>" + transformTime(playlist[index].songs[j].songLength) + "</li>" +"<li>" +playlist[index].songs[j].songListened+"</li></ul>" ;
+        console.log(playlist[index].songs[j].songLength);
         //newdiv.appendChild(parag);
         playlistElement.appendChild( divSong );
 
