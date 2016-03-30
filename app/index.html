@@ -1,5 +1,9 @@
 <html>
 <head>
+<script src="http://backbonejs.org/test/vendor/underscore.js"></script>
+<script src="http://backbonejs.org/test/vendor/jquery.js"></script>
+<script src="http://backbonejs.org/docs/js/jquery.lazyload.js"></script>
+<script src="http://backbonejs.org/backbone.js"></script>
 <link rel="stylesheet" type="text/css" href="index_css.css">
 <script  src="java_index.js"></script>
 <script  src="playlist.js"></script>
@@ -8,10 +12,17 @@
 <script  src="time-change.js"></script>
 <script  src="account-service.js"></script>
 <script  src="serverReq.js"></script>
-<script src="http://backbonejs.org/test/vendor/underscore.js"></script>
-<script src="http://backbonejs.org/test/vendor/jquery.js"></script>
-<script src="http://backbonejs.org/docs/js/jquery.lazyload.js"></script>
-<script src="http://backbonejs.org/backbone.js"></script>
+<script  src="Songs/songModel.js"></script>
+<script  src="Songs/songsCollection.js"></script>
+<script  src="Songs/songView.js"></script>
+<script  src="Songs/songsView.js"></script>
+<script  src="playlist/playlistModel.js"></script>
+<script  src="playlist/playlistCollection.js"></script>
+<script  src="playlist/playlistView.js"></script>
+<script  src="playlist/playlistsView.js"></script>
+
+
+
 </head>
 <body body onload="OnLoad()">
 
@@ -69,51 +80,24 @@
 
 
 
-  <div class="playlist1" >
-     <div class="playlist" id="bloc1" >
+  <div id="playlist1" >
+
+	 <script type="text/template" id="template-Playlist">
+	 <div class="playlist" id="bloc1" >
        <div id="position_relative">
          <form  action="index.html" method="post" class="form_playlist"  >
          <input type="button"  onclick="clonare(0)" value="Explore list " class="button_playlist" id="button_playlist_top">
         </form>
-        <img src="../core/assets/massive-pop-hits.png" class="img_blc1" id="img_play_1">
-        <span class="text_blc" id="title_play_1">Massive pop hits vol 1</span>
-        <span class="text_blc text_blc2"  id="text_play_1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porttitor enim erat</span>
+        <img src=<%= imageLarge %> class="img_blc1" id="img_play_1">
+        <span class="text_blc" id="title_play_1"><%= title %></span>
+        <span class="text_blc text_blc2"  id="text_play_1"><%= description %></span>
 
 
        </div>
 
+    </div>
+</script>
 
-
-
-   </div>
-
-   <div class="playlist" id="bloc2" >
-       <div id="position_relative">
-       <form  action="www.google.ro" method="post" class="form_playlist"  >
-       <input type="button"  onclick="clonare(1)" value="Explore list " class="button_playlist" id="button_playlist_top">
-       </form>
-       <img src="../core/assets/up-all-night.png" class="img_blc1" id="img_play_2">
-       <span class="text_blc" id="title_play_2">Massive pop hits vol 1</span>
-       <span class="text_blc text_blc2"  id="text_play_2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porttitor enim erat
-
-     </span>
-
-
-     </div>
-
-
-  </div>
- <div class="playlist" id="bloc3" >
-   <div id="position_relative">
-     <form  action="index.html" method="post" class="form_playlist"  >
-    <input type="button"  onclick="clonare(2)" value="Explore list " class="button_playlist" id="button_playlist_top">
-      </form>
-     <img src="../core/assets/dj-killer-mixes.png" class="img_blc1" id="img_play_3">
-     <span class="text_blc" id="title_play_3" >Massive pop hits vol 1</span>
-     <span class="text_blc text_blc2"  id="text_play_3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porttitor enim erat
-     </span>
-
-   </div>
 
 
 
@@ -164,26 +148,26 @@
   <script type="text/template" id="template-FriendInListView">
     <div id="container1">
         <div id="photo_song_small" class="card">
-             <img src="../core/assets/up-all-night.png" id="photo_id" class="img_blc2">
+             <img src=<%= gsx$image.$t %>  id="photo_id" class="img_blc2">
 
         </div>
         <div id="name_song_small" class="card">
 
              <span class="display2" id="title_id">
-               <%= songTitle %>
+               <%= gsx$name.$t %>
              </span>
              <span class="display2" id="subtitle_id">
-               <%= songAuthor %>
+               <%= gsx$name.$t %>
              </span>
 
         </div>
        <div id="leght_song_small" class="card">
-         <span  id="leght_song"><%= songLength %>
+         <span  id="leght_song"><%= gsx$length.$t %>
          </span>
 
        </div>
        <div id="time_song_small" class="card">
-         <span id="time_song" ><%= songListened %>
+         <span id="time_song" ><%= songLength %>
          </span>
 
        </div>

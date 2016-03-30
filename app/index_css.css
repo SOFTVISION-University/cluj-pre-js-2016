@@ -37,7 +37,7 @@ background-size: cover;
      background-color:white;
 	  }
 
-		.playlist1{
+		#playlist1{
       background-color: rgba(0, 0, 0, 0);
 		  width:70%;
 		  height:360px;
