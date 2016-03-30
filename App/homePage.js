@@ -1,5 +1,5 @@
 var playListFromJS= JSON.parse(playlistsJSON);
-var link = "http://quotes.rest/qod.json";
+var link = "http://192.168.28.109:3000/playlists";
 var jsonOffline = {
     "success": {
         "total": 1
@@ -34,43 +34,50 @@ document.addEventListener("DOMContentLoaded", function(event) {
       document.getElementById('username').innerText = "";
   }
 
-getLinkContent();
+// getLinkContent();
+//createPlayLists();
+createPlaylistsModel();
 });
 
-$.ajax( {
-   url: "https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro=&explaintext=&titles=metallica",
-   jsonp: "callback",
-   dataType: 'jsonp',
-   data: {
-       action: "query",
-       list: "search",
-       srsearch: "javascript",
-       format: "json"
-   },
 
-   success: function(response) {
-    var metallicaInfo = response.query.pages["18787"].extract;
-     document.getElementById('mettalicaDiv').getElementsByTagName('span')[0].innerText = metallicaInfo;
-   }
-});
 
-$.ajax( {
-   url: "https://en.wikipedia.org//w/api.php?action=query&format=json&prop=pageimages%7Cextracts&exintro=&explaintext=&titles=metallica",
-   jsonp: "callback",
-   dataType: 'jsonp',
-   data: {
-       action: "query",
-       list: "search",
-       srsearch: "javascript",
-       format: "json"
-   },
 
-    success: function(response) {
-    var metallicaImage = response.query.pages["18787"].thumbnail.source;
-    metallicaImage = metallicaImage.split("50")[0]+"400"+metallicaImage.split("50")[1];
-    document.getElementById('mettalicaDiv').getElementsByTagName('img')[0].style.backgroundImage = 'url("'+metallicaImage+'")';
-   }
-});
+
+
+// $.ajax( {
+//    url: "https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro=&explaintext=&titles=metallica",
+//    jsonp: "callback",
+//    dataType: 'jsonp',
+//    data: {
+//        action: "query",
+//        list: "search",
+//        srsearch: "javascript",
+//        format: "json"
+//    },
+//
+//    success: function(response) {
+//     var metallicaInfo = response.query.pages["18787"].extract;
+//      document.getElementById('mettalicaDiv').getElementsByTagName('span')[0].innerText = metallicaInfo;
+//    }
+// });
+//
+// $.ajax( {
+//    url: "https://en.wikipedia.org//w/api.php?action=query&format=json&prop=pageimages%7Cextracts&exintro=&explaintext=&titles=metallica",
+//    jsonp: "callback",
+//    dataType: 'jsonp',
+//    data: {
+//        action: "query",
+//        list: "search",
+//        srsearch: "javascript",
+//        format: "json"
+//    },
+//
+//     success: function(response) {
+//     var metallicaImage = response.query.pages["18787"].thumbnail.source;
+//     metallicaImage = metallicaImage.split("50")[0]+"400"+metallicaImage.split("50")[1];
+//     document.getElementById('mettalicaDiv').getElementsByTagName('img')[0].style.backgroundImage = 'url("'+metallicaImage+'")';
+//    }
+// });
 
 
 function getLinkContent() {
@@ -80,8 +87,9 @@ function getLinkContent() {
 
     var objectFromServer = xhr.send();
     xhr.onreadystatechange = function(){
-      console.log(xhr.responseText);
+      // console.log(xhr.responseText);
       var myArr = JSON.parse(xhr.responseText);
+      // console.log(myArr);
       if(xhr.status >= 200 && xhr.status < 300){
         resolve(objectFromServer);
       }
@@ -100,7 +108,7 @@ function getLinkContent() {
 }
 
 function parseResultFromServer(data){
-  var title = data.contents.quotes[0].quote;
+
 }
 function parseResultOffline(data){
  var title = data.contents.quotes[0].quote;
@@ -108,19 +116,32 @@ function parseResultOffline(data){
  drawTitle(title , author);
 }
 
+var songCollection = new SongCollection();
+//var playlistCollection = new PlaylistCollection();
+
 function drawTitle(title , author){
   document.getElementById("bigTitle").innerText = title;
   document.getElementById("authorSmall").innerText = author;
 }
 
 //function Create playlists
-function createPlayLists(){
-  (playListFromJS.map(createPlaylists)).map(drawBigPlayList);
+function createPlaylistsModel(){
+  var playlistCollection =  new PlaylistCollection();
+  playlistCollection.fetch().done(function(){
+    createPlayLists(playlistCollection);
+  });
 }
 
-function createPlaylists(playListFromJson){
-  var bigPlaylist = new Playlist(playListFromJson);
+
+function createPlayLists(playlistCollection){
+ var playlistCollectionView = new PlaylistCollectionView({
+   el: document.getElementById('playlist-holder'),
+   collection: playlistCollection
+ });
+ playlistCollectionView.render();
 }
+
+
 // end function create playlists
 
 function clearPlaylist(){
@@ -132,10 +153,6 @@ function clearPlaylist(){
 
 //start draw and populate nodes --> playlist
 function drawBigPlayList(playlist){
-  var playlistDiv = document.getElementsByClassName('playListDivTemplate')[playlist.index];
-  playlistDiv.style.backgroundImage = 'url("'+playlist.imageLarge+'")';
-  playlistDiv.getElementsByTagName('span')[0] = playlist.playlistName;
-  playlistDiv.getElementsByTagName('span')[1] = playlist.description;
 }
 //end draw and populate nodes
 
@@ -147,50 +164,30 @@ function closePlaylist(){
   platListDiv.style.height = "0px";
 }
 //start click explore playlist
-function showPlaylist(playlistNr){
-  var songsArray = [];
-  var songCollection = new SongCollection();
-  var playlistCollection = new PlaylistCollection();
-  clearPlaylist();
-  playListFromJS.forEach(function(currentPlaylist){
-    console.log(currentPlaylist);
-    var playlistModel = new PlaylistModel(currentPlaylist);
-    var songCollection = new SongCollection();
-    currentPlaylist.songs.forEach(function(currentSong){
-      var songModel = new SongModel(currentSong);
-      songCollection.add(songModel);
-    });
-    playlistModel.songs = songCollection;
-    console.log(playlistModel);
-    playlistCollection.add(playlistModel);
-  });
+function showPlaylist(playlist){
+  var selectedPlaylist = playlist.songs;
+  drawPlayListHeader(playlist);
+  drawSonsCollectionView(selectedPlaylist);
+}
 
-  var selectedPlaylist = playListFromJS[playlistNr];
-  var playListObject = new Playlist(selectedPlaylist);
-  drawPlayListHeader(playListObject);
-  selectedPlaylist.songs.forEach(function(currentSong){
-    var songModel = new SongModel(currentSong);
-    songCollection.add(songModel);
-  });
-  console.log("soncCOll:"+songCollection);
+function drawSonsCollectionView(selectedPlaylist) {
   var songCollectionView = new SongCollectionView({
                 el: document.getElementById('songsHolder'),
-                collection: songCollection
+                collection: selectedPlaylist
               });
   songCollectionView.render();
 }
 
 function drawPlayListHeader(playListObject) {
+  var playListHeaderView = new PlaylistHeaderView({
+    el:document.getElementById('playList'),
+    model: playListObject
+  });
+  playListHeaderView.render();
   var platListDiv =   document.getElementById('playList');
   platListDiv.className = "showPlayList";
   platListDiv.style.visibility = "visible";
   platListDiv.style.transition = "0.5s";
   platListDiv.style.height = "400px";
-
-  var playlistImg = document.getElementById('playListHeader').getElementsByTagName('img')[0];
-  playlistImg.style.float = "left";
-  playlistImg.style.backgroundImage = 'url("'+playListObject.imageSmall+'")';
-  var titleSpan = document.getElementById('playListHeader').getElementsByTagName('span')[0];
-  titleSpan.innerText = playListObject.playlistName;
 }
 //end draw songs in the playlist

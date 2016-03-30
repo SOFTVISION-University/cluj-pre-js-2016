@@ -21,22 +21,13 @@
                 <div class="formIndex">
                   <datalist id="fruits">
                     <select name="fruits" id="search_music" >
-
-
-
-
                     </select>
-
                     </datalist>
                   <input type="text" id="searchStr" placeholder="Search Music" name="fruit" list="fruits" onkeyup="return searchMusic(event)">
                   <option name="Name" value="music" id="option_music"> </option>
                     <!-- <input type="text" name="searchtext" placeholder="Search music"> -->
-
-
                 </div>
-
             </div>
-
         <div  class="signInindexDiv">
             <button type="button" name="button" id="signInButton" class="signInButton"><a href="signIn.html"> <span class="white">Sign In</span> </a></button>
             <span id="username"></span>
@@ -54,64 +45,54 @@
       </div>
 
       </div>
-      <div class="listHolder">
-        <div class="playListDivTemplate" id="playL1">
-            <button type="button" name="list1" class="viewPlayList hidden" onclick="showPlaylist(0)"><span>Explore list</span></button>
-            <div class="textPLDiv">
-                <span class="medium">Up all nigth</span><br>
-                <span class="small gray">Lorem ipsum dolor  sit amet  coectrur adispsigind elit se ddo </span>
-            </div>
-        </div>
-        <div class="playListDivTemplate">
-            <button type="button" name="list1" class="viewPlayList hidden" onclick="showPlaylist(1)"><span>Explore list</span></button>
-            <div class="textPLDiv">
-                <span class="medium">Up all nigth</span><br>
-                  <span class="small gray">Lorem ipsum dolor  sit amet  coectrur adispsigind elit se ddo </span>
-            </div>
-        </div>
-        <div class="playListDivTemplate">
-            <button type="button" name="list1" class="viewPlayList hidden" onclick="showPlaylist(2)"><span>Explore list</span></button>
-            <div class="textPLDiv">
-                <span class="medium">Up all nigth</span><br>
-                  <span class="small gray">Lorem ipsum dolor  sit amet  coectrur adispsigind elit se ddo </span>
-            </div>
-        </div>
-      </div>
+      <div class="listHolder" id="playlist-holder">
 
-  </div>
+     </div>
   <div class="class1">
 
   </div>
-  <div id="playList">
-    <img src="../core/assets/close-icon.png" alt="" id="closeImg" onclick="closePlaylist()"/>
-    <div id="playListHeader">
-        <img src="" alt="" id="playlistImg"/>
-        <span></span>
-    </div>
-    <div id="songsHolder">
-    </div>
-  </div>
 
-<div id="TestDiv1">
-  <span></span>
-</div>
+    <div id="playList">
+
+    </div>
+
+
+<script type="text/template" id="header-playlist">
+  <div id="playListHeader">
+    <img src="../core/assets/close-icon.png" alt="" id="closeImg"/>
+    <img src="<%= imageSmall %>" alt="" id="playlistImg"/>
+    <span><%= title %></span>
+  </div>
+  <div id="songsHolder">
+  </div>
+</script>
+
+<script type="text/template" id="playlist-item">
+  <div class="playListDivTemplate" style="background-image: url(<%= imageLarge %>)" id="playL1">
+      <button type="button" name="list1" class="viewPlayList"><span>Explore list</span></button>
+      <div class="textPLDiv">
+          <span class="medium"><%= title %></span><br>
+          <span class="small gray"><%= description %></span>
+      </div>
+  </div>
+</script>
 
 
 <script type="text/template" id="song-item">
   <div class="divToClone">
-    <img src="<%= image %>" alt="" id="songImg" class="songImg"/>
+    <img src="<%= gsx$image.$t %>" alt="" id="songImg" class="songImg"/>
 
     <div class="songTitleDiv">
-      <span><%= songTitle %></span><br>
-      <span><%= songAuthor %></span>
+      <span><%= gsx$name.$t %></span><br>
+      <span><%= gsx$album.$t %></span>
     </div>
 
     <div class="songDurationDiv">
-      <span><%= songLength %></span>
+      <span><%= gsx$length.$t %></span>
     </div>
 
     <div class="songCountDiv">
-      <span><%= songListened %></span>
+      <span><%= gsx$track.$t %></span>
     </div>
   </div>
 </script>
@@ -125,15 +106,16 @@
   </body>
   <script type="text/javascript" src="../core/data/playlists.js" ></script>
   <script type="text/javascript" src="../core/data/users.js" ></script>
-  <script type="text/javascript" src="SongCollectionView.js" ></script>
-  <script type="text/javascript" src="Song.js" ></script>
-  <script type="text/javascript" src="SongView.js" ></script>
-  <script type="text/javascript" src="SongCollection.js" ></script>
-  <script type="text/javascript" src="PlaylistModel.js" ></script>
-  <script type="text/javascript" src="PlaylistCollection.js" ></script>
-  <script type="text/javascript" src="ListJS.js" ></script>
-  <script type="text/javascript" src="Playlist.js" ></script>
-  <script type="text/javascript" src="Draw.js" ></script>
+  <script type="text/javascript" src="View/SongCollectionView.js" ></script>
+  <script type="text/javascript" src="View/PlaylistView.js" ></script>
+  <script type="text/javascript" src="View/PlaylistCollectionView.js" ></script>
+  <script type="text/javascript" src="Model/Song.js" ></script>
+  <script type="text/javascript" src="View/SongView.js" ></script>
+  <script type="text/javascript" src="Collection/SongCollection.js" ></script>
+  <script type="text/javascript" src="Model/PlaylistModel.js" ></script>
+  <script type="text/javascript" src="Collection/PlaylistCollection.js" ></script>
+  <script type="text/javascript" src="View/PlaylistHeaderView.js" ></script>
+  <script type="text/javascript" src="homePage.js" ></script>
   <script type="text/javascript" src="Utils.js" ></script>
   <script type="text/javascript" src="User.js"></script>
   <script type="text/javascript" src="AccountService.js"></script>

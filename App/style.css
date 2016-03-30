@@ -135,8 +135,9 @@ overflow: hidden;
 	margin:0 auto;
 }
 .listHolder{
-	width: 1200px;
-	margin: -100px auto;
+	width: 70%;
+	align-items: center;
+	margin: -100px auto;*/
 }
 .playListDivTemplate
 {
@@ -147,10 +148,10 @@ overflow: hidden;
 	text-align: center;
 	border-radius: 4px;
 	background-color: #ffffff;
-	background-image: url("../core/assets/dj-killer-mixes.png");
 	background-repeat: no-repeat;
 }
 .viewPlayList{
+	display: inline-block;
 	background-color: #00bfff;
 	border: 5px;
 	border-radius: 5px;
@@ -160,9 +161,11 @@ overflow: hidden;
 	height: 37px;
 	margin-top: 100px;
 	outline: none;
+	visibility: visible;
 }
 
 #playlistImg{
+	float: left;
 	width: 100px;
 	height: 100px;
 	margin-left: 5px;
@@ -176,12 +179,21 @@ float: left;
 }
 .textPLDiv{
 	margin-top: 90px;
+	line-height: 70%;
 }
 
 
 .listHolder div{
-position: relative;
+	width: 300px;
+	margin-right: 20px;
 }
+
+.playlistCl{
+	width: 300px;
+	float:left;
+	margin-top: 20px;
+}
+
 .hidden{
 visibility: hidden;
 }
