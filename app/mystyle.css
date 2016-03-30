@@ -330,36 +330,28 @@ a.submitSignUp {
   text-align: left;
   padding: 20px;
 }
-#explorePlaylist1{
+.explorePlaylist{
+  background-color: #1DBFF5;
+  height: 50px;
+  width: 180px;
+  border: none;
+  color: white;
+  font-size: 1.2em;
+  border-radius: 5px;
   position: absolute;
   margin-top: 110px;
   margin-left: 80px;
+  box-sizing: border-box;
+  padding-top: 15px;
   display:none;
   z-index: 100;
+  text-decoration: none;
 }
-#explorePlaylist2{
-  position: absolute;
-  margin-top: 110px;
-  margin-left: 80px;
-  display:none;
-  z-index: 100;
-}
-#explorePlaylist3{
-  position: absolute;
-  margin-top: 110px;
-  margin-left: 80px;
-  display:none;
-  z-index: 100;
-}
-.cardBottomDiv:hover #explorePlaylist1 {
+
+.cardBottomDiv:hover .explorePlaylist {
   display: block;
 }
-.cardBottomDiv:hover #explorePlaylist2 {
-  display: block;
-}
-.cardBottomDiv:hover #explorePlaylist3 {
-  display: block;
-}
+
 .cardBottomDiv:hover .cardOverlay{
   display: block;
   right: 0px;
