@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-  
+
   document.getElementById('box1').onclick=function(){
     document.getElementById('popup').style.visibility="visible";
   }

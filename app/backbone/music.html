@@ -1,14 +1,56 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
 <head>
-	<script src="http://backbonejs.org/test/vendor/underscore.js"></script>
-	<script src="http://backbonejs.org/test/vendor/jquery.js"></script>
-	<script src="http://backbonejs.org/docs/js/jquery.lazyload.js"></script>
-	<script src="http://backbonejs.org/backbone.js"></script>
-	<title>Music Playlist</title>
+  <title>SignIn</title>
+  <script src="http://backbonejs.org/test/vendor/underscore.js"></script>
+  <script src="http://backbonejs.org/test/vendor/jquery.js"></script>
+  <script src="http://backbonejs.org/docs/js/jquery.lazyload.js"></script>
+  <script src="http://backbonejs.org/backbone.js"></script>
+  <script src="/home/robert.cosma/work/cluj-pre-js-2016/app/backbone/Song/SongModel.js"></script>
+  <script src="/home/robert.cosma/work/cluj-pre-js-2016/app/backbone/Song/SongCollection.js"></script>
+  <script src="/home/robert.cosma/work/cluj-pre-js-2016/app/backbone/Song/SongListItemView.js"></script>
+  <script src="/home/robert.cosma/work/cluj-pre-js-2016/app/backbone/Song/SongsListView.js"></script>
+  <script src="/home/robert.cosma/work/cluj-pre-js-2016/app/backbone/Playlist/PlaylistModel.js"></script>
+  <script src="/home/robert.cosma/work/cluj-pre-js-2016/app/backbone/Playlist/PlaylistCollection.js"></script>
+  <script src="/home/robert.cosma/work/cluj-pre-js-2016/app/backbone/Playlist/PlaylistsView.js"></script>
+  <script src="/home/robert.cosma/work/cluj-pre-js-2016/app/backbone/Playlist/PlaylistView.js"></script>
 </head>
 
 <body>
+<div class="playlist">
+  <div>
+    <img src="/home/robert.cosma/work/cluj-pre-js-2016/core/assets/massive-pop-hits.png">
+  </div>
+  <div>
+    <h1>Massive pop hits vol 1</h1>
+  </div>
+  <table>
+    <tr>
+      <th>SONG </th>
+      <th>LENGHT </th>
+      <th>LISTENED</th>
+    </tr>
+  </table>
+  <script type="text/template" id="song-list-view">
+    <img src=<%= image %> />
+    <span class="name"><%= name %></span>
+    <span class="songAuthor"><%= songAuthor %></span>
+    <span class="songLength"><%= songLength %></span>
+    <span class="songListened"><%= songListened %></span>
+  </script>
+
+<div id="songs">
+</div>
+
+<script>
+  $(function() {
+  var songsJSON = '[{"image":"/home/robert.cosma/work/cluj-pre-js-2016/core/assets/2015-best-music.png","name":"love love enemies love","songAuthor":"Smiley","songLength":74,"songListened":82},{"image":"/home/robert.cosma/work/cluj-pre-js-2016/core/assets/2015-best-music.png","name":"love love enemies pierdut","songAuthor":"Dr. Dre","songLength":186,"songListened":78},{"image":"/home/robert.cosma/work/cluj-pre-js-2016/core/assets/2015-best-music.png","name":"ea money pierdut ea","songAuthor":"Andra","songLength":303,"songListened":94},{"image":"/home/robert.cosma/work/cluj-pre-js-2016/core/assets/2015-best-music.png","name":"enemies el buletin ea","songAuthor":"Andra","songLength":359,"songListened":23},{"image":"/home/robert.cosma/work/cluj-pre-js-2016/core/assets/2015-best-music.png","name":"buletin el buletin love","songAuthor":"Eminem","songLength":312,"songListened":11},{"image":"/home/robert.cosma/work/cluj-pre-js-2016/core/assets/2015-best-music.png","name":"pierdut pierdut enemies ea","songAuthor":"Eminem","songLength":37,"songListened":9},{"image":"/home/robert.cosma/work/cluj-pre-js-2016/core/assets/2015-best-music.png","name":"ea money enemies enemies","songAuthor":"Dr. Dre","songLength":325,"songListened":13},{"image":"/home/robert.cosma/work/cluj-pre-js-2016/core/assets/2015-best-music.png","name":"enemies money el money","songAuthor":"Eminem","songLength":58,"songListened":10}]';
+  var playlist_songs = new SongCollection(JSON.parse(songsJSON));
+  var songsView = new SongListView({collection: playlist_songs});
+  songsView.render();
+  $('#songs').append(songsView.el);
+  });
+</script>
 
 </body>
 </html>
