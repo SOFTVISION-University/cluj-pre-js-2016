@@ -401,7 +401,7 @@ p#copyright{
 }
 
 div#index-card-area{
-  text-align: left;;
+  text-align: left;
   margin-top: 80px;
   max-width: 1200px;
   margin: 0 auto;
@@ -489,7 +489,7 @@ div#close{
   text-align: right;
 }
 
-span#close-button{
+span.close-button{
 display: inline-block;
 color:#00bfff;
 cursor: pointer;
@@ -507,9 +507,22 @@ p#copyrighthome{
   margin-bottom: 40px;
 }
 
-div#playlist.playlist-expand{
-  height: 70%;
+.playlist-expand{
   transition: 1s;
+  transform: translate(0,-500px);
+  position: absolute;
+  border: 1px solid white;
+  box-shadow: 1px 4px 8px rgba(0,0,0,0.2);
+  border-radius: 3px 3px 3px 3px;
+  width:30%;
+  height: 60%;
+  z-index: 3;
+  background-color: white;
+  display: inline-block;
+  padding: 5px;
+  overflow-y: auto;
+
+
 }
 
 div#playing-from{
@@ -591,4 +604,9 @@ div#sign_up_div input.focus{
 div#sign_up_div input.blur{
   background-color: rgba(128,128,128 ,0.2);
   border:1px solid rgba(128,128,128 ,0.2);
+}
+
+ul.playlists-view li{
+  list-style-type: none;
+  display: inline-block;
 }
