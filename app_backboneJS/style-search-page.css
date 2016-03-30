@@ -1,0 +1,226 @@
+body{
+  font-family: arial;
+  background-color: #f6f6f6;
+}
+
+.wrapper{
+  height: 650px;
+  background-image: url("../core/assets/banner-app.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  box-sizing: border-box;
+}
+
+.search-container{
+  height:550px;
+  width:1600px ;
+  margin:0 auto;
+  padding-top: 40px;
+}
+
+.logo{
+  display: inline-block;
+  vertical-align: top;
+
+}
+
+.search-input{
+  display: inline-block;
+  margin-left: 200px;
+  width: 60%;
+  vertical-align: top;
+}
+
+input{
+  height: 40px;
+  width: 700px;
+  color: white;
+  font-size: 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+  background-image: url('../core/assets/search-icon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  border-radius: 3px;
+  border-width: 0px;
+  border-color: rgba(255, 255, 255, 0.1);
+  margin-top: 20px;
+  margin-left: 50px;
+  padding-left:  40px;
+}
+
+.button-signIn{
+  display: inline-block;
+  vertical-align: top;
+}
+
+.button-signIn button{
+  background-color: #3399ff;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 50px ;
+  border-width: 0px;
+  font-weight: bold;
+  margin-top: 27px;
+}
+
+#searchLogOut{
+  visibility: hidden;
+}
+
+.join-now{
+  margin: 50px auto;
+  width: 60%;
+  text-align: center;
+  color: #fff;
+}
+
+.join-now button{
+  width: 200px;
+  height: 50px;
+  background-color: #6f6;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 50px ;
+  border-width: 0px;
+  font-weight: bold;
+  margin-top: 40px;
+
+}
+
+body p{
+  padding-left: 100px;
+  padding-top: 250px;
+}
+
+.join-now span{
+  width: 300px;
+  display: inline-block;
+}
+
+#welcomeText{
+  margin-top: 30px;
+  margin-bottom: -50px;
+  color: rgba(204, 255, 204, 0.9);
+}
+
+#replaceQuote{
+  margin-top: 50px;
+}
+
+.wrapper-image{
+  /*//height: 350px;*/
+  width: 1200px;
+  background-color: transparent;
+  margin: -150px auto;
+}
+
+.wrapper-image .playlist-view{
+  position: relative;
+  display: inline-block;
+  width:30%;
+  border-radius: 3px;
+  box-shadow: 10px 10px 5px #888888;
+  margin-left: 30px;
+  background-color: #fff;
+  padding-bottom: 20px;
+  transition:transform 3s;
+  box-sizing: border-box;
+}
+
+.wrapper-image .playlist-view:hover{
+  transform: translate(0, -50px);
+}
+
+.wrapper-image .playlist-view span{
+  color: gray;
+}
+
+.playlist-button{
+  position: absolute;
+  visibility: hidden;
+  background-color: rgba(100, 249, 237, 0.3);
+  border-radius: 3px;
+  width:100%;
+  height: 62%;
+  top:0;
+  bottom: 60px;
+  text-align: center;
+}
+
+.playlist-button button{
+  background-color: #3399ff;
+  background-image: url('../core/assets/play-icon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 50px ;
+  border-width: 0px;
+  font-weight: bold;
+  margin:100px auto;
+}
+
+.wrapper-image .playlist-view:hover .playlist-button{
+  visibility: visible;
+}
+
+
+
+#playlist-songs{
+  visibility: visible;
+  position: fixed;
+  overflow-y: scroll;
+  bottom: 0;
+  left: 50px;
+  height:70%;
+  width:30%;
+  border-radius: 5px;
+  background-color: white;
+
+}
+
+
+#playlist-songs .closeButton{
+  color: blue;
+  float:right;
+  background-color: rgba(255, 255, 255, 0);
+  background-image: url('../core/assets/close-icon.png');
+  background-position: 2px 2px;
+  background-repeat: no-repeat;
+  border: 0;
+  padding-left: 15px;
+}
+
+.headerPlaylist{
+  background-color: #f6f6f6;
+  margin-top: 20px;
+  vertical-align: top;
+}
+
+.headerPlaylist .text{
+  display: inline-block;
+}
+
+.subHeaderPlaylist{
+  height: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-top: 10px;
+  padding-left: 0px;
+  background-color: #f6f6f6;
+}
+.subHeaderPlaylist p{
+  color : gray;
+  display: inline;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.song-item-view{
+  height:70px;
+  vertical-align:top;
+  border-bottom: 1px solid gray;
+}
+#element li{
+  display: inline-block;
+}

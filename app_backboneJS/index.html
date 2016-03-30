@@ -1,105 +1,209 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.js"></script>
-	<script type="text/javascript" src="http://underscorejs.org/underscore-min.js"></script>
-	<script type="text/javascript" src="http://backbonejs.org/backbone-min.js"></script>
-	<script type="text/javascript" src="playlist/playlist-model.js"></script>
-	<script type="text/javascript" src="playlist/playlist-collection.js"></script>
-	<title>BB::APP</title>
-	<script type="text/javascript">
-	//var playlistsJSON = '[{"id":0,"title":"Playlist 1","songs":[{"image":"../core/assets/2015-best-music.png","songTitle":"love love enemies love","songAuthor":"Smiley","songLength":74,"songListened":82},{"image":"../core/assets/2015-best-music.png","songTitle":"love love enemies pierdut","songAuthor":"Dr. Dre","songLength":186,"songListened":78},{"image":"../core/assets/2015-best-music.png","songTitle":"ea money pierdut ea","songAuthor":"Andra","songLength":303,"songListened":94},{"image":"../core/assets/2015-best-music.png","songTitle":"enemies el buletin ea","songAuthor":"Andra","songLength":359,"songListened":23},{"image":"../core/assets/2015-best-music.png","songTitle":"buletin el buletin love","songAuthor":"Eminem","songLength":312,"songListened":11},{"image":"../core/assets/2015-best-music.png","songTitle":"pierdut pierdut enemies ea","songAuthor":"Eminem","songLength":37,"songListened":9},{"image":"../core/assets/2015-best-music.png","songTitle":"ea money enemies enemies","songAuthor":"Dr. Dre","songLength":325,"songListened":13},{"image":"../core/assets/2015-best-music.png","songTitle":"enemies money el money","songAuthor":"Eminem","songLength":58,"songListened":10}],"imageLarge":"../core/assets/up-all-night.png","imageSmall":"../core/assets/up-all-night-small.png","description":"Culpa ipsum adipisicing adipisicing mollit nostrud consequat adipisicing reprehenderit laboris duis cillum reprehenderit velit. Et cupidatat eiusmod reprehenderit cupidatat consectetur est. Aliquip laboris ullamco excepteur deserunt culpa et exercitation labore velit ad."},{"id":1,"title":"Playlist 2","songs":[{"image":"../core/assets/2015-best-music.png","songTitle":"money money love ea","songAuthor":"Dr. Dre","songLength":97,"songListened":100},{"image":"../core/assets/2015-best-music.png","songTitle":"el pierdut pierdut ea","songAuthor":"Smiley","songLength":42,"songListened":86},{"image":"../core/assets/2015-best-music.png","songTitle":"enemies money pierdut enemies","songAuthor":"Dr. Dre","songLength":454,"songListened":23},{"image":"../core/assets/2015-best-music.png","songTitle":"money ea love buletin","songAuthor":"Dr. Dre","songLength":448,"songListened":16},{"image":"../core/assets/2015-best-music.png","songTitle":"buletin pierdut ea el","songAuthor":"Dr. Dre","songLength":363,"songListened":23},{"image":"../core/assets/2015-best-music.png","songTitle":"el love el buletin","songAuthor":"Smiley","songLength":88,"songListened":20}],"imageLarge":"../core/assets/up-all-night.png","imageSmall":"../core/assets/up-all-night-small.png","description":"Culpa ipsum adipisicing adipisicing mollit nostrud consequat adipisicing reprehenderit laboris duis cillum reprehenderit velit. Et cupidatat eiusmod reprehenderit cupidatat consectetur est. Aliquip laboris ullamco excepteur deserunt culpa et exercitation labore velit ad."},{"id":2,"title":"Playlist 3","songs":[{"image":"../core/assets/2015-best-music.png","songTitle":"enemies enemies el love","songAuthor":"Smiley","songLength":192,"songListened":51},{"image":"../core/assets/2015-best-music.png","songTitle":"el enemies pierdut el","songAuthor":"Andra","songLength":232,"songListened":87},{"image":"../core/assets/2015-best-music.png","songTitle":"ea enemies pierdut enemies","songAuthor":"Smiley","songLength":234,"songListened":5},{"image":"../core/assets/2015-best-music.png","songTitle":"enemies ea enemies buletin","songAuthor":"Andra","songLength":123,"songListened":45},{"image":"../core/assets/2015-best-music.png","songTitle":"love money buletin love","songAuthor":"Andra","songLength":299,"songListened":13},{"image":"../core/assets/2015-best-music.png","songTitle":"el love ea love","songAuthor":"Andra","songLength":478,"songListened":34},{"image":"../core/assets/2015-best-music.png","songTitle":"ea el enemies money","songAuthor":"Dr. Dre","songLength":280,"songListened":35}],"imageLarge":"../core/assets/up-all-night.png","imageSmall":"../core/assets/up-all-night-small.png","description":"Culpa ipsum adipisicing adipisicing mollit nostrud consequat adipisicing reprehenderit laboris duis cillum reprehenderit velit. Et cupidatat eiusmod reprehenderit cupidatat consectetur est. Aliquip laboris ullamco excepteur deserunt culpa et exercitation labore velit ad."}]';
-	$(function() {
-    var listOfPlaylists=[
-			{
-				id: 1,
-				title: 'Playlist1',
-				songs:[ "song1", "song2"],
-				imageLarge:"../core/assets/2015-best-music.png ",
-				imageSmall:"../core/assets/2015-best-music.png ",
-				description:"Lorem ipsum1"
-			},
-			{
-				id: 2,
-				title: 'Playlist2',
-				songs:[ "song1", "song2"],
-				imageLarge:"../core/assets/2015-best-music.png ",
-				imageSmall:"../core/assets/2015-best-music.png ",
-				description:"Lorem ipsum2"
-			},
-			{
-				id: 3,
-				title: 'Playlist3',
-				songs:[ "song1", "song2"],
-				imageLarge:"../core/assets/2015-best-music.png ",
-				imageSmall:"../core/assets/2015-best-music.png ",
-				description:"Lorem ipsum3"
-			}
-		]
+	<head>
+		<title>Search</title>
+		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.js"></script>
+		<script type="text/javascript" src="http://underscorejs.org/underscore-min.js"></script>
+		<script type="text/javascript" src="http://backbonejs.org/backbone-min.js"></script>
+		<script type="text/javascript" src="playlist/playlist-model.js"></script>
+		<script type="text/javascript" src="playlist/playlist-collection.js"></script>
+		<script type="text/javascript" src="song/song-model.js"></script>
+		<script type="text/javascript" src="song/song-collection.js"></script>
+		<link rel="stylesheet" type="text/css" href="style-search-page.css">
+		<script type="text/javascript" src="playlist/playlist-view.js"></script>
+		<script type="text/javascript" src="playlist/playlists-view.js"></script>
+		<script type="text/javascript" src="song/song-list-item-view.js"></script>
+		<script type="text/javascript" src="song/song-list-view.js"></script>
 
-		var playlists = new PlaylistCollection();
-		playlists.set(listOfPlaylists);
-		console.log(playlists);
+	</head>
+	<body>
+		<div class="wrapper">
+				<div class="search-container">
+							<div class="logo">
+									<img src="../core/assets/logo-top.png" class="logo">
+							</div>
+							<div class="search-input">
+									<form>
+											<input type="text" name="search" placeholder="Search Music"><br>
+									</form>
+							</div>
+							<div class="button-signIn">
+									<form action="Login.html">
+											<button type="submit" id="searchLogIn" >Sign In</button>
+									</form>
+									<form>
+											<button type="submit" id="searchLogOut" onclick="logOut()">Log out</button>
+									</form>
+							</div>
+							<div class="join-now" id="divForQuote">
+									<h3><span>Ready to listen to endless music on your favorite device ?</span></h3>
+									<h2 id="welcomeText"></h2>
+									<form action="register.html">
+											<button type="submit" id="joinNowButton">JOIN NOW</button>
+									</form>
+									<h1 id="replaceQuote">Epic and debauched party mixes</h1>
+							</div>
+				</div>
+		</div>
+
+		<div id="page">	</div>
+		
+		<script type=text/template id="playlist-item-view">
+			<img src="<%= imageLarge %>"/>
+			<h3 class="name"><%= title %></h3>
+			<span class="description"><%= description%></span>
+			<div class="playlist-button">
+				<button type="submit" id="explore-list-button">Explore playlist</button>
+			</div>
+		</script>
+
+		<div id="playlist-songs">
+			<form>
+				<button type="button" id="closeB" class="closeButton" onclick="closePlaylist()"> CLOSE </button>
+			</form>
+			<div class="headerPlaylist">
+				<img src="../core/assets/up-all-night-small.png">
+				<div class="text">
+					<h4>Playing from:</h4>
+					<h2>Up all night:The remixes radio</h2>
+				</div>
+			</div>
+			<div class="subHeaderPlaylist">
+					<p id="headerSong">SONG</p>
+					<p id="headerLength"> LENGTH </p>
+					<p id="headerListened">LISTENED</p>
+			</div>
+			<div id="container-list-of-songs"></div>
+		</div>
+
+		<p style="color:gray">&#169; 2016 ACME DIVISION. ALL RIGHTS RESERVED</p>
 
 
-		var PlaylistView = Backbone.View.extend({
-			tagName: 'li',
-			className: 'playlist-view',
-			template: _.template('<span class="name"><%= title %></span>'),
-			render: function () {
-				this.$el.html(this.template(this.model.attributes));
-				return this;
-			}
+
+		<script>
+		$(function(){
+			var listOfPlaylists=[
+				{
+					id: 1,
+					title: 'Playlist1',
+					songs:[
+						{
+							image:"../core/assets/2015-best-music.png",
+							songTitle:"love love enemies love",
+							songAuthor:"Smiley",
+							songLength:74,
+							songListened:82
+						},
+						{
+							image:"../core/assets/2015-best-music.png",
+							songTitle:"love love enemies pierdut",
+							songAuthor:"Dr. Dre",
+							songLength:186,
+							songListened:78
+						}
+					],
+					imageLarge:"../core/assets/up-all-night.png ",
+					imageSmall:"../core/assets/up-all-night.png",
+					description:"Lorem ipsum1"
+				},
+				{
+					id: 2,
+					title: 'Playlist2',
+					songs:[
+						{
+							image:"../core/assets/2015-best-music.png",
+							songTitle:"love love enemies love",
+							songAuthor:"Smiley",
+							songLength:74,
+							songListened:82
+						},
+						{
+							image:"../core/assets/2015-best-music.png",
+							songTitle:"love love enemies pierdut",
+							songAuthor:"Dr. Dre",
+							songLength:186,
+							songListened:78
+						}
+					],
+					imageLarge:"../core/assets/up-all-night.png",
+					imageSmall:"../core/assets/up-all-night.png",
+					description:"Lorem ipsum2"
+				},
+				{
+					id: 3,
+					title: 'Playlist3',
+					songs:[
+						{
+							image:"../core/assets/2015-best-music.png",
+							songTitle:"love love enemies love",
+							songAuthor:"Smiley",
+							songLength:74,
+							songListened:82
+						},
+						{
+							image:"../core/assets/2015-best-music.png",
+							songTitle:"love love enemies pierdut",
+							songAuthor:"Dr. Dre",
+							songLength:186,
+							songListened:78
+						}
+					],
+					imageLarge:"../core/assets/up-all-night.png",
+					imageSmall:"../core/assets/up-all-night.png",
+					description:"Lorem ipsum3"
+				},
+				{
+					id: 4,
+					title: 'Playlist4',
+					songs:[
+						{
+							image:"../core/assets/2015-best-music.png",
+							songTitle:"love love enemies love",
+							songAuthor:"Smiley",
+							songLength:74,
+							songListened:82
+						},
+						{
+							image:"../core/assets/2015-best-music.png",
+							songTitle:"love love enemies pierdut",
+							songAuthor:"Dr. Dre",
+							songLength:186,
+							songListened:78
+						}
+					],
+					imageLarge:"../core/assets/up-all-night.png",
+					imageSmall:"../core/assets/up-all-night.png",
+					description:"Lorem ipsum4"
+				}
+			];
+
+			var playlist = new Playlist();
+			var playlists = new PlaylistCollection();
+			playlists.set(listOfPlaylists);
+
+			var songsList = new SongsCollection();
+			// var mapa=listOfPlaylists.map(function(val){
+			// 		return val.songs;
+			// });
+			songsList.set(listOfPlaylists[0].songs);
+
+			console.log(playlists);
+			console.log(songsList);
+
+			var pageView = new PlaylistsView({
+			      el: document.getElementById('page'),
+			      collection: playlists
+			});
+			var songListView = new SongsListView({
+					el: document.getElementById('container-list-of-songs'),
+					collection: songsList
+			});
+
+			songListView.render();
+			pageView.render();
+
 		});
+		</script>
+	</body>
 
-		var PlaylistsView = Backbone.View.extend({
-			template: _.template("<p>List of participants</p><div class='user'></div><ul class='playlists-view'></ul>"),
-			_nestedView: [],
-			renderNestedView: function(view, el) {
-			this._nestedView.push(view);
-			el.append(view.el);
-		},
-		render: function () {
-			this.$el.html(this.template());
-			var that = this;
-			var partEl = $(this.el.querySelector('.playlists-view'));
-			this.collection.forEach(function(model) {
-				var playlistView = new PlaylistView({
-					model: model
-				});
-				playlistView.render();
-				that.renderNestedView(playlistView, partEl);
-		});
-
-		debugger;
-		return this;
-		}
-		});
-		var pageView = new PlaylistsView({
-			el: document.getElementById('page'),
-			collection: playlists
-		});
-		pageView.render();
-		debugger;
-
-		// var ListView = Backbone.View.extend({
-		// 	renderTemplate: function (selectorString, options) {
-		// 		var templateText = document.querySelector(selectorString).innerText;
-		// 		var compiled = _.template(templateText);
-    //
-		// 		if (options != null) {
-		// 			return compiled(options);
-		// 		}
-    //
-		// 		return compiled();
-		// 	}
-		// });
-});
-	</script>
-</head>
-<body>
-	<h1>Welcome to your profile</h1>
-	<div id="page"></div>
-
-</body>
 </html>
