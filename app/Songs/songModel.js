@@ -1,4 +1,4 @@
- var Song = Backbone.Model.extend({
+ var SongModel = Backbone.Model.extend({
   defaults: {
     image: 'Robert',
     songTitle: 23,

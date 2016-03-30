@@ -1,4 +1,4 @@
-var Playlist1 = Backbone.Model.extend({
+var PlaylistModel = Backbone.Model.extend({
   defaults: {
     id: +new Date(),
     title:"cosmin",
@@ -8,6 +8,6 @@ var Playlist1 = Backbone.Model.extend({
     imageSmall :"../core/assets/2015-best-music.png"
   },
   setSongs: function(songsJSON) {
-    this.songs = new Songs(songsJSON);
+    this.songs = new SongsListColection(songsJSON);
   }
 });

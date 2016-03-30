@@ -1,8 +1,8 @@
 var PlaylistView = Backbone.View.extend ({
     events: {
 		"click": "onClick"
-	},
-	onClick : function(){
+   	},
+	onClick : function() {
 		Update_song (this.model.attributes.songs);
 		PlaylistChangeTitle(this.model.attributes);
 	},
@@ -18,7 +18,7 @@ var PlaylistView = Backbone.View.extend ({
 		return this.renderTemplate('#template-Playlist',val);
 	},
 	render: function () {
-    
+
 		this.$el.html(this.template(this.model.attributes));
 		return this;
 	}

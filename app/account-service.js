@@ -1,14 +1,10 @@
 
 
 function AccountService() {
-
   var ERROR_MESSAGE = "ERROR";
   var message="ERROR";
   this.members = [];
-
-
-
- }
+}
 
 AccountService.prototype.isUserRegistered = function (mail,password) {
 
