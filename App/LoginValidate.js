@@ -1,54 +1,53 @@
-var LOGIN_SUCCESFULLY = 0;
-var INVALID_PASSWORD = 1;
-var INVALID_USERNAME = 2;
+import { AccountService } from './AccountService.js';
+import { User } from './User.js';
 
-var usernameJson = JSON.parse(usersJSON);
+const LOGIN_SUCCESFULLY = 0;
+const INVALID_PASSWORD = 1;
+const INVALID_USERNAME = 2;
+// const usernameJson = JSON.parse(usersJSON);
 
-var accountService = AccountService.getInstance();
-
-document.addEventListener("DOMContentLoaded", function(event) {
-
-usernameJson.forEach(addUserToAccountService);
-
-  });
 function addUserToAccountService(userFromJS) {
-  var user = new User(userFromJS);
+  const user = new User(userFromJS);
   AccountService.getInstance().addUser(user);
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+  // usernameJson.forEach(addUserToAccountService);
+});
+
 function logOutUser() {
-  localStorage.setItem("nameUser1", null);
-  window.location.href = "index.html";
+  localStorage.setItem('nameUser1', null);
+  window.location.href = 'index.html';
 }
 
-
-function validate(){
-  var username = document.getElementById("username").value;
-  var password = document.getElementById("password").value;
+function validate() {
+  const username = document.getElementById('username').value;
+  const password = document.getElementById('password').value;
   AccountService.getInstance().setUsername(username);
   AccountService.getInstance().setPassword(password);
-  var loginView =  new LoginView();
+  const loginView = new LoginView();
 
   switch (AccountService.getInstance().checkLogin()) {
     case LOGIN_SUCCESFULLY:
 
       loginView.showLoginSucces();
-      window.location.href = "index.html";
-    break;
+      window.location.href = 'index.html';
+      break;
     case INVALID_PASSWORD:
       loginView.showInvalidPasswod();
-    break;
+      break;
     case INVALID_USERNAME:
       loginView.showInvalidUsername();
-    break;
+      break;
     default:
 
   }
 }
-function focusOut(id){
-  id.className = "focusOut";
+function focusOut(id) {
+  id.className = 'focusOut';
 
 }
-function focusIt(id){
-  id.className = "focusIn";
+function focusIt(id) {
+  id.className = 'focusIn';
 }
+export { LOGIN_SUCCESFULLY, INVALID_USERNAME };

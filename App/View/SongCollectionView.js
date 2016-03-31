@@ -1,11 +1,13 @@
-var SongCollectionView = Backbone.View.extend({
-    render: function () {
-      var that = this;
-      this.collection.forEach(function(model) {
-          var songView = new SongView({
-            model: model
-          });
-          that.el.appendChild(songView.render().el);
+import { SongView } from './SongView.js';
+const SongCollectionView = Backbone.View.extend({
+  render() {
+    const that = this;
+    this.collection.forEach((model) => {
+      const songView = new SongView({
+        model,
+      });
+      that.el.appendChild(songView.render().el);
     });
-  }
+  },
 });
+export { SongCollectionView };

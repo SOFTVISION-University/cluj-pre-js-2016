@@ -23,7 +23,7 @@
                     <select name="fruits" id="search_music" >
                     </select>
                     </datalist>
-                  <input type="text" id="searchStr" placeholder="Search Music" name="fruit" list="fruits" onkeyup="return searchMusic(event)">
+                  <input type="text" id="searchStr" placeholder="Search Music" name="song" list="songs" onkeyup="return searchMusic()">
                   <option name="Name" value="music" id="option_music"> </option>
                     <!-- <input type="text" name="searchtext" placeholder="Search music"> -->
                 </div>
@@ -104,23 +104,8 @@
 </div>
 
   </body>
-  <script type="text/javascript" src="../core/data/playlists.js" ></script>
-  <script type="text/javascript" src="../core/data/users.js" ></script>
-  <script type="text/javascript" src="View/SongCollectionView.js" ></script>
-  <script type="text/javascript" src="View/PlaylistView.js" ></script>
-  <script type="text/javascript" src="View/PlaylistCollectionView.js" ></script>
-  <script type="text/javascript" src="Model/Song.js" ></script>
-  <script type="text/javascript" src="View/SongView.js" ></script>
-  <script type="text/javascript" src="Collection/SongCollection.js" ></script>
-  <script type="text/javascript" src="Model/PlaylistModel.js" ></script>
-  <script type="text/javascript" src="Collection/PlaylistCollection.js" ></script>
-  <script type="text/javascript" src="View/PlaylistHeaderView.js" ></script>
-  <script type="text/javascript" src="homePage.js" ></script>
-  <script type="text/javascript" src="Utils.js" ></script>
-  <script type="text/javascript" src="User.js"></script>
-  <script type="text/javascript" src="AccountService.js"></script>
-  <script type="text/javascript" src="LoginValidate.js" ></script>
-  <script type="text/javascript" src="SearchMusic.js" ></script>
+
+  <script type="text/javascript" src="../Build/bundle.js" ></script>
   <!-- <script src="jquery-2.2.2.min.js"></script> -->
 
 

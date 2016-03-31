@@ -5,6 +5,7 @@ function User(data) {
   this.logged = false;
 }
 
-User.prototype.getUserName = function(){
+User.prototype.getUserName = function () {
   return this.name;
 };
+export { User };
