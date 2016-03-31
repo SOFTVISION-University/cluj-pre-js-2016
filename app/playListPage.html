@@ -9,13 +9,9 @@
     <link rel="stylesheet" type="text/css" href="mystyle.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-    <script	type="text/javascript" src="domElementsCreator.js"></script>
-    <script	type="text/javascript" src="playlists.js"></script>
-    <script	type="text/javascript" src="songs.js"></script>
-    <script	type="text/javascript" src="user.js"></script>
-    <script	type="text/javascript" src="AccountService.js"></script>
-    <script	type="text/javascript" src="ModelFactory.js"></script>
-    <script	type="text/javascript" src="scriptPlaylists.js"></script>
+
+
+
 
     <script src="http://backbonejs.org/test/vendor/underscore.js"></script>
     <script src="http://backbonejs.org/test/vendor/jquery.js"></script>
@@ -23,16 +19,17 @@
     <script src="http://backbonejs.org/backbone.js"></script>
     <script type="text/template" id="template-SongView">
       <div class="songDiv">
-        <img class="songImg" src="<%= imagePath %>">
-        <div class="songNumbers" ><%= length %></div>
-        <div class="songNumbers" ><%= playCount %></div>
-        <span class="songTitle" class="textBiggerGri"><%= title %></span>
-        <span class="textMediuGri"><%= author %></span>
+        <img class="songImg" src="<%= gsx$image.$t %>">
+        <div class="songNumbers" ><%= gsx$length.$t %></div>
+        <div class="songNumbers" >0</div>
+        <span class="songTitle" class="textBiggerGri"><%= gsx$name.$t %></span>
+        <span class="textMediuGri"><%= gsx$album.$t %></span>
       </div>
     </script>
     <script type="text/template" id="template-PlaylistView">
       <div class="cardBottomDiv">
         <div class="bookThumbail">
+          <img src="<%= imageLarge %>" class="playlistLargeImage"/>
           <a href="#" class="explorePlaylist">
             <img src="../core/assets/play-icon.png">
             Explore playlist
@@ -46,21 +43,16 @@
       </div>
     </script>
     <script type="text/template" id="template-SongsView">
-
         <div id="closeButton">
           <img src="../core/assets/close-icon.png" id="closeButton">
         </div >
         <div id="playlistHeader"></div>
         <div id="songs"></div>
         <div class="clearFloat"></div>
-
     </script>
-    <script	type="text/javascript" src="models/song-model.js"></script>
-    <script	type="text/javascript" src="collections/song-col.js"></script>
-    <script	type="text/javascript" src="views/song-view.js"></script>
-    <script	type="text/javascript" src="models/playlist-model.js"></script>
-    <script	type="text/javascript" src="collections/playlist-col.js"></script>
-    <script	type="text/javascript" src="views/playlist-view.js"></script>
+
+    <script	type="text/javascript" src="../build/bundle.js"></script>
+
 
 </head>
 <body style="background-color:#EEEEEE">
@@ -70,11 +62,7 @@
     <form>
       <input list="searchSongs" class="searchBar" placeholder="Search Music" name="search">
       <datalist id="searchSongs">
-        <option value="Internet Explorer">
-        <option value="Firefox">
-        <option value="Chrome">
-        <option value="Opera">
-        <option value="Safari">
+
       </datalist>
     </form>
 
@@ -92,20 +80,7 @@
   </div>
   <div class="clearFloat"></div>
   <div id="playlists">
-    <div id="closeButton">
-      <img src="../core/assets/close-icon.png" id="closeButton">
-    </div >
-    <div id="playlistHeader"></div>
-    <div id="songs">
-      <!-- <div class="songDiv">
-          <img class="songImg" src="../core/assets/beats-like-birds.png">
-          <div class="songNumbers" >22</div>
-          <div class="songNumbers" >22</div>
-          <span class="songTitle" class="textBiggerGri">Song Title</span>
-          <span class="textMediuGri">song author</span>
-      </div> -->
-      <div class="clearFloat"></div>
-    </div>
+
   </div>
 
   <div id="metallicaBio">
@@ -114,55 +89,9 @@
     <div id="metallicaText"></div>
   </div>
 
-  <script>
 
-    $(function(){
-
-    var songlist = new SongsView({
-      el: $('#playlists')[0],
-      collection: songcol
-    });
-    songlist.render();
-
-    var playlistcol = new PlaylistCollection();
-    playlistcol.fetch().done(function(){
-      var cards = new PlaylistsColView({
-        el: $('#centeredWrapper')[0],
-        collection: playlistcol
-      });
-      cards.render();
-    });
-  });
-  debugger;
-  </script>
 <script>
-window.onload = function(){
 
-};
-function slidePlayListIn(elem) {
-    var left = -600;
-    var id = setInterval(frame, 1);
-    function frame() {
-        if (left == 50) {
-            clearInterval(id);
-        } else {
-            left+=5;
-            elem.style.left = left + 'px';
-        }
-    }
-}
-function slidePlayListOut(elem) {
-    var left = 50;
-    var id = setInterval(frame, 1);
-    function frame() {
-        if (left == -600) {
-            clearInterval(id);
-        } else {
-            left-=5;
-            elem.style.left = left + 'px';
-        }
-    }
-}
 
 var test = {
     "success": {

@@ -1,13 +1,15 @@
-var PlaylistCollection = Backbone.Collection.extend({
+import { PlaylistModel } from '../models/playlist-model';
+
+const PlaylistCollection = Backbone.Collection.extend({
   model: PlaylistModel,
-	url :  'http://192.168.28.109:3000/playlists',
-  parse : function (resp){
-  return resp.map(function(songs) {
-
-			var model = new PlaylistModel();
-
+  url: 'http://localhost:3000/playlists',
+  parse(resp) {
+    return resp.map((songs) => {
+      const model = new PlaylistModel();
       model.set(songs);
-			return model;
-		});
-  }
+      return model;
+    });
+  },
 });
+
+export { PlaylistCollection };

@@ -1,36 +1,48 @@
-var PlaylistCardView = Backbone.View.extend({
-  template: _.template( $("#template-PlaylistView").html() ),
+import { SongCollection } from '../collections/song-col';
+import { SongsView } from '../views/song-view';
+import Utils from '../utils.js';
+
+const PlaylistCardView = Backbone.View.extend({
+  template: _.template($('#template-PlaylistView').html()),
   el: $('#centeredWrapper')[0],
-  render: function(){
+  render() {
     this.$el.html(this.template(this.model.attributes));
     return this;
   },
-  events:{
-    'click .explorePlaylist' : 'popPlaylist'
+  events: {
+    'click .explorePlaylist': 'popPlaylist',
   },
-  popPlaylist: function(){
-    // to be impl.
-  }
+  popPlaylist() {
+    const test = new SongCollection();
+    test.set(this.model.attributes.songs);
+    const songlist = new SongsView({
+      el: $('#playlists')[0],
+      collection: test,
+    });
+    songlist.render();
+    Utils.slidePlayListIn(document.getElementById('playlists'));
+  },
 });
 
-var PlaylistsColView = Backbone.View.extend({
+const PlaylistsColView = Backbone.View.extend({
   _nestedView: [],
 
-  renderNestedView: function(view) {
+  renderNestedView(view) {
     this._nestedView.push(view);
     this.$el.append(view.el);
   },
 
-  render: function () {
-    var that = this;
-    this.collection.forEach(function(model) {
-        var playlistview = new PlaylistCardView({
-          model: model
-        });
-        playlistview.render();
-        that.renderNestedView(playlistview);
+  render() {
+    const that = this;
+    this.collection.forEach((model) => {
+      const playlistview = new PlaylistCardView({
+        model: model,
+      });
+      playlistview.render();
+      that.renderNestedView(playlistview);
     });
     return this;
-    }
-
+  },
 });
+
+export { PlaylistCardView, PlaylistsColView };

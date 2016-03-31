@@ -1,6 +1,7 @@
-var SongCollection = Backbone.Collection.extend({
-  model: SongModel
+import { SongModel } from '../models/song-model';
+
+const SongCollection = Backbone.Collection.extend({
+  model: SongModel,
 });
 
-var songcol = new SongCollection();
-songcol.set(zongs);
+export { SongCollection };

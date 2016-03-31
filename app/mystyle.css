@@ -183,7 +183,7 @@ a.submitSignUp {
   font-weight: bold;
   margin-top: 50px;
 }
-.centeredWrapper{
+#centeredWrapper{
   background-color: pink;
   width:74%;
   margin-left: auto;
@@ -318,10 +318,16 @@ a.submitSignUp {
 .bookThumbail{
   width: auto;
   height: 250px;
-  background:url('../core/assets/massive-pop-hits.png');
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
+  text-align: left;
+}
+.playlistLargeImage{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+
 }
 .cardText{
   box-sizing: border-box;
@@ -331,6 +337,7 @@ a.submitSignUp {
   padding: 20px;
 }
 .explorePlaylist{
+  text-align: center;
   background-color: #1DBFF5;
   height: 50px;
   width: 180px;
@@ -362,12 +369,14 @@ a.submitSignUp {
   background-color: white;
   height: 800px;
   width: 600px;
-  position: absolute;
+  position: fixed;
   bottom:10px;
   left: -600px;
+  z-index: 200;
   overflow: scroll;
 
 }
+
 #closeButton{
   text-align: right;
   padding: 4px;
