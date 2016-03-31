@@ -1,25 +1,23 @@
-
-  var PlaylistsView = Backbone.View.extend ({
-
-	_nestedView: [],
-	renderNestedView: function(view,el) {
-		this._nestedView.push(view);
-		this.$el.append(view.el);
-	},
-	render: function () {
-		var that = this;
-		var partEl = this.el;
-		this.collection.forEach(function(model) {
-			var playlistView = new PlaylistView({
-				model: model
-			});
-			playlistView.render();
-			that.renderNestedView(playlistView,partEl);
-
-		});
+import { PlaylistView } from './playlistView.js';
+const PlaylistsView = Backbone.View.extend({
+  _nestedView: [],
+  renderNestedView(view) {
+    this._nestedView.push(view);
+    this.$el.append(view.el);
+  },
+  render() {
+    const that = this;
+    const partEl = this.el;
+    this.collection.forEach((model) => {
+      const playlistView = new PlaylistView({
+        model: model,
+      });
+      playlistView.render();
+      that.renderNestedView(playlistView, partEl);
+    });
 
 
-		return this;
-	}
-
-  });
+    return this;
+  },
+});
+export { PlaylistsView } ;

@@ -1,23 +1,30 @@
-var SongsView = Backbone.View.extend({
+import { SongView } from './songView.js';
+const SongsView = Backbone.View.extend({
 
   _nestedView: [],
-  renderNestedView: function(view,el) {
+  renderNestedView(view) {
     this._nestedView.push(view);
     this.$el.append(view.el);
   },
-  render: function () {
-    var that = this;
-    var partEl = this.el;
-  this.collection.forEach(function(model) {
-    var songView = new SongView({
-    model: model
-  });
-  songView.render();
-  that.renderNestedView(songView,partEl);
+  render() {
+    const that = this;
+    const partEl = this.el;
+    this.collection.forEach((model) => {
+      const songView = new SongView({
+        model: model,
+      });
+      songView.render();
+      that.renderNestedView(songView, partEl);
+    });
 
-  });
 
-
-  return this;
-  }
+    return this;
+  },
+  destroy_view() {
+    this.undelegateEvents();
+    this.$el.removeData().unbind();
+    this.remove();
+    Backbone.View.prototype.remove.call(this);
+  },
 });
+export { SongsView } ;
