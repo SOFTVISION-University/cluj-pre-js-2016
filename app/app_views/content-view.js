@@ -1,11 +1,10 @@
-var ContentView = Backbone.View.extend({
-  initialize: function(){
-    this.render();
-  },
-  render: function(){
+const ContentView = Backbone.View.extend({
+  render() {
     // Compile the template using underscore
-    var template = _.template( $("#template-ContentView").html(), {} );
+    const template = _.template($('#template-ContentView').html(), {});
     // Load the compiled HTML into the Backbone "el"
-    this.$el.html( template );
-  }
+    this.$el.html(template);
+  },
 });
+
+export { ContentView };

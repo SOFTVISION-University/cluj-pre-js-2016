@@ -1,3 +1,5 @@
-var SongModel = Backbone.Model.extend({
-  
+const SongModel = Backbone.Model.extend({
+
 });
+
+export { SongModel };

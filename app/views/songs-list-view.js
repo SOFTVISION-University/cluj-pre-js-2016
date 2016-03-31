@@ -1,41 +1,44 @@
-var SongsListView = Backbone.View.extend({
-  className: "playlist-expand",
+import { SongListItemView } from '../views/song-list-item-view.js';
+const SongsListView = Backbone.View.extend({
+  className: 'playlist-expand',
   events: {
-   'click .close-button': 'closePlaylist'
+    'click .close-button': 'closePlaylist',
   },
-  initialize: function() {
-   this.listenTo(this.model, "change", this.render);
+  initialize() {
+    this.listenTo(this.model, 'change', this.render);
   },
-  renderTemplate: function (selectorString, options) {
-		var templateText = document.querySelector(selectorString).innerText;
-		var compiled = _.template(templateText);
-		if (options != null) {
-			return compiled(options);
-		}
-		return compiled();
-	},
-  template:function () {
-		return this.renderTemplate('#template-SongsListView');
+  renderTemplate(selectorString, options) {
+    const templateText = document.querySelector(selectorString).innerText;
+    const compiled = _.template(templateText);
+    if (options !== null) {
+      return compiled(options);
+    }
+    return compiled();
+  },
+  template() {
+    return this.renderTemplate('#template-SongsListView');
   },
   _nestedView: [],
-  renderNestedView: function(view, el) {
+  renderNestedView(view, el) {
     this._nestedView.push(view);
     el.append(view.el);
   },
-  render: function () {
+  render() {
     this.$el.html(this.template());
-    var that = this;
-    var songEl = $(this.el.querySelector('#playlist-songs-body'));
-    this.collection.forEach(function(model) {
-      var songListItemView = new SongListItemView({
-        model: model
+    const that = this;
+    const songEl = $(this.el.querySelector('#playlist-songs-body'));
+    this.collection.forEach((model) => {
+      const songListItemView = new SongListItemView({
+        model,
       });
       songListItemView.render();
       that.renderNestedView(songListItemView, songEl);
     });
   },
 
-  closePlaylist: function() {
+  closePlaylist() {
     this.trigger('destroy');
-  }
+  },
 });
+
+export { SongsListView };

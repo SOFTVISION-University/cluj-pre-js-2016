@@ -610,3 +610,8 @@ ul.playlists-view li{
   list-style-type: none;
   display: inline-block;
 }
+
+div.playlist-content{
+  height: 160px;
+  overflow-y:auto;
+}

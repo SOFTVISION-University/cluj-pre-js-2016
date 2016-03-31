@@ -1,3 +1,5 @@
-var UserModel = Backbone.Model.extend({
+const UserModel = Backbone.Model.extend({
 
 });
+
+export { UserModel };

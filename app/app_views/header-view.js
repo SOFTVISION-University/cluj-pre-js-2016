@@ -1,11 +1,10 @@
-var HeaderView = Backbone.View.extend({
-  initialize: function(){
-    this.render();
-  },
-  render: function(){
+const HeaderView = Backbone.View.extend({
+  render() {
     // Compile the template using underscore
-    var template = _.template( $("#template-HeaderView").html(), {} );
+    const template = _.template($('#template-HeaderView').html(), {});
     // Load the compiled HTML into the Backbone "el"
-    this.$el.html( template );
-  }
+    this.$el.html(template);
+  },
 });
+
+export { HeaderView };

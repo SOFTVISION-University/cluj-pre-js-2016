@@ -10,11 +10,11 @@
     <script src="http://backbonejs.org/docs/js/jquery.lazyload.js"></script>
     <script src="http://backbonejs.org/backbone.js"></script>
     <script>
-      var playlistsJSN = JSON.parse(playlistsJSON);
-      var usersJSN = JSON.parse(usersJSON);
+      const playlistsJSN = JSON.parse(playlistsJSON);
+      const usersJSN = JSON.parse(usersJSON);
     </script>
   </head>
-  <body>
+  <body id="home">
     <div id="index-header"></div>
     <div id="index-content"></div>
     <div id="index-card-area"></div>
@@ -49,13 +49,15 @@
     </script>
 
   	<script type="text/template" id="template-PlaylistView">
-      <div class="card">
+      <div class="card" id="<%= id %>">
         <div class="mat">
         </div>
         <button class="explore" type="button" name="explore_playlist"><img src="../core/assets/play-icon.png" alt="Image not found"/> Explore playlist</button>
         <img id="card-image" src="<%= imageLarge %>"/>
-        <p><strong id="title"><%= title %></strong></p>
-        <p id="description"><%= description %></p>
+        <div class="playlist-content">
+          <p><strong id="title"><%= title %></strong></p>
+          <p id="description"><%= description %></p>
+        </div>
       </div>
   	</script>
 
@@ -84,41 +86,20 @@
 
     <script type="text/template" id="template-SongRowView">
       <td>
-        <img src="<%= image %>"/>
+        <img src="<%= gsx$image.$t %>"/>
       </td>
       <td>
-        <%= songTitle %><br/>
-        <%= songAuthor %>
+        <%= gsx$name.$t %><br/>
+        <%= gsx$album.$t %>
       </td>
       <td>
-        <%= songLength %>
+        <%= gsx$length.$t %>
       </td>
       <td>
-        <%= songListened %>
+
       </td>
     </script>
 
-    <script type="text/javascript" src="app_views/header-view.js"></script>
-    <script type="text/javascript" src="app_views/content-view.js"></script>
-    <script type="text/javascript" src="models/playlist-model.js"></script>
-    <script type="text/javascript" src="collections/playlist-collection.js"></script>
-    <script type="text/javascript" src="views/playlist-view.js"></script>
-    <script type="text/javascript" src="views/playlists-view.js"></script>
-    <script type="text/javascript" src="models/song-model.js"></script>
-    <script type="text/javascript" src="collections/song-collection.js"></script>
-    <script type="text/javascript" src="views/song-list-item-view.js"></script>
-    <script type="text/javascript" src="views/songs-list-view.js"></script>
-
-    <script type="text/javascript">
-      var headerView = new HeaderView({ el: $("#index-header") });
-      var contentView = new ContentView({ el: $("#index-content") });
-      var playlists = new PlaylistCollection();
-      playlists.set(playlistsJSN);
-      var playlistsView = new PlaylistsView({
-        el: document.getElementById('index-card-area'),
-        collection: playlists
-      });
-      playlistsView.render();
-    </script>
+    <script type="text/javascript" src="../build/bundle.js"></script>
   </body>
 </html>
