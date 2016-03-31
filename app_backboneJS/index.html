@@ -5,49 +5,41 @@
 		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.js"></script>
 		<script type="text/javascript" src="http://underscorejs.org/underscore-min.js"></script>
 		<script type="text/javascript" src="http://backbonejs.org/backbone-min.js"></script>
-		<script type="text/javascript" src="playlist/playlist-model.js"></script>
-		<script type="text/javascript" src="playlist/playlist-collection.js"></script>
-		<script type="text/javascript" src="song/song-model.js"></script>
-		<script type="text/javascript" src="song/song-collection.js"></script>
 		<link rel="stylesheet" type="text/css" href="style-search-page.css">
-		<script type="text/javascript" src="playlist/playlist-view.js"></script>
-		<script type="text/javascript" src="playlist/playlists-view.js"></script>
-		<script type="text/javascript" src="song/song-list-item-view.js"></script>
-		<script type="text/javascript" src="song/song-list-view.js"></script>
 
 	</head>
 	<body>
 		<div class="wrapper">
-				<div class="search-container">
-							<div class="logo">
-									<img src="../core/assets/logo-top.png" class="logo">
-							</div>
-							<div class="search-input">
-									<form>
-											<input type="text" name="search" placeholder="Search Music"><br>
-									</form>
-							</div>
-							<div class="button-signIn">
-									<form action="Login.html">
-											<button type="submit" id="searchLogIn" >Sign In</button>
-									</form>
-									<form>
-											<button type="submit" id="searchLogOut" onclick="logOut()">Log out</button>
-									</form>
-							</div>
-							<div class="join-now" id="divForQuote">
-									<h3><span>Ready to listen to endless music on your favorite device ?</span></h3>
-									<h2 id="welcomeText"></h2>
-									<form action="register.html">
-											<button type="submit" id="joinNowButton">JOIN NOW</button>
-									</form>
-									<h1 id="replaceQuote">Epic and debauched party mixes</h1>
-							</div>
+			<div class="search-container">
+				<div class="logo">
+					<img src="../core/assets/logo-top.png" class="logo">
 				</div>
+				<div class="search-input">
+					<form>
+						<input type="text" name="search" placeholder="Search Music"><br>
+					</form>
+				</div>
+				<div class="button-signIn">
+					<form action="Login.html">
+						<button type="submit" id="searchLogIn" >Sign In</button>
+					</form>
+					<form>
+						<button type="submit" id="searchLogOut" onclick="logOut()">Log out</button>
+					</form>
+				</div>
+				<div class="join-now" id="divForQuote">
+					<h3><span>Ready to listen to endless music on your favorite device ?</span></h3>
+					<h2 id="welcomeText"></h2>
+					<form action="register.html">
+						<button type="submit" id="joinNowButton">JOIN NOW</button>
+					</form>
+					<h1 id="replaceQuote">Epic and debauched party mixes</h1>
+				</div>
+			</div>
 		</div>
 
 		<div id="page">	</div>
-		
+
 		<script type=text/template id="playlist-item-view">
 			<img src="<%= imageLarge %>"/>
 			<h3 class="name"><%= title %></h3>
@@ -78,132 +70,7 @@
 
 		<p style="color:gray">&#169; 2016 ACME DIVISION. ALL RIGHTS RESERVED</p>
 
-
-
-		<script>
-		$(function(){
-			var listOfPlaylists=[
-				{
-					id: 1,
-					title: 'Playlist1',
-					songs:[
-						{
-							image:"../core/assets/2015-best-music.png",
-							songTitle:"love love enemies love",
-							songAuthor:"Smiley",
-							songLength:74,
-							songListened:82
-						},
-						{
-							image:"../core/assets/2015-best-music.png",
-							songTitle:"love love enemies pierdut",
-							songAuthor:"Dr. Dre",
-							songLength:186,
-							songListened:78
-						}
-					],
-					imageLarge:"../core/assets/up-all-night.png ",
-					imageSmall:"../core/assets/up-all-night.png",
-					description:"Lorem ipsum1"
-				},
-				{
-					id: 2,
-					title: 'Playlist2',
-					songs:[
-						{
-							image:"../core/assets/2015-best-music.png",
-							songTitle:"love love enemies love",
-							songAuthor:"Smiley",
-							songLength:74,
-							songListened:82
-						},
-						{
-							image:"../core/assets/2015-best-music.png",
-							songTitle:"love love enemies pierdut",
-							songAuthor:"Dr. Dre",
-							songLength:186,
-							songListened:78
-						}
-					],
-					imageLarge:"../core/assets/up-all-night.png",
-					imageSmall:"../core/assets/up-all-night.png",
-					description:"Lorem ipsum2"
-				},
-				{
-					id: 3,
-					title: 'Playlist3',
-					songs:[
-						{
-							image:"../core/assets/2015-best-music.png",
-							songTitle:"love love enemies love",
-							songAuthor:"Smiley",
-							songLength:74,
-							songListened:82
-						},
-						{
-							image:"../core/assets/2015-best-music.png",
-							songTitle:"love love enemies pierdut",
-							songAuthor:"Dr. Dre",
-							songLength:186,
-							songListened:78
-						}
-					],
-					imageLarge:"../core/assets/up-all-night.png",
-					imageSmall:"../core/assets/up-all-night.png",
-					description:"Lorem ipsum3"
-				},
-				{
-					id: 4,
-					title: 'Playlist4',
-					songs:[
-						{
-							image:"../core/assets/2015-best-music.png",
-							songTitle:"love love enemies love",
-							songAuthor:"Smiley",
-							songLength:74,
-							songListened:82
-						},
-						{
-							image:"../core/assets/2015-best-music.png",
-							songTitle:"love love enemies pierdut",
-							songAuthor:"Dr. Dre",
-							songLength:186,
-							songListened:78
-						}
-					],
-					imageLarge:"../core/assets/up-all-night.png",
-					imageSmall:"../core/assets/up-all-night.png",
-					description:"Lorem ipsum4"
-				}
-			];
-
-			var playlist = new Playlist();
-			var playlists = new PlaylistCollection();
-			playlists.set(listOfPlaylists);
-
-			var songsList = new SongsCollection();
-			// var mapa=listOfPlaylists.map(function(val){
-			// 		return val.songs;
-			// });
-			songsList.set(listOfPlaylists[0].songs);
-
-			console.log(playlists);
-			console.log(songsList);
-
-			var pageView = new PlaylistsView({
-			      el: document.getElementById('page'),
-			      collection: playlists
-			});
-			var songListView = new SongsListView({
-					el: document.getElementById('container-list-of-songs'),
-					collection: songsList
-			});
-
-			songListView.render();
-			pageView.render();
-
-		});
-		</script>
+		<script src="../build/bundle.js"></script>
 	</body>
 
 </html>

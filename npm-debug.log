@@ -1,0 +1,40 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/nodejs', '/usr/bin/npm', 'run', 'build:dev' ]
+2 info using npm@2.14.20
+3 info using node@v4.4.0
+4 verbose run-script [ 'prebuild:dev', 'build:dev', 'postbuild:dev' ]
+5 info prebuild:dev sample@1.0.0
+6 info build:dev sample@1.0.0
+7 verbose unsafe-perm in lifecycle true
+8 info sample@1.0.0 Failed to exec build:dev script
+9 verbose stack Error: sample@1.0.0 build:dev: `./node_modules/webpack/bin/webpack.jsb --watch`
+9 verbose stack spawn ENOENT
+9 verbose stack     at ChildProcess.<anonymous> (/usr/lib/node_modules/npm/lib/utils/spawn.js:17:16)
+9 verbose stack     at emitTwo (events.js:87:13)
+9 verbose stack     at ChildProcess.emit (events.js:172:7)
+9 verbose stack     at maybeClose (internal/child_process.js:827:16)
+9 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:211:5)
+10 verbose pkgid sample@1.0.0
+11 verbose cwd /home/medeea.patrutiu/work/cluj-pre-js-2016
+12 error Linux 4.2.0-30-generic
+13 error argv "/usr/bin/nodejs" "/usr/bin/npm" "run" "build:dev"
+14 error node v4.4.0
+15 error npm  v2.14.20
+16 error file sh
+17 error code ELIFECYCLE
+18 error errno ENOENT
+19 error syscall spawn
+20 error sample@1.0.0 build:dev: `./node_modules/webpack/bin/webpack.jsb --watch`
+20 error spawn ENOENT
+21 error Failed at the sample@1.0.0 build:dev script './node_modules/webpack/bin/webpack.jsb --watch'.
+21 error This is most likely a problem with the sample package,
+21 error not with npm itself.
+21 error Tell the author that this fails on your system:
+21 error     ./node_modules/webpack/bin/webpack.jsb --watch
+21 error You can get information on how to open an issue for this project with:
+21 error     npm bugs sample
+21 error Or if that isn't available, you can get their info via:
+21 error
+21 error     npm owner ls sample
+21 error There is likely additional logging output above.
+22 verbose exit [ 1, true ]

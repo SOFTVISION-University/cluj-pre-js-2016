@@ -1,11 +1,13 @@
 
-var Playlist = Backbone.Model.extend({
+const Playlist = Backbone.Model.extend({
   defaults: {
     id: 0,
     title: 'test',
-    songs:[ "song1", "song2"],
-    imageLarge:" ",
-    imageSmall:" ",
-    description:"Lorem ipsum"
-  }
+    songs: ['song1', 'song2'],
+    imageLarge: '',
+    imageSmall: '',
+    description: 'Lorem ipsum',
+  },
 });
+
+export { Playlist };
