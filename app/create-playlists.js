@@ -1,40 +1,41 @@
-var list = JSON.parse( playlistsJSON ) ;
-var i;
+const list = JSON.parse(playlistsJSON);
+let i = undefined;
 
-function createPlaylist ( ) {
-  
-    var currentPlaylist = new Playlist( list[0] ) ;
-    var newDiv = document.createElement ( 'div' ) ;
-    newDiv.id = 'new' ;
-    newDiv.style.height = "200px" ;
-    newDiv.style.width = "200px" ;
-    newDiv.style.backgroundColor = "blue" ;
-    document.getElementById('new').appendChild('newDiv') ;
+function createPlaylist() {
 
-    var currentPlaylistsongs = currentPlaylist.songs.map ( function ( data ) {
-      return new Song ( data.image , data.songTitle , data.songAuthor , data.songAuthor , data.songListened) ;
-    });
+  const currentPlaylist = new Playlist(list[0]);
+  const newDiv = document.createElement('div');
+  newDiv.id = 'new';
+  newDiv.style.height = '200px';
+  newDiv.style.width = '200px';
+  newDiv.style.backgroundColor = 'blue';
+  document.getElementById('new').appendChild('newDiv');
 
-    for ( i = 0 ; i < currentPlaylistsongs.length ; i++ ) {
-      var song = currentPlaylistsongs[i] ;
-      var image = document.createElement('div');
-  		image.innerHTML = '<img src="' + song.getImage() + '"/>';
-  		innerDiv.appendChild(image);
+  const currentPlaylistsongs = currentPlaylist.songs.map(function (data) {
+    return new Song(data.image, data.songTitle, data.songAuthor,
+       data.songAuthor, data.songListened);
+  });
 
-      var songTitle = document.createElement('div');
-  		songTitle.innerText = song.getSongTitle();
-  		innerDiv.appendChild(songTitle);
+  for (i = 0; i < currentPlaylistsongs.length ; i++) {
+    const song = currentPlaylistsongs[i];
+    const image = document.createElement('div');
+    image.innerHTML = '<img src="' + song.getImage() + '"/>';
+    innerDiv.appendChild(image);
 
-      var songAuthor = document.createElement('div');
-  		songAuthor.innerText = song.getSongAuthor();
-  		innerDiv.appendChild(songAuthor);
+    const songTitle = document.createElement('div');
+    songTitle.innerText = song.getSongTitle();
+    innerDiv.appendChild(songTitle);
 
-  		var songLength = document.createElement('div');
-  		songLength.innerText = convertSecToMin(song.getSongLength());
-  		innerDiv.appendChild(songLength);
+    const songAuthor = document.createElement('div');
+    songAuthor.innerText = song.getSongAuthor();
+    innerDiv.appendChild(songAuthor);
 
-  		var songListened = document.createElement('div');
-  		songListened.innerText = song.getSongListened();
-  		innerDiv.appendChild(songListened);
-    }
+    const songLength = document.createElement('div');
+    songLength.innerText = convertSecToMin(song.getSongLength());
+    innerDiv.appendChild(songLength);
+
+    const songListened = document.createElement('div');
+    songListened.innerText = song.getSongListened();
+    innerDiv.appendChild(songListened);
+  }
 }

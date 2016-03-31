@@ -1,3 +1,5 @@
-var PlaylistCollection = Backbone.Collection.extend({
-		model: PlaylistModel
-	});
+const PlaylistCollection = Backbone.Collection.extend({
+	model: PlaylistModel,
+});
+
+export { PlaylistCollection };

@@ -1,46 +1,46 @@
-function Playlist (item) {
-  this.id = item.id ;
-  this.title = item.title ;
-  this.image = item.image ;
-  this.songs = item.songs ;
-  this.imageLarge = item.imageLarge ;
-  this.imageSmall = item.imageSmall ;
-  this.description = item.description ;
-  }
+function Playlist(item) {
+  this.id = item.id;
+  this.title = item.title;
+  this.image = item.image;
+  this.songs = item.songs;
+  this.imageLarge = item.imageLarge;
+  this.imageSmall = item.imageSmall;
+  this.description = item.description;
+}
 
-Playlist.prototype.getId = function () {
-  return this.id ;
+Playlist.prototype.getId = function getId() {
+  return this.id;
 };
-Playlist.prototype.getTitle = function () {
-  return this.title ;
+Playlist.prototype.getTitle = function getTitle() {
+  return this.title;
 };
-Playlist.prototype.getSongs = function ( item ) {
-return this.songs;
+Playlist.prototype.getSongs = function getSongs() {
+  return this.songs;
 };
-Playlist.prototype.getImageLarge = function () {
-  return this.imageLarge ;
+Playlist.prototype.getImageLarge = function getImageLarge() {
+  return this.imageLarge;
 };
-Playlist.prototype.getImageSmall = function () {
-  return this.imageSmall ;
+Playlist.prototype.getImageSmall = function getImageSmall() {
+  return this.imageSmall;
 };
-Playlist.prototype.getDescription = function () {
-  return this.description ;
+Playlist.prototype.getDescription = function getDescription() {
+  return this.description;
 };
-Playlist.prototype.setId = function ( id ) {
-  this.id = id ;
+Playlist.prototype.setId = function setId(id) {
+  this.id = id;
 };
-Playlist.prototype.setTitle = function ( title ) {
-   this.title = title ;
+Playlist.prototype.setTitle = function setTitle(title) {
+  this.title = title;
 };
-Playlist.prototype.setSongs = function ( songs ) {
-   this.songs = songs ;
+Playlist.prototype.setSongs = function setSongs(songs) {
+  this.songs = songs;
 };
-Playlist.prototype.setImageLarge = function ( imageLarge ) {
-   this.imageLarge = imageLarge ;
+Playlist.prototype.setImageLarge = function setImageLarge(imageLarge) {
+  this.imageLarge = imageLarge;
 };
-Playlist.prototype.setImageSmall = function ( imageSmall ) {
-   this.imageSmall = imageSmall ;
+Playlist.prototype.setImageSmall = function setImageSmall(imageSmall) {
+  this.imageSmall = imageSmall;
 };
-Playlist.prototype.setDescription = function ( description ) {
-   this.description = description ;
+Playlist.prototype.setDescription = function setDescription(description) {
+  this.description = description;
 };

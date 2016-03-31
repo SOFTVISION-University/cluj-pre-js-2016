@@ -1,2 +1,2 @@
-var PlaylistModel = Backbone.Model.extend ({
-  }) ;
+const PlaylistModel = Backbone.Model.extend({
+});
