@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Sign In</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <div class="headerSI">
+      <div class="wrapper">
+        <div class="signInDiv">
+
+
+          <img src="../core/assets/logo-color.png" alt="acme" />
+
+          <p style="font-weight: bold;">Sign into your Acme Account</p>
+          <div class="siDivForm">
+
+            <form>
+            <span>Email</span>:<br>
+            <input type="email" name="email" required  class="signInTexfFields" id="username" onfocus="focusIt(this)" onblur="focusOut(this)"><br>
+            <span>Password</span>:<br>
+            <input type="password" name="password" required class="signInTexfFields" id="password" onfocus="focusIt(this)" onblur="focusOut(this)">
+            </form>
+            <span class="small lightBlue">Forgot your pasword?</span>
+            <input type="submit" value="Sign In" class="buttonSI" onclick="validate()">
+            <br>
+            <span class="medium-2 gray">Don't have an account ?</span>
+            <a href="signUp.html" style="color:CornflowerBlue">Sign up</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </body>
+  <script type="text/javascript" src="../core/data/users.js"></script>
+  <script type="text/javascript" src="LoginView.js"></script>
+  <script type="text/javascript" src="User.js"></script>
+  <script type="text/javascript" src="AccountService.js"></script>
+  <script type="text/javascript" src="LoginValidate.js" ></script>
+
+
+
+</html>

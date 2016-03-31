@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Acme Division</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://backbonejs.org/test/vendor/underscore.js"></script>
+    <script src="http://backbonejs.org/test/vendor/jquery.js"></script>
+    <script src="http://backbonejs.org/docs/js/jquery.lazyload.js"></script>
+    <script src="http://backbonejs.org/backbone.js"></script>
+  </head>
+  <body>
+  <div class="mainDiv">
+
+      <div class="headerDiv">
+          <div class="logoTopDiv">
+            <div class="searchDiv">
+              <div class="searchImg" >
+              </div>
+                <div class="formIndex">
+                  <datalist id="fruits">
+                    <select name="fruits" id="search_music" >
+                    </select>
+                    </datalist>
+                  <input type="text" id="searchStr" placeholder="Search Music" name="fruit" list="fruits" onkeyup="return searchMusic(event)">
+                  <option name="Name" value="music" id="option_music"> </option>
+                    <!-- <input type="text" name="searchtext" placeholder="Search music"> -->
+                </div>
+            </div>
+        <div  class="signInindexDiv">
+            <button type="button" name="button" id="signInButton" class="signInButton"><a href="signIn.html"> <span class="white">Sign In</span> </a></button>
+            <span id="username"></span>
+            <button type="button" name="button" id="logOutButton" class="signInButton"><a href="index.html" onclick="logOutUser()"> <span class="white">Log out</span> </a></button>
+        </div>
+      </div>
+      <div id="underBanner">
+          <p>Ready to listen the endless music on your favorite device</p>
+          <!-- <button type="button" name="button" id="joinButton" onclick="clearPlaylist()"><span>JOIN NOW</span></button> -->
+          <button type="button" name="button" id="joinButton"><a href="signUp.html"> <span>JOIN NOW</span> </a></button>
+
+          <br>
+          <span id="bigTitle" class="medium white"></span><br>
+          <span id="authorSmall" class="small gray"></span>
+      </div>
+
+      </div>
+      <div class="listHolder" id="playlist-holder">
+
+     </div>
+  <div class="class1">
+
+  </div>
+
+    <div id="playList">
+
+    </div>
+
+
+<script type="text/template" id="header-playlist">
+  <div id="playListHeader">
+    <img src="../core/assets/close-icon.png" alt="" id="closeImg"/>
+    <img src="<%= imageSmall %>" alt="" id="playlistImg"/>
+    <span><%= title %></span>
+  </div>
+  <div id="songsHolder">
+  </div>
+</script>
+
+<script type="text/template" id="playlist-item">
+  <div class="playListDivTemplate" style="background-image: url(<%= imageLarge %>)" id="playL1">
+      <button type="button" name="list1" class="viewPlayList"><span>Explore list</span></button>
+      <div class="textPLDiv">
+          <span class="medium"><%= title %></span><br>
+          <span class="small gray"><%= description %></span>
+      </div>
+  </div>
+</script>
+
+
+<script type="text/template" id="song-item">
+  <div class="divToClone">
+    <img src="<%= gsx$image.$t %>" alt="" id="songImg" class="songImg"/>
+
+    <div class="songTitleDiv">
+      <span><%= gsx$name.$t %></span><br>
+      <span><%= gsx$album.$t %></span>
+    </div>
+
+    <div class="songDurationDiv">
+      <span><%= gsx$length.$t %></span>
+    </div>
+
+    <div class="songCountDiv">
+      <span><%= gsx$track.$t %></span>
+    </div>
+  </div>
+</script>
+
+
+<div id="mettalicaDiv">
+  <img src="" alt="" class="imgMetallica"/>
+  <span></span>
+</div>
+
+  </body>
+  <script type="text/javascript" src="../core/data/playlists.js" ></script>
+  <script type="text/javascript" src="../core/data/users.js" ></script>
+  <script type="text/javascript" src="View/SongCollectionView.js" ></script>
+  <script type="text/javascript" src="View/PlaylistView.js" ></script>
+  <script type="text/javascript" src="View/PlaylistCollectionView.js" ></script>
+  <script type="text/javascript" src="Model/Song.js" ></script>
+  <script type="text/javascript" src="View/SongView.js" ></script>
+  <script type="text/javascript" src="Collection/SongCollection.js" ></script>
+  <script type="text/javascript" src="Model/PlaylistModel.js" ></script>
+  <script type="text/javascript" src="Collection/PlaylistCollection.js" ></script>
+  <script type="text/javascript" src="View/PlaylistHeaderView.js" ></script>
+  <script type="text/javascript" src="homePage.js" ></script>
+  <script type="text/javascript" src="Utils.js" ></script>
+  <script type="text/javascript" src="User.js"></script>
+  <script type="text/javascript" src="AccountService.js"></script>
+  <script type="text/javascript" src="LoginValidate.js" ></script>
+  <script type="text/javascript" src="SearchMusic.js" ></script>
+  <!-- <script src="jquery-2.2.2.min.js"></script> -->
+
+
+</html>
