@@ -3,16 +3,10 @@
   <head>
     <link rel="stylesheet" type="text/css" href="style.css">
     <title>Home page</title>
-    <script type="text/javascript" src="../core/data/playlists.js"></script>
-    <script type="text/javascript" src="../core/data/users.js"></script>
     <script src="http://backbonejs.org/test/vendor/underscore.js"></script>
     <script src="http://backbonejs.org/test/vendor/jquery.js"></script>
     <script src="http://backbonejs.org/docs/js/jquery.lazyload.js"></script>
     <script src="http://backbonejs.org/backbone.js"></script>
-    <script>
-      const playlistsJSN = JSON.parse(playlistsJSON);
-      const usersJSN = JSON.parse(usersJSON);
-    </script>
   </head>
   <body id="home">
     <div id="index-header"></div>
@@ -65,7 +59,11 @@
       <div id="close">
         <span class="close-button">CLOSE<img id="close-icon" src="../core/assets/close-icon.png" alt="Image not found"/></span>
       </div>
-      <div id="playing-from"></div>
+      <div class="playing-from">
+        <table id="songs-list-header">
+
+        </table>
+      </div>
         <table id="playlist-songs" align="center">
         <thead>
         <tr>
@@ -86,7 +84,7 @@
 
     <script type="text/template" id="template-SongRowView">
       <td>
-        <img src="<%= gsx$image.$t %>"/>
+        <img class=songImage src="<%= gsx$image.$t %>"/>
       </td>
       <td>
         <%= gsx$name.$t %><br/>
@@ -99,6 +97,16 @@
 
       </td>
     </script>
+
+    <script type="text/template" id="template-SongsListHeader">
+          <td>
+            <img class="song-list-header-image" src="<%= imageSmall %>"/>
+          </td>
+          <td>
+            Playing from: <br />
+            <%= title %>
+          </td>
+  	</script>
 
     <script type="text/javascript" src="../build/bundle.js"></script>
   </body>

@@ -1,11 +1,9 @@
 import { SongListItemView } from '../views/song-list-item-view.js';
+import { SongsListHeaderView } from '../views/songs-list-header-view.js';
 const SongsListView = Backbone.View.extend({
   className: 'playlist-expand',
   events: {
     'click .close-button': 'closePlaylist',
-  },
-  initialize() {
-    this.listenTo(this.model, 'change', this.render);
   },
   renderTemplate(selectorString, options) {
     const templateText = document.querySelector(selectorString).innerText;
@@ -24,6 +22,14 @@ const SongsListView = Backbone.View.extend({
     el.append(view.el);
   },
   render() {
+    const playlistModel = this.model;
+    playlistModel.fetch().done(() => {
+      const songsListHeaderView = new SongsListHeaderView({
+        el: document.getElementById('songs-list-header'),
+        model: playlistModel,
+      });
+      songsListHeaderView.render();
+    });
     this.$el.html(this.template());
     const that = this;
     const songEl = $(this.el.querySelector('#playlist-songs-body'));

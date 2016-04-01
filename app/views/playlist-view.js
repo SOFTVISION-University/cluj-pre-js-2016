@@ -6,10 +6,6 @@ const PlaylistView = Backbone.View.extend({
   events: {
     'click .explore': 'explorePlaylist',
   },
-  initialize: function initialize() {
-    this.listenTo(this.model, 'change', this.render);
-  },
-
   renderTemplate(selectorString, options) {
     const templateText = document.querySelector(selectorString).innerText;
     const compiled = _.template(templateText);
@@ -44,6 +40,7 @@ const PlaylistView = Backbone.View.extend({
     songsCollection.fetch().done(() => {
       this._setSongsListView(new SongsListView({
         collection: songsCollection,
+        model: this.model,
       }));
     });
   },

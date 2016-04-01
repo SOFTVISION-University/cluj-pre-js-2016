@@ -525,7 +525,7 @@ p#copyrighthome{
 
 }
 
-div#playing-from{
+div.playing-from{
   border:1px solid black;
   height:135px;
   background-color: rgba(211,211,211,0.6);
@@ -614,4 +614,24 @@ ul.playlists-view li{
 div.playlist-content{
   height: 160px;
   overflow-y:auto;
+}
+
+img.songImage{
+  width: 50px;
+  height: 50px;
+}
+
+table#songs-list-header{
+  width:100%;
+  text-align: left;
+  vertical-align: top;
+  border-collapse:collapse
+}
+
+.songs-list-header-row td{
+
+}
+
+.song-list-header-image{
+  
 }
