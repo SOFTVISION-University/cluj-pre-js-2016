@@ -1,7 +1,6 @@
 import { PlaylistCollection } from './playlist/playlist-collection.js';
 import { PlaylistsView } from './playlist/playlists-view.js';
-import { SongsCollection } from './song/song-collection.js';
-import { SongsListView } from './song/song-list-view.js';
+
 
 export function startApp() {
   const listOfPlaylists = [
@@ -98,26 +97,12 @@ export function startApp() {
       description: 'Lorem ipsum4',
     },
   ];
-
-  // const playlist = new Playlist();
   const playlists = new PlaylistCollection();
-  playlists.set(listOfPlaylists);
-
-  const songsList = new SongsCollection();
-  songsList.set(listOfPlaylists[0].songs);
-
-  console.log(playlists);
-  console.log(songsList);
-
-  const pageView = new PlaylistsView({
-    el: document.getElementById('page'),
-    collection: playlists,
+  playlists.fetch().done(() => {
+    const pageView = new PlaylistsView({
+      el: document.getElementById('page'),
+      collection: playlists,
+    });
+    pageView.render();
   });
-  // const songListView = new SongsListView({
-  //   el: document.getElementById('container-list-of-songs'),
-  //   collection: songsList,
-  // });
-  //
-  // songListView.render();
-  pageView.render();
 }
