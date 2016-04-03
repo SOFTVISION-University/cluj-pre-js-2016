@@ -1,4 +1,3 @@
-import { SongCollection } from '../collections/song-collection.js';
 import { SongsListView } from '../views/songs-list-view.js';
 const PlaylistView = Backbone.View.extend({
   tagName: 'li',
@@ -31,18 +30,15 @@ const PlaylistView = Backbone.View.extend({
     if (view !== null) {
       this.songsListView.render();
       this.listenTo(this.songsListView, 'destroy', this._setSongsListView.bind(this, null));
-      this.$el.append(this.songsListView.el);
+      this.$el.append(this.songsListView.el).hide().fadeIn();
     }
   },
 
   explorePlaylist() {
-    const songsCollection = new SongCollection();
-    songsCollection.fetch().done(() => {
-      this._setSongsListView(new SongsListView({
-        collection: songsCollection,
-        model: this.model,
-      }));
-    });
+    this._setSongsListView(new SongsListView({
+      collection: this.model.songs,
+      model: this.model,
+    }));
   },
 });
 

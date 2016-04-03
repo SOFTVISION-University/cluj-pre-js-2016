@@ -1,5 +1,7 @@
 const PlaylistModel = Backbone.Model.extend({
-  url: 'http://localhost:3000/playlists',
+  setSongs(songs) {
+    this.songs = songs;
+  },
 });
 
 export { PlaylistModel };

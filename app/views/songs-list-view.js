@@ -22,15 +22,12 @@ const SongsListView = Backbone.View.extend({
     el.append(view.el);
   },
   render() {
-    const playlistModel = this.model;
-    playlistModel.fetch().done(() => {
-      const songsListHeaderView = new SongsListHeaderView({
-        el: document.getElementById('songs-list-header'),
-        model: playlistModel,
-      });
-      songsListHeaderView.render();
-    });
     this.$el.html(this.template());
+    const songsListHeaderView = new SongsListHeaderView({
+      el: this.el.querySelector('.songs-list-header'),
+      model: this.model,
+    });
+    songsListHeaderView.render();
     const that = this;
     const songEl = $(this.el.querySelector('#playlist-songs-body'));
     this.collection.forEach((model) => {
