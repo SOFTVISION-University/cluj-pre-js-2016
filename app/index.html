@@ -12,12 +12,12 @@
     <div id="index-header"></div>
     <div id="index-content"></div>
     <div id="index-card-area"></div>
-    <div id="playlist"></div>
-    <div id="index-footer"></div>
+    <div id="footer"></div>
+    <div id="authentication"></div>
 
     <script type="text/template" id="template-HeaderView">
       <div id="logo_div">
-        <a href="home.html"><img src="../core/assets/logo-top.png" id="logo" alt="Image not found"/></a>
+        <a href="index.html"><img src="../core/assets/logo-top.png" id="logo" alt="Image not found"/></a>
       </div>
       <div id="search">
         <img src="../core/assets/search-icon.png" id="search_img" alt="Image not found"/>
@@ -60,11 +60,11 @@
         <span class="close-button">CLOSE<img id="close-icon" src="../core/assets/close-icon.png" alt="Image not found"/></span>
       </div>
       <div class="playing-from">
-        <table id="songs-list-header">
+        <table class="songs-list-header">
 
         </table>
       </div>
-        <table id="playlist-songs" align="center">
+        <table id="playlist-songs" align="center" cellspacing="0" cellpadding="0">
         <thead>
         <tr>
           <th colspan="2">
@@ -102,11 +102,37 @@
           <td>
             <img class="song-list-header-image" src="<%= imageSmall %>"/>
           </td>
-          <td>
-            Playing from: <br />
-            <%= title %>
+          <td class="header-text">
+            <span class="song-list-header-text">
+              Playing from: <br />
+            </span>
+            <span class="song-list-header-text">
+              <%= title %>
+            </span>
           </td>
   	</script>
+
+    <script type="text/template" id="template-FooterView">
+      <p id="copyrighthome"></p>
+    </script>
+
+    <script type="text/template" id="template-UserView">
+      <div id="login_div" align="center">
+        <img src="../core/assets/logo-color.png" alt="Image not found"/>
+        <p><b>Sign into your ACME account</b></p>
+        <p id="error"></p>
+        <form action="" method="post" onsubmit="return validateUser()">
+          <label for="email">Email</label><br/>
+          <input id="email" type="email" name="email" onfocus="getFocus(this)" onblur="getBlur(this)" required/><br/><br/>
+          <label for="password">Password</label><br/>
+          <input id="password" type="password" name="password" onfocus="getFocus(this)" onblur="getBlur(this)" required/><br/><br/>
+          <a href="" id="forgot_pass">Forgot password ?</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <input id="sign_in" type="submit" name="submit" value="Sign in"/><br/><br/><br/>
+        </form><br/>
+        <span>Don't have an account ?<a id="sign_up" href="sign_up.html"> Sign up here</a>
+        </span><br/><br/>
+      </div>
+    </script>
 
     <script type="text/javascript" src="../build/bundle.js"></script>
   </body>

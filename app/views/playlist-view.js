@@ -31,7 +31,7 @@ const PlaylistView = Backbone.View.extend({
     if (view !== null) {
       this.songsListView.render();
       this.listenTo(this.songsListView, 'destroy', this._setSongsListView.bind(this, null));
-      this.$el.append(this.songsListView.el);
+      this.$el.append(this.songsListView.el).hide().fadeIn();
     }
   },
 

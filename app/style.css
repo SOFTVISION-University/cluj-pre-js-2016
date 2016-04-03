@@ -376,12 +376,6 @@ td.check{
   background-color: #F0F8FF;
 }
 
-div#footer{
-  height: 610px;
-  background-color:rgba(211,211,211,0.6);
-  text-align: center;
-}
-
 div#apps{
   display: inline-block;
   text-align: left;
@@ -398,6 +392,7 @@ div#devices{
 
 p#copyright{
   margin-top: 130px;
+  margin-left: 40%;
 }
 
 div#index-card-area{
@@ -502,8 +497,8 @@ img#close-icon{
 }
 
 p#copyrighthome{
-  margin-top: 90px;
-  margin-left: 8%;
+  margin-top: 20px;
+  margin-left: 10%;
   margin-bottom: 40px;
 }
 
@@ -526,7 +521,6 @@ p#copyrighthome{
 }
 
 div.playing-from{
-  border:1px solid black;
   height:135px;
   background-color: rgba(211,211,211,0.6);
 }
@@ -621,17 +615,31 @@ img.songImage{
   height: 50px;
 }
 
-table#songs-list-header{
+table.songs-list-header{
   width:100%;
+  text-align: center;
+  vertical-align: middle;
+  border-collapse:collapse;
+  height:135px;
+  border:0px solid black;
+  display: block;
+
+}
+
+img.song-list-header-image{
+  padding:0px;
+  margin:-1px 0 0 0;
+  float: left;
+}
+
+td.header-text{
   text-align: left;
-  vertical-align: top;
-  border-collapse:collapse
 }
 
-.songs-list-header-row td{
-
-}
-
-.song-list-header-image{
-  
+div#authentication{
+  background-image: url("../core/assets/banner-top.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  padding: 100px;
 }
