@@ -73,7 +73,13 @@
         <div id="songs"></div>
         <div class="clearFloat"></div>
     </script>
-
+    <script type="text/template" id="template-loggedOut-View">
+      <a href="loginForm.html" class="submitSignUp" id="signInButton" style="padding-top:10px;">Sign In</a>
+    </script>
+    <script type="text/template" id="template-loggedIn-View">
+      <a href="#" class="submitSignUp" id="signOutButton" style="padding-top:10px;">Sign Out</a>
+      <span id="welcomeMessage">Welcome <%= fullname %> </span>
+    </script>
     <script	type="text/javascript" src="../build/bundle.js"></script>
 
 
@@ -82,7 +88,7 @@
   <div id="loginDiv"></div>
   <div id="header">
     <img src="../core/assets/logo-top.png" class="floatLeft"></img>
-    <a href="loginForm.html" class="submitSignUp" id="signInButton" style="padding-top:10px;">Sign In</a>
+
     <form>
       <input list="searchSongs" class="searchBar" placeholder="Search Music" name="search">
       <datalist id="searchSongs">

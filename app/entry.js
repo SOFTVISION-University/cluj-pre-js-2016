@@ -1,6 +1,7 @@
 import { PlaylistCollection } from './collections/playlist-col';
 import { PlaylistsColView } from './views/playlist-view';
 import { LoginView } from './views/login-view';
+import { LoginStatusView } from './views/login-status-view';
 
 
 $(() => {
@@ -17,4 +18,9 @@ $(() => {
     el: $('#loginDiv')[0],
   });
   logview.render();
+
+  const statusView = new LoginStatusView({
+    el: $('#header')[0],
+  });
+  statusView.render();
 });

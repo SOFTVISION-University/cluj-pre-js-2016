@@ -1,4 +1,3 @@
-import { UserModel } from '../models/user-model';
 import Utils from '../utils.js';
 
 const LoginView = Backbone.View.extend({
@@ -19,6 +18,7 @@ const LoginView = Backbone.View.extend({
     this.inputvalues.password = document.forms.signInForm.password.value;
     event.preventDefault();
     this.sendLoginPost(this.inputvalues);
+
   },
   sendLoginPost(data) {
     $.ajax({
@@ -44,6 +44,7 @@ const LoginView = Backbone.View.extend({
       const jsonObj = JSON.parse(resp);
       window.LoggedInUser.fullname = jsonObj.gsx$fullname.$t;
       Utils.setHeaderBackground(jsonObj.gsx$background.$t);
+      Backbone.trigger('statusChanged');
     });
   },
 // Logout trebuie mutata !!! No rage :)

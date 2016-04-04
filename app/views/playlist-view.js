@@ -42,8 +42,7 @@ const PlaylistsColView = Backbone.View.extend({
       const playlistview = new PlaylistCardView({
         model: modelInCol,
       });
-      playlistview.render();
-      that.renderNestedView(playlistview);
+      that.renderNestedView(playlistview.render());
     });
     return this;
   },
