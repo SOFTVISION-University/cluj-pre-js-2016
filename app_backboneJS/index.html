@@ -9,6 +9,67 @@
 
 	</head>
 	<body>
+
+		<script type="text/template" id="log-in-container-view">
+      <img src="../core/assets/logo-color.png" >
+
+      <h3 align="center"> Sign into your ACME acccount </h3>
+
+      <form name="loginForm" action="search.html" method="post">
+
+      <label>Email</label><br>
+      <input class="input" id="input1" type="email" name="email" required ><br>
+      <br>
+
+      <label>Password</label><br>
+      <input  class="input" id="input2" type="password" name="password" required ><br>
+      <br>
+
+      <a href="" style="padding-right:50px"> Forgot password? </a>
+      <button type="submit" onclick="changeWrongInputColor()"> Sign In </button>
+
+      </form>
+      <p> Don`t have an account? <a href="register.html" >Sign up here</a> </p>
+		</script>
+
+
+		<script type=text/template id="playlist-item-view">
+			<img src="<%= imageLarge %>"/>
+			<h3 class="name"><%= title %></h3>
+			<span class="description"><%= description%></span>
+			<div class="playlist-button">
+				<button type="submit" id="explore-list-button">Explore playlist</button>
+			</div>
+		</script>
+
+		<script type=text/template id="song-item-view">
+			<img src="<%= image %>" id="image"/>
+			<span class="description"><%= songAuthor%></span>
+			<span class="description"><%= songLength%></span>
+		</script>
+
+		<script type=text/template id="song-list-header">
+				<form>
+					<button type="button" id="closeB" class="closeButton"> CLOSE </button>
+				</form>
+				<div class="headerPlaylist">
+					<img src="<%= imageSmall %>">
+					<div class="text">
+						<h4>Playing from:</h4>
+						<h2><%= title %></h2>
+					</div>
+				</div>
+				<div class="subHeaderPlaylist">
+						<p id="headerSong">SONG</p>
+						<p id="headerLength"> LENGTH </p>
+						<p id="headerListened">LISTENED</p>
+				</div>
+		</script>
+
+		<div id="container-log-in">
+			<div id="container"></div>
+		</div>
+
 		<div class="wrapper">
 			<div class="search-container">
 				<div class="logo">
@@ -40,32 +101,9 @@
 
 		<div id="page">	</div>
 
-		<script type=text/template id="playlist-item-view">
-			<img src="<%= imageLarge %>"/>
-			<h3 class="name"><%= title %></h3>
-			<span class="description"><%= description%></span>
-			<div class="playlist-button">
-				<button type="submit" id="explore-list-button">Explore playlist</button>
-			</div>
-		</script>
-
 		<div id="playlist-songs">
-			<form>
-				<button type="button" id="closeB" class="closeButton" onclick="closePlaylist()"> CLOSE </button>
-			</form>
-			<div class="headerPlaylist">
-				<img src="../core/assets/up-all-night-small.png">
-				<div class="text">
-					<h4>Playing from:</h4>
-					<h2>Up all night:The remixes radio</h2>
-				</div>
+			<div id="container-list-of-songs">
 			</div>
-			<div class="subHeaderPlaylist">
-					<p id="headerSong">SONG</p>
-					<p id="headerLength"> LENGTH </p>
-					<p id="headerListened">LISTENED</p>
-			</div>
-			<div id="container-list-of-songs"></div>
 		</div>
 
 		<p style="color:gray">&#169; 2016 ACME DIVISION. ALL RIGHTS RESERVED</p>

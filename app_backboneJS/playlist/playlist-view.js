@@ -16,16 +16,13 @@ const PlaylistView = Backbone.View.extend({
     return this;
   },
   openListOfSongs() {
-    const songsList = new SongsCollection();
-
-    songsList.fetch().done(() => {
-      const songListDisplay = new SongsListView({
-        el: '#container-list-of-songs',
-        collection: songsList,
-      });
-      songListDisplay.render();
+    const songListDisplay = new SongsListView({
+      el: '#container-list-of-songs',
+      collection: this.model,
     });
+    songListDisplay.render();
   },
+
 });
 
 export { PlaylistView };

@@ -1,12 +1,16 @@
 import { Song } from './song-model.js';
 const SongsCollection = Backbone.Collection.extend({
   model: Song,
-  url: 'http://localhost:3000/playlists',
-  parse(respone) {
-    return respone.songs.map((val) => {
-      const parsedElementSong = new Song(val);
-      return parsedElementSong;
+}, {
+  fromJSON(songsJSON) {
+    const songs = songsJSON.map((song) => {
+      return {
+        image: song.gsx$image.$t,
+        songAuthor: song.gsx$name.$t,
+        songLength: song.gsx$length.$t,
+      };
     });
+    return new SongsCollection(songs);
   },
 });
 

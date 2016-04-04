@@ -1,8 +1,8 @@
-const SongListItemView = Backbone.View.extend({
+const SongListHeaderView = Backbone.View.extend({
   tagName: 'div',
-  className: 'song-item-view',
+  className: 'song-header-view',
   template() {
-    const fn = _.template($('script#song-item-view').html());
+    const fn = _.template($('script#song-list-header').html());
     return fn.apply(this, arguments);
   },
   render: function () {
@@ -11,4 +11,4 @@ const SongListItemView = Backbone.View.extend({
   },
 });
 
-export { SongListItemView };
+export { SongListHeaderView };
