@@ -21,9 +21,9 @@ const SongsView = Backbone.View.extend({
     this.$el.html(this.template());
     const that = this;
     const partEl = $(this.el.querySelector('#songs'));
-    this.collection.forEach((model) => {
+    this.collection.forEach((modelInCol) => {
       const songview = new SongView({
-        model: model
+        model: modelInCol,
       });
       songview.render();
       that.renderNestedView(songview, partEl);
@@ -37,7 +37,7 @@ const SongsView = Backbone.View.extend({
     Utils.slidePlayListOut(this.el);
     const that = this;
     setTimeout(() => {
-      that.remove();
+      that.collection.reset();
     }, 2000);
   },
 

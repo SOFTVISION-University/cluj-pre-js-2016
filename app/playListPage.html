@@ -17,6 +17,14 @@
     <script src="http://backbonejs.org/test/vendor/jquery.js"></script>
     <script src="http://backbonejs.org/docs/js/jquery.lazyload.js"></script>
     <script src="http://backbonejs.org/backbone.js"></script>
+    <script>
+    var LoggedInUser = {
+      username: '',
+      fullname: '',
+      background: '',
+      token: '',
+    };
+    </script>
     <script type="text/template" id="template-SongView">
       <div class="songDiv">
         <img class="songImg" src="<%= gsx$image.$t %>">
@@ -42,6 +50,21 @@
         </div>
       </div>
     </script>
+    <script type="text/template" id="template-Login">
+      <div id="signInDiv">
+        <div class="acmelogo"></div>
+        <span id="SignInSpan">Sign into your ACME account</span><br />
+        <span id="SignInError"  style="visibility:hidden;color:red">Oops! That email / password combination is not valid.</span>
+          <form id="signInForm" name="signInForm" method="post">
+              Email<br>
+              <input type="text"   class="SU-input" name="username" required="true"><br>
+              Password<br>
+              <input type="password"  class="SU-input" name="password" required="true"><br><br />
+              <a id="ForgotPassw" href="#">Forgot password?</a>
+              <button id="submitSignIn">SignIn</button>
+          </form>
+      </div>
+    </script>
     <script type="text/template" id="template-SongsView">
         <div id="closeButton">
           <img src="../core/assets/close-icon.png" id="closeButton">
@@ -56,6 +79,7 @@
 
 </head>
 <body style="background-color:#EEEEEE">
+  <div id="loginDiv"></div>
   <div id="header">
     <img src="../core/assets/logo-top.png" class="floatLeft"></img>
     <a href="loginForm.html" class="submitSignUp" id="signInButton" style="padding-top:10px;">Sign In</a>

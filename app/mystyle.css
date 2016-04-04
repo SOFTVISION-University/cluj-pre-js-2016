@@ -431,3 +431,75 @@ a.submitSignUp {
 .songDiv:hover .songTitle{
   color: #007bff;
 }
+
+/*login style*/
+
+#signInDiv{
+  width:400px;
+  height:500px;
+  background-color: white;
+  border-radius: 5px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 10%;
+  text-align: center;
+  vertical-align: middle;
+  box-sizing: border-box;
+  padding-top: 20px;
+}
+#signInForm{
+  padding: 20px 50px 50px 50px;
+  text-align: left;
+
+
+}
+.SU-input{
+  height: 35px;
+  width: 300px;
+  border-radius: 5px;
+  border:1px solid darkgrey;
+  font-size: 1.2em;
+  padding: 2px;
+  padding-left: 10px;
+  color:darkgrey;
+  outline: none;
+}
+#submitSignIn{
+  background-color: #1DBFF5;
+  height: 50px;
+  width: 150px;
+  border: none;
+  color: white;
+  font-size: 1.2em;
+  border-radius: 5px;
+  margin-left: 10px;
+
+}
+#SignInSpan{
+  display:block;
+  font-weight: bold;
+  font-size: 1.2em;
+
+}
+#SignInError{
+  display:block;
+}
+.error{
+  color:red;
+  font-size: small;
+}
+.acmelogo{
+  background:url('../core/assets/logo-color.png');
+  width:158px;
+  height:57px;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+}
+#ForgotPassw{
+  color:#1DBFF5;
+  text-decoration: none;
+  display: block;
+  float:left;
+}

@@ -13,6 +13,7 @@ const PlaylistCardView = Backbone.View.extend({
     'click .explorePlaylist': 'popPlaylist',
   },
   popPlaylist() {
+    Utils.slidePlayListOut(document.getElementById('playlists'));
     const test = new SongCollection();
     test.set(this.model.attributes.songs);
     const songlist = new SongsView({
@@ -20,7 +21,10 @@ const PlaylistCardView = Backbone.View.extend({
       collection: test,
     });
     songlist.render();
-    Utils.slidePlayListIn(document.getElementById('playlists'));
+    setTimeout(() => {
+      Utils.slidePlayListIn(document.getElementById('playlists'));
+    }, 1000);
+    return false;
   },
 });
 
@@ -34,9 +38,9 @@ const PlaylistsColView = Backbone.View.extend({
 
   render() {
     const that = this;
-    this.collection.forEach((model) => {
+    this.collection.forEach((modelInCol) => {
       const playlistview = new PlaylistCardView({
-        model: model,
+        model: modelInCol,
       });
       playlistview.render();
       that.renderNestedView(playlistview);
