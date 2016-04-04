@@ -1,12 +1,17 @@
 import { AccountService } from './AccountService.js';
+import { LoginView } from './View/LoginView.js';
+import { HeaderView } from './View/HeaderView.js';
 import { PlaylistCollection } from './Collection/PlaylistCollection.js';
 import { PlaylistCollectionView } from './View/PlaylistCollectionView.js';
 
 // const link = 'http://192.168.28.109:3000/playlists';
 
 function createPlayLists(playlistCollection) {
+  const playlistsHolder = document.createElement('div');
+  playlistsHolder.id = 'playList-holder';
+  document.getElementById('playlist-holder').appendChild(playlistsHolder);
   const playlistCollectionView = new PlaylistCollectionView({
-    el: document.getElementById('playlist-holder'),
+    el: playlistsHolder,
     collection: playlistCollection,
   });
   playlistCollectionView.render();
@@ -19,19 +24,22 @@ function createPlaylistsModel() {
   });
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  if (AccountService.getInstance().loggedUser !== null) {
-    document.getElementById('signInButton').style.visibility = 'hidden';
-    document.getElementById('logOutButton').style.visibility = 'visible';
-    const message = 'Hello ${ AccountService.getInstance().loggedUser.name }  !';
-    document.getElementById('username').innerText = message;
-  }
-  else {
-    document.getElementById('logOutButton').style.visibility = 'hidden';
-    document.getElementById('username').innerText = '';
-  }
+function addLoginView() {
+  const loginView =  new LoginView({
+    el: document.getElementById('login-div'),
+  });
+  loginView.render();
+}
 
-// getLinkContent();
-// createPlayLists();
+function addHeaderView() {
+  const headerView =  new HeaderView({
+    el: document.getElementById('header-div'),
+  });
+  headerView.render();
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  addLoginView();
+  addHeaderView();
   createPlaylistsModel();
 });

@@ -1,7 +1,6 @@
-// import { closePlaylistSongsPannel } from './PlaylistView';
-const PlaylistHeaderView = Backbone.View.extend({
+const HeaderView = Backbone.View.extend({
   template(values) {
-    const templateText = document.querySelector('#header-playlist').innerText;
+    const templateText = document.querySelector('#header-template').innerText;
     const compiled = _.template(templateText);
     if (values !== null) {
       return compiled(values);
@@ -14,4 +13,4 @@ const PlaylistHeaderView = Backbone.View.extend({
   },
 });
 
-export { PlaylistHeaderView };
+export { HeaderView };

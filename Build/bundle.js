@@ -48,7 +48,7 @@
 	
 	var _homePage = __webpack_require__(1);
 	
-	var _SearchMusic = __webpack_require__(12);
+	var _SearchMusic = __webpack_require__(13);
 
 /***/ },
 /* 1 */
@@ -58,6 +58,10 @@
 	
 	var _AccountService = __webpack_require__(2);
 	
+	var _LoginView = __webpack_require__(15);
+	
+	var _HeaderView = __webpack_require__(16);
+	
 	var _PlaylistCollection = __webpack_require__(5);
 	
 	var _PlaylistCollectionView = __webpack_require__(7);
@@ -65,8 +69,11 @@
 	// const link = 'http://192.168.28.109:3000/playlists';
 	
 	function createPlayLists(playlistCollection) {
+	  var playlistsHolder = document.createElement('div');
+	  playlistsHolder.id = 'playList-holder';
+	  document.getElementById('playlist-holder').appendChild(playlistsHolder);
 	  var playlistCollectionView = new _PlaylistCollectionView.PlaylistCollectionView({
-	    el: document.getElementById('playlist-holder'),
+	    el: playlistsHolder,
 	    collection: playlistCollection
 	  });
 	  playlistCollectionView.render();
@@ -79,19 +86,23 @@
 	  });
 	}
 	
-	document.addEventListener('DOMContentLoaded', function () {
-	  if (_AccountService.AccountService.getInstance().loggedUser !== null) {
-	    document.getElementById('signInButton').style.visibility = 'hidden';
-	    document.getElementById('logOutButton').style.visibility = 'visible';
-	    var message = 'Hello ${ AccountService.getInstance().loggedUser.name }  !';
-	    document.getElementById('username').innerText = message;
-	  } else {
-	    document.getElementById('logOutButton').style.visibility = 'hidden';
-	    document.getElementById('username').innerText = '';
-	  }
+	function addLoginView() {
+	  var loginView = new _LoginView.LoginView({
+	    el: document.getElementById('login-div')
+	  });
+	  loginView.render();
+	}
 	
-	  // getLinkContent();
-	  // createPlayLists();
+	function addHeaderView() {
+	  var headerView = new _HeaderView.HeaderView({
+	    el: document.getElementById('header-div')
+	  });
+	  headerView.render();
+	}
+	
+	document.addEventListener('DOMContentLoaded', function () {
+	  addLoginView();
+	  addHeaderView();
 	  createPlaylistsModel();
 	});
 
@@ -258,6 +269,7 @@
 	    return resp.map(function (playlist) {
 	      var model = new _PlaylistModel.PlaylistModel();
 	      model.set(playlist);
+	      // debugger;
 	      return model;
 	    });
 	  }
@@ -297,7 +309,7 @@
 	  render: function render() {
 	    var collView = this;
 	    this.collection.forEach(function (model) {
-	      var playlistView = new _PlaylistView.PlaylistView({
+	      var playlistView = new _PlaylistView.PlaylistCardView({
 	        model: model
 	      });
 	      collView.el.appendChild(playlistView.render().el);
@@ -315,45 +327,29 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	exports.PlaylistView = undefined;
+	exports.PlaylistCardView = undefined;
 	
-	var _SongCollectionView = __webpack_require__(9);
+	var _PlaylistSongsView = __webpack_require__(12);
 	
-	var _PlaylistHeaderView = __webpack_require__(11);
-	
-	function drawSonsCollectionView(selectedPlaylist) {
-	  var songCollectionView = new _SongCollectionView.SongCollectionView({
-	    el: document.getElementById('songsHolder'),
-	    collection: selectedPlaylist
-	  });
-	  songCollectionView.render();
-	}
-	
-	function drawPlayListHeader(playListObject) {
-	  var playListHeaderView = new _PlaylistHeaderView.PlaylistHeaderView({
-	    el: document.getElementById('playList'),
-	    model: playListObject
-	  });
-	  playListHeaderView.render();
-	  var platListDiv = document.getElementById('playList');
-	  platListDiv.className = 'showPlayList';
-	  platListDiv.style.visibility = 'visible';
-	  platListDiv.style.transition = '0.5s';
-	  platListDiv.style.height = '400px';
-	}
-	
-	function showPlaylist(playlist) {
-	  var selectedPlaylist = playlist.songs;
-	  drawPlayListHeader(playlist);
-	  drawSonsCollectionView(selectedPlaylist);
-	}
-	
-	var PlaylistView = Backbone.View.extend({
+	var PlaylistCardView = Backbone.View.extend({
 	  events: {
-	    click: 'onClickExplorePlaylist'
+	    'click .viewPlayList': 'onClickExplorePlaylist'
 	  },
 	  onClickExplorePlaylist: function onClickExplorePlaylist() {
-	    showPlaylist(this.model.attributes);
+	    if (false) {
+	      // closePlaylistSongsPannel();
+	    } else {
+	        var currentPlaylist = this.model.attributes;
+	        var playlistSongsHolder = document.createElement('div');
+	        playlistSongsHolder.id = 'songs-holder';
+	        var playListDiv = document.getElementById('playList');
+	        playListDiv.appendChild(playlistSongsHolder);
+	        var playlistSongsView = new _PlaylistSongsView.PlaylistSongsView({
+	          el: playlistSongsHolder,
+	          model: currentPlaylist
+	        });
+	        playlistSongsView.render();
+	      }
 	  },
 	
 	  className: 'playlistCl',
@@ -371,7 +367,8 @@
 	  }
 	});
 	
-	exports.PlaylistView = PlaylistView;
+	exports.PlaylistCardView = PlaylistCardView;
+	// export { closePlaylistSongsPannel };
 
 /***/ },
 /* 9 */
@@ -433,13 +430,8 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
+	// import { closePlaylistSongsPannel } from './PlaylistView';
 	var PlaylistHeaderView = Backbone.View.extend({
-	  events: {
-	    'click #closeImg': 'closeThePlaylist'
-	  },
-	  closeThePlaylist: function closeThePlaylist() {
-	    this.el.remove();
-	  },
 	  template: function template(values) {
 	    var templateText = document.querySelector('#header-playlist').innerText;
 	    var compiled = _.template(templateText);
@@ -453,10 +445,70 @@
 	    return this;
 	  }
 	});
+	
 	exports.PlaylistHeaderView = PlaylistHeaderView;
 
 /***/ },
 /* 12 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.PlaylistSongsView = undefined;
+	
+	var _PlaylistHeaderView = __webpack_require__(11);
+	
+	var _SongCollectionView = __webpack_require__(9);
+	
+	var PlaylistSongsView = Backbone.View.extend({
+	  events: {
+	    'click #closeImg': 'closeThePlaylist'
+	  },
+	  closeThePlaylist: function closeThePlaylist() {
+	    var platListDiv = document.getElementById('playList');
+	    platListDiv.className = 'hideAnim';
+	    platListDiv.addEventListener('animationend', animationHideEnd);
+	    platListDiv.myParam = this;
+	  },
+	  render: function render() {
+	    debugger;
+	    var playlistSongsView = this;
+	    var playListHeaderView = new _PlaylistHeaderView.PlaylistHeaderView({
+	      el: playlistSongsView.el,
+	      model: playlistSongsView.model
+	    });
+	    playListHeaderView.render();
+	    var songCollectionView = new _SongCollectionView.SongCollectionView({
+	      el: playlistSongsView.el,
+	      collection: playlistSongsView.model.songs
+	    });
+	    songCollectionView.render();
+	    var platListDiv = document.getElementById('playList');
+	    platListDiv.className = 'showAnim';
+	    platListDiv.addEventListener('animationend', animationShowEnd);
+	  }
+	});
+	
+	function animationHideEnd(evt) {
+	  var platListDiv = document.getElementById('playList');
+	  platListDiv.removeEventListener('animationend', animationHideEnd);
+	  platListDiv.style.height = '0px';
+	  evt.target.myParam.remove();
+	}
+	
+	function animationShowEnd() {
+	  var platListDiv = document.getElementById('playList');
+	  platListDiv.removeEventListener('animationend', animationShowEnd);
+	  platListDiv.className = '';
+	  platListDiv.style.height = '400px';
+	}
+	exports.PlaylistSongsView = PlaylistSongsView;
+
+/***/ },
+/* 13 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -502,6 +554,134 @@
 	  songsArray.forEach(drawResults);
 	}
 	exports.searchMusic = searchMusic;
+
+/***/ },
+/* 14 */,
+/* 15 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.LoginView = undefined;
+	
+	var _CurrentUser = __webpack_require__(18);
+	
+	var LoginView = Backbone.View.extend({
+	  template: function template(values) {
+	    var templateText = document.querySelector('#login-user').innerText;
+	    var compiled = _.template(templateText);
+	    if (values !== null) {
+	      return compiled(values);
+	    }
+	    return compiled();
+	  },
+	
+	  events: {
+	    'click #login-button': 'logIn'
+	  },
+	  render: function render() {
+	    this.$el.append(this.template(this.model));
+	    return this;
+	  },
+	  logIn: function logIn() {
+	    var user = {};
+	    user.username = document.getElementById('username').value;
+	    user.password = document.getElementById('password').value;
+	    $.ajax({
+	      url: 'http://localhost:3000/auth',
+	      type: 'POST',
+	      data: JSON.stringify(user),
+	      dataType: 'json',
+	      contentType: 'application/json'
+	    }).done(function (token) {
+	      $.ajax({
+	        url: 'http://localhost:3000/preferences',
+	        headers: {
+	          'x-token': token
+	        }
+	      }).done(function (data) {
+	        console.log(data);
+	        var userPreferences = JSON.parse(data);
+	        _CurrentUser.CurrentUser.getInstance().setUserHeaderImage(userPreferences.gsx$background.$t);
+	        _CurrentUser.CurrentUser.getInstance().setFullName(userPreferences.gsx$fullname.$t);
+	        debugger;
+	        var headerDiv = document.getElementsByClassName('headerDiv')[0];
+	        headerDiv.style.backgroundImage = 'url( ' + _CurrentUser.CurrentUser.getInstance().getUserHeaderImage() + ' )';
+	        document.getElementById('full-name').innerText = _CurrentUser.CurrentUser.getInstance().getFullName();
+	        document.getElementById('signInButton').style.visibility = 'hidden';
+	        debugger;
+	      });
+	    });
+	  }
+	});
+	
+	exports.LoginView = LoginView;
+
+/***/ },
+/* 16 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	var HeaderView = Backbone.View.extend({
+	  template: function template(values) {
+	    var templateText = document.querySelector('#header-template').innerText;
+	    var compiled = _.template(templateText);
+	    if (values !== null) {
+	      return compiled(values);
+	    }
+	    return compiled();
+	  },
+	  render: function render() {
+	    this.$el.append(this.template(this.model));
+	    return this;
+	  }
+	});
+	
+	exports.HeaderView = HeaderView;
+
+/***/ },
+/* 17 */,
+/* 18 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	function CurrentUser() {
+	  this.userHeaderImage = '';
+	  this.fullName = '';
+	}
+	CurrentUser._instance = null;
+	CurrentUser.getInstance = function () {
+	  if (CurrentUser._instance === null) {
+	    CurrentUser._instance = new CurrentUser();
+	  }
+	  return CurrentUser._instance;
+	};
+	CurrentUser.prototype.setUserHeaderImage = function (headerImg) {
+	  this.userHeaderImage = headerImg;
+	};
+	CurrentUser.prototype.setFullName = function (fullname) {
+	  this.fullName = fullname;
+	};
+	
+	CurrentUser.prototype.getUserHeaderImage = function () {
+	  return this.userHeaderImage;
+	};
+	CurrentUser.prototype.getFullName = function () {
+	  return this.fullName;
+	};
+	
+	exports.CurrentUser = CurrentUser;
 
 /***/ }
 /******/ ]);

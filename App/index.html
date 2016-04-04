@@ -12,39 +12,13 @@
   </head>
   <body>
   <div class="mainDiv">
+    <div id = 'login-div'>
 
-      <div class="headerDiv">
-          <div class="logoTopDiv">
-            <div class="searchDiv">
-              <div class="searchImg" >
-              </div>
-                <div class="formIndex">
-                  <datalist id="fruits">
-                    <select name="fruits" id="search_music" >
-                    </select>
-                    </datalist>
-                  <input type="text" id="searchStr" placeholder="Search Music" name="song" list="songs" onkeyup="return searchMusic()">
-                  <option name="Name" value="music" id="option_music"> </option>
-                    <!-- <input type="text" name="searchtext" placeholder="Search music"> -->
-                </div>
-            </div>
-        <div  class="signInindexDiv">
-            <button type="button" name="button" id="signInButton" class="signInButton"><a href="signIn.html"> <span class="white">Sign In</span> </a></button>
-            <span id="username"></span>
-            <button type="button" name="button" id="logOutButton" class="signInButton"><a href="index.html" onclick="logOutUser()"> <span class="white">Log out</span> </a></button>
-        </div>
-      </div>
-      <div id="underBanner">
-          <p>Ready to listen the endless music on your favorite device</p>
-          <!-- <button type="button" name="button" id="joinButton" onclick="clearPlaylist()"><span>JOIN NOW</span></button> -->
-          <button type="button" name="button" id="joinButton"><a href="signUp.html"> <span>JOIN NOW</span> </a></button>
+    </div>
+    <div id = 'header-div'>
 
-          <br>
-          <span id="bigTitle" class="medium white"></span><br>
-          <span id="authorSmall" class="small gray"></span>
-      </div>
+    </div>
 
-      </div>
       <div class="listHolder" id="playlist-holder">
 
      </div>
@@ -56,6 +30,61 @@
 
     </div>
 
+
+  <script type="text/template" id="header-template">
+    <div class="headerDiv">
+        <div class="logoTopDiv">
+          <div class="searchDiv">
+            <div class="searchImg" >
+            </div>
+              <div class="formIndex">
+                <datalist id="fruits">
+                  <select name="fruits" id="search_music" >
+                  </select>
+                  </datalist>
+                <input type="text" id="searchStr" placeholder="Search Music" name="song" list="songs" onkeyup="return searchMusic()">
+                <option name="Name" value="music" id="option_music"> </option>
+                  <!-- <input type="text" name="searchtext" placeholder="Search music"> -->
+              </div>
+          </div>
+      <div  class="signInindexDiv">
+          <button type="button" name="button" id="signInButton" class="signInButton"><a href="signIn.html"> <span class="white">Sign In</span> </a></button>
+          <span id="full-name"></span>
+          <button type="button" name="button" id="logOutButton" class="signInButton"><a href="index.html"> <span class="white">Log out</span> </a></button>
+      </div>
+    </div>
+    <div id="underBanner">
+        <p>Ready to listen the endless music on your favorite device</p>
+        <!-- <button type="button" name="button" id="joinButton" onclick="clearPlaylist()"><span>JOIN NOW</span></button> -->
+        <button type="button" name="button" id="joinButton"><a href="signUp.html"> <span>JOIN NOW</span> </a></button>
+
+        <br>
+        <span id="bigTitle" class="medium white"></span><br>
+        <span id="authorSmall" class="small gray"></span>
+    </div>
+
+    </div>
+</script>
+
+<script type="text/template" id="login-user">
+  <div class="signInDiv">
+    <img src="../core/assets/logo-color.png" alt="acme" />
+    <p style="font-weight: bold;">Sign into your Acme Account</p>
+    <div class="siDivForm">
+      <form>
+      <span>Email</span>:<br>
+      <input type="email" name="email" required  class="signInTexfFields" id="username"><br>
+      <span>Password</span>:<br>
+      <input type="password" name="password" required class="signInTexfFields" id="password">
+      </form>
+      <span class="small lightBlue">Forgot your pasword?</span>
+      <input type="submit" value="Sign In" class="buttonSI" id="login-button">
+      <br>
+      <span class="medium-2 gray">Don't have an account ?</span>
+      <a href="signUp.html" style="color:CornflowerBlue">Sign up</p>
+    </div>
+  </div>
+</script>
 
 <script type="text/template" id="header-playlist">
   <div id="playListHeader">

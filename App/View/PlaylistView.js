@@ -1,39 +1,25 @@
-import { SongCollectionView } from './SongCollectionView.js';
-import { PlaylistHeaderView } from './PlaylistHeaderView.js';
+import { PlaylistSongsView } from './PlaylistSongsView.js';
 
-function drawSonsCollectionView(selectedPlaylist) {
-  const songCollectionView = new SongCollectionView({
-    el: document.getElementById('songsHolder'),
-    collection: selectedPlaylist,
-  });
-  songCollectionView.render();
-}
-
-function drawPlayListHeader(playListObject) {
-  const playListHeaderView = new PlaylistHeaderView({
-    el: document.getElementById('playList'),
-    model: playListObject,
-  });
-  playListHeaderView.render();
-  const platListDiv = document.getElementById('playList');
-  platListDiv.className = 'showPlayList';
-  platListDiv.style.visibility = 'visible';
-  platListDiv.style.transition = '0.5s';
-  platListDiv.style.height = '400px';
-}
-
-function showPlaylist(playlist) {
-  const selectedPlaylist = playlist.songs;
-  drawPlayListHeader(playlist);
-  drawSonsCollectionView(selectedPlaylist);
-}
-
-const PlaylistView = Backbone.View.extend({
+const PlaylistCardView = Backbone.View.extend({
   events: {
-    click: 'onClickExplorePlaylist',
+    'click .viewPlayList': 'onClickExplorePlaylist',
   },
   onClickExplorePlaylist() {
-    showPlaylist(this.model.attributes);
+    if(1 === 0) {
+      // closePlaylistSongsPannel();
+    }
+    else {
+      const currentPlaylist = this.model.attributes;
+      const playlistSongsHolder = document.createElement('div');
+      playlistSongsHolder.id = 'songs-holder';
+      const playListDiv = document.getElementById('playList');
+      playListDiv.appendChild(playlistSongsHolder);
+      const playlistSongsView = new PlaylistSongsView({
+        el: playlistSongsHolder,
+        model: currentPlaylist,
+      });
+      playlistSongsView.render();
+    }
   },
   className: 'playlistCl',
   template(values) {
@@ -50,4 +36,5 @@ const PlaylistView = Backbone.View.extend({
   },
 });
 
-export { PlaylistView };
+export { PlaylistCardView };
+// export { closePlaylistSongsPannel };

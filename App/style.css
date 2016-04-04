@@ -9,11 +9,17 @@ body {
 
 }
 
-
 .bannerBlock{
 	display: block;
 }
 
+#playList-holder{
+	width: 100%;
+}
+
+#songs-holder{
+	width: 100%;
+}
 
 #topDiv{
 width: 100%;
@@ -23,9 +29,9 @@ overflow: hidden;
 }
 
 .showPlayList{
-	visibility:visible;
+	/*visibility:visible;
 	transition-duration: 0.5s;
-	height: 400px;
+	height: 400px;*/
 }
 
 .invalidUsername{
@@ -143,7 +149,7 @@ overflow: hidden;
 {
 	display: inline-block;
 	width: 25%;
-	margin: auto 15px;
+	/*margin: auto 15px;*/
 	height: 300px;
 	text-align: center;
 	border-radius: 4px;
@@ -161,7 +167,7 @@ overflow: hidden;
 	height: 37px;
 	margin-top: 100px;
 	outline: none;
-	visibility: visible;
+	visibility: ;
 }
 
 #playlistImg{
@@ -184,6 +190,7 @@ float: left;
 
 
 .listHolder div{
+	display: block;
 	width: 300px;
 	margin-right: 20px;
 }
@@ -197,10 +204,10 @@ float: left;
 .hidden{
 visibility: hidden;
 }
-.listHolder > div:hover{
+.playListDivTemplate:hover{
 		transition-duration: 0.5s;
 		transform: translate(0,-15px);
-		box-shadow: 2px 10px 5px rgba(0, 0, 0, 0.3);
+		box-shadow: 15px 10px 5px rgba(0, 0, 0, 0.3);
 }
 .divToClone{
 	display: block;
@@ -230,6 +237,68 @@ visibility: hidden;
 	margin-bottom: 10px;
 	text-align: center;
 }
+
+
+.showAnim {
+    -webkit-animation:showAnimation 0.5s;
+    -moz-animation:showAnimation 0.5s;
+    -ms-animation:showAnimation 0.5s;
+    -o-animation:showAnimation 0.5s;
+    animation:showAnimation 0.5s;
+}
+
+@-webkit-keyframes showAnimation {
+    0% { height: 0px; }
+    100% { height: 400px; }
+}
+@-moz-keyframes showAnimation {
+	0% { height: 0px; }
+	100% { height: 400px; }
+}
+@-ms-keyframes showAnimation {
+	0% { height: 0px; }
+	100% { height: 400px; }
+}
+@-o-keyframes showAnimation {
+	0% { height: 0px; }
+	100% { height: 400px; }
+}
+@keyframes showAnimation {
+	0% { height: 0px; }
+	100% { height: 400px; }
+}
+
+
+.hideAnim {
+    -webkit-animation:hideAnimation 0.5s;
+    -moz-animation:hideAnimation 0.5s;
+    -ms-animation:hideAnimation 0.5s;
+    -o-animation:hideAnimation 0.5s;
+    animation:hideAnimation 0.5s;
+}
+
+@-webkit-keyframes hideAnimation {
+    0% { height: 400px; }
+    100% { height: 0px; }
+}
+@-moz-keyframes hideAnimation {
+	0% { height: 400px; }
+	100% { height: 0px; }
+}
+@-ms-keyframes hideAnimation {
+	0% { height: 400px; }
+	100% { height: 0px; }
+}
+@-o-keyframes hideAnimation {
+	0% { height: 400px; }
+	100% { height: 0px; }
+}
+@keyframes hideAnimation {
+	0% { height: 400px; }
+	100% { height: 0px; }
+}
+
+
 
 #playList{
 	position: fixed;

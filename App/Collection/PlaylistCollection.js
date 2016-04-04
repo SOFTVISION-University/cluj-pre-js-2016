@@ -6,6 +6,7 @@ const PlaylistCollection = Backbone.Collection.extend({
     return resp.map((playlist) => {
       const model = new PlaylistModel();
       model.set(playlist);
+      // debugger;
       return model;
     });
   },
