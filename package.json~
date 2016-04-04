@@ -26,7 +26,7 @@
     "webpack": "^1.12.14"
   },
 "scripts" : {
- "build:dev" : "./node_modules/webpack/bin/webpack.js --watch"
+ "build:dev" : "./node_modules/webpack/bin/webpack.js ^C"
 
 }
 }

@@ -6,14 +6,33 @@
 <script src="http://backbonejs.org/backbone.js"></script>
 <link rel="stylesheet" type="text/css" href="index_css.css">
 <script  src="../build/bundle.js"></script>
+<script type="text/template" id="template-logIn">
+<div id="login_form">
 
+  <img src="../core/assets/logo-color.png" alt="altceva">
 
+  <span id="title_span">Sign into your ACME account</span>
 
+  <div id="error_message"></div>
 
+<form   method="post" >
+  <div class="align_left">Email</div>
+  <input type="text" name="email"  id="e-mail" required=""><br>
+  <div class="align_left">Password </div>
+  <input type="text" name="pwd"  id="pass" required><br>
+  <a class="size" href="www.google.ro" >Forgot password?</a>
+  <input type="button" value="Sign in" id="SignIn_button"  >
+</form>
 
-
+<div class="size" id="bottom1">Don't have an acount?
+<a href="www.google.com">Sign up here</a>
+</div>
+</div>
+</script>
 </head>
-<body body >
+<body  >
+ <div id="logIn">
+</div>
 
 <div class="container">
 
@@ -58,10 +77,9 @@
 
   <div id="right">
 
-<form action="login.html" method="post">
-       <input type="submit" value="Sign in" id="button_signin">
-       <input type="submit" value="Log Out" id="log_out" onclick="logOut()")>
-</form>
+<script type="text/template" id="template-logOutButton">
+<input type="submit" value="Log Out" id="logOut" )>
+</script>
   </div>
 
  </div>
@@ -101,23 +119,24 @@
     <img src="../core/assets/close-icon.png"  alt="altceva">
   </div>
 
-<script type="text/template" id="template-HeaderPlaylist">
-   <div id="footer_playlist">
+
+  <div id="footer_playlist">
+
+  </div>
+
+  <script type="text/template" id="template-HeaderPlaylist">
     <div id="img_playlist" class="info_playlist">
       <img src=<%= imageSmall %> class="img_blc2" id="img_play_big">
     </div>
 
     <div id="text_playlist" class="info_playlist">
-        <span id="text_playlist1">Playing from:
-        </span>
-        <span id="text_playlist2"><%= title %>
-        </span>
+      <span id="text_playlist1">Playing from:
+      </span>
+      <span id="text_playlist2"><%= title %>
+      </span>
 
     </div>
-
-   </div>
- </script>
-
+  </script>
 
 <div class="info_song">
      <span class="display1" id="name_song_size">Song

@@ -1,6 +1,9 @@
 import { SongView } from './songView.js';
-const SongsView = Backbone.View.extend({
 
+const SongsView = Backbone.View.extend({
+  events: {
+    'click ': 'deleteSongsView',
+  },
   _nestedView: [],
   renderNestedView(view) {
     this._nestedView.push(view);
@@ -11,20 +14,15 @@ const SongsView = Backbone.View.extend({
     const partEl = this.el;
     this.collection.forEach((model) => {
       const songView = new SongView({
-        model: model,
+        model,
       });
       songView.render();
       that.renderNestedView(songView, partEl);
     });
-
-
     return this;
   },
-  destroy_view() {
-    this.undelegateEvents();
-    this.$el.removeData().unbind();
-    this.remove();
-    Backbone.View.prototype.remove.call(this);
+  deleteSongsView() {
+    this.model.remove();
   },
 });
 export { SongsView } ;
