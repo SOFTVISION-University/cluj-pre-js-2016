@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+    <title>Example Domain</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script	type="text/javascript" src="playlists.js"></script>
+    <script	type="text/javascript" src="songs.js"></script>
+    <script	type="text/javascript" src="user.js"></script>
+    <script	type="text/javascript" src="AccountService.js"></script>
+    <script	type="text/javascript" src="scriptPlaylists.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="loginstyle.css">
+</head>
+<body>
+    <div id="signInDiv">
+      <div class="acmelogo"></div>
+      <span id="SignInSpan">Sign into your ACME account</span><br />
+      <span id="SignInError"  style="visibility:hidden;color:red">Oops! That email / password combination is not valid.</span>
+        <form id="signInForm" name="signInForm" action="playListPage.html" method="post">
+            Email<br>
+            <input type="email"   class="SU-input" name="email"><br>
+            Password<br>
+            <input type="password"  class="SU-input" name="password"><br><br />
+            <a id="ForgotPassw" href="#">Forgot password?</a>
+            <input type="submit" id="submitSignIn" value="SignIn">
+        </form>
+    </div>
+
+    <script>
+      function loginSubmit(){
+        var email = document.forms["signInForm"]["email"].value;
+        var password = document.forms["signInForm"]["password"].value;
+        if (AccountService.signIn(email, password)){
+          return true;
+        }
+        document.querySelector('#SignInError').style.visibility = 'visible';
+        return false;
+
+      }
+      window.onload = function(){
+
+        document.getElementById("signInForm").onsubmit=loginSubmit;
+
+
+
+      }
+
+    </script>
+
+</body>
+</html>

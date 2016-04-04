@@ -6,4 +6,3 @@ Add simple scripts to improve UX:
 when the “SIGN UP” button is pressed on the landing page, scroll top and focus on the registration form
 click on explore playlist opens the playlist panel
 click on “CLOSE X” removes the playlist panel
-
