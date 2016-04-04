@@ -1,4 +1,3 @@
-import { SongCollection } from '../collections/song-collection.js';
 import { SongsListView } from '../views/songs-list-view.js';
 const PlaylistView = Backbone.View.extend({
   tagName: 'li',
@@ -36,13 +35,10 @@ const PlaylistView = Backbone.View.extend({
   },
 
   explorePlaylist() {
-    const songsCollection = new SongCollection();
-    songsCollection.fetch().done(() => {
-      this._setSongsListView(new SongsListView({
-        collection: songsCollection,
-        model: this.model,
-      }));
-    });
+    this._setSongsListView(new SongsListView({
+      collection: this.model.songs,
+      model: this.model,
+    }));
   },
 });
 

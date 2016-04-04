@@ -188,7 +188,7 @@ a#forgot_pass{
   text-decoration: none;
 }
 
-div#login_div input[type=email],div#login_div input[type=password]{
+div#login_div input[type=email],div#login_div input[type=password],input[type=text]{
   width: 292px;
   background-color:rgba(128,128,128 ,0.2);
   padding: 7px;

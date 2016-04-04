@@ -22,6 +22,17 @@ const SongsListView = Backbone.View.extend({
     el.append(view.el);
   },
   render() {
+<<<<<<< HEAD
+    const playlistModel = this.model;
+    playlistModel.fetch().done(() => {
+      const songsListHeaderView = new SongsListHeaderView({
+        el: this.el.querySelector('.songs-list-header'),
+        model: playlistModel,
+      });
+      songsListHeaderView.render();
+    });
+=======
+>>>>>>> BackboneImplementation
     this.$el.html(this.template());
     const songsListHeaderView = new SongsListHeaderView({
       el: this.el.querySelector('.songs-list-header'),

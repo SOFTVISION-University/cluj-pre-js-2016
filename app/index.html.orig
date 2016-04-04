@@ -14,7 +14,11 @@
     <div id="index-content"></div>
     <div id="index-card-area"></div>
     <div id="footer"></div>
+<<<<<<< HEAD
     <div id="authentication"></div>
+=======
+
+>>>>>>> BackboneImplementation
 
     <script type="text/template" id="template-HeaderView">
       <div id="logo_div">
@@ -122,11 +126,19 @@
         <img src="../core/assets/logo-color.png" alt="Image not found"/>
         <p><b>Sign into your ACME account</b></p>
         <p id="error"></p>
+<<<<<<< HEAD
+        <form action="" method="post" onsubmit="return validateUser()">
+          <label for="email">Email</label><br/>
+          <input id="email" type="email" name="email" onfocus="getFocus(this)" onblur="getBlur(this)" required/><br/><br/>
+          <label for="password">Password</label><br/>
+          <input id="password" type="password" name="password" onfocus="getFocus(this)" onblur="getBlur(this)" required/><br/><br/>
+=======
         <form action="" method="post">
           <label for="email">Email</label><br/>
           <input id="email" type="text" name="email" required/><br/><br/>
           <label for="password">Password</label><br/>
           <input id="password" type="password" name="password" required/><br/><br/>
+>>>>>>> BackboneImplementation
           <a href="" id="forgot_pass">Forgot password ?</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           <input id="sign_in" type="submit" name="submit" value="Sign in"/><br/><br/><br/>
         </form><br/>
