@@ -1,16 +1,17 @@
-import { SongListItemView } from './SongListItemView.js' ;
+// import { SongListItemView } from './SongListItemView.js' ;
 
-const SongsListView = Backbone.View.extend({
+const SongListView = Backbone.View.extend({
   className: 'songs',
   render() {
     this.$el.html(this.template);
     const that = this;
-    this.collection.forEach(function (modelS) {
+    this.collection.forEach(function (model) {
       const songListView = new SongListItemView({
-        model: modelS,
+        model: model,
       });
       that.el.appendChild(songListView.render().el);
     });
   },
 });
-export { SongsListView };
+
+// export { SongListView };

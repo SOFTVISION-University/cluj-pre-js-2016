@@ -1,4 +1,4 @@
-const PlaylistView = Backbone.View.extend({
+const PlaylistItemView = Backbone.View.extend({
   tagName: 'li',
   className: 'playlist-view',
   template: _.template('<span class="name"><%= name %></span>'),
@@ -8,4 +8,4 @@ const PlaylistView = Backbone.View.extend({
   },
 });
 
-export { PlaylistView };
+//export { PlaylistItemView };

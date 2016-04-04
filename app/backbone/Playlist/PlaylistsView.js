@@ -1,4 +1,4 @@
-import { PlaylistView } from './PlaylistView.js';
+// import { PlaylistView } from './PlaylistView.js';
 
 const PlaylistsView = Backbone.View.extend({
   template: _.template("<p>List of playlists</p><div class='user'></div><ul class='playlists-view'></ul>"),
@@ -11,15 +11,25 @@ const PlaylistsView = Backbone.View.extend({
     this.$el.html(this.template());
     const that = this;
     const partEl = $(this.el.querySelector('.playlists-view'));
-    this.collection.forEach(function (modelP) {
-      const playlistView = new PlaylistView({
-        model: modelP,
+    this.collection.forEach(function (model) {
+      const playlistItemView = new PlaylistItemView({
+        model: model,
       });
-      playlistView.render();
-      that.renderNestedView(playlistView, partEl);
+      playlistItemView.render();
+      that.renderNestedView(playlistItemView, partEl);
     });
     return this;
   },
 });
 
-export { PlaylistsView };
+const playlists = new PlaylistCollection();
+playlists.fetch().done(() => {
+  const view = new PlaylistItemView({
+    el: document.getElementById('container'),
+    collection: playlists,
+  });
+  view.render();
+});
+
+
+// export { PlaylistsView };

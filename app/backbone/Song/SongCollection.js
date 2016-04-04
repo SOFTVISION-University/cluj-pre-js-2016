@@ -1,7 +1,6 @@
-import { SongModel } from './SongModel.js';
+// import { SongModel } from './SongModel.js';
 
 const SongCollection = Backbone.Collection.extend({
 	model: SongModel,
-	});
-
-export { SongCollection };
+});
+// export { SongCollection };

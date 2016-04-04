@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>SignIn</title>
+<link rel="stylesheet" type="text/css" href="./css/signin.css">
+</head>
+
+<body>
+<div class="header">
+  <img src="/home/robert.cosma/work/cluj-pre-js-2016/core/assets/logo-top.png" />
+  <input type="text" placeholder="Search Music" class="search" />
+  <img src="/home/robert.cosma/work/cluj-pre-js-2016/core/assets/search-icon.png" class="icon"/>
+  <form action="">
+    <input type="button" value="Sign in" class="signin" id="signin">
+  </form>
+  <p class="text">Ready to listen to endless music<br>on your favorite device ?</p>
+  <form action="">
+    <input type="button" value="JOIN NOW" id="join">
+  </form>
+  <p id="header-text">Epic and debauched party mixes</p>
+</div>
+
+<div class="container">
+  <div class="box1">
+    <form action="">
+      <input type="button" value="Explore playlist" class="explore" id="box1"/>
+    </form>
+    <img src="/home/robert.cosma/work/cluj-pre-js-2016/core/assets/massive-pop-hits.png" />
+    <p class="box-title">Massive pop hits vol 1</p>
+    <p class="box-content">Lorem ipsum dolor sit amet,consectetur adisciping<br>elit,sed do eiusmud tempor incididunt ut labore et</p>
+  </div>
+  <div class="box2">
+    <form action="">
+      <input type="button" value="Explore playlist" class="explore" id="box2"/>
+    </form>
+      <img src="/home/robert.cosma/work/cluj-pre-js-2016/core/assets/up-all-night.png" />
+      <p class="box-title">Up all night</p>
+      <p class="box-content">Ut enim ad minim veniam,quis nostrud exercitatioon<br>ullamco laboris nisi ut aliquip ex ea commodo</p>
+  </div>
+  <div class="box3">
+    <form action="">
+      <input type="button" value="Explore playlist" class="explore" id="box3"/>
+    </form>
+    <img src="/home/robert.cosma/work/cluj-pre-js-2016/core/assets/dj-killer-mixes.png" />
+    <p class="box-title">Dj Killer mixes</p>
+    <p class="box-content">Ut enim ad minim veniam,quis nostrud exercitatioon<br>ullamco laboris nisi ut aliquip ex ea commodo</p>
+  </div>
+</div>
+<div class="popup" id="popup">
+  <div>
+    <p id="close">Close</p>
+    <img src="/home/robert.cosma/work/cluj-pre-js-2016/core/assets/close-icon.png" id="close-icon"/>
+  </div>
+  <div class="playlist-pop-up">
+    <div class="playlist">
+      <div>
+        <img src="/home/robert.cosma/work/cluj-pre-js-2016/core/assets/massive-pop-hits.png">
+      </div>
+      <div>
+        <h1>Massive pop hits vol 1</h1>
+      </div>
+      <table>
+        <tr>
+          <th>SONG </th>
+          <th>LENGHT </th>
+          <th>LISTENED</th>
+        </tr>
+      </table>
+      <script type="text/template" id="song-list-view">
+        <img src=<%= image %> />
+        <span class="name"><%= name %></span>
+        <span class="songAuthor"><%= songAuthor %></span>
+        <span class="songLength"><%= songLength %></span>
+        <span class="songListened"><%= songListened %></span>
+      </script>
+    </div>
+</div>
+    <div id="songs">
+    </div>
+
+    <script type="text/javascript">
+        $(function() {
+
+        const songsJSON = '[{"image":"/home/robert.cosma/work/cluj-pre-js-2016/core/assets/2015-best-music.png","name":"love love enemies love","songAuthor":"Smiley","songLength":74,"songListened":82},{"image":"/home/robert.cosma/work/cluj-pre-js-2016/core/assets/2015-best-music.png","name":"love love enemies pierdut","songAuthor":"Dr. Dre","songLength":186,"songListened":78},{"image":"/home/robert.cosma/work/cluj-pre-js-2016/core/assets/2015-best-music.png","name":"ea money pierdut ea","songAuthor":"Andra","songLength":303,"songListened":94},{"image":"/home/robert.cosma/work/cluj-pre-js-2016/core/assets/2015-best-music.png","name":"enemies el buletin ea","songAuthor":"Andra","songLength":359,"songListened":23},{"image":"/home/robert.cosma/work/cluj-pre-js-2016/core/assets/2015-best-music.png","name":"buletin el buletin love","songAuthor":"Eminem","songLength":312,"songListened":11},{"image":"/home/robert.cosma/work/cluj-pre-js-2016/core/assets/2015-best-music.png","name":"pierdut pierdut enemies ea","songAuthor":"Eminem","songLength":37,"songListened":9},{"image":"/home/robert.cosma/work/cluj-pre-js-2016/core/assets/2015-best-music.png","name":"ea money enemies enemies","songAuthor":"Dr. Dre","songLength":325,"songListened":13},{"image":"/home/robert.cosma/work/cluj-pre-js-2016/core/assets/2015-best-music.png","name":"enemies money el money","songAuthor":"Eminem","songLength":58,"songListened":10}]';
+        const playlist_songs = new SongCollection(JSON.parse(songsJSON));
+
+        const songsView = new SongListView({collection: playlist_songs});
+        songsView.render();
+        $('#songs').append(songsView.el);
+
+        });
+    </script>
+</div>
+<p id="copyright">2016 ACME DIVISION.ALL RIGHTS RESERVED</p>
+
+<script src="http://backbonejs.org/test/vendor/underscore.js"></script>
+<script src="http://backbonejs.org/test/vendor/jquery.js"></script>
+<script src="http://backbonejs.org/docs/js/jquery.lazyload.js"></script>
+<script src="http://backbonejs.org/backbone.js"></script>
+<!-- <script src="/home/robert.cosma/work/cluj-pre-js-2016/app/backbone/Song/SongModel.js"></script>
+<script src="/home/robert.cosma/work/cluj-pre-js-2016/app/backbone/Song/SongCollection.js"></script>
+<script src="/home/robert.cosma/work/cluj-pre-js-2016/app/backbone/Song/SongListItemView.js"></script>
+<script src="/home/robert.cosma/work/cluj-pre-js-2016/app/backbone/Song/SongsListView.js"></script>
+<script src="/home/robert.cosma/work/cluj-pre-js-2016/app/backbone/Playlist/PlaylistModel.js"></script>
+<script src="/home/robert.cosma/work/cluj-pre-js-2016/app/backbone/Playlist/PlaylistCollection.js"></script>
+<script src="/home/robert.cosma/work/cluj-pre-js-2016/app/backbone/Playlist/PlaylistItemView.js"></script>
+<script src="/home/robert.cosma/work/cluj-pre-js-2016/app/backbone/Playlist/PlaylistsView.js"></script> -->
+<script type="text/javascript" src="./js/signin.js"></script>
+</body>
+
+</html>
