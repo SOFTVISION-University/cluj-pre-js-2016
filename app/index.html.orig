@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Home page</title>
+    <script src="http://backbonejs.org/test/vendor/underscore.js"></script>
+    <script src="http://backbonejs.org/test/vendor/jquery.js"></script>
+    <script src="http://backbonejs.org/docs/js/jquery.lazyload.js"></script>
+    <script src="http://backbonejs.org/backbone.js"></script>
+  </head>
+  <body id="home">
+    <div id="authentication"></div>
+    <div id="index-header"></div>
+    <div id="index-content"></div>
+    <div id="index-card-area"></div>
+    <div id="footer"></div>
+<<<<<<< HEAD
+    <div id="authentication"></div>
+=======
+
+>>>>>>> BackboneImplementation
+
+    <script type="text/template" id="template-HeaderView">
+      <div id="logo_div">
+        <a href="index.html"><img src="../core/assets/logo-top.png" id="logo" alt="Image not found"/></a>
+      </div>
+      <div id="search">
+        <img src="../core/assets/search-icon.png" id="search_img" alt="Image not found"/>
+        <form action="" method="get">
+          <input id="search_box" type="text" name="search" placeholder="Search Music"/>
+        </form>
+      </div>
+      <div id="sign_in_div">
+        <a href="login.html"><button id="sign_in_button" type="button" name="sign_in">Sign in</button></a>
+      </div>
+    </script>
+
+    <script type="text/template" id="template-ContentView">
+      <p style="color:white"><strong>Ready to listen to endless music<br/> on your favorite device?</strong></p>
+      <a href="sign_up.html"><button id="join_now_button" type="button" name="join_now">JOIN NOW</button></a><br/><br/><br/>
+      <p id ="promise" style="color:white">Epic and debauched party mixes</p><br/><br/>
+  	</script>
+
+    <script type="text/template" id="template-PlaylistsView">
+      <ul class='playlists-view'>
+
+      </ul>
+    </script>
+
+  	<script type="text/template" id="template-PlaylistView">
+      <div class="card" id="<%= id %>">
+        <div class="mat">
+        </div>
+        <button class="explore" type="button" name="explore_playlist"><img src="../core/assets/play-icon.png" alt="Image not found"/> Explore playlist</button>
+        <img id="card-image" src="<%= imageLarge %>"/>
+        <div class="playlist-content">
+          <p><strong id="title"><%= title %></strong></p>
+          <p id="description"><%= description %></p>
+        </div>
+      </div>
+  	</script>
+
+    <script type="text/template" id="template-SongsListView">
+      <div id="close">
+        <span class="close-button">CLOSE<img id="close-icon" src="../core/assets/close-icon.png" alt="Image not found"/></span>
+      </div>
+      <div class="playing-from">
+        <table class="songs-list-header">
+
+        </table>
+      </div>
+        <table id="playlist-songs" align="center" cellspacing="0" cellpadding="0">
+        <thead>
+        <tr>
+          <th colspan="2">
+            SONG
+          </th>
+          <th>
+            LENGTH
+          </th>
+          <th>
+            LISTENED
+          </th>
+        </tr>
+      </thead>
+      <tbody id="playlist-songs-body"></tbody>
+      </table>
+    </script>
+
+    <script type="text/template" id="template-SongRowView">
+      <td>
+        <img class=songImage src="<%= image %>"/>
+      </td>
+      <td>
+        <%= songName %><br/>
+        <%= songAlbum %>
+      </td>
+      <td>
+        <%= songLength %>
+      </td>
+      <td>
+
+      </td>
+    </script>
+
+    <script type="text/template" id="template-SongsListHeader">
+          <td>
+            <img class="song-list-header-image" src="<%= imageSmall %>"/>
+          </td>
+          <td class="header-text">
+            <span class="song-list-header-text">
+              Playing from: <br />
+            </span>
+            <span class="song-list-header-text">
+              <%= title %>
+            </span>
+          </td>
+  	</script>
+
+    <script type="text/template" id="template-FooterView">
+      <p id="copyrighthome"></p>
+    </script>
+
+    <script type="text/template" id="template-UserView">
+      <div id="login_div" align="center">
+        <img src="../core/assets/logo-color.png" alt="Image not found"/>
+        <p><b>Sign into your ACME account</b></p>
+        <p id="error"></p>
+<<<<<<< HEAD
+        <form action="" method="post" onsubmit="return validateUser()">
+          <label for="email">Email</label><br/>
+          <input id="email" type="email" name="email" onfocus="getFocus(this)" onblur="getBlur(this)" required/><br/><br/>
+          <label for="password">Password</label><br/>
+          <input id="password" type="password" name="password" onfocus="getFocus(this)" onblur="getBlur(this)" required/><br/><br/>
+=======
+        <form action="" method="post">
+          <label for="email">Email</label><br/>
+          <input id="email" type="text" name="email" required/><br/><br/>
+          <label for="password">Password</label><br/>
+          <input id="password" type="password" name="password" required/><br/><br/>
+>>>>>>> BackboneImplementation
+          <a href="" id="forgot_pass">Forgot password ?</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <input id="sign_in" type="submit" name="submit" value="Sign in"/><br/><br/><br/>
+        </form><br/>
+        <span>Don't have an account ?<a id="sign_up" href="sign_up.html"> Sign up here</a>
+        </span><br/><br/>
+      </div>
+    </script>
+
+    <script type="text/javascript" src="../build/bundle.js"></script>
+  </body>
+</html>
