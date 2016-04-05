@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>SignIn</title>
+<title>Welcome</title>
 <link rel="stylesheet" type="text/css" href="/home/robert.cosma/work/cluj-pre-js-2016/app/css/signin.css">
 <script src="http://backbonejs.org/test/vendor/underscore.js"></script>
 <script src="http://backbonejs.org/test/vendor/jquery.js"></script>
@@ -23,13 +23,7 @@
   <img src="/home/robert.cosma/work/cluj-pre-js-2016/core/assets/logo-top.png" />
   <input type="text" placeholder="Search Music" class="search" />
   <img src="/home/robert.cosma/work/cluj-pre-js-2016/core/assets/search-icon.png" class="icon"/>
-  <form action="">
-    <input type="button" value="Sign in" class="signin" id="signin">
-  </form>
   <p class="text">Ready to listen to endless music<br>on your favorite device ?</p>
-  <form action="">
-    <input type="button" value="JOIN NOW" id="join">
-  </form>
   <p id="header-text">Epic and debauched party mixes</p>
 </div>
 
@@ -89,6 +83,16 @@
   </div>
   <div id="songs">
   </div>
+  <script type="text/javascript">
+  $(function() {
+    const songsJSON = '[{"image":"/home/robert.cosma/work/cluj-pre-js-2016/core/assets/2015-best-music.png","name":"love love enemies love","songAuthor":"Smiley","songLength":74,"songListened":82},{"image":"/home/robert.cosma/work/cluj-pre-js-2016/core/assets/2015-best-music.png","name":"love love enemies pierdut","songAuthor":"Dr. Dre","songLength":186,"songListened":78},{"image":"/home/robert.cosma/work/cluj-pre-js-2016/core/assets/2015-best-music.png","name":"ea money pierdut ea","songAuthor":"Andra","songLength":303,"songListened":94},{"image":"/home/robert.cosma/work/cluj-pre-js-2016/core/assets/2015-best-music.png","name":"enemies el buletin ea","songAuthor":"Andra","songLength":359,"songListened":23},{"image":"/home/robert.cosma/work/cluj-pre-js-2016/core/assets/2015-best-music.png","name":"buletin el buletin love","songAuthor":"Eminem","songLength":312,"songListened":11},{"image":"/home/robert.cosma/work/cluj-pre-js-2016/core/assets/2015-best-music.png","name":"pierdut pierdut enemies ea","songAuthor":"Eminem","songLength":37,"songListened":9},{"image":"/home/robert.cosma/work/cluj-pre-js-2016/core/assets/2015-best-music.png","name":"ea money enemies enemies","songAuthor":"Dr. Dre","songLength":325,"songListened":13},{"image":"/home/robert.cosma/work/cluj-pre-js-2016/core/assets/2015-best-music.png","name":"enemies money el money","songAuthor":"Eminem","songLength":58,"songListened":10}]';
+    const playlist_songs = new SongCollection(JSON.parse(songsJSON));
+    const songListView = new SongListView({collection: playlist_songs});
+    songListView.render();
+    $('#songs').append(songListView.el);
+    });
+  </script>
+
 </div>
 <p id="copyright">2016 ACME DIVISION.ALL RIGHTS RESERVED</p>
 

@@ -16,3 +16,5 @@ AccountService.prototype.checkLogin = function checkLogin(email, password) {
 };
 
 const accountService = new AccountService();
+
+// export { AccountService , checkLogin } ;

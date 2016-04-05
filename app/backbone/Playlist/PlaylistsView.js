@@ -1,4 +1,4 @@
-// import { PlaylistView } from './PlaylistView.js';
+// import { PlaylistItemView } from './PlaylistItemView.js';
 
 const PlaylistsView = Backbone.View.extend({
   template: _.template("<p>List of playlists</p><div class='user'></div><ul class='playlists-view'></ul>"),
@@ -21,15 +21,5 @@ const PlaylistsView = Backbone.View.extend({
     return this;
   },
 });
-
-const playlists = new PlaylistCollection();
-playlists.fetch().done(() => {
-  const view = new PlaylistItemView({
-    el: document.getElementById('container'),
-    collection: playlists,
-  });
-  view.render();
-});
-
 
 // export { PlaylistsView };
