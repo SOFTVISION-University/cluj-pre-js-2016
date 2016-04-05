@@ -1,0 +1,104 @@
+<html>
+    <head>
+        <script src="http://backbonejs.org/test/vendor/underscore.js"></script>
+        <script src="http://backbonejs.org/test/vendor/jquery.js"></script>
+        <script src="http://backbonejs.org/docs/js/jquery.lazyload.js"></script>
+        <script src="http://backbonejs.org/backbone.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="styleApp.css">
+    </head>
+
+    <body>
+      <div class="first-cont">
+        <div id="logo-top">
+          <img src="../core/assets/logo-top.png" alt="logo-icon">
+        </div>
+
+        <div id="text-areas">
+          <input  type="text" name="search" placeholder="Search Music" size="80" required>
+        </div>
+
+        <div class="button-signin">
+          <a href="login.html">
+            <input type="button" value="Sign in" />
+          </a>
+        </div>
+
+        <div id="span-id">
+          <p><span>Ready to listen to endless music on your favorite device?</span></p>
+        </div>
+
+        <div class="button-join" >
+          <a href="register.html">
+            <input type="button" value="JOIN NOW" />
+          </a>
+
+          <p id="quote">Epic debauched party mixes</p>
+        </div>
+      </div>
+
+      <div id="page"></div>
+
+
+      <script type="text/template" id="template-playlists-list-view">
+	    </script>
+
+      <script type="text/template" id="template-playlist-table-view">
+              <div class="small-imgs-playlist">
+                <img  class="img-playlist" src="<%= imageLarge %>"/>
+              </div>
+              <p class="title"><%= title %></p>
+              <p class="description"><span><%= description %></span></p>
+              <div id="button-album1" class="button-albums-style"
+                  <a>
+                     <input type="button" class="button-explore" id="explore-btn" value="     Explore playlist" />
+                  </a>
+              </div>
+	    </script>
+
+
+
+      <script type="text/template" id="template-HeaderTableView">
+            <div id="divContainerButton">
+              <input id="button-close-playlist" type="button" value="CLOSE">
+            </div>
+            <div id="header-playlist">
+              <img  id="img-playlist" src=""/>
+              <p id="parag-playlist" class="text-header">Playing from:</p>
+              <p id="title-playlist" class="text-header">Dummy title</p>
+            </div>
+
+            <table id="table-songs">
+              <tr id="table-header-songs">
+                <td colspan="2">SONG</td>
+                <td>LENGTH</td>
+                <td>LISTENED</td>
+              </tr>
+            </table>
+      </script>
+
+      <script type="text/template" id="template-songRowView">
+            <tr class="tr-song">
+              <td rowspan="2" class ="td-song">
+                <img  class="td-song" src="<%= img %>"/>
+              </td>
+              <td id="top-td">
+                <%= songTitle %>
+              </td>
+              <td rowspan="2" class="td-song">
+                <%= songLength %>
+              </td>
+              <td rowspan="2" id="top-td" class="td-song">
+                <%= songListened %>
+              </td>
+            </tr>
+            <tr class="tr-song" id="bottom-table-tr">
+              <td id="td-song-bottom">
+                <%= songAuthor %>
+              </td>
+            </tr>
+      </script>
+
+      <script src="../build/bundle.js"></script>
+    </body>
+</html>
