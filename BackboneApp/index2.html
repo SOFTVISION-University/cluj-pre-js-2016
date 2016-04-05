@@ -1,0 +1,156 @@
+<html>
+    <head>
+      <title>Aplicatie</title>
+      <link rel="stylesheet" type="text/css" href="style3.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+        <script src="http://backbonejs.org/test/vendor/underscore.js"></script>
+        <script src="http://backbonejs.org/test/vendor/jquery.js"></script>
+        <script src="http://backbonejs.org/docs/js/jquery.lazyload.js"></script>
+        <script src="http://backbonejs.org/backbone.js"></script>
+        <script src="http://backbonejs.org/backbone-min.js"></script>
+    </head>
+      <body>
+        <script src = "../build/bundle.js"></script>
+        <!--
+        <script src="RESTapi.js"></script>
+        <script src="../core/data/playlists.js"></script> -->
+
+        <div id="top">
+
+          <div id="logo">
+            <img src="../core/assets/logo-top.png">
+          </div>
+
+          <div id="search">
+            <input type="text" value="" placeholder="Search Music">
+          </div>
+
+          <div id="signin">
+              <input type="submit" value="Sign in">
+          </div>
+
+        <div id="middle">
+          <h3>Ready to listen to endless music<br>on your favourite device?</h2>
+          <input type="submit" value="JOIN NOW" style="background-color: #2db300; width: 200px;"><br><br><br>
+          <h1 id = "quote">Ready to listen to endless music? </h1>
+          <h2 id = "author"></h2>
+        </div>
+
+        </div>
+          <div id="container">
+
+            <div id="hits">
+              <img src="../core/assets/massive-pop-hits.png">
+              <h2>Massive pop hits vol 1</h2>
+              <h5>Lorem ipsum dolor sit amet, consectetur adipisicing<br> elit, sed do elusmod tempor incididunt ut labore et</h5>
+              <input onclick="unhidePlaylist()" type="button" value="Explore playlist">
+            </div>
+
+            <div id="night">
+             <img src="../core/assets/up-all-night.png">
+             <h2>Up all night</h2>
+             <h5>Lorem ipsum dolor sit amet, consectetur adipisicing<br> elit, sed do elusmod tempor incididunt ut labore et</h5>
+             <input type="button" value="Explore playlist">
+            </div>
+
+            <div id="djmix">
+              <img src="../core/assets/dj-killer-mixes.png">
+              <h2>DJ killer mixes</h2>
+              <h5>Lorem ipsum dolor sit amet, consectetur adipisicing<br> elit, sed do elusmod tempor incididunt ut labore et</h5>
+              <input onclick="goToPlaylist" type="button" value="Explore playlist">
+            </div>
+
+
+          <div class ="bottom">
+
+            <div id = "playlist-content">
+              <script type = "text/template" id = "template-Playlist">
+               <img src= <%= image %> />
+               <span id = "title"><%= title =%></span>
+             </script>
+
+
+           <div id ="header">
+
+             <div id ="image">
+               <img src = "..core/assets/up-all-night-small.png">
+             </div>
+
+             <div id = "playingfrom">
+               <h5>Playing from:</h5>
+               <h3>Up all night: The remixes radio</h3>
+               <input onclick="closePlaylist()" type="button" value="Close" style="color:blue;height:4px;">
+            </div>
+          </div>
+
+            <table style = "width: 100%">
+              <tr>
+                <th width = 70%>Song</th>
+                <th>Length</th>
+                <th>Listened</th>
+              </tr>
+            </table>
+
+        <div>
+          <div id = "divSong">
+            <script type="text/template" id="template-Song">
+
+              <div id = "divSongImg">
+                <img src = <%= songImage %> />
+              </div>
+
+              <span id = "SongTitle">
+                <%= songTitle %>
+              </span>
+
+              <span id = "SongAuthor">
+                <%= songAuthor %>
+              </span>
+
+              <span id = "SongLength">
+                <%= songLength %>
+              </span>
+
+              <span id = "SongListened">
+                <%= songListened %>
+              </span>
+            </div>
+          </div>
+            <!-- <br><br><br><br><br><br><br><br><br><br><br><br> -->
+          </div>
+        </div>
+      </div>
+    </script>
+
+
+
+
+
+
+        <!-- <script src="Playlist/playlistsCollection.js"></script>
+        <script src="Playlist/PlaylistCollectionView.js"></script>
+        <script src="Playlist/playlistModel.js"></script>
+        <script src="Playlist/PlaylistModelView.js"></script>
+        <script src="songs/songsCollection.js"></script>
+        <script src="songs/SongCollectionView.js"></script>
+        <script src="songs/songModel.js"></script>
+        <script src="songs/SongModelView.js"></script> -->
+
+
+        <div id="page"></div>
+
+        <script type="text/javascript">
+        function unhidePlaylist(){
+          document.getElementById("playlist-content").style.visibility = "visible";
+        }
+
+
+
+        function closePlaylist(){
+          document.getElementById("playlist-content").style.visibility = "hidden";
+        }
+
+          </script>
+
+      </body>
+</html>

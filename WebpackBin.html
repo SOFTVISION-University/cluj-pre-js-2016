@@ -1,0 +1,1377 @@
+<!DOCTYPE html>
+<!-- saved from url=(0036)http://www.webpackbin.com/EJ-Ia16HAx -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>WebpackBin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="http://www.webpackbin.com/favicon.ico" type="image/x-icon">
+    <link href="./WebpackBin_files/css" rel="stylesheet" type="text/css">
+    <style>
+      html, body {
+        margin: 0;
+        background-color: #242d3c;
+        color: #fff;
+        font-family: Ubuntu, sans-serif;
+        overflow: hidden;
+        height: 100%;
+      }
+
+      #root {
+        height: 100%;
+      }
+
+      #loader {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 500px;
+        height: 97px;
+        margin-top: -69px;
+        margin-left: -250px;
+      }
+      #loader h3 {
+        text-align: center;
+        opacity: 1;
+        animation: pulse 1s infinite;
+        -webkit-animation: pulse 1s infinite;
+      }
+
+      @keyframes pulse {
+        0%   {opacity: 1;}
+        50%  {opacity: 0.5;}
+        100% {opacity: 1;}
+      }
+
+      @-webkit-keyframes pulse {
+        0%   {opacity: 1;}
+        50%  {opacity: 0.5;}
+        100% {opacity: 1;}
+      }
+
+    </style>
+  <script async="" src="./WebpackBin_files/analytics.js"></script><script type="text/javascript" charset="utf-8" async="" src="./WebpackBin_files/1.client_bundle.js"></script><style type="text/css">.styles---wrapper---bzzyQ {
+  position: relative;
+  height: 100%;
+  opacity: 1;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+}
+
+.styles---preview---1bItl {
+  position: absolute;
+  top: 52px;
+  left: 100%;
+  height: calc(100% - 52px);
+  transition: left 0.2s ease-in;
+  width: 100%;
+  z-index: 99;
+}
+
+.styles---showPreview---2kt7K {
+  left: 0;
+}
+</style><style type="text/css">.styles---wrapper---TiMRG {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 500px;
+  height: 150px;
+  margin-left: -250px;
+  margin-top: -75px;
+  text-align: center;
+  display: flex;
+}
+
+.styles---column---1nlov {
+  flex: 1;
+}
+
+.styles---wrapper---TiMRG h1 {
+  font-size: 1.5em;
+  margin-bottom: 0;
+}
+
+.styles---button---vhPBW {
+  display: inline-block;
+  width: 200px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  background-color: #eb1e64;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 20px 10px;
+}
+
+.styles---button---vhPBW:hover {
+  opacity: 0.9;
+}
+
+.styles---wrapper---TiMRG iframe {
+  border: 2px solid #111;
+}
+</style><style type="text/css">.styles---wrapper---2x3Sy {
+  width: 100%;
+  background-color: #202634;
+}
+
+.styles---row---2jILn {
+  border-bottom: 2px solid #232e3c;
+  min-height: 50px;
+}
+
+.styles---file---7tu9T {
+  position: relative;
+  display: inline-block;
+  padding: 15px 30px;
+  cursor: pointer;
+}
+
+.styles---files---1qQZY {
+  display: inline-block;
+  white-space: nowrap;
+  overflow-x: scroll;
+  width: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+
+.styles---file---7tu9T:not(:first-child):hover i {
+  display: block;
+}
+
+.styles---active---Rh9mn {
+  border-bottom: 2px solid #eb1e64;
+}
+
+.styles---status---YUaot {
+  float: left;
+  text-indent: 10px;
+  line-height: 48px;
+  color: rgba(255,255,255,0.5);
+}
+
+.styles---buttonWrapper---ahho5 {
+  float: left;
+  margin-top: 9px;
+}
+
+.styles---packagesButton---1yCDm {
+  float: left;
+  margin-top: 9px;
+}
+
+.styles---info---2CK97 {
+  width: 300px;
+  padding: 0 20px;
+}
+
+.styles---info---2CK97 h3 {
+  color: rgba(255,255,255, 0.5);
+}
+
+.styles---info---2CK97 p {
+  line-height: 20px;
+}
+
+.styles---deleteFile---nyEQH {
+  position: absolute;
+  font-style: normal;
+  font-size: 14px;
+  right: 5px;
+  display: none;
+  top: 5px;
+  font-weight: bold;
+  color: rgba(255,255,255,0.5);
+}
+
+.styles---deleteFile---nyEQH:hover {
+  color: rgba(255,255,255,1);
+}
+
+.styles---link---2c2_p {
+  display: block;
+  background-color: rgba(0,0,0,0.15);
+  border-radius: 3px;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  color: rgba(255,255,255,0.8);
+  margin-bottom: 5px;
+  text-decoration: none;
+}
+
+.styles---link---2c2_p i {
+  margin-right: 5px;
+}
+
+.styles---link---2c2_p:hover {
+  background-color: rgba(0,0,0,0.1);
+  color: rgba(255,255,255,1);
+}
+
+.styles---logo---3aneT {
+  float: left;
+  width: 40px;
+  height: 50px;
+  background-image: url('/logo.png');
+  background-size: auto 50px;
+  background-position: 0 -2px;
+}
+
+.styles---version---1SFdD {
+  position: relative;
+  float: left;
+  width: 50px;
+  height: 50px;
+}
+
+.styles---versionText---AWs_g {
+  position: absolute;
+  left: 0;
+  bottom: 8px;
+  opacity: 0.5;
+}
+
+.styles---highlightLink---1Xf41 {
+  background-color: #eb1e64;
+  color: #fff;
+  animation: styles---highlight---3Pv-4 0.5s infinite;
+  -webkit-animation: styles---highlight---3Pv-4 0.5s infinite;
+  opacity: 1;
+}
+
+.styles---highlightLink---1Xf41:hover {
+  background-color: #eb1e64;
+  color: #fff;
+}
+
+@keyframes styles---highlight---3Pv-4 {
+  0%   {opacity: 1;}
+  50%  {opacity: 0.8;}
+  100% {opacity: 1;}
+}
+
+@-webkit-keyframes styles---highlight---3Pv-4 {
+  0%   {opacity: 1;}
+  50%  {opacity: 0.8;}
+  100% {opacity: 1;}
+}
+
+.styles---entryIndication---8tRdV {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  bottom: 3px;
+  font-size: 10px;
+  color: rgba(255,255,255,0.5);
+}
+
+.styles---isChanged---3RAB0 {
+  background-color: #eb1e64;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  width: 5px;
+  height: 5px;
+  margin-top: -2.5px;
+}
+</style><style type="text/css">@font-face {
+	font-family: 'icomoon';
+	src: url(data:application/font-woff;base64,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) format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.icons---font---2Bsno {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icons---loading---1kqiS {
+
+	-webkit-animation: icons---spin---RJV1I 2s infinite linear reverse;
+	animation: icons---spin---RJV1I 2s infinite linear reverse;
+}
+.icons---loading---1kqiS:before {
+	content: "\E00E";
+}
+
+@-webkit-keyframes icons---spin---RJV1I {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes icons---spin---RJV1I {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.icons---close---3QUDj {}
+.icons---close---3QUDj:before {
+    content: "\E209";
+}
+
+.icons---addAssignment---3lVsu {}
+.icons---addAssignment---3lVsu:before {
+	content: "\E013";
+}
+
+.icons---addCourse---2pCMJ {}
+.icons---addCourse---2pCMJ:before {
+	content: "\E06A";
+}
+
+.icons---uploadFile---3JjXJ {}
+.icons---uploadFile---3JjXJ:before {
+	content: "\E100";
+}
+
+.icons---mic---3fzSC {}
+.icons---mic---3fzSC:before {
+	content: "\E00F";
+}
+
+.icons---pause---10tqu {}
+.icons---pause---10tqu:before {
+	content: "\E018";
+}
+
+.icons---eye---1SnqA {}
+.icons---eye---1SnqA:before {
+	content: "\E1A8";
+}
+
+.icons---stop---2ZMMD {}
+.icons---stop---2ZMMD:before {
+	content: "\E02A";
+}
+
+.icons---play---1hyQA {}
+.icons---play---1hyQA:before {
+	content: "\E01B";
+}
+
+.icons---save---1m3QS {}
+.icons---save---1m3QS:before {
+	content: "\E085";
+}
+
+.icons---menu---3L8Ed {}
+.icons---menu---3L8Ed:before {
+	content: "\E20E";
+}
+
+.icons---school---2d82U {}
+.icons---school---2d82U:before {
+	content: "\E259";
+}
+
+.icons---checkbox---1b3vV {}
+.icons---checkbox---1b3vV:before {
+	content: "\E25C";
+}
+
+.icons---delete---8RnWi {}
+.icons---delete---8RnWi:before {
+	content: "\E287";
+}
+
+.icons---description---Qs1x7 {}
+.icons---description---Qs1x7:before {
+	content: "\E288";
+}
+
+.icons---addFile---1U17J {}
+.icons---addFile---1U17J:before {
+	content: "\E2B0";
+}
+
+.icons---thumbDown---2rvGM {}
+.icons---thumbDown---2rvGM:before {
+	content: "\E2ED";
+}
+
+.icons---thumbUp---3aCc2 {}
+.icons---thumbUp---3aCc2:before {
+	content: "\E2EE";
+}
+
+.icons---user---FjbAX {}
+.icons---user---FjbAX:before {
+	content: "\E253";
+}
+
+.icons---preview---vacnw {}
+.icons---preview---vacnw:before {
+	content: "\E12E";
+}
+
+.icons---assignment---FaoLm {}
+.icons---assignment---FaoLm:before {
+	content: "\E272";
+}
+
+.icons---assignmentCompleted---3xB7d {}
+.icons---assignmentCompleted---3xB7d:before {
+	content: "\E277";
+}
+
+.icons---light---19elw { transform: rotate(180deg); display: inline-block;}
+.icons---light---19elw:before {
+    content: "\E1BF";
+}
+
+.icons---check---1oGdi {}
+.icons---check---1oGdi:before {
+    content: "\E206";
+}
+
+.icons---chevronLeft---UVG75 {}
+.icons---chevronLeft---UVG75:before {
+    content: "\E207";
+}
+
+.icons---chevronRight---WlPvK {}
+.icons---chevronRight---WlPvK:before {
+    content: "\E208";
+}
+
+.icons---notification---BgAlx {}
+.icons---notification---BgAlx:before {
+    content: "\E24B";
+}
+
+.icons---lock---2EDgh {}
+.icons---lock---2EDgh:before {
+    content: "\E2AB";
+}
+
+.icons---search---3WHVz {}
+.icons---search---3WHVz:before {
+    content: "\E2CA";
+}
+
+.icons---help---zrYQU {}
+.icons---help---zrYQU:before {
+    content: "\E29B";
+}
+
+.icons---loaders---3hxBo {}
+.icons---loaders---3hxBo:before {
+    content: "\E093";
+}
+
+.icons---npm---OE-0R {}
+.icons---npm---OE-0R:before {
+    content: "\E0FB";
+}
+
+.icons---boilerplates---hh7fF {}
+.icons---boilerplates---hh7fF:before {
+    content: "\E284";
+}
+
+.icons---github---1igdg {}
+.icons---github---1igdg:before {
+    content: "\E900";
+}
+
+.icons---issue---32gQd {}
+.icons---issue---32gQd:before {
+    content: "\E0C5";
+}
+
+.icons---twitter---2V9eu {}
+.icons---twitter---2V9eu:before {
+    content: "\E901";
+}
+
+.icons---live---1B60R {}
+.icons---live---1B60R:before {
+    content: "\E258";
+}
+
+.icons---zip---1YPnv {}
+.icons---zip---1YPnv:before {
+    content: "\E902";
+}
+
+.icons---movie---3TMPs {}
+.icons---movie---3TMPs:before {
+    content: "\E012";
+}
+
+.icons---fullLog---1KTRM {}
+.icons---fullLog---1KTRM:before {
+	content: "\E152";
+}
+
+.icons---halfLog---DPbWO {}
+.icons---halfLog---DPbWO:before {
+	content: "\E151";
+}
+</style><style type="text/css">.styles---button---h7_P1 {
+  position: relative;
+  background: transparent;
+  border: 0;
+  float: left;
+  padding: 0;
+  cursor: pointer;
+  text-align: center;
+}
+
+.styles---button---h7_P1 i {
+  position: absolute;
+  display: none;
+  padding: 5px 10px;
+  white-space: nowrap;
+  background-color: #eb1e64;
+  font-style: normal;
+  border-radius: 3px;
+  color: #FFF;
+  bottom: -30px;
+  width: 100px;
+  margin-left: -50px;
+}
+
+.styles---button---h7_P1:hover i {
+  display: block;
+}
+
+.styles---button---h7_P1[disabled]:hover {
+  color: #cadaed;
+  background-color: transparent;
+}
+
+.styles---icon---6Dqp0 {
+  border: 2px solid #eb1e64;
+  border-radius: 50%;
+  font-size: 16px;
+  color: #cadaed;
+  transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+  position: relative;
+  padding: 6px;
+  margin-right: 5px;
+  margin-left: 5px;
+  display: inline-block;
+}
+
+.styles---icon---6Dqp0:hover, .styles---button---h7_P1:focus .styles---icon---6Dqp0 {
+  color: #fff;
+  background-color: #28374b;
+}
+
+.styles---disabledIcon---G79Ki {
+  cursor: default;
+}
+
+.styles---activeIcon---393E- {
+  border-color: #eb1e64;
+  background-color: #eb1e64;
+  color: #fff;
+}
+
+.styles---activeIcon---393E-:hover, .styles---button---h7_P1:focus .styles---activeIcon---393E-, .styles---activeTextIcon---2KC3T:hover, .styles---button---h7_P1:focus .styles---activeTextIcon---2KC3T {
+  background-color: #eb1e64;
+  color: #fff;
+}
+
+.styles---button---h7_P1:focus{
+  outline: 0;
+}
+
+.styles---iconTitleWrapper---6B_nc {
+  position: relative;
+  cursor: pointer;
+}
+
+.styles---iconTitle---pRLrt {
+  font-size: 14px;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 9px;
+  margin-left: 5px;
+  margin-right: 20px;
+  text-align: center;
+  color: #cadaed;
+  font-family: Ubuntu, sans-serif;
+}
+
+.styles---notifyIcon---Q05GL {
+  /*border-color: #eb1e64;*/
+  color: #fff;
+  animation: styles---notify---pfW_0 1s infinite;
+  -webkit-animation: styles---notify---pfW_0 1s infinite;
+}
+
+@keyframes styles---notify---pfW_0 {
+  0%   {background: #242d3c;}
+  50%  {background: #eb1e64;}
+  100% {background: #242d3c;}
+}
+
+@-webkit-keyframes styles---notify---pfW_0 {
+  0%   {background: #242d3c;}
+  50%  {background: #eb1e64;}
+  100% {background: #242d3c;}
+}
+</style><style type="text/css">.styles---wrapper---24Jle {
+  height: 100%;
+  float: left;
+  position: relative;
+}
+
+.styles---wrapperRight---seyrs {
+  float: right;
+}
+
+.styles---popup---lyg4G {
+  position: relative;
+  left: 0;
+  width: 42px;
+}
+
+.styles---arrowBox---EKzp7 {
+  position: absolute;
+  top: 42px;
+  margin-left: -25px;
+  z-index: 10;
+}
+
+.styles---arrowBox---EKzp7:before, .styles---arrowBox---EKzp7:after {
+  content: " ";
+  bottom: 100%;
+  left: 65px;
+  border: 10px solid rgba(0, 0, 0, 0);
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  margin-left: -30px;
+}
+
+.styles---arrowBox---EKzp7:before {
+  border-bottom-color: #333;
+}
+
+.styles---arrowBox---EKzp7:after {
+  border-bottom-color: #28374c;
+}
+
+.styles---arrowBoxMiddle---2gHbx {
+  right: -340px;
+}
+
+.styles---arrowBoxMiddle---2gHbx:before, .styles---arrowBoxMiddle---2gHbx:after {
+  right: 350px;
+  margin-left: 0;
+  left: auto;
+}
+
+.styles---arrowBoxRight---25CuK {
+  right: -15px;
+}
+
+.styles---arrowBoxRight---25CuK:before, .styles---arrowBoxRight---25CuK:after {
+  right: 26px;
+  margin-left: 0;
+  left: auto;
+}
+
+.styles---contentBox---37orx {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  overflow-y: scroll;
+  height: calc(100% - 52px);
+  -webkit-overflow-scrolling: touch;
+  border-radius: 2px;
+  background-color: #28374c;
+  padding: 8px 0;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.24) 0px 1px 4px;
+  font-family: Ubuntu, sans-serif;
+  min-height: 10px;
+  min-width: 100px;
+}
+</style><style type="text/css">.styles---wrapper---29uNd {
+  padding: 10px;
+  width: 100%;
+}
+
+.styles---boilerplate---1EP_y {
+  height: 20px;
+  line-height: 20px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.styles---boilerplate---1EP_y:hover {
+  border-radius: 3px;
+  background-color: rgba(0,0,0,0.5);
+}
+</style><style type="text/css">/* BASICS */
+
+.CodeMirror {
+  /* Set height, width, borders, and global font properties here */
+  font-family: monospace;
+  height: 300px;
+  color: black;
+}
+
+/* PADDING */
+
+.CodeMirror-lines {
+  padding: 4px 0; /* Vertical padding around content */
+}
+.CodeMirror pre {
+  padding: 0 4px; /* Horizontal padding of content */
+}
+
+.CodeMirror-scrollbar-filler, .CodeMirror-gutter-filler {
+  background-color: white; /* The little square between H and V scrollbars */
+}
+
+/* GUTTER */
+
+.CodeMirror-gutters {
+  border-right: 1px solid #ddd;
+  background-color: #f7f7f7;
+  white-space: nowrap;
+}
+.CodeMirror-linenumbers {}
+.CodeMirror-linenumber {
+  padding: 0 3px 0 5px;
+  min-width: 20px;
+  text-align: right;
+  color: #999;
+  white-space: nowrap;
+}
+
+.CodeMirror-guttermarker { color: black; }
+.CodeMirror-guttermarker-subtle { color: #999; }
+
+/* CURSOR */
+
+.CodeMirror-cursor {
+  border-left: 1px solid black;
+  border-right: none;
+  width: 0;
+}
+/* Shown when moving in bi-directional text */
+.CodeMirror div.CodeMirror-secondarycursor {
+  border-left: 1px solid silver;
+}
+.cm-fat-cursor .CodeMirror-cursor {
+  width: auto;
+  border: 0;
+  background: #7e7;
+}
+.cm-fat-cursor div.CodeMirror-cursors {
+  z-index: 1;
+}
+
+.cm-animate-fat-cursor {
+  width: auto;
+  border: 0;
+  -webkit-animation: blink 1.06s steps(1) infinite;
+  -moz-animation: blink 1.06s steps(1) infinite;
+  animation: blink 1.06s steps(1) infinite;
+  background-color: #7e7;
+}
+@-moz-keyframes blink {
+  0% {}
+  50% { background-color: transparent; }
+  100% {}
+}
+@-webkit-keyframes blink {
+  0% {}
+  50% { background-color: transparent; }
+  100% {}
+}
+@keyframes blink {
+  0% {}
+  50% { background-color: transparent; }
+  100% {}
+}
+
+/* Can style cursor different in overwrite (non-insert) mode */
+.CodeMirror-overwrite .CodeMirror-cursor {}
+
+.cm-tab { display: inline-block; text-decoration: inherit; }
+
+.CodeMirror-ruler {
+  border-left: 1px solid #ccc;
+  position: absolute;
+}
+
+/* DEFAULT THEME */
+
+.cm-s-default .cm-header {color: blue;}
+.cm-s-default .cm-quote {color: #090;}
+.cm-negative {color: #d44;}
+.cm-positive {color: #292;}
+.cm-header, .cm-strong {font-weight: bold;}
+.cm-em {font-style: italic;}
+.cm-link {text-decoration: underline;}
+.cm-strikethrough {text-decoration: line-through;}
+
+.cm-s-default .cm-keyword {color: #708;}
+.cm-s-default .cm-atom {color: #219;}
+.cm-s-default .cm-number {color: #164;}
+.cm-s-default .cm-def {color: #00f;}
+.cm-s-default .cm-variable,
+.cm-s-default .cm-punctuation,
+.cm-s-default .cm-property,
+.cm-s-default .cm-operator {}
+.cm-s-default .cm-variable-2 {color: #05a;}
+.cm-s-default .cm-variable-3 {color: #085;}
+.cm-s-default .cm-comment {color: #a50;}
+.cm-s-default .cm-string {color: #a11;}
+.cm-s-default .cm-string-2 {color: #f50;}
+.cm-s-default .cm-meta {color: #555;}
+.cm-s-default .cm-qualifier {color: #555;}
+.cm-s-default .cm-builtin {color: #30a;}
+.cm-s-default .cm-bracket {color: #997;}
+.cm-s-default .cm-tag {color: #170;}
+.cm-s-default .cm-attribute {color: #00c;}
+.cm-s-default .cm-hr {color: #999;}
+.cm-s-default .cm-link {color: #00c;}
+
+.cm-s-default .cm-error {color: #f00;}
+.cm-invalidchar {color: #f00;}
+
+.CodeMirror-composing { border-bottom: 2px solid; }
+
+/* Default styles for common addons */
+
+div.CodeMirror span.CodeMirror-matchingbracket {color: #0f0;}
+div.CodeMirror span.CodeMirror-nonmatchingbracket {color: #f22;}
+.CodeMirror-matchingtag { background: rgba(255, 150, 0, .3); }
+.CodeMirror-activeline-background {background: #e8f2ff;}
+
+/* STOP */
+
+/* The rest of this file contains styles related to the mechanics of
+   the editor. You probably shouldn't touch them. */
+
+.CodeMirror {
+  position: relative;
+  overflow: hidden;
+  background: white;
+}
+
+.CodeMirror-scroll {
+  overflow: scroll !important; /* Things will break if this is overridden */
+  /* 30px is the magic margin used to hide the element's real scrollbars */
+  /* See overflow: hidden in .CodeMirror */
+  margin-bottom: -30px; margin-right: -30px;
+  padding-bottom: 30px;
+  height: 100%;
+  outline: none; /* Prevent dragging from highlighting the element */
+  position: relative;
+}
+.CodeMirror-sizer {
+  position: relative;
+  border-right: 30px solid transparent;
+}
+
+/* The fake, visible scrollbars. Used to force redraw during scrolling
+   before actual scrolling happens, thus preventing shaking and
+   flickering artifacts. */
+.CodeMirror-vscrollbar, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-gutter-filler {
+  position: absolute;
+  z-index: 6;
+  display: none;
+}
+.CodeMirror-vscrollbar {
+  right: 0; top: 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+.CodeMirror-hscrollbar {
+  bottom: 0; left: 0;
+  overflow-y: hidden;
+  overflow-x: scroll;
+}
+.CodeMirror-scrollbar-filler {
+  right: 0; bottom: 0;
+}
+.CodeMirror-gutter-filler {
+  left: 0; bottom: 0;
+}
+
+.CodeMirror-gutters {
+  position: absolute; left: 0; top: 0;
+  min-height: 100%;
+  z-index: 3;
+}
+.CodeMirror-gutter {
+  white-space: normal;
+  height: 100%;
+  display: inline-block;
+  vertical-align: top;
+  margin-bottom: -30px;
+  /* Hack to make IE7 behave */
+  *zoom:1;
+  *display:inline;
+}
+.CodeMirror-gutter-wrapper {
+  position: absolute;
+  z-index: 4;
+  background: none !important;
+  border: none !important;
+}
+.CodeMirror-gutter-background {
+  position: absolute;
+  top: 0; bottom: 0;
+  z-index: 4;
+}
+.CodeMirror-gutter-elt {
+  position: absolute;
+  cursor: default;
+  z-index: 4;
+}
+.CodeMirror-gutter-wrapper {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+.CodeMirror-lines {
+  cursor: text;
+  min-height: 1px; /* prevents collapsing before first draw */
+}
+.CodeMirror pre {
+  /* Reset some styles that the rest of the page might have set */
+  -moz-border-radius: 0; -webkit-border-radius: 0; border-radius: 0;
+  border-width: 0;
+  background: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  margin: 0;
+  white-space: pre;
+  word-wrap: normal;
+  line-height: inherit;
+  color: inherit;
+  z-index: 2;
+  position: relative;
+  overflow: visible;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-font-variant-ligatures: none;
+  font-variant-ligatures: none;
+}
+.CodeMirror-wrap pre {
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  word-break: normal;
+}
+
+.CodeMirror-linebackground {
+  position: absolute;
+  left: 0; right: 0; top: 0; bottom: 0;
+  z-index: 0;
+}
+
+.CodeMirror-linewidget {
+  position: relative;
+  z-index: 2;
+  overflow: auto;
+}
+
+.CodeMirror-widget {}
+
+.CodeMirror-code {
+  outline: none;
+}
+
+/* Force content-box sizing for the elements where we expect it */
+.CodeMirror-scroll,
+.CodeMirror-sizer,
+.CodeMirror-gutter,
+.CodeMirror-gutters,
+.CodeMirror-linenumber {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+.CodeMirror-measure {
+  position: absolute;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+.CodeMirror-cursor { position: absolute; }
+.CodeMirror-measure pre { position: static; }
+
+div.CodeMirror-cursors {
+  visibility: hidden;
+  position: relative;
+  z-index: 3;
+}
+div.CodeMirror-dragcursors {
+  visibility: visible;
+}
+
+.CodeMirror-focused div.CodeMirror-cursors {
+  visibility: visible;
+}
+
+.CodeMirror-selected { background: #d9d9d9; }
+.CodeMirror-focused .CodeMirror-selected { background: #d7d4f0; }
+.CodeMirror-crosshair { cursor: crosshair; }
+.CodeMirror-line::selection, .CodeMirror-line > span::selection, .CodeMirror-line > span > span::selection { background: #d7d4f0; }
+.CodeMirror-line::-moz-selection, .CodeMirror-line > span::-moz-selection, .CodeMirror-line > span > span::-moz-selection { background: #d7d4f0; }
+
+.cm-searching {
+  background: #ffa;
+  background: rgba(255, 255, 0, .4);
+}
+
+/* IE7 hack to prevent it from returning funny offsetTops on the spans */
+.CodeMirror span { *vertical-align: text-bottom; }
+
+/* Used to force a border model for a node */
+.cm-force-border { padding-right: .1px; }
+
+@media print {
+  /* Hide the cursor when printing */
+  .CodeMirror div.CodeMirror-cursors {
+    visibility: hidden;
+  }
+}
+
+/* See issue #2901 */
+.cm-tab-wrap-hack:after { content: ''; }
+
+/* Help users use markselection to safely style text background */
+span.CodeMirror-selectedtext { background: none; }
+</style><style type="text/css">.cm-s-learncode.CodeMirror {
+    background: #202634;
+    color: #fff;
+    font-size: 14px;
+    line-height: 20px;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.CodeMirror-scrollbar-filler {
+  background-color: rgba(0, 0, 0, 0) !important;
+}
+
+.cm-s-learncode.CodeMirror .CodeMirror-lines {
+  padding-top: 0;
+}
+
+.cm-s-learncode.CodeMirror pre {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.cm-s-learncode div.CodeMirror-selected {
+    background: rgba(255,255,255,0.1) !important;
+}
+
+.cm-s-learncode.CodeMirror::selection {
+    background: #171c26;
+}
+
+.cm-s-learncode.CodeMirror::-moz-selection {
+    background: #171c26;
+}
+
+.cm-s-learncode .CodeMirror-gutters {
+    background: #202634;
+    border-right: 0px;
+}
+
+.cm-s-learncode .CodeMirror-guttermarker {
+    color: #db2d20;
+}
+
+.cm-s-learncode .CodeMirror-guttermarker-subtle {
+    color: #646871;
+}
+
+.cm-s-learncode .CodeMirror-linenumber {
+    color: #646871;
+}
+
+.cm-s-learncode .CodeMirror-cursor {
+    border-left: 1px solid #FFF !important;
+}
+
+.cm-s-learncode span.cm-comment {
+    color: rgba(255,255,255,0.5);
+}
+
+.cm-s-learncode span.cm-atom {
+    color: #2196f3;
+}
+
+.cm-s-learncode span.cm-number {
+    color: #2196f3;
+}
+
+.cm-s-learncode span.cm-property,
+.cm-s-learncode span.cm-attribute {
+    color: #1eaa6e;
+}
+
+.cm-s-learncode span.cm-keyword {
+    color: #597394;
+}
+
+.cm-s-learncode span.cm-qualifier {
+    color: #597394;
+}
+
+
+.cm-s-learncode span.cm-string {
+    color: #f0b937;
+}
+
+.cm-s-learncode span.cm-variable {
+    color: #4caf50;
+}
+
+.cm-s-learncode span.cm-variable-2 {
+    color: #01a0e4;
+}
+
+.cm-s-learncode span.cm-def {
+    color: #4caf50;
+}
+
+.cm-s-learncode span.cm-bracket {
+    color: #3a3432;
+}
+
+.cm-s-learncode span.cm-tag {
+    color: #597394;
+}
+
+.cm-s-learncode span.cm-link {
+    color: #a16a94;
+}
+
+.cm-s-learncode span.cm-meta {
+    color: #405574;
+}
+
+.cm-s-learncode span.cm-error {
+    /* background: rgba(0,0,0,0.1); */
+    background-color: #eb1e64;
+    color: #fff;
+}
+
+.cm-s-learncode .CodeMirror-activeline-background {
+    background: #e8f2ff !important;
+}
+
+.cm-s-learncode .CodeMirror-matchingbracket {
+    text-decoration: underline;
+    color: #a16a94 !important;
+}
+
+.cm-s-learncode .CodeMirror-matchingtag {
+  background-color: #171c26;
+}
+</style><style type="text/css">.styles---wrapper---1PMo6 {
+  width: 100%;
+  height: calc(100% - 102px);
+  background-color: #202634;
+  border-right: 2px solid #232e3c;
+  box-sizing: border-box;
+}
+</style><style type="text/css">.styles---wrapper---3-RXg {
+  position: relative;
+  height: 100%;
+}
+
+.styles---halfWrapper---3Ory_ {
+  height: 50%;
+}
+
+.styles---iframe---3TsHA {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  border: 0;
+}
+
+.styles---iframeLoader---gxsDn {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  white-space: nowrap;
+  background-color: #eb1e64;
+  padding: 5px 10px;
+  border-radius: 3px;
+  opacity: 0;
+  -webkit-transition: opacity 0.1s linear 0.1s;
+  transition: opacity 0.1s linear 0.1s;
+}
+
+.styles---iframeLoaderVisible---3k24U {
+  opacity: 1;
+}
+</style><style type="text/css">.styles---wrapper---2Fn4l {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #202634;
+  padding: 10px;
+  box-sizing: border-box;
+  overflow:scroll;
+  z-index: 999;
+}
+
+.styles---halfWrapper---3d7wO {
+  bottom: 0;
+  top: auto;
+  height: 50%;
+}
+
+.styles---log---3yanY {
+  padding: 5px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.styles---info---3QLbI {
+  color: rgba(255,255,255,0.2);
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+.styles---size---jn192 {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  color: rgba(255,255,255,0.5);
+}
+
+.styles---size---jn192:hover {
+  color: #FFF;
+}
+</style><style type="text/css">.styles---string---1sO8i span:nth-of-type(2) {
+  color: #dc6428;
+}
+
+.styles---number---25JAh span:nth-of-type(2) {
+  color: #1e78c3;
+}
+
+.styles---boolean---jFtSt span:nth-of-type(2) {
+  color: #1e78c3;
+}
+
+.styles---null---i-uu0 span:nth-of-type(2) {
+  color: #1e78c3;
+}
+
+.styles---undefined---2LglS span:nth-of-type(2) {
+  color: #1e78c3;
+}
+
+.styles---highlight---Bhx_E {
+  background-color: rgba(255,255,255,0.1);
+  border: 1px solid #eb1e64;
+  padding: 3px;
+  margin: 3px;
+  border-radius: 3px;
+}
+
+.styles---object---3dhr_ {
+  cursor: pointer;
+  flex: 1;
+  color: #cadaed;
+}
+
+.styles---highlightObject---ZB5Y5 {
+}
+
+.styles---objectProperty---3L3rk {
+  display: flex;
+  padding-left: 10px;
+}
+
+.styles---objectPropertyKey---ubTHV {
+  flex: 0 0 auto;
+  padding-right: 5px;
+}
+
+.styles---objectPropertyValue---3Q97D {
+  flex: 4;
+}
+
+.styles---array---32bv- {
+  cursor: pointer;
+  flex: 1;
+  color: #cadaed;
+}
+
+.styles---highlightArray---3oQ9W {
+}
+
+.styles---arrayItem---bCAdH {
+  padding-left: 10px;
+}
+
+.styles---highlightValue---2XUvE {
+}
+
+.styles---highlightFunction---1VPVx {
+}
+
+.styles---error---sRp0E {
+  color: #eb1e64;
+}
+
+.styles---functionKeyword---3MoXN {
+  color: #1e78c3;
+}
+
+.styles---functionName---1K_4i {
+  color: rgba(255,255,255,0.5);
+}
+
+.styles---circular---3wODD {
+  color: #872841;
+}
+</style></head>
+  <body>
+    <div id="root"><div style="height:100%;" data-reactid=".0"><div class="styles---wrapper---bzzyQ" data-reactid=".0.0"><div class="styles---wrapper---2x3Sy" data-reactid=".0.0.0"><div class="styles---row---2jILn" data-reactid=".0.0.0.0"><div class="styles---logo---3aneT" data-reactid=".0.0.0.0.0"></div><div class="styles---version---1SFdD" data-reactid=".0.0.0.0.1"><div class="styles---versionText---AWs_g" data-reactid=".0.0.0.0.1.0">beta</div></div><div class="styles---buttonWrapper---ahho5" data-reactid=".0.0.0.0.2"><button class="styles---button---h7_P1" data-reactid=".0.0.0.0.2.0"><div class="styles---iconTitleWrapper---6B_nc" data-reactid=".0.0.0.0.2.0.0"><div class="styles---icon---6Dqp0" data-reactid=".0.0.0.0.2.0.0.0"><div class="icons---preview---vacnw icons---font---2Bsno" data-reactid=".0.0.0.0.2.0.0.0.0"></div></div><div class="styles---iconTitle---pRLrt" data-reactid=".0.0.0.0.2.0.0.1">Preview</div></div></button></div><div class="styles---buttonWrapper---ahho5" data-reactid=".0.0.0.0.3"><button class="styles---button---h7_P1" data-reactid=".0.0.0.0.3.0"><div class="styles---iconTitleWrapper---6B_nc" data-reactid=".0.0.0.0.3.0.0"><div class="styles---icon---6Dqp0" data-reactid=".0.0.0.0.3.0.0.0"><div class="icons---assignment---FaoLm icons---font---2Bsno" data-reactid=".0.0.0.0.3.0.0.0.0"></div></div><div class="styles---iconTitle---pRLrt" data-reactid=".0.0.0.0.3.0.0.1">Log</div></div></button></div><div class="styles---wrapper---24Jle styles---packagesButton---1yCDm" data-reactid=".0.0.0.0.4"><button class="styles---button---h7_P1" data-reactid=".0.0.0.0.4.0"><div class="styles---iconTitleWrapper---6B_nc" data-reactid=".0.0.0.0.4.0.0"><div class="styles---icon---6Dqp0" data-reactid=".0.0.0.0.4.0.0.0"><div class="icons---boilerplates---hh7fF icons---font---2Bsno" data-reactid=".0.0.0.0.4.0.0.0.0"></div></div><div class="styles---iconTitle---pRLrt" data-reactid=".0.0.0.0.4.0.0.1">Boilerplates</div></div></button></div></div><div class="styles---row---2jILn" data-reactid=".0.0.0.1"><div class="styles---files---1qQZY" data-reactid=".0.0.0.1.0"><div class="styles---file---7tu9T" data-reactid=".0.0.0.1.0.$0"><span data-reactid=".0.0.0.1.0.$0.0">index.html</span></div><div class="styles---file---7tu9T styles---active---Rh9mn" data-reactid=".0.0.0.1.0.$1"><span data-reactid=".0.0.0.1.0.$1.0">inex.js</span><span class="styles---entryIndication---8tRdV" data-reactid=".0.0.0.1.0.$1.1">entry</span></div></div></div></div><div class="styles---wrapper---1PMo6" data-reactid=".0.0.1"><div style="height:100%;" data-reactid=".0.0.1.0"><div class="CodeMirror cm-s-learncode"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 39px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" style="position: absolute; padding: 0px; width: 1000px; height: 1em; outline: none;" tabindex="0"></textarea></div><div class="CodeMirror-vscrollbar" cm-not-content="true" style="display: block; bottom: 0px;"><div style="min-width: 1px; height: 1164px;"></div></div><div class="CodeMirror-hscrollbar" cm-not-content="true"><div style="height: 100%; min-height: 1px; width: 0px;"></div></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 29px; margin-bottom: -15px; border-right-width: 15px; min-height: 1164px; min-width: 586.062px; padding-right: 15px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines"><div style="position: relative; outline: none;"><div class="CodeMirror-measure"><span><span>​</span>x</span></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-cursors"><div class="CodeMirror-cursor" style="left: 10px; top: 0px; height: 20px;">&nbsp;</div></div><div class="CodeMirror-code"><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">1</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-keyword">class</span> <span class="cm-def">AccountService</span> {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">2</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;">  <span class="cm-keyword">static</span> <span class="cm-property">getInstance</span>(){</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">3</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;">    <span class="cm-keyword">if</span>(<span class="cm-keyword">this</span>.<span class="cm-property">_instance</span> <span class="cm-operator">===</span> <span class="cm-atom">null</span>){</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">4</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;">      <span class="cm-keyword">this</span>.<span class="cm-property">_instance</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">AccountService</span>();</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">5</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;">    }</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">6</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;">    <span class="cm-keyword">return</span> <span class="cm-keyword">this</span>.<span class="cm-property">_instance</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">7</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;">  }</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">8</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;">}</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">9</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-variable">AccountService</span>.<span class="cm-property">prototype</span>.<span class="cm-property">login</span> <span class="cm-operator">=</span> <span class="cm-keyword">function</span>(){</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">10</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;">  <span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-string">"Logging in..."</span>);</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">11</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;">}</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">12</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-variable">AccountService</span>.<span class="cm-property">_instance</span> <span class="cm-operator">=</span> <span class="cm-atom">null</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">13</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">14</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;">[<span class="cm-number">1</span>, <span class="cm-number">2</span>, <span class="cm-number">3</span>].<span class="cm-property">reduce</span>((<span class="cm-def">a</span>,<span class="cm-def">b</span>) <span class="cm-operator">=&gt;</span> <span class="cm-variable-2">a</span> <span class="cm-operator">+</span> <span class="cm-variable-2">b</span>, <span class="cm-number">0</span>);</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">15</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">16</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-variable">AccountService</span>.<span class="cm-property">getInstance</span>());</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">17</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">18</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">19</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-keyword">var</span> <span class="cm-def">add</span> <span class="cm-operator">=</span> (<span class="cm-def">a</span>, <span class="cm-def">b</span>) <span class="cm-operator">=&gt;</span> {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">20</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;">  <span class="cm-keyword">return</span> <span class="cm-variable-2">a</span> <span class="cm-operator">+</span> <span class="cm-variable-2">b</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">21</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;">}</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">22</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-keyword">const</span> <span class="cm-def">res</span> <span class="cm-operator">=</span> [<span class="cm-number">1</span>, <span class="cm-number">2</span>, <span class="cm-number">3</span>].<span class="cm-property">reduce</span>(<span class="cm-variable">add</span>, <span class="cm-number">0</span>);</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">23</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">24</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-variable">res</span>);</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">25</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">26</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">27</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-keyword">class</span> <span class="cm-def">DOMHandler</span>{</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">28</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">29</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">30</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-property">DOMHandler</span>(){</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">31</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;">  <span class="cm-variable">registerForClick</span>(){</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">32</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;">    <span class="cm-variable">document</span>.<span class="cm-property">querySelector</span>(<span class="cm-string">"#elem"</span>).<span class="cm-property">addEventListener</span>(<span class="cm-string">"click"</span>, () <span class="cm-operator">=&gt;</span>{</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">33</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;">      <span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-string">"Element clicked. Scope is"</span> <span class="cm-operator">+</span><span class="cm-keyword">this</span>);</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">34</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;">    });</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">35</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;">  }</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">36</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;">}</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">37</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">38</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">39</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-property">window</span>.<span class="cm-variable">onload</span>(){</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">40</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;">  <span class="cm-keyword">var</span> <span class="cm-def">handler</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">DOMHandler</span>();</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">41</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;">  <span class="cm-variable">handler</span>.<span class="cm-property">registerForClick</span> ();</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">42</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;">}</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">43</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">44</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">45</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">46</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-keyword">class</span> <span class="cm-def">DOMHandler</span>{</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">47</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;">  <span class="cm-property">registerForClick</span>(){</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">48</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;">    <span class="cm-variable">document</span>.<span class="cm-property">querySelector</span>(<span class="cm-string">"#elem"</span>).<span class="cm-property">addEventListener</span>(<span class="cm-string">"click"</span>, () <span class="cm-operator">=&gt;</span>{</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">49</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;">      <span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-string">"Element clicked. Scope is"</span> <span class="cm-operator">+</span><span class="cm-keyword">this</span>);</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">50</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;">    });</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">51</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;">  }</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">52</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;">}</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 15px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 1164px;"></div><div class="CodeMirror-gutters" style="height: 1179px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 29px;"></div></div></div></div></div></div><div class="styles---preview---1bItl" data-reactid=".0.0.2"><div class="styles---wrapper---3-RXg" data-reactid=".0.0.2.0"><iframe class="styles---iframe---3TsHA" data-reactid=".0.0.2.0.0" src="./WebpackBin_files/saved_resource.html"></iframe><div class="styles---iframeLoader---gxsDn" data-reactid=".0.0.2.0.1">Loading...</div></div></div></div></div></div>
+    <div id="loader" style="display: none;">
+      <img src="./WebpackBin_files/logo.png">
+      <h3>Loading it up!</h3>
+    </div>
+    <script type="text/javascript" src="./WebpackBin_files/client_bundle.js"></script>
+  <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create', 'UA-74769782-1', 'auto');ga('send', 'pageview');</script>
+  
+
+</body></html>

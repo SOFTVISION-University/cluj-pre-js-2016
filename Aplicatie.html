@@ -1,0 +1,430 @@
+
+<!-- saved from url=(0070)file:///home/dora.oroian/work/cluj-pre-js-2016/BackboneApp/index2.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+      <title>Aplicatie</title>
+      <link rel="stylesheet" type="text/css" href="./Aplicatie_files/style3.css">
+      <script src="./Aplicatie_files/jquery.min.js"></script>
+        <script src="./Aplicatie_files/underscore.js"></script>
+        <script src="./Aplicatie_files/jquery.js"></script>
+        <script src="./Aplicatie_files/jquery.lazyload.js"></script>
+        <script src="./Aplicatie_files/backbone.js"></script>
+        <script src="./Aplicatie_files/backbone-min.js"></script>
+    </head>
+      <body>
+        <script src="./Aplicatie_files/RESTapi.js"></script>
+        <script src="./Aplicatie_files/playlists.js"></script>
+
+        <div id="top">
+
+          <div id="logo">
+            <img src="./Aplicatie_files/logo-top.png">
+          </div>
+
+          <div id="search">
+            <input type="text" value="" placeholder="Search Music">
+          </div>
+
+          <div id="signin">
+              <input type="submit" value="Sign in">
+          </div>
+
+        <div id="middle">
+          <h3>Ready to listen to endless music<br>on your favourite device?</h3>
+          <input type="submit" value="JOIN NOW" style="background-color: #2db300; width: 200px;"><br><br><br>
+          <h1 id="quote">Ready to listen to endless music? </h1>
+          <h2 id="author"></h2>
+        </div>
+
+        </div>
+          <div id="container">
+
+            <div id="hits">
+              <img src="./Aplicatie_files/massive-pop-hits.png">
+              <h2>Massive pop hits vol 1</h2>
+              <h5>Lorem ipsum dolor sit amet, consectetur adipisicing<br> elit, sed do elusmod tempor incididunt ut labore et</h5>
+              <input onclick="unhidePlaylist()" type="button" value="Explore playlist">
+            </div>
+
+            <div id="night">
+             <img src="./Aplicatie_files/up-all-night.png">
+             <h2>Up all night</h2>
+             <h5>Lorem ipsum dolor sit amet, consectetur adipisicing<br> elit, sed do elusmod tempor incididunt ut labore et</h5>
+             <input type="button" value="Explore playlist">
+            </div>
+
+            <div id="djmix">
+              <img src="./Aplicatie_files/dj-killer-mixes.png">
+              <h2>DJ killer mixes</h2>
+              <h5>Lorem ipsum dolor sit amet, consectetur adipisicing<br> elit, sed do elusmod tempor incididunt ut labore et</h5>
+              <input onclick="goToPlaylist" type="button" value="Explore playlist">
+            </div>
+
+
+          <div class="bottom">
+
+            <div id="playlist-content" style="visibility: visible;">
+              <script type="text/template" id="template-Playlist">
+               <img src= <%= image %> />
+               <span id = "title"><%= title =%></span>
+             </script>
+
+
+           <div id="header">
+
+             <div id="image">
+               <img src="./Aplicatie_files/up-all-night-small.png">
+             </div>
+
+             <div id="playingfrom">
+               <h5>Playing from:</h5>
+               <h3>Up all night: The remixes radio</h3>
+               <input onclick="closePlaylist()" type="button" value="Close" style="color:blue;height:4px;">
+            </div>
+          </div>
+
+            <table style="width: 100%">
+              <tbody><tr>
+                <th width="70%">Song</th>
+                <th>Length</th>
+                <th>Listened</th>
+              </tr>
+            </tbody></table>
+
+        <div>
+          <div id="divSong">
+            <script type="text/template" id="template-Song">
+
+              <div id = "divSongImg">
+                <img src = <%= songImage %> />
+              </div>
+
+              <span id = "SongTitle">
+                <%= songTitle %>
+              </span>
+
+              <span id = "SongAuthor">
+                <%= songAuthor %>
+              </span>
+
+              <span id = "SongLength">
+                <%= songLength %>
+              </span>
+
+              <span id = "SongListened">
+                <%= songListened %>
+              </span>
+            </div>
+          </div>
+            <!-- <br><br><br><br><br><br><br><br><br><br><br><br> -->
+          </div>
+        </div>
+      </div>
+    </script>
+
+
+
+        <script src="./Aplicatie_files/songModel.js"></script>
+        <script src="./Aplicatie_files/SongModelView.js"></script>
+        <script src="./Aplicatie_files/songsCollectionModel.js"></script>
+        <script src="./Aplicatie_files/SongCollectionView.js"></script>
+        <script src="./Aplicatie_files/playlistModel.js"></script>
+        <script src="./Aplicatie_files/playlistCollectionModel.js"></script>
+        <script src="./Aplicatie_files/PlaylistModelView.js"></script>
+        <script src="./Aplicatie_files/PlaylistCollectionView.js"></script>
+
+
+        <div id="page">
+
+              <div id="divSongImg">
+                <img src="./Aplicatie_files/image">
+              </div>
+
+              <span id="SongTitle">
+                love love enemies love
+              </span>
+
+              <span id="SongAuthor">
+                Smiley
+              </span>
+
+              <span id="SongLength">
+                74
+              </span>
+
+              <span id="SongListened">
+                82
+              </span>
+            
+          
+            <!-- <br><br><br><br><br><br><br><br><br><br><br><br> -->
+          
+        
+      
+    </div>
+
+        <script type="text/javascript">
+        function unhidePlaylist(){
+          document.getElementById("playlist-content").style.visibility = "visible";
+
+        $(function(){
+                      var playlistsJSON = '[{"id":0,"title":"Playlist 1","songs":[{"image":"../core/assets/2015-best-music.png","songTitle":"love love enemies love","songAuthor":"Smiley","songLength":74,"songListened":82},{"image":"../core/assets/2015-best-music.png","songTitle":"love love enemies pierdut","songAuthor":"Dr. Dre","songLength":186,"songListened":78},{"image":"../core/assets/2015-best-music.png","songTitle":"ea money pierdut ea","songAuthor":"Andra","songLength":303,"songListened":94},{"image":"../core/assets/2015-best-music.png","songTitle":"enemies el buletin ea","songAuthor":"Andra","songLength":359,"songListened":23},{"image":"../core/assets/2015-best-music.png","songTitle":"buletin el buletin love","songAuthor":"Eminem","songLength":312,"songListened":11},{"image":"../core/assets/2015-best-music.png","songTitle":"pierdut pierdut enemies ea","songAuthor":"Eminem","songLength":37,"songListened":9},{"image":"../core/assets/2015-best-music.png","songTitle":"ea money enemies enemies","songAuthor":"Dr. Dre","songLength":325,"songListened":13},{"image":"../core/assets/2015-best-music.png","songTitle":"enemies money el money","songAuthor":"Eminem","songLength":58,"songListened":10}],"imageLarge":"../core/assets/up-all-night.png","imageSmall":"../core/assets/up-all-night-small.png","description":"Culpa ipsum adipisicing adipisicing mollit nostrud consequat adipisicing reprehenderit laboris duis cillum reprehenderit velit. Et cupidatat eiusmod reprehenderit cupidatat consectetur est. Aliquip laboris ullamco excepteur deserunt culpa et exercitation labore velit ad."},{"id":1,"title":"Playlist 2","songs":[{"image":"../core/assets/2015-best-music.png","songTitle":"money money love ea","songAuthor":"Dr. Dre","songLength":97,"songListened":100},{"image":"../core/assets/2015-best-music.png","songTitle":"el pierdut pierdut ea","songAuthor":"Smiley","songLength":42,"songListened":86},{"image":"../core/assets/2015-best-music.png","songTitle":"enemies money pierdut enemies","songAuthor":"Dr. Dre","songLength":454,"songListened":23},{"image":"../core/assets/2015-best-music.png","songTitle":"money ea love buletin","songAuthor":"Dr. Dre","songLength":448,"songListened":16},{"image":"../core/assets/2015-best-music.png","songTitle":"buletin pierdut ea el","songAuthor":"Dr. Dre","songLength":363,"songListened":23},{"image":"../core/assets/2015-best-music.png","songTitle":"el love el buletin","songAuthor":"Smiley","songLength":88,"songListened":20}],"imageLarge":"../core/assets/up-all-night.png","imageSmall":"../core/assets/up-all-night-small.png","description":"Culpa ipsum adipisicing adipisicing mollit nostrud consequat adipisicing reprehenderit laboris duis cillum reprehenderit velit. Et cupidatat eiusmod reprehenderit cupidatat consectetur est. Aliquip laboris ullamco excepteur deserunt culpa et exercitation labore velit ad."},{"id":2,"title":"Playlist 3","songs":[{"image":"../core/assets/2015-best-music.png","songTitle":"enemies enemies el love","songAuthor":"Smiley","songLength":192,"songListened":51},{"image":"../core/assets/2015-best-music.png","songTitle":"el enemies pierdut el","songAuthor":"Andra","songLength":232,"songListened":87},{"image":"../core/assets/2015-best-music.png","songTitle":"ea enemies pierdut enemies","songAuthor":"Smiley","songLength":234,"songListened":5},{"image":"../core/assets/2015-best-music.png","songTitle":"enemies ea enemies buletin","songAuthor":"Andra","songLength":123,"songListened":45},{"image":"../core/assets/2015-best-music.png","songTitle":"love money buletin love","songAuthor":"Andra","songLength":299,"songListened":13},{"image":"../core/assets/2015-best-music.png","songTitle":"el love ea love","songAuthor":"Andra","songLength":478,"songListened":34},{"image":"../core/assets/2015-best-music.png","songTitle":"ea el enemies money","songAuthor":"Dr. Dre","songLength":280,"songListened":35}],"imageLarge":"../core/assets/up-all-night.png","imageSmall":"../core/assets/up-all-night-small.png","description":"Culpa ipsum adipisicing adipisicing mollit nostrud consequat adipisicing reprehenderit laboris duis cillum reprehenderit velit. Et cupidatat eiusmod reprehenderit cupidatat consectetur est. Aliquip laboris ullamco excepteur deserunt culpa et exercitation labore velit ad."}]';
+
+                      var songFromJson = '{"image":"../core/assets/2015-best-music.png","songTitle":"love love enemies love","songAuthor":"Smiley","songLength":74,"songListened":82}';
+                      var songModel = new SongModel(JSON.parse(songFromJson));
+                      var songModelView = new SongModelView({
+                        el: document.getElementById('page'),
+                        model: songModel
+                      });
+                      songModelView.render();
+                      $('#pageContent').append(songModelView.el);
+
+                      var songsFromJson = '[{"image":"../core/assets/2015-best-music.png","songTitle":"love love enemies love","songAuthor":"Smiley","songLength":74,"songListened":82},{"image":"../core/assets/2015-best-music.png","songTitle":"love love enemies pierdut","songAuthor":"Dr. Dre","songLength":186,"songListened":78},{"image":"../core/assets/2015-best-music.png","songTitle":"ea money pierdut ea","songAuthor":"Andra","songLength":303,"songListened":94},{"image":"../core/assets/2015-best-music.png","songTitle":"enemies el buletin ea","songAuthor":"Andra","songLength":359,"songListened":23},{"image":"../core/assets/2015-best-music.png","songTitle":"buletin el buletin love","songAuthor":"Eminem","songLength":312,"songListened":11},{"image":"../core/assets/2015-best-music.png","songTitle":"pierdut pierdut enemies ea","songAuthor":"Eminem","songLength":37,"songListened":9},{"image":"../core/assets/2015-best-music.png","songTitle":"ea money enemies enemies","songAuthor":"Dr. Dre","songLength":325,"songListened":13},{"image":"../core/assets/2015-best-music.png","songTitle":"enemies money el money","songAuthor":"Eminem","songLength":58,"songListened":10}]';
+                      var songCollection = new SongCollection(JSON.parse(songsFromJson));
+                      var songCollectionView = new SongCollectionView({
+                        collection: songCollection
+                      });
+                      songCollectionView.render();
+                      $('#divSong').append(songCollectionView.el);
+
+                      var playlistFromJson = '{"id":0,"title":"Playlist 1","songs":[{"image":"../core/assets/2015-best-music.png","songTitle":"love love enemies love","songAuthor":"Smiley","songLength":74,"songListened":82},{"image":"../core/assets/2015-best-music.png","songTitle":"love love enemies pierdut","songAuthor":"Dr. Dre","songLength":186,"songListened":78},{"image":"../core/assets/2015-best-music.png","songTitle":"ea money pierdut ea","songAuthor":"Andra","songLength":303,"songListened":94},{"image":"../core/assets/2015-best-music.png","songTitle":"enemies el buletin ea","songAuthor":"Andra","songLength":359,"songListened":23},{"image":"../core/assets/2015-best-music.png","songTitle":"buletin el buletin love","songAuthor":"Eminem","songLength":312,"songListened":11},{"image":"../core/assets/2015-best-music.png","songTitle":"pierdut pierdut enemies ea","songAuthor":"Eminem","songLength":37,"songListened":9},{"image":"../core/assets/2015-best-music.png","songTitle":"ea money enemies enemies","songAuthor":"Dr. Dre","songLength":325,"songListened":13},{"image":"../core/assets/2015-best-music.png","songTitle":"enemies money el money","songAuthor":"Eminem","songLength":58,"songListened":10}]}';
+                      var playlistModel = new PlaylistModel(JSON.parse(playlistFromJson));
+                      var playlistModelView = new PlaylistModelView({
+                        model: playlistModel
+                      });
+                      playlistModelView.render();
+                      $('#playlistContent').append(playlistModelView.el);
+
+                      var playlistsFromJson = playlistsJSON;
+                      var playlistCollection = new PlaylistCollection(JSON.parse(playlistsFromJson));
+                      var playlistCollectionView = new PlaylistCollectionView({
+                        collection: playlistCollection
+                      });
+                      playlistCollectionView.render();
+                      $('#playlistContent').append(playlistCollectionView.el);
+                    });
+                  }
+
+          function closePlaylist(){
+              document.getElementById("playlist-content").style.visibility = "hidden";
+          }
+
+          </script>
+      
+
+<div><div>
+
+              <div id="divSongImg">
+                <img src="./Aplicatie_files/image">
+              </div>
+
+              <span id="SongTitle">
+                love love enemies love
+              </span>
+
+              <span id="SongAuthor">
+                Smiley
+              </span>
+
+              <span id="SongLength">
+                74
+              </span>
+
+              <span id="SongListened">
+                82
+              </span>
+            
+          
+            <!-- <br><br><br><br><br><br><br><br><br><br><br><br> -->
+          
+        
+      
+    </div><div>
+
+              <div id="divSongImg">
+                <img src="./Aplicatie_files/image">
+              </div>
+
+              <span id="SongTitle">
+                love love enemies pierdut
+              </span>
+
+              <span id="SongAuthor">
+                Dr. Dre
+              </span>
+
+              <span id="SongLength">
+                186
+              </span>
+
+              <span id="SongListened">
+                78
+              </span>
+            
+          
+            <!-- <br><br><br><br><br><br><br><br><br><br><br><br> -->
+          
+        
+      
+    </div><div>
+
+              <div id="divSongImg">
+                <img src="./Aplicatie_files/image">
+              </div>
+
+              <span id="SongTitle">
+                ea money pierdut ea
+              </span>
+
+              <span id="SongAuthor">
+                Andra
+              </span>
+
+              <span id="SongLength">
+                303
+              </span>
+
+              <span id="SongListened">
+                94
+              </span>
+            
+          
+            <!-- <br><br><br><br><br><br><br><br><br><br><br><br> -->
+          
+        
+      
+    </div><div>
+
+              <div id="divSongImg">
+                <img src="./Aplicatie_files/image">
+              </div>
+
+              <span id="SongTitle">
+                enemies el buletin ea
+              </span>
+
+              <span id="SongAuthor">
+                Andra
+              </span>
+
+              <span id="SongLength">
+                359
+              </span>
+
+              <span id="SongListened">
+                23
+              </span>
+            
+          
+            <!-- <br><br><br><br><br><br><br><br><br><br><br><br> -->
+          
+        
+      
+    </div><div>
+
+              <div id="divSongImg">
+                <img src="./Aplicatie_files/image">
+              </div>
+
+              <span id="SongTitle">
+                buletin el buletin love
+              </span>
+
+              <span id="SongAuthor">
+                Eminem
+              </span>
+
+              <span id="SongLength">
+                312
+              </span>
+
+              <span id="SongListened">
+                11
+              </span>
+            
+          
+            <!-- <br><br><br><br><br><br><br><br><br><br><br><br> -->
+          
+        
+      
+    </div><div>
+
+              <div id="divSongImg">
+                <img src="./Aplicatie_files/image">
+              </div>
+
+              <span id="SongTitle">
+                pierdut pierdut enemies ea
+              </span>
+
+              <span id="SongAuthor">
+                Eminem
+              </span>
+
+              <span id="SongLength">
+                37
+              </span>
+
+              <span id="SongListened">
+                9
+              </span>
+            
+          
+            <!-- <br><br><br><br><br><br><br><br><br><br><br><br> -->
+          
+        
+      
+    </div><div>
+
+              <div id="divSongImg">
+                <img src="./Aplicatie_files/image">
+              </div>
+
+              <span id="SongTitle">
+                ea money enemies enemies
+              </span>
+
+              <span id="SongAuthor">
+                Dr. Dre
+              </span>
+
+              <span id="SongLength">
+                325
+              </span>
+
+              <span id="SongListened">
+                13
+              </span>
+            
+          
+            <!-- <br><br><br><br><br><br><br><br><br><br><br><br> -->
+          
+        
+      
+    </div><div>
+
+              <div id="divSongImg">
+                <img src="./Aplicatie_files/image">
+              </div>
+
+              <span id="SongTitle">
+                enemies money el money
+              </span>
+
+              <span id="SongAuthor">
+                Eminem
+              </span>
+
+              <span id="SongLength">
+                58
+              </span>
+
+              <span id="SongListened">
+                10
+              </span>
+            
+          
+            <!-- <br><br><br><br><br><br><br><br><br><br><br><br> -->
+          
+        
+      
+    </div></div></div></div></div></div></div></body></html>

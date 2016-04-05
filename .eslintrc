@@ -1,0 +1,6 @@
+{
+ "extends": "airbnb",
+ "globals": {
+   "Backbone": false
+   }
+}
