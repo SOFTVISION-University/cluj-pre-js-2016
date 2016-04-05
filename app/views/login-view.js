@@ -18,7 +18,6 @@ const LoginView = Backbone.View.extend({
     this.inputvalues.password = document.forms.signInForm.password.value;
     event.preventDefault();
     this.sendLoginPost(this.inputvalues);
-
   },
   sendLoginPost(data) {
     $.ajax({
@@ -45,20 +44,6 @@ const LoginView = Backbone.View.extend({
       window.LoggedInUser.fullname = jsonObj.gsx$fullname.$t;
       Utils.setHeaderBackground(jsonObj.gsx$background.$t);
       Backbone.trigger('statusChanged');
-    });
-  },
-// Logout trebuie mutata !!! No rage :)
-  logout() {
-    $.ajax({
-      type: 'POST',
-      url: 'http://localhost:3000/logout',
-      headers: {
-        'x-token': window.LoggedInUser.token,
-      },
-    }).done(() => {
-      window.LoggedInUser.fullname = '';
-      window.LoggedInUser.token = '';
-      Utils.setHeaderBackground('../core/assets/banner-top.jpg');
     });
   },
 });
