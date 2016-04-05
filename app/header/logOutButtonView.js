@@ -1,9 +1,12 @@
 
-import { user } from '../User/userModel.js';
 
 export const LogOutButtonView = Backbone.View.extend({
   events: {
     'click #logOut ': 'logOutFunction',
+    'click #logIn': 'logInFunction',
+  },
+  logInFunction() {
+    window.location.href = '#login';
   },
   renderTemplate(selectorString, options) {
     const templateText = document.querySelector(selectorString).innerText;
@@ -14,21 +17,27 @@ export const LogOutButtonView = Backbone.View.extend({
     return compiled();
   },
   template() {
-    return this.renderTemplate('#template-logOutButton');
+    if (this.model.get('status')) {
+      return this.renderTemplate('#template-logOutButton');
+    }
+    return this.renderTemplate('#template-logInButton');
   },
   render() {
     this.$el.html(this.template());
     return this;
   },
   logOutFunction() {
+    const that = this;
+
     $.ajax({
       type: 'POST',
       url: 'http://localhost:3000/logout',
-      data: user.token,
-      dataType: 'json',
-      contentType: 'application/json',
+      headers: {
+        'x-token': that.model.get('token'),
+      },
     }).done(function (data) {
-      console.log("logOut");
+      that.model.set('status', false);
+      that.model.triggerEventOnHeader();
     });
   },
 });
