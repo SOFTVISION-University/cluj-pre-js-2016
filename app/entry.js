@@ -1,26 +1,21 @@
-import { PlaylistCollection } from './collections/playlist-col';
-import { PlaylistsColView } from './views/playlist-view';
 import { LoginView } from './views/login-view';
-import { LoginStatusView } from './views/login-status-view';
+import { AppRouter } from './router';
+import { UserModel } from './models/user-model';
+import { PlaylistCollection } from './collections/playlist-col';
 
 
 $(() => {
-  const playlistcol = new PlaylistCollection();
-  playlistcol.fetch().done(() => {
-    const cards = new PlaylistsColView({
-      el: $('#centeredWrapper')[0],
-      collection: playlistcol,
-    });
-    cards.render();
-  });
+  const globalUserModel = new UserModel();
+  const playlistCollection = new PlaylistCollection();
+  const app = new AppRouter();
+  app.setPlaylists(playlistCollection);
+  app.setCurrentUser(globalUserModel);
 
-  const logview = new LoginView({
-    el: $('#loginDiv')[0],
-  });
-  logview.render();
+  Backbone.history.start();
 
-  const statusView = new LoginStatusView({
-    el: $('#header')[0],
-  });
-  statusView.render();
+  // const logInView = new LoginView({
+  //   model: globalUserModel,
+  //   el: $('#loginDiv')[0],
+  // });
+  // logInView.render();
 });

@@ -1,23 +1,12 @@
 import Utils from '../utils.js';
 
-const LoginView = Backbone.View.extend({
-  inputvalues: {
+const UserModel = Backbone.Model.extend({
+  defaults: {
     username: '',
     password: '',
   },
-  template: $('#template-Login').html(),
-  render() {
-    this.$el.html(this.template);
-    return this;
-  },
-  events: {
-    'click #submitSignIn': 'handleLogin',
-  },
-  handleLogin(event) {
-    this.inputvalues.username = this.el.querySelector('input[name="username"]').value;
-    this.inputvalues.password = this.el.querySelector('input[name="password"]').value;
-    event.preventDefault();
-    this.model.sendLoginPost(this.inputvalues);
+  initialize() {
+    Backbone.on('signOutEvent', this.logout, this);
   },
   sendLoginPost(data) {
     $.ajax({
@@ -31,7 +20,6 @@ const LoginView = Backbone.View.extend({
       this.getPreferences();
     });
   },
-
   getPreferences() {
     $.ajax({
       type: 'GET',
@@ -46,6 +34,20 @@ const LoginView = Backbone.View.extend({
       Backbone.trigger('statusChanged');
     });
   },
+  logout() {
+    $.ajax({
+      type: 'POST',
+      url: 'http://localhost:3000/logout',
+      headers: {
+        'x-token': window.LoggedInUser.token,
+      },
+    }).done(() => {
+      window.LoggedInUser.fullname = '';
+      window.LoggedInUser.token = '';
+      Utils.setHeaderBackground('../core/assets/banner-top.jpg');
+      Backbone.trigger('statusChanged');
+    });
+  },
 });
 
-export { LoginView };
+export { UserModel };

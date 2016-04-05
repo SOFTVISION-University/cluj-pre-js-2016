@@ -26,6 +26,18 @@ body {
   width: auto;
   color:white;
 }
+#loginStatusContainer{
+  float: right;
+  margin-right: 10px;
+}
+
+.loginBackground{
+  height: 1000px;
+  width: 100%;
+  background: url('../core/assets/banner-app.jpg');
+  /*background-repeat: no-repeat;*/
+  background-size: cover;
+}
 input{
   outline: none;
 }
@@ -447,17 +459,17 @@ a.submitSignUp {
 /*login style*/
 
 #signInDiv{
+  position: absolute;
   width:400px;
   height:500px;
   background-color: white;
   border-radius: 5px;
-  margin-right: auto;
-  margin-left: auto;
+  margin-left: 40%;
   margin-top: 10%;
   text-align: center;
   vertical-align: middle;
   box-sizing: border-box;
-  padding-top: 20px;
+  padding-top: 40px;
 }
 #signInForm{
   padding: 20px 50px 50px 50px;
