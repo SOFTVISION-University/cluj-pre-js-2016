@@ -9,10 +9,14 @@ const PlaylistCardView = Backbone.View.extend({
       // closePlaylistSongsPannel();
     }
     else {
+      Backbone.trigger('closePlaylist');
       const currentPlaylist = this.model.attributes;
       const playlistSongsHolder = document.createElement('div');
       playlistSongsHolder.id = 'songs-holder';
-      const playListDiv = document.getElementById('playList');
+      playlistSongsHolder.style.width = '800px';
+      const playListDiv = document.getElementById('playlist-div');
+      playlistSongsHolder.className = 'playlist-class';
+
       playListDiv.appendChild(playlistSongsHolder);
       const playlistSongsView = new PlaylistSongsView({
         el: playlistSongsHolder,

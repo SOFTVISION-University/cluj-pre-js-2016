@@ -1,6 +1,7 @@
-import { AccountService } from './AccountService.js';
 import { LoginView } from './View/LoginView.js';
+import { UserModel } from './Model/UserModel.js';
 import { HeaderView } from './View/HeaderView.js';
+import { SignUpView } from './View/SignUpView.js';
 import { PlaylistCollection } from './Collection/PlaylistCollection.js';
 import { PlaylistCollectionView } from './View/PlaylistCollectionView.js';
 
@@ -25,21 +26,31 @@ function createPlaylistsModel() {
 }
 
 function addLoginView() {
-  const loginView =  new LoginView({
+  const loginView = new LoginView({
+    model: new UserModel(),
     el: document.getElementById('login-div'),
   });
   loginView.render();
 }
 
+function addSignUpView() {
+  const signUpView = new SignUpView({
+    el: document.getElementsByClassName('sign-up-div')[0],
+  });
+  signUpView.render();
+}
+
 function addHeaderView() {
-  const headerView =  new HeaderView({
+  const headerView = new HeaderView({
     el: document.getElementById('header-div'),
   });
   headerView.render();
 }
 
+
 document.addEventListener('DOMContentLoaded', () => {
-  addLoginView();
-  addHeaderView();
-  createPlaylistsModel();
+  // addLoginView();
+  // addHeaderView();
+  // addSignUpView();
+  // createPlaylistsModel();
 });

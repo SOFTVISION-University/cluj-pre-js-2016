@@ -91,6 +91,9 @@ overflow: hidden;
 	/*width: 145px;*/
 	height: 62px;
 }
+.sign-up-div{
+	width: 100%;
+}
 .headerDiv {
 	background-image: url(../core/assets/banner-app.jpg);
 	background-size:cover;
@@ -297,7 +300,22 @@ visibility: hidden;
 	0% { height: 400px; }
 	100% { height: 0px; }
 }
-
+.playlist-class{
+	position: fixed;
+	bottom: 0;
+	height: 0;
+	background-color: #ffffff;
+	width: 200px;
+	overflow-y: scroll;
+}
+.playlist-close{
+	position: fixed;
+	bottom: 0;
+	height: 0;
+	background-color: #ffffff;
+	width: 200px;
+	overflow-y: scroll;
+}
 
 
 #playList{
