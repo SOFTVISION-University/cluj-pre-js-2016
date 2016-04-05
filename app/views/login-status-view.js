@@ -7,9 +7,15 @@ export const LoginStatusView = Backbone.View.extend({
   },
   events: {
     'click #signOutButton': 'triggerSignOutEvent',
+    'click #signInButton': 'showSignIn',
+  },
+  showSignIn(event) {
+    window.location.href = '#login';
+    event.preventDefault();
   },
   triggerSignOutEvent(event) {
     Backbone.trigger('signOutEvent');
+    window.location.href = '#login';
     event.preventDefault();
   },
   rerender() {

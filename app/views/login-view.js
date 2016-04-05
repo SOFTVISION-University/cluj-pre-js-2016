@@ -17,34 +17,8 @@ const LoginView = Backbone.View.extend({
     this.inputvalues.username = this.el.querySelector('input[name="username"]').value;
     this.inputvalues.password = this.el.querySelector('input[name="password"]').value;
     event.preventDefault();
+    window.location.href = '#playlists';
     this.model.sendLoginPost(this.inputvalues);
-  },
-  sendLoginPost(data) {
-    $.ajax({
-      type: 'POST',
-      url: 'http://localhost:3000/auth',
-      data: JSON.stringify(data),
-      dataType: 'json',
-      contentType: 'application/json',
-    }).done((resp) => {
-      window.LoggedInUser.token = resp;
-      this.getPreferences();
-    });
-  },
-
-  getPreferences() {
-    $.ajax({
-      type: 'GET',
-      url: 'http://localhost:3000/preferences',
-      headers: {
-        'x-token': window.LoggedInUser.token,
-      },
-    }).done((resp) => {
-      const jsonObj = JSON.parse(resp);
-      window.LoggedInUser.fullname = jsonObj.gsx$fullname.$t;
-      Utils.setHeaderBackground(jsonObj.gsx$background.$t);
-      Backbone.trigger('statusChanged');
-    });
   },
 });
 
