@@ -1,0 +1,166 @@
+<!doctype html>
+<html>
+<head>
+    <title>Example Domain</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="mystyle.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+    <script src="http://backbonejs.org/test/vendor/underscore.js"></script>
+    <script src="http://backbonejs.org/test/vendor/jquery.js"></script>
+    <script src="http://backbonejs.org/docs/js/jquery.lazyload.js"></script>
+    <script src="http://backbonejs.org/backbone.js"></script>
+    <script>
+    var LoggedInUser = {
+      username: '',
+      fullname: '',
+      background: '',
+      token: '',
+    };
+    </script>
+    <script type="text/template" id="template-SongView">
+      <div class="songDiv">
+        <img class="songImg" src="<%= gsx$image.$t %>">
+        <div class="songNumbers" ><%= gsx$length.$t %></div>
+        <div class="songNumbers" >0</div>
+        <span class="songTitle" class="textBiggerGri"><%= gsx$name.$t %></span>
+        <span class="textMediuGri"><%= gsx$album.$t %></span>
+      </div>
+    </script>
+    <script type="text/template" id="template-PlaylistView">
+      <div class="cardBottomDiv">
+        <div class="bookThumbail">
+          <img src="<%= imageLarge %>" class="playlistLargeImage"/>
+          <a href="#" class="explorePlaylist">
+            <img src="../core/assets/play-icon.png">
+            Explore playlist
+          </a>
+          <div class="cardOverlay"></div>
+        </div>
+        <div class="cardText" >
+          <span class="textBiggerGri"><%= title %><span><br>
+          <span class="ByClicking"><%= desc %><span>
+        </div>
+      </div>
+    </script>
+    <script type="text/template" id="template-Login">
+      <div class="loginBackground">
+        <div id="signInDiv">
+          <div class="acmelogo"></div>
+          <span id="SignInSpan">Sign into your ACME account</span><br />
+          <span id="SignInError"  style="visibility:hidden;color:red">Oops! That email / password combination is not valid.</span>
+            <form id="signInForm" name="signInForm" method="post">
+                Email<br>
+                <input type="text"   class="SU-input" name="username" required="true"><br>
+                Password<br>
+                <input type="password"  class="SU-input" name="password" required="true"><br><br />
+                <a id="ForgotPassw" href="#">Forgot password?</a>
+                <button id="submitSignIn">SignIn</button>
+            </form>
+        </div>
+    </div>
+    </script>
+    <script type="text/template" id="template-SongsView">
+        <div id="closeButton">
+          <img src="../core/assets/close-icon.png" id="closeButton">
+        </div >
+        <div id="playlistHeader"></div>
+        <div id="songs"></div>
+        <div class="clearFloat"></div>
+    </script>
+    <script type="text/template" id="template-loggedOut-View">
+      <a href="#" class="submitSignUp" id="signInButton" style="padding-top:10px;">Sign In</a>
+    </script>
+    <script type="text/template" id="template-loggedIn-View">
+      <a href="#" class="submitSignUp" id="signOutButton" style="padding-top:10px;">Sign Out</a>
+      <span id="welcomeMessage">Welcome <%= fullname %> </span>
+    </script>
+    <script type="text/template" id="template-header-view">
+      <img src="../core/assets/logo-top.png" class="floatLeft"></img>
+      <div id="loginStatusContainer"></div>
+      <form>
+        <input list="searchSongs" class="searchBar" placeholder="Search Music" name="search">
+        <datalist id="searchSongs">
+
+        </datalist>
+      </form>
+
+      <div class="clearFloat"></div>
+
+      <br>
+      <span class="textMareAlbBold">Ready to listen to endless music<br>
+      on your favorite device ?</span><br>
+      <a href="#" class="submitSignUp" id="joinNow">JOIN NOW</a>
+      <h1 id="quote"></h1><br>
+    </script>
+    <script type="text/template" id="template-Playlists-Page">
+
+      <div id="header"> </div>
+      <div id="centeredWrapper"> </div>
+      <div class="clearFloat"></div>
+      <div id="playlists"> </div>
+      <div id="metallicaBio">
+        <img id="metallicaBioImg" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Metallica_at_The_O2_Arena_London_2008.jpg/1280px-Metallica_at_The_O2_Arena_London_2008.jpg">
+        <h1>Metallica</h1>
+        <div id="metallicaText"></div>
+      </div>
+
+    </script>
+    <script	type="text/javascript" src="../build/bundle.js"></script>
+
+
+</head>
+<body style="background-color:#EEEEEE">
+  <div id="loginDiv"> </div>
+  <div id="playlistsPageContainer"> </div>
+
+
+
+<script>
+
+
+var test = {
+    "success": {
+        "total": 1
+    },
+    "contents": {
+        "quotes": [
+            {
+                "quote": "Be not afraid of greatness. Some are born great, some achieve greatness, and some have greatness thrust upon 'em....",
+                "length": "116",
+                "author": "William Shakespeare",
+                "tags": [
+                    "inspire"
+                ],
+                "category": "inspire",
+                "date": "2016-03-28",
+                "title": "Inspiring Quote of the day",
+                "background": "https://theysaidso.com/img/bgs/man_on_the_mountain.jpg",
+                "id": "FG7_PlYnhPFaWL79P5076QeF"
+            }
+        ]
+    }
+};
+
+
+
+$.ajax({
+  url: "https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro=&explaintext=&titles=Metallica",
+  dataType: 'jsonp',
+}).done(function(data) {
+  document.querySelector('#metallicaText').innerText =  data.query.pages['18787'].extract;
+});
+
+// $.when( $.ajax( "http://quotes.rest/qod.json" ) ).then(function( data, textStatus, jqXHR ) {
+//   console.log(jqXHR.status);
+// }, function( data ) {
+//   console.log(data.responseJSON.error.code);
+// });
+
+</script>
+</body>
+</html>
