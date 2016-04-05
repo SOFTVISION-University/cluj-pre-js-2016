@@ -1,7 +1,10 @@
 import { HeaderView } from './app_views/header-view.js';
 import { ContentView } from './app_views/content-view.js';
+import { FooterView } from './app_views/footer-view.js';
 import { PlaylistCollection } from './collections/playlist-collection.js';
 import { PlaylistsView } from './views/playlists-view.js';
+import { UserModel } from './models/user-model.js';
+import { UserView } from './views/user-view.js';
 
 const headerView = new HeaderView({ el: $('#index-header') });
 headerView.render();

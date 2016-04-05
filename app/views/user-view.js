@@ -1,22 +1,12 @@
 const UserView = Backbone.View.extend({
   events: {
-    'focus #email': 'getFocus',
-    'focus #password': 'getFocus',
-    'blur #email': 'getBlur',
-    'blur #password': 'getBlur',
-    'submit #sign_in': 'logIn',
-  },
-  getFocus(ev) {
-    this.$(ev.currentTarget).attr('class', 'focus');
-  },
-  getBlur(ev) {
-    this.$(ev.currentTarget).attr('class', 'blur');
+    'click #sign_in': 'signIn',
   },
   loginError() {
     document.getElementById('error').innerHTML = `Oops! That email/password
     combination is not valid.`;
-    document.getElementById('email').attr('class', 'login-error');
-    document.getElementById('password').attr('class', 'login-error');
+    this.el.querySelector('.email').className = 'login-error';
+    this.el.querySelector('.password').className = 'login-error';
   },
   renderTemplate(selectorString, options) {
     const templateText = document.querySelector(selectorString).innerText;
@@ -33,32 +23,23 @@ const UserView = Backbone.View.extend({
     this.$el.html(this.template(this.model.attributes));
     return this;
   },
-  logIn() {
-    const user = {};
-    user.email = $('#email').val();
-    user.password = $('#password').val();
-    const request = $.ajax({
-      type: 'POST',
-      url: 'http://localhost:3000/auth',
-      data: JSON.stringify(user),
-      dataType: 'json',
-    });
-    request.done((token) => {
-      $.ajax({
-        url: 'http://localhost:3000/preferences',
-        headers: { 'x-token': token },
-      }).done((preferences) => {
-        document.getElementById('index-header').style.backgroundImage = preferences.background;
-      }).fail(() => {
+  signIn(e) {
+    const that = this;
+    const username = this.el.querySelector('.email').value;
+    const password = this.el.querySelector('.password').value;
+    const isLoggedIn = false;
+    this.model.set({ username, password, isLoggedIn });
+    this.model.logIn().done((token) => {
+      that.model.getPreferences(token).done(() => {
+        if (that.model.get('isLoggedIn') === true) {
+          document.getElementById('index-header').style.backgroundImage =
+          `url('${that.model.get('background')}')`;
+        }
       });
+    }).fail(() => {
+      return that.loginError();
     });
-    request.fail(() => {
-      this.loginError();
-      return false;
-    });
-  },
-  logOut() {
-    this.isLoggedIn = false;
+    e.preventDefault();
   },
 });
 

@@ -1,26 +1,36 @@
 const UserModel = Backbone.Model.extend({
-<<<<<<< HEAD
-  urlRoot: 'http://localhost:3000/users',
-  defaults: {
-    userName: 'Marius',
-    email: 'marius.luca@test.ro',
-    password: 'password',
-    isLoggedIn: false,
+  handleLoginResponse() {
+    this.set('isLoggedIn', true);
   },
   logIn() {
-    const email = document.querySelector('#email').value;
-    const password = document.querySelector('#password').value;
-    if (this.el.email === email && this.el.password === password) {
-      this.isLoggedIn = true;
-      localStorage.setItem('url', JSON.stringify(url));
-    }
+    return $.ajax({
+      type: 'POST',
+      url: 'http://localhost:3000/auth',
+      data: JSON.stringify(this.attributes),
+      dataType: 'json',
+      contentType: 'application/json; charset=utf-8',
+    })
+    .done(this.handleLoginResponse.bind(this))
+    .fail(() => {
+    });
   },
   logOut() {
     this.isLoggedIn = false;
-    localStorage.removeItem(key);
   },
-=======
->>>>>>> BackboneImplementation
+  getPreferences(token) {
+    return $.ajax({
+      type: 'GET',
+      url: 'http://localhost:3000/preferences',
+      headers: { 'x-token': token },
+    }).done((preferences) => {
+      const parsedPreferences = JSON.parse(preferences);
+      const userPreferences = {
+        background: parsedPreferences.gsx$background.$t,
+      };
+      this.set(userPreferences).bind(this, null);
+    }).fail(() => {
+    });
+  },
 });
 
 export { UserModel };
