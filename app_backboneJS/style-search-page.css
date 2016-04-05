@@ -35,7 +35,7 @@ body{
   padding-right: 10px;
 }
 
-.container input:focus{
+#container input:focus{
   background: rgba( 51,153,255,0.2 );
   border: 1px solid rgb(51,153,255);
 }
@@ -49,7 +49,11 @@ body{
   padding: 10px 50px ;
 }
 
-.container a:link, a:visited{
+#container p{
+    padding-top: 20px;
+    padding-left: 0px;
+}
+#container a:link, a:visited{
   color:#3399ff;
   text-decoration: none;
 }
@@ -82,7 +86,7 @@ body{
   vertical-align: top;
 }
 
-input{
+.search-input input{
   height: 40px;
   width: 700px;
   color: white;
@@ -280,6 +284,10 @@ body p{
   border-bottom: 1px solid gray;
 }
 
+.headerPlaylist img{
+  height:135px;
+  width:157px;
+}
 
 #element li{
   display: inline-block;

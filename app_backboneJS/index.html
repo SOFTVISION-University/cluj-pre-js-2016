@@ -15,18 +15,18 @@
 
       <h3 align="center"> Sign into your ACME acccount </h3>
 
-      <form name="loginForm" action="search.html" method="post">
+      <form name="loginForm" method="post">
 
-      <label>Email</label><br>
-      <input class="input" id="input1" type="email" name="email" required ><br>
-      <br>
+		    <label>Email</label><br>
+		    <input class="input" id="input-user" type="text" name="username" value="<%= name%>" required ><br>
+		    <br>
 
-      <label>Password</label><br>
-      <input  class="input" id="input2" type="password" name="password" required ><br>
-      <br>
+		    <label>Password</label><br>
+		    <input  class="input" id="input-password" type="password" name="password" required ><br>
+		    <br>
 
-      <a href="" style="padding-right:50px"> Forgot password? </a>
-      <button type="submit" onclick="changeWrongInputColor()"> Sign In </button>
+		    <a href="" style="padding-right:50px"> Forgot password? </a>
+		    <button type="submit" id="log-in-button" > Sign In </button>
 
       </form>
       <p> Don`t have an account? <a href="register.html" >Sign up here</a> </p>
@@ -53,7 +53,7 @@
 					<button type="button" id="closeB" class="closeButton"> CLOSE </button>
 				</form>
 				<div class="headerPlaylist">
-					<img src="<%= imageSmall %>">
+					<img src="<%= imageLarge %>" >
 					<div class="text">
 						<h4>Playing from:</h4>
 						<h2><%= title %></h2>
@@ -82,19 +82,19 @@
 				</div>
 				<div class="button-signIn">
 					<form action="Login.html">
-						<button type="submit" id="searchLogIn" >Sign In</button>
+						<button type="submit" id="search-log-in" >Sign In</button>
 					</form>
 					<form>
-						<button type="submit" id="searchLogOut" onclick="logOut()">Log out</button>
+						<button type="submit" id="search-log-out" >Log out</button>
 					</form>
 				</div>
-				<div class="join-now" id="divForQuote">
+				<div class="join-now" id="div-for-quote ">
 					<h3><span>Ready to listen to endless music on your favorite device ?</span></h3>
 					<h2 id="welcomeText"></h2>
 					<form action="register.html">
-						<button type="submit" id="joinNowButton">JOIN NOW</button>
+						<button type="submit" id="join-now-button">JOIN NOW</button>
 					</form>
-					<h1 id="replaceQuote">Epic and debauched party mixes</h1>
+					<h1 id="replace-quote">Epic and debauched party mixes</h1>
 				</div>
 			</div>
 		</div>
