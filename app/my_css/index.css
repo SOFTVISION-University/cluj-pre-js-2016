@@ -1,0 +1,519 @@
+
+
+body{
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
+/*MAIN PAGE TEMPLATE */
+#top-section{
+  background-image: url("../../core/assets/banner-app.jpg");
+  background-size: 100%;
+  height: 70%;
+  color: white;
+}
+#top-section > div{
+  display:inline-block;
+}
+#index-section-1{
+  width: 80%;
+}
+#index-section-1 > div{
+  display: inline-block;
+}
+
+#logo {
+  width: 30%;
+  padding-left: 2%;
+  padding-top: 1%;
+  vertical-align: top;
+}
+.index-section-1-1{
+  padding-left: 20%;
+  width: 50%;
+  padding-top: 3%;
+  text-align: center;
+}
+.index-section-1-1 h2{
+  margin-left: 30%;
+  padding-top: 5%;
+  font-size: 1em;
+  width: 40%;
+  text-align: center;
+}
+.index-section-1-1 button{
+  height: 9%;
+  width: 23%;
+  background-color: #4dffb8;
+  border-color: #8c8c8c;
+  color: white;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+.index-section-1-2{
+  width: 20%;
+  margin-left: 80%;
+  padding-top: 2%;
+  vertical-align: top;
+  text-align: center;
+}
+.index-section-1-2 button{
+  height:7%;
+  width: 40%;
+  border: 0px;
+  box-shadow:0px 4px 4px rgba(0,0,0,0.3);
+  background-color: #0ABEFB;
+  color: white;
+  font-weight: bold;
+  font-size: 1.3em;
+  padding: 5px 10px 5px 10px;
+  text-decoration: none;
+  border-radius: 2px;
+}
+.index-section-1-2 button:hover{
+ cursor: pointer;
+}
+#searchBlock {
+ background-color: white;
+ opacity: 0.4;
+  width: 90%;
+  padding-bottom: 1px;
+}
+#searchBlock input {
+    opacity: 1;
+  width: inherit;
+  vertical-align: middle;
+  height: 5%;
+  width: inherit;
+  border:0px;
+  padding: 0px;
+  font-size: 0.9em;
+}
+#searchBlock img {
+  opacity: 1;
+  background-color: black;
+  margin: 0px;
+  vertical-align: middle;
+}
+.index-section-1-1 button{
+  border: 0px;
+  border-radius: 2px;
+    box-shadow:0px 8px 6px rgba(0,0,0,0.3);
+}
+.index-section-1-1 button:hover{
+  cursor: pointer;
+}
+#index-section-2 {
+  padding-top: 1px;
+  background-color: #d9d9d9;
+}
+#index-section-2 div{
+  padding-top: 300px;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+#index-section-2 p{
+  opacity: 0.6;
+  vertical-align: bottom;
+  padding-left: 20%;
+}
+.section-absolute {
+  z-index: 3;
+  width: 80%;
+  position: absolute;
+  margin-top: -10%;
+  margin-left: 10%;
+  display: inline-block;
+
+}
+.section-absolute > div{
+    border-radius: 5px;
+  background-color: white;
+  margin-left: 15px;
+    display: inline-block;
+  transition:
+  	all 0.7s ease-in-out;
+}
+.section-absolute > div:hover {
+  transform: translate(0,-60px);
+  box-shadow:0px 8px 6px rgba(0,0,0,0.3);
+
+}
+.individual-playlist {
+  display: inline-block;
+  width:360px;
+}
+.section-absolute > div:hover .individual-playlist-button {
+  display: inline;
+}
+
+.section-absolute h3{
+  padding-left: 5%;
+}
+.section-absolute p {
+    padding-left: 5%;
+    opacity: 0.7;
+}
+.individual-playlist-button:hover {
+  cursor: pointer;
+}
+.individual-playlist-button {
+  z-index: 10;
+  user-select: none;
+  padding: 5px;
+  margin-left: 110px;
+  margin-top: 100px;
+  border:  0px;
+  background-color: #33ccff;
+  position: absolute;
+  display: none;
+}
+.individual-playlist-button > p{
+  margin: 0px;
+  padding: 0px;
+  color:white;
+  font-weight: bold;
+  float: right;
+}
+.playlist-absolute {
+  z-index: 10000;
+  margin-left: 5%;
+  position: fixed;
+  float: left;
+}
+.playlistDisplayInline{
+ display: inline;
+}
+.playlist-top {
+  padding-right: 5px;
+  padding-top: 5px;
+  border: 0px;
+  color: blue;
+  text-align: right;
+  background-color: white;
+}
+.playlist-top:hover{
+  cursor: pointer;
+}
+.playlist-top a {
+user-select: none;
+color: #0AB8F9;
+font-size: 12px;
+font-weight: bold;
+text-decoration:none;
+margin: 0px;
+padding: 0px;
+}
+.playlist-top img{
+  vertical-align: middle;
+}
+.playlist-main {
+  background-color:#DBDAD8;
+}
+.playlist-main  div{
+  display: inline-block;
+  padding-left: 5px;
+  padding-top: 0px;
+}
+
+.playlist-main  div p {
+  margin-top: 0px;
+  font-size: 12px;
+}
+.playlist-main  div h2{
+  margin-top: 5px;
+  display: inline-block;
+}
+
+.songs-table {
+  display: block;
+  height: 80%;
+  border-collapse:collapse;
+  text-align: left;
+  font-size: 12px;
+  background-color: white;
+}
+
+.songs-table tbody {
+  padding: 10px;
+}
+
+#headTable {
+  padding: 10px;
+  background-color: #d9d9d9;
+}
+.song-pic-text img {
+  width: 20%;
+  height: 15%;
+  display: inline;
+}
+.song-pic-text > div {
+  display: inline-block;
+  margin-left: 10px;
+}
+.song-pic-text > div > h3 {
+  vertical-align: middle;
+    margin-bottom: 0px;
+}
+.song-pic-text > div:hover {
+   cursor:pointer;
+}
+.song-pic-text > div > p{
+  margin-top: 0px;
+  opacity: 0.7;
+}
+
+  /*LOGIN TEMPLATE*/
+
+#login-section {
+  width: 100%;
+  background-image: url("../../core/assets/banner-top.jpg");
+  text-align: center;
+}
+.content {
+  width: 400px;
+  height: 400px;
+  margin-left: 35%;
+  background-color: white;
+  border-radius: 10px;
+}
+.formular {
+}
+.formular input {
+ height: 7%;
+ width: 50%;
+}
+
+.formular > p {
+  margin-top: 10px;
+  margin-bottom: 0px;
+  margin-left: 25%;
+  text-align: left;
+}
+
+.form_actions  {
+
+  display: inline-block;
+  margin-top: 5%;
+  margin-left: 0px;
+}
+#bPass {
+  width: 30%;
+  margin-left: 5%;
+  border: 0px;
+  background-color: #0ABEFB;
+  color: white;
+  border-radius: 2px;
+  box-shadow:0px 4px 4px rgba(0,0,0,0.3);
+}
+
+.sign-up *{
+    display: inline-block;
+}
+
+/*SIGN UP TEMPLATE */
+
+/* SECTION ONE ----------------------------------*/
+.section_1 {
+background-image: url("../../core/assets/banner-top.jpg");
+padding-left: 15%;
+padding-right: 15%;
+padding-bottom: 3%;
+margin: 0px;
+width: 70%;
+}
+.section_1 > div {
+display: inline-block;
+}
+.section_1_1 {
+color : white;
+  width: 49%;
+}
+.section_1_1 h1 {
+  width: 80%;
+}
+.section_1_1 p {
+font-size: 1.2em;
+width:80%;
+}
+.section_1_1 a {
+font-size: 0.8em;
+color: inherit;
+padding-left: 5px;
+}
+.section_1_1 h5{
+opacity: 0.4;
+margin: 0px 0px 5px 0px;
+}
+.section_1_2 {
+background-color: #FFFFFF;
+text-align: center;
+width: 34%;
+border-radius: 5px;
+}
+.section_1_2 div{
+width:90%;
+}
+.section_1_2 p {
+font-size: 1em;
+opacity: 0.7;
+margin: 0px 0px 3px 0px;
+}
+
+.section_1_2 span {
+font-size: 0.8em;
+opacity: 0.5;
+
+}
+#form_signUp {
+padding-top: 10px;
+width: 80%;
+text-align: center;
+margin-left: 10%;
+}
+
+#form_signUp > p {
+text-align: center;
+width: 70%;
+}
+
+#singInformButton {
+border: 0px;
+text-align: center;
+ margin-top: 5%;
+ width: 50%;
+ height: 3%;
+ background-color: #1E90FF;
+ opacity: 0.8;
+ color: white;
+ text-align: center;
+ border-radius: 2px;
+ box-shadow:0px 4px 4px rgba(0,0,0,0.3);
+}
+.section_1_2 > p {
+font-size: 0.8em;
+opacity: 0.6;
+}
+/* SECTION TWO ----------------------------------*/
+.section_2 {
+padding-top: 1px;
+background-color: white;
+text-align: center;
+}
+.section_2 h2{
+margin-top: 2%;
+}
+.section_2 p {
+font-size:  1em;
+opacity: 0.6;
+margin: 0px;
+}
+.section_2 > div {
+ display: inline-block;
+ width: inherit;
+ margin-top: 3%;
+ margin-bottom: 5%;
+}
+.section_2 > div div{
+   display: inline-block;
+width: 30%;
+}
+.section_2 > div div p{
+  opacity: 1;
+  margin: 0px;
+  text-align: center;
+  width: 80%;
+  margin-left: 10%;
+}
+
+/* SECTION THREE*/
+.section_3 {
+background-image: url("../../core/assets/stars-bg.jpg");
+color:white;
+margin: 0px;
+text-align: center;
+padding-bottom: 6%;
+}
+.section_3 div img{
+position: relative;
+display: float;
+}
+.section_3 h1{
+margin: 0px;
+padding-top: 7%;
+}
+.section_3 p{
+font-size: 1.4em;
+}
+/* SECTION FOUR*/
+.section_4 {
+padding-top: 1px;
+text-align: center;
+text-decoration: none;
+background-color: white;
+}
+.section_4 h1 {
+padding-top: 3%;
+padding-bottom: 2%;
+}
+.section_4 div {
+padding-left: 25%;
+display: block;
+text-align: left;
+}
+.section_4 table {
+border: 2px solid 	#0080ff;
+border-collapse: collapse;
+text-align: center;
+width: 60%;
+height: 40%;
+}
+.section_4 table tr{
+border-bottom: 1px solid #0080ff;
+}
+.section_4 table tr td{
+background-color: #ccffff;
+}
+.head-table {
+border-bottom: 2px solid 	#b3d9ff;
+}
+.head-table *{
+    width: 30%;
+    text-align: left;
+}
+.in-table-titles * {
+display: inline-block;
+}
+.in-table-titles h4 {
+word-wrap: normal;
+width: 35%;
+margin-right: 0px;
+}
+#SignUpFree{
+border: 0px;
+box-shadow:0px 4px 4px rgba(0,0,0,0.3);
+border-radius: 5px;
+}
+.section_4 button{
+text-align: center;
+font-size: 100%;
+color: white;
+width: 15%;
+height: 4%;
+background-color: #0066ff;
+margin-top: 3%;
+margin-bottom: 5%;
+margin-left: 20%;
+}
+.section_5 {
+background-color: #E5E5E5;
+padding-top: 5%;
+padding-left: 15%;
+}
+.section_5 > div{
+display: inline-block;
+}
+.section_5_1{
+vertical-align: top;
+}
