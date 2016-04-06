@@ -1,4 +1,5 @@
 import { HomePageView } from '../app_views/home-page-view.js';
+import { SignUpPageView } from '../app_views/sign-up-page-view.js';
 import { UserModel } from '../models/user-model.js';
 import { UserView } from '../views/user-view.js';
 const AppRouter = Backbone.Router.extend({
@@ -6,7 +7,7 @@ const AppRouter = Backbone.Router.extend({
     '': 'renderIndex',
     logged: 'renderIndex',
     login: 'renderLogin',
-    singup: 'renderSignUp',
+    signup: 'renderSignUp',
   },
   renderIndex() {
     const homePageView = new HomePageView({ el: $('#page') });
@@ -21,6 +22,8 @@ const AppRouter = Backbone.Router.extend({
     this.render(userView);
   },
   renderSignUp() {
+    const signUpPageView = new SignUpPageView({ el: $('#sign-up-page') });
+    this.render(signUpPageView);
   },
   render(view) {
     if (this.currentView) {

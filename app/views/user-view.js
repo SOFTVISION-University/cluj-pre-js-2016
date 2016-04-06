@@ -30,6 +30,7 @@ const UserView = Backbone.View.extend({
     const isLoggedIn = false;
     this.model.set({ username, password, isLoggedIn });
     this.model.logIn().done((token) => {
+      location.hash = 'logged';
       that.model.getPreferences(token).done(() => {
         if (that.model.get('isLoggedIn') === true) {
           document.getElementById('index-header').style.backgroundImage =
