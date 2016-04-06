@@ -11,9 +11,8 @@ export const UserModel = Backbone.Model.extend({
   triggerEventOnHeader() {
     this.trigger('triggerHead');
   },
-  triggerLogOut() {
-    this.status = false;
-    this.trigger('triggerLogout');
+  triggerEventOnLogOut() {
+    this.trigger('triggerPage');
   },
   logIn() {
     const that = this;

@@ -6,6 +6,94 @@
 <script src="http://backbonejs.org/backbone.js"></script>
 <link rel="stylesheet" type="text/css" href="index_css.css">
 <script  src="../build/bundle.js"></script>
+<script type="text/template" id="template-playlistPage">
+<div class="container">
+<div id="left">
+
+        <img src="../core/assets/logo-top.png" alt="altceva" id="position_centred">
+
+  </div>
+
+  <div id="center">
+	<label>
+- <datalist id="fruits">
+    <select name="fruits" id="search_music" >
+       <option name="NAme" value="COsmin" id="option_music"> </option>
+
+
+
+    </select>
+
+    </datalist>
+  <input type="text" id="search" placeholder="Search Music" name="fruit" list="fruits" onkeypress="return Search(event)">
+</label>
+
+
+  <span id="span_search" class="search_text">Ready to listen to endless music </span>
+  <span class="search_text">on your favorite device? </span>
+
+
+    <input type="submit" value="JOIN NOW" id="button_join">
+  <span id="span_search1" class="search_text"></span>
+
+  </div>
+
+
+
+
+  <div id="right">
+
+
+  </div>
+
+ </div>
+	 <div class="clear"></div>
+
+
+
+  <div id="playlist1" >
+
+
+
+
+
+
+</div>
+
+
+</div>
+
+<div class="pop_playlist" id="pop_playlist1">
+  <div id="close_button">
+
+    <img src="../core/assets/close-icon.png"  alt="altceva">
+  </div>
+
+
+  <div id="footer_playlist">
+
+  </div>
+
+
+<div class="info_song">
+     <span class="display1" id="name_song_size">Song
+     </span>
+     <span class="display1">Leght
+     </span>
+     <span class="display1" id="name_song_leght">Listened
+     </span>
+   </div>
+  <div id ="name_songs">
+  </div>
+</div>
+
+
+   <div id = "request">
+     <div  id="photo_form_wiki"></div>
+     <div id="song_form_wiki"></div>
+
+   </div>
+</script>
 
 <script type="text/template" id="template-FriendInListView">
 	<div id="container1">
@@ -73,7 +161,7 @@
   </script>
   <script type="text/template" id="template-logInButton">
   <input type="button" value="Log In" id="logIn" )>
-</script>
+  </script>
 
 
 <script type="text/template" id="template-registerPage">
@@ -170,9 +258,6 @@
 
 </div>
 
-
-
-
 <div id="mijloc3">
 
     <div id="h1_mijloc3"> <h1>What you'll get</h1> </div>
@@ -247,13 +332,7 @@
  </tr>
 </table>
 <input type="button" onclick="scrollup()" value="Sign up free">
-
-
 </div>
-
-
-
-
 <div id="footer">
 
   <div id="footer_image1">
@@ -295,105 +374,7 @@
 </head>
 <body  >
 
-<script type="text/template" id="template-playlistPage">
-<div class="container">
-<div id="left">
 
-        <img src="../core/assets/logo-top.png" alt="altceva" id="position_centred">
-
-  </div>
-
-  <div id="center">
-	<label>
-- <datalist id="fruits">
-    <select name="fruits" id="search_music" >
-       <option name="NAme" value="COsmin" id="option_music"> </option>
-
-
-
-    </select>
-
-    </datalist>
-  <input type="text" id="search" placeholder="Search Music" name="fruit" list="fruits" onkeypress="return Search(event)">
-</label>
-
-
-  <span id="span_search" class="search_text">Ready to listen to endless music </span>
-  <span class="search_text">on your favorite device? </span>
-
-
-    <input type="submit" value="JOIN NOW" id="button_join">
-  <span id="span_search1" class="search_text"></span>
-
-  </div>
-
-
-
-
-  <div id="right">
-
-
-  </div>
-
- </div>
-	 <div class="clear"></div>
-
-
-
-  <div id="playlist1" >
-
-
-
-
-
-
-</div>
-
-
-</div>
-
-<div class="pop_playlist" id="pop_playlist1">
-  <div id="close_button">
-
-    <img src="../core/assets/close-icon.png"  alt="altceva">
-  </div>
-
-
-  <div id="footer_playlist">
-
-  </div>
-
-
-<div class="info_song">
-     <span class="display1" id="name_song_size">Song
-     </span>
-     <span class="display1">Leght
-     </span>
-     <span class="display1" id="name_song_leght">Listened
-     </span>
-   </div>
-
-
-  <div id ="name_songs">
-
-
-
-
-  </div>
-
-
-
-
-
-</div>
-
-
-   <div id = "request">
-     <div  id="photo_form_wiki"></div>
-     <div id="song_form_wiki"></div>
-
-   </div>
-</script>
 
 
 

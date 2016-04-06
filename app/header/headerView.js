@@ -10,17 +10,7 @@ export const HeaderView = Backbone.View.extend({
     logOutButtonView.render();
     this.listenTo(this.model, 'triggerHead',
     function () {
-      if (this.model.get('status') === true) {
-        logOutButtonView.render();
-        const imageBackground = this.model.get('backgroundColor');
-        document.querySelector('.container').style.backgroundImage =
-        'url('+imageBackground+')';
-      }
-      else {
-        logOutButtonView.render();
-        document.querySelector('.container').style.backgroundImage =
-        'url(../core/assets/banner-top.jpg)';
-      }
+      logOutButtonView.render();
     });
   },
 

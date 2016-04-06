@@ -48,9 +48,9 @@
 
 	var _playlistCollection = __webpack_require__(1);
 
-	var _userModel = __webpack_require__(12);
+	var _userModel = __webpack_require__(3);
 
-	var _routerBackbone = __webpack_require__(17);
+	var _routerBackbone = __webpack_require__(5);
 
 	$(function () {
 	  var userModel = new _userModel.UserModel();
@@ -125,275 +125,9 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	exports.PlaylistsView = undefined;
-
-	var _playlistView = __webpack_require__(4);
-
-	var PlaylistsView = Backbone.View.extend({
-	  _nestedView: [],
-	  renderNestedView: function renderNestedView(view) {
-	    this._nestedView.push(view);
-	    this.$el.append(view.el);
-	  },
-	  render: function render() {
-	    var that = this;
-	    var partEl = this.el;
-	    this.collection.forEach(function (model) {
-	      var playlistView = new _playlistView.PlaylistView({
-	        model: model
-	      });
-	      playlistView.render();
-	      that.renderNestedView(playlistView, partEl);
-	    });
-
-	    return this;
-	  }
-	});
-	exports.PlaylistsView = PlaylistsView;
-
-/***/ },
-/* 4 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.PlaylistView = undefined;
-
-	var _containerPlaylistSongsView = __webpack_require__(16);
-
-	var PlaylistView = Backbone.View.extend({
-	  events: {
-	    'click .button_playlist': 'openSongView'
-	  },
-	  openSongView: function openSongView() {
-	    var containerSongs = new _containerPlaylistSongsView.ContainerPlaylistSongs({
-	      model: this.model,
-	      el: document.querySelector('.pop_playlist')
-	    });
-	    containerSongs.render();
-	  },
-	  renderTemplate: function renderTemplate(selectorString, options) {
-	    var templateText = document.querySelector(selectorString).innerText;
-	    var compiled = _.template(templateText);
-	    if (options !== null) {
-	      return compiled(options);
-	    }
-	    return compiled();
-	  },
-	  template: function template(val) {
-	    return this.renderTemplate('#template-Playlist', val);
-	  },
-	  render: function render() {
-	    this.$el.html(this.template(this.model.attributes));
-	    return this;
-	  }
-	});
-	exports.PlaylistView = PlaylistView;
-
-/***/ },
-/* 5 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.SongsListColection = undefined;
-
-	var _songModel = __webpack_require__(6);
-
-	var SongsListColection = Backbone.Collection.extend({
-	  model: _songModel.SongModel
-	});
-	exports.SongsListColection = SongsListColection;
-
-/***/ },
-/* 6 */
-/***/ function(module, exports) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	var SongModel = Backbone.Model.extend({
-	  defaults: {
-	    image: 'Robert',
-	    songTitle: 23,
-
-	    songAuthor: 'daaaa',
-	    songLength: 'daaa',
-	    songListened: 20
-	  }
-
-	});
-	exports.SongModel = SongModel;
-
-/***/ },
-/* 7 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.SongsView = undefined;
-
-	var _songView = __webpack_require__(8);
-
-	var SongsView = Backbone.View.extend({
-	  _nestedView: [],
-	  renderNestedView: function renderNestedView(view) {
-	    this._nestedView.push(view);
-	    this.$el.append(view.el);
-	  },
-	  render: function render() {
-	    var that = this;
-	    var partEl = this.el;
-	    this.collection.forEach(function (model) {
-	      var songView = new _songView.SongView({
-	        model: model
-	      });
-	      songView.render();
-	      that.renderNestedView(songView, partEl);
-	    });
-	    return this;
-	  }
-	});
-	exports.SongsView = SongsView;
-
-/***/ },
-/* 8 */
-/***/ function(module, exports) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	var SongView = Backbone.View.extend({
-	  renderTemplate: function renderTemplate(selectorString, options) {
-	    var templateText = document.querySelector(selectorString).innerText;
-	    var compiled = _.template(templateText);
-	    if (options !== null) {
-	      return compiled(options);
-	    }
-	    return compiled();
-	  },
-	  template: function template(val) {
-	    return this.renderTemplate('#template-FriendInListView', val);
-	  },
-	  render: function render() {
-	    this.$el.html(this.template(this.model.attributes));
-	    return this;
-	  }
-	});
-	exports.SongView = SongView;
-
-/***/ },
-/* 9 */
-/***/ function(module, exports) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	var HeaderView = Backbone.View.extend({
-	  renderTemplate: function renderTemplate(selectorString, options) {
-	    var templateText = document.querySelector(selectorString).innerText;
-
-	    var compiled = _.template(templateText);
-	    if (options !== null) {
-	      return compiled(options);
-	    }
-	    return compiled();
-	  },
-	  template: function template(val) {
-	    return this.renderTemplate('#template-HeaderPlaylist', val);
-	  },
-	  render: function render() {
-	    this.$el.html(this.template(this.model.attributes));
-	    return this;
-	  }
-	});
-	exports.HeaderView = HeaderView;
-
-/***/ },
-/* 10 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.LogInView = undefined;
-
-	var _userObj = __webpack_require__(11);
-
-	var LogInView = exports.LogInView = Backbone.View.extend({
-	  events: {
-	    'click #SignIn_button ': 'logIn'
-	  },
-	  renderTemplate: function renderTemplate(selectorString, options) {
-	    var templateText = document.querySelector(selectorString).innerText;
-	    var compiled = _.template(templateText);
-	    if (options !== null) {
-	      return compiled(options);
-	    }
-	    return compiled();
-	  },
-	  template: function template(val) {
-	    return this.renderTemplate('#template-logIn', val);
-	  },
-	  render: function render() {
-	    this.$el.html(this.template());
-	    return this;
-	  },
-	  logIn: function logIn() {
-	    this.model.logIn(this.model);
-	    this.model.set(_userObj.user);
-
-	    this.model.triggerEventOnHeader();
-	    window.location.href = '#';
-	  }
-	});
-
-/***/ },
-/* 11 */
-/***/ function(module, exports) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	var user = exports.user = {
-	  fullName: '',
-	  username: '',
-	  token: '',
-	  backgroundColor: '',
-	  status: false
-	};
-
-/***/ },
-/* 12 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
 	exports.UserModel = undefined;
 
-	var _userObj = __webpack_require__(11);
+	var _userObj = __webpack_require__(4);
 
 	var UserModel = exports.UserModel = Backbone.Model.extend({
 	  defaults: {
@@ -406,9 +140,8 @@
 	  triggerEventOnHeader: function triggerEventOnHeader() {
 	    this.trigger('triggerHead');
 	  },
-	  triggerLogOut: function triggerLogOut() {
-	    this.status = false;
-	    this.trigger('triggerLogout');
+	  triggerEventOnLogOut: function triggerEventOnLogOut() {
+	    this.trigger('triggerPage');
 	  },
 	  logIn: function logIn() {
 	    var that = this;
@@ -445,40 +178,7 @@
 	});
 
 /***/ },
-/* 13 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.HeaderView = undefined;
-
-	var _logOutButtonView = __webpack_require__(14);
-
-	var HeaderView = exports.HeaderView = Backbone.View.extend({
-	  render: function render() {
-	    var logOutButtonView = new _logOutButtonView.LogOutButtonView({
-	      model: this.model,
-	      el: document.querySelector('#right')
-	    });
-	    logOutButtonView.render();
-	    this.listenTo(this.model, 'triggerHead', function () {
-	      if (this.model.get('status') === true) {
-	        logOutButtonView.render();
-	        var imageBackground = this.model.get('backgroundColor');
-	        document.querySelector('.container').style.backgroundImage = 'url(' + imageBackground + ')';
-	      } else {
-	        logOutButtonView.render();
-	        document.querySelector('.container').style.backgroundImage = 'url(../core/assets/banner-top.jpg)';
-	      }
-	    });
-	  }
-	});
-
-/***/ },
-/* 14 */
+/* 4 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -486,13 +186,88 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	var LogOutButtonView = exports.LogOutButtonView = Backbone.View.extend({
-	  events: {
-	    'click #logOut ': 'logOutFunction',
-	    'click #logIn': 'logInFunction'
+	var user = exports.user = {
+	  fullName: '',
+	  username: '',
+	  token: '',
+	  backgroundColor: '',
+	  status: false
+	};
+
+/***/ },
+/* 5 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.Router = undefined;
+
+	var _logInView = __webpack_require__(6);
+
+	var _registrationView = __webpack_require__(7);
+
+	var _playlistPageView = __webpack_require__(8);
+
+	var Router = exports.Router = Backbone.Router.extend({
+	  setCurrentUser: function setCurrentUser(model) {
+	    this.currentUser = model;
 	  },
-	  logInFunction: function logInFunction() {
-	    window.location.href = '#login';
+	  setPlaylists: function setPlaylists(playlists) {
+	    this.playlists = playlists;
+	  },
+
+
+	  routes: {
+	    '': 'handlePlaylistPage',
+	    index: 'handlePlaylistPage',
+	    login: 'handleLogInPage',
+	    registration: 'handleRegistrationPage'
+	  },
+	  handlePlaylistPage: function handlePlaylistPage() {
+	    var that = this;
+	    this.playlists.safeFetch().then(function () {
+	      var playlistPageView = new _playlistPageView.PlaylistPageView({
+	        model: that.currentUser,
+	        collection: that.playlists,
+	        el: document.querySelector('body')
+	      });
+	      playlistPageView.render();
+	    });
+	  },
+	  handleLogInPage: function handleLogInPage() {
+	    var logView = new _logInView.LogInView({
+	      model: this.currentUser,
+	      el: document.querySelector('body')
+	    });
+	    logView.render();
+	  },
+	  handleRegistrationPage: function handleRegistrationPage() {
+	    var registrationPageView = new _registrationView.RegistrationPageView({
+	      el: document.querySelector('body')
+	    });
+	    registrationPageView.render();
+	  }
+	});
+
+/***/ },
+/* 6 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.LogInView = undefined;
+
+	var _userObj = __webpack_require__(4);
+
+	var LogInView = exports.LogInView = Backbone.View.extend({
+	  events: {
+	    'click #SignIn_button ': 'logIn'
 	  },
 	  renderTemplate: function renderTemplate(selectorString, options) {
 	    var templateText = document.querySelector(selectorString).innerText;
@@ -502,34 +277,23 @@
 	    }
 	    return compiled();
 	  },
-	  template: function template() {
-	    if (this.model.get('status')) {
-	      return this.renderTemplate('#template-logOutButton');
-	    }
-	    return this.renderTemplate('#template-logInButton');
+	  template: function template(val) {
+	    return this.renderTemplate('#template-logIn', val);
 	  },
 	  render: function render() {
 	    this.$el.html(this.template());
 	    return this;
 	  },
-	  logOutFunction: function logOutFunction() {
-	    var that = this;
-
-	    $.ajax({
-	      type: 'POST',
-	      url: 'http://localhost:3000/logout',
-	      headers: {
-	        'x-token': that.model.get('token')
-	      }
-	    }).done(function (data) {
-	      that.model.set('status', false);
-	      that.model.triggerEventOnHeader();
-	    });
+	  logIn: function logIn() {
+	    this.model.logIn(this.model);
+	    this.model.set(_userObj.user);
+	    this.model.triggerEventOnHeader();
+	    window.location.href = '#index';
 	  }
 	});
 
 /***/ },
-/* 15 */
+/* 7 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -575,7 +339,216 @@
 	});
 
 /***/ },
-/* 16 */
+/* 8 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.PlaylistPageView = undefined;
+
+	var _headerView = __webpack_require__(9);
+
+	var _playlistsView = __webpack_require__(11);
+
+	var PlaylistPageView = exports.PlaylistPageView = Backbone.View.extend({
+	  renderTemplate: function renderTemplate(selectorString, options) {
+	    var templateText = document.querySelector(selectorString).innerText;
+	    var compiled = _.template(templateText);
+	    if (options !== null) {
+	      return compiled(options);
+	    }
+	    return compiled();
+	  },
+	  template: function template() {
+	    return this.renderTemplate('#template-playlistPage');
+	  },
+	  render: function render() {
+	    this.$el.html(this.template());
+	    this.headerView = new _headerView.HeaderView({
+	      model: this.model,
+	      el: document.querySelector('.contaier')
+	    });
+	    this.playlist = new _playlistsView.PlaylistsView({
+	      el: document.querySelector('#playlist1'),
+	      collection: this.collection
+
+	    });
+
+	    if (this.model.get('status') === true) {
+	      var imageBackground = this.model.get('backgroundColor');
+	      document.querySelector('.container').style.backgroundImage = 'url(' + imageBackground + ')';
+	    }
+	    this.listenTo(this.model, 'triggerPage', function () {
+	      document.querySelector('.container').style.backgroundImage = 'url(../core/assets/banner-top.jpg)';
+	    });
+	    this.headerView.render();
+	    this.playlist.render();
+	    return this;
+	  }
+	});
+
+/***/ },
+/* 9 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.HeaderView = undefined;
+
+	var _logOutButtonView = __webpack_require__(10);
+
+	var HeaderView = exports.HeaderView = Backbone.View.extend({
+	  render: function render() {
+	    var logOutButtonView = new _logOutButtonView.LogOutButtonView({
+	      model: this.model,
+	      el: document.querySelector('#right')
+	    });
+	    logOutButtonView.render();
+	    this.listenTo(this.model, 'triggerHead', function () {
+	      logOutButtonView.render();
+	    });
+	  }
+	});
+
+/***/ },
+/* 10 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	var LogOutButtonView = exports.LogOutButtonView = Backbone.View.extend({
+	  events: {
+	    'click #logOut ': 'logOutFunction',
+	    'click #logIn': 'logInFunction'
+	  },
+	  logInFunction: function logInFunction() {
+	    this.model.triggerEventOnHeader();
+	    window.location.href = '#login';
+	  },
+	  renderTemplate: function renderTemplate(selectorString, options) {
+	    var templateText = document.querySelector(selectorString).innerText;
+	    var compiled = _.template(templateText);
+	    if (options !== null) {
+	      return compiled(options);
+	    }
+	    return compiled();
+	  },
+	  template: function template() {
+	    if (this.model.get('status')) {
+	      return this.renderTemplate('#template-logOutButton');
+	    }
+	    return this.renderTemplate('#template-logInButton');
+	  },
+	  render: function render() {
+	    this.$el.html(this.template());
+	    return this;
+	  },
+	  logOutFunction: function logOutFunction() {
+	    var that = this;
+
+	    $.ajax({
+	      type: 'POST',
+	      url: 'http://localhost:3000/logout',
+	      headers: {
+	        'x-token': that.model.get('token')
+	      }
+	    }).done(function (data) {
+	      that.model.set('status', false);
+	      that.model.triggerEventOnHeader();
+	      that.model.triggerEventOnLogOut();
+	    });
+	    window.location.href = '#';
+	  }
+	});
+
+/***/ },
+/* 11 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.PlaylistsView = undefined;
+
+	var _playlistView = __webpack_require__(12);
+
+	var PlaylistsView = Backbone.View.extend({
+	  _nestedView: [],
+	  renderNestedView: function renderNestedView(view) {
+	    this._nestedView.push(view);
+	    this.$el.append(view.el);
+	  },
+	  render: function render() {
+	    var that = this;
+	    var partEl = this.el;
+	    this.collection.forEach(function (model) {
+	      var playlistView = new _playlistView.PlaylistView({
+	        model: model
+	      });
+	      playlistView.render();
+	      that.renderNestedView(playlistView, partEl);
+	    });
+
+	    return this;
+	  }
+	});
+	exports.PlaylistsView = PlaylistsView;
+
+/***/ },
+/* 12 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.PlaylistView = undefined;
+
+	var _containerPlaylistSongsView = __webpack_require__(13);
+
+	var PlaylistView = Backbone.View.extend({
+	  events: {
+	    'click .button_playlist': 'openSongView'
+	  },
+	  openSongView: function openSongView() {
+	    var containerSongs = new _containerPlaylistSongsView.ContainerPlaylistSongs({
+	      model: this.model,
+	      el: document.querySelector('.pop_playlist')
+	    });
+	    containerSongs.render();
+	  },
+	  renderTemplate: function renderTemplate(selectorString, options) {
+	    var templateText = document.querySelector(selectorString).innerText;
+	    var compiled = _.template(templateText);
+	    if (options !== null) {
+	      return compiled(options);
+	    }
+	    return compiled();
+	  },
+	  template: function template(val) {
+	    return this.renderTemplate('#template-Playlist', val);
+	  },
+	  render: function render() {
+	    this.$el.html(this.template(this.model.attributes));
+	    return this;
+	  }
+	});
+	exports.PlaylistView = PlaylistView;
+
+/***/ },
+/* 13 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -585,11 +558,11 @@
 	});
 	exports.ContainerPlaylistSongs = undefined;
 
-	var _songsCollection = __webpack_require__(5);
+	var _songsCollection = __webpack_require__(14);
 
-	var _songsView = __webpack_require__(7);
+	var _songsView = __webpack_require__(16);
 
-	var _headerPlaylist = __webpack_require__(9);
+	var _headerPlaylist = __webpack_require__(18);
 
 	var ContainerPlaylistSongs = exports.ContainerPlaylistSongs = Backbone.View.extend({
 	  events: {
@@ -629,7 +602,7 @@
 	});
 
 /***/ },
-/* 17 */
+/* 14 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -637,59 +610,39 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	exports.Router = undefined;
+	exports.SongsListColection = undefined;
 
-	var _logInView = __webpack_require__(10);
+	var _songModel = __webpack_require__(15);
 
-	var _registrationView = __webpack_require__(15);
-
-	var _playlistPageView = __webpack_require__(18);
-
-	var Router = exports.Router = Backbone.Router.extend({
-	  currentUser: '',
-	  playlists: '',
-	  playlistsCollection: '',
-	  setCurrentUser: function setCurrentUser(model) {
-	    this.currentUser = model;
-	  },
-	  setPlaylists: function setPlaylists(playlists) {
-	    this.playlists = playlists;
-	  },
-
-
-	  routes: {
-	    index: 'handlePlaylistPage',
-	    login: 'handleLogInPage',
-	    registration: 'handleRegistrationPage'
-	  },
-	  handlePlaylistPage: function handlePlaylistPage() {
-	    var that = this;
-	    this.playlists.safeFetch().done(function () {
-	      var playlistPageView = new _playlistPageView.PlaylistPageView({
-	        model: that.currentUser,
-	        collection: that.playlists,
-	        el: document.getElementsByTagName('body')[0]
-	      });
-	      playlistPageView.render();
-	    });
-	  },
-	  handleLogInPage: function handleLogInPage() {
-	    var logView = new _logInView.LogInView({
-	      model: this.currentUser,
-	      el: document.getElementsByTagName('body')[0]
-	    });
-	    logView.render();
-	  },
-	  handleRegistrationPage: function handleRegistrationPage() {
-	    var registrationPageView = new _registrationView.RegistrationPageView({
-	      el: document.getElementsByTagName('body')[0]
-	    });
-	    registrationPageView.render();
-	  }
+	var SongsListColection = Backbone.Collection.extend({
+	  model: _songModel.SongModel
 	});
+	exports.SongsListColection = SongsListColection;
 
 /***/ },
-/* 18 */
+/* 15 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	var SongModel = Backbone.Model.extend({
+	  defaults: {
+	    image: 'Robert',
+	    songTitle: 23,
+
+	    songAuthor: 'daaaa',
+	    songLength: 'daaa',
+	    songListened: 20
+	  }
+
+	});
+	exports.SongModel = SongModel;
+
+/***/ },
+/* 16 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -697,13 +650,41 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	exports.PlaylistPageView = undefined;
+	exports.SongsView = undefined;
 
-	var _headerView = __webpack_require__(13);
+	var _songView = __webpack_require__(17);
 
-	var _playlistsView = __webpack_require__(3);
+	var SongsView = Backbone.View.extend({
+	  _nestedView: [],
+	  renderNestedView: function renderNestedView(view) {
+	    this._nestedView.push(view);
+	    this.$el.append(view.el);
+	  },
+	  render: function render() {
+	    var that = this;
+	    var partEl = this.el;
+	    this.collection.forEach(function (model) {
+	      var songView = new _songView.SongView({
+	        model: model
+	      });
+	      songView.render();
+	      that.renderNestedView(songView, partEl);
+	    });
+	    return this;
+	  }
+	});
+	exports.SongsView = SongsView;
 
-	var PlaylistPageView = exports.PlaylistPageView = Backbone.View.extend({
+/***/ },
+/* 17 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	var SongView = Backbone.View.extend({
 	  renderTemplate: function renderTemplate(selectorString, options) {
 	    var templateText = document.querySelector(selectorString).innerText;
 	    var compiled = _.template(templateText);
@@ -712,28 +693,44 @@
 	    }
 	    return compiled();
 	  },
-	  template: function template() {
-	    return this.renderTemplate('#template-playlistPage');
+	  template: function template(val) {
+	    return this.renderTemplate('#template-FriendInListView', val);
 	  },
 	  render: function render() {
-	    this.$el.html(this.template());
-
-	    this.headerView = new _headerView.HeaderView({
-	      model: this.model,
-	      el: document.querySelector('.contaier')
-	    });
-	    this.playlist = new _playlistsView.PlaylistsView({
-	      el: document.querySelector('#playlist1'),
-	      collection: this.collection
-
-	    });
-
-	    this.headerView.render();
-	    this.playlist.render();
-
+	    this.$el.html(this.template(this.model.attributes));
 	    return this;
 	  }
 	});
+	exports.SongView = SongView;
+
+/***/ },
+/* 18 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	var HeaderView = Backbone.View.extend({
+	  renderTemplate: function renderTemplate(selectorString, options) {
+	    var templateText = document.querySelector(selectorString).innerText;
+
+	    var compiled = _.template(templateText);
+	    if (options !== null) {
+	      return compiled(options);
+	    }
+	    return compiled();
+	  },
+	  template: function template(val) {
+	    return this.renderTemplate('#template-HeaderPlaylist', val);
+	  },
+	  render: function render() {
+	    this.$el.html(this.template(this.model.attributes));
+	    return this;
+	  }
+	});
+	exports.HeaderView = HeaderView;
 
 /***/ }
 /******/ ]);

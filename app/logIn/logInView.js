@@ -22,8 +22,7 @@ export const LogInView = Backbone.View.extend({
   logIn() {
     this.model.logIn(this.model);
     this.model.set(user);
-
     this.model.triggerEventOnHeader();
-    window.location.href = '#';
+    window.location.href = '#index';
   },
 });

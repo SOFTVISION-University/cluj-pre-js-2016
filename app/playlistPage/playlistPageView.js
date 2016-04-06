@@ -16,7 +16,6 @@ export const PlaylistPageView = Backbone.View.extend({
   },
   render() {
     this.$el.html(this.template());
-
     this.headerView = new HeaderView({
       model: this.model,
       el: document.querySelector('.contaier'),
@@ -27,9 +26,18 @@ export const PlaylistPageView = Backbone.View.extend({
 
     });
 
+    if (this.model.get('status') === true) {
+      const imageBackground = this.model.get('backgroundColor');
+      document.querySelector('.container').style.backgroundImage =
+      'url('+imageBackground+')';
+    }
+    this.listenTo(this.model, 'triggerPage',
+    function () {
+      document.querySelector('.container').style.backgroundImage =
+      'url(../core/assets/banner-top.jpg)';
+    });
     this.headerView.render();
     this.playlist.render();
-
     return this;
   },
 });

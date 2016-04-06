@@ -6,6 +6,7 @@ export const LogOutButtonView = Backbone.View.extend({
     'click #logIn': 'logInFunction',
   },
   logInFunction() {
+    this.model.triggerEventOnHeader();
     window.location.href = '#login';
   },
   renderTemplate(selectorString, options) {
@@ -38,6 +39,8 @@ export const LogOutButtonView = Backbone.View.extend({
     }).done(function (data) {
       that.model.set('status', false);
       that.model.triggerEventOnHeader();
+      that.model.triggerEventOnLogOut();
     });
+    window.location.href = '#';
   },
 });
