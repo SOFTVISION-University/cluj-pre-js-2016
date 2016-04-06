@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <script src="http://backbonejs.org/test/vendor/underscore.js"></script>
+        <script src="http://backbonejs.org/test/vendor/jquery.js"></script>
+        <script src="http://backbonejs.org/docs/js/jquery.lazyload.js"></script>
+        <script src="http://backbonejs.org/backbone.js"></script>
+        <script type="text/javascript">
+
+
+        $(function() {
+          var response = [
+            {
+              name: "xxx",
+              fullname: "XXX",
+              bio: "lorem ipsum",
+              pic: null
+            },
+            {
+              name: "xxx",
+              fullname: "XXX",
+              bio: "lorem ipsum",
+              pic: null
+            }
+          ];
+
+          var Song = Backbone.Model.extend({
+            defaults: {
+              image: '../core/assets/2015-best-music.png',
+              songTitle: 'test',
+              songAuthor: 'test',
+              songLength: 1,
+              songListened: 1,
+            }
+          });
+
+          var Songs = Backbone.Collection.extend({
+            model: Song;
+          });
+
+          var SongsView = Backbone.View.extend({
+            tagName: 'li',
+            className: 'songs',
+            template: _.template('<div id="song"><%= name %></div>'),
+            render: function () {
+              this.$el.html(this.template(this.model.attributes));
+              return this;
+            }
+          });
+
+});
+        </script>
+    </head>
+    <body>
+      <p>Hello!</p>
+      <div id="song"></div>
+    </body>
+</html>

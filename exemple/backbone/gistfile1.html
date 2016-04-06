@@ -1,0 +1,107 @@
+
+<html>
+    <head>
+        <script src="http://backbonejs.org/test/vendor/underscore.js"></script>
+        <script src="http://backbonejs.org/test/vendor/jquery.js"></script>
+        <script src="http://backbonejs.org/docs/js/jquery.lazyload.js"></script>
+        <script src="http://backbonejs.org/backbone.js"></script>
+        <script type="text/javascript">
+            $(function() {
+              var response = [
+                {
+                  name: "xxx",
+                  fullname: "XXX",
+                  bio: "lorem ipsum",
+                  pic: null
+                },
+                {
+                  name: "xxx",
+                  fullname: "XXX",
+                  bio: "lorem ipsum",
+                  pic: null
+                }
+              ];
+              var Preferences = Backbone.Model.extend({});
+              var User = Backbone.Model.extend({
+                defaults: {
+                  name: 'andrei',
+                  email: 'andrei@test.com',
+                  password: 'test',
+                  isLoggedIn: false
+                },
+                logIn: function() {
+                },
+                logOut: function() {
+                }
+              })
+              var Participant = Backbone.Model.extend({
+                name : "Pop"
+              });
+              var Participants = Backbone.Collection.extend({
+                model: Participant
+              });
+              var participants = new Participants();
+              participants.set(response);
+
+              var ParticipantView = Backbone.View.extend({
+                tagName: 'li',
+                className: 'participant-view',
+                template: _.template('<span class="name"><%= name %></span>'),
+                render: function () {
+                  this.$el.html(this.template(this.model.attributes));
+                  return this;
+                }
+              });
+
+              var UserView = Backbone.View.extend({
+                template: _.template('<span class="name"><%= name %></span>'),
+                render: function () {
+                  debugger;
+                  this.$el.html(this.template(this.model.attributes));
+                  return this;
+                }
+              });
+
+              var ParticipantsView = Backbone.View.extend({
+                template: _.template("<p>List of participants</p><div class='user'></div><ul class='participants-view'></ul>"),
+                _nestedView: [],
+                renderNestedView: function(view, el) {
+                  this._nestedView.push(view);
+                  el.append(view.el);
+                },
+
+                render: function () {
+                  this.$el.html(this.template());
+                  var that = this;
+                  var partEl = $(this.el.querySelector('.participants-view'));
+                  this.collection.forEach(function(model) {
+                      var participantView = new ParticipantView({
+                        model: model
+                      });
+                      participantView.render();
+                      that.renderNestedView(participantView, partEl);
+                  });
+                  var userView = new UserView({
+                    model: new User()
+                  });
+                  userView.render();
+                  this.renderNestedView(userView, $(this.el.querySelector('.user')));
+                  debugger;
+                  return this;
+                }
+              });
+              
+              var pageView = new ParticipantsView({
+                el: document.getElementById('page'),
+                collection: participants
+              });
+              pageView.render();
+              debugger;
+            });
+        </script>
+    </head>
+    <body>
+      <p>Hello!</p>
+      <div id="page"></div>
+    </body>
+</html>

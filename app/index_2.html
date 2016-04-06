@@ -1,0 +1,101 @@
+<html>
+  <head>
+    <title>Search</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://backbonejs.org/test/vendor/underscore.js"></script>
+    <script src="http://backbonejs.org/test/vendor/jquery.js"></script>
+    <script src="http://backbonejs.org/docs/js/jquery.lazyload.js"></script>
+    <script src="http://backbonejs.org/backbone.js"></script>
+    <!-- <script type="text/javascript" src="song-list-item-view.js">  </script> -->
+    <!-- <script type="text/javascript" src="songs-list-item-view.js">  </script>
+    <script type="text/javascript" src="playlist-item-view.js">  </script>
+    <script type="text/javascript" src="playlists-items-view.js">  </script> -->
+    <script src="../build/bundle.js"></script>
+</head>
+
+  <body style="background-color:rgb(237, 234, 221)">
+        <div style="background-image: url(../core/assets/banner-app.jpg)" class="background_image">
+        <div class="color" style="text-align:center">
+                <div>
+                <img src="../core/assets/logo-top.png" alt="logo" class="up_divs1">
+                <input type="type-text" name="Search Music" placeholder="Search music" id="search" class="up_divs2">
+                <input type="submit" value="Sign in" class="button up_divs3" onclick="Login()">
+                </div>
+
+          <h4>Ready to listen to endless music</h4>
+          <h4>on your favorite device ?</h4>
+          <h4 id="join" onclick="Login()">JOIN NOW</h4>
+          <h3 id="promise">Epic and debauched party mixes</h3>
+        </div>
+        </div>
+        <div style="text-align:center; margin-top:-120px">
+
+        <!-- <div id="playlists-content">
+        <script type="text/template" id="playlists-view">
+              <img src=<%= image %> />
+              <br>
+              <span class="title"><%= title %></span>
+        </script>
+        </div> -->
+        </div>
+
+        <div class="container">
+          <div id="playlist-content">
+          <script type="text/template" id="play-list-item">
+                <!-- <img src=<%= imageLarge %> /> -->
+                <br>
+                <span class="title" style="text-align:center"><%= title %></span>
+                <br>
+                <span class="description"><%= description %></span>
+                <br>
+          </script>
+          </div>
+          </div>
+
+
+        <div id="new_playlist">
+            <div align="right" style="text-decoration: underline">CLOSE</div>
+            <div1>
+              <img src="../core/assets/up-all-night-small.png">
+            </div1>
+        <div2>
+            <h5 >Playing from:</h5>
+            <h3>Up all night: The remixes radio</h3>
+        </div2>
+
+        <div3 class="clear">
+        </div3>
+
+      <table style= "width:100%">
+            <tr>
+              <th width=70% >SONG </th>
+              <th>LENGHT </th>
+              <th>LISTENED</th>
+            </tr>
+      </table>
+
+      <div class="container">
+      <div id="page-content">
+      <script type="text/template" id="song-list-item">
+            <img src=<%= image %> />
+            <span class="songAuthor"><%= songAuthor %></span>
+            <span class="songLength"><%= songLength %></span>
+      </script>
+      </div>
+    </div>
+    <div id="songs">
+    <script type="text/template" id="playlistAPI.songs">
+          <img src=<%= image %> />
+          <span class="name"><%= name %></span>
+          <span class="songLength"><%= songLength %></span>
+          <span class="songListened"><%= songListened %></span>
+    </script>
+  </div>
+
+    </div>
+
+
+      </body>
+</html>
