@@ -9,11 +9,15 @@
     <script src="http://backbonejs.org/backbone.js"></script>
   </head>
   <body id="home">
-    <div id="authentication"></div>
-    <div id="index-header"></div>
-    <div id="index-content"></div>
-    <div id="index-card-area"></div>
-    <div id="footer"></div>
+    <div id="page"></div>
+    <div id="auth"></div>
+
+    <script type="text/template" id="template-PageView">
+      <div id="index-header"></div>
+      <div id="index-content"></div>
+      <div id="index-card-area"></div>
+      <div id="footer"></div>
+    </script>
 
     <script type="text/template" id="template-HeaderView">
       <div id="logo_div">
@@ -26,7 +30,7 @@
         </form>
       </div>
       <div id="sign_in_div">
-        <a href="login.html"><button id="sign_in_button" type="button" name="sign_in">Sign in</button></a>
+        <a href="index.html#login"><button id="sign_in_button" type="button" name="sign_in">Sign in</button></a>
       </div>
     </script>
 
@@ -113,24 +117,26 @@
   	</script>
 
     <script type="text/template" id="template-FooterView">
-      <p id="copyrighthome"></p>
+      <p id="copyrighthome">&copy; 2016 ACMEDIVISION ALL RIGHTS RESERVED</p>
     </script>
 
     <script type="text/template" id="template-UserView">
-      <div id="login_div" align="center">
-        <img src="../core/assets/logo-color.png" alt="Image not found"/>
-        <p><b>Sign into your ACME account</b></p>
-        <p id="error"></p>
-        <form action="" method="post" id="login_form">
-          <label for="email">Email</label><br/>
-          <input class="email" type="text" name="email" required/><br/><br/>
-          <label for="password">Password</label><br/>
-          <input class="password" type="password" name="password" required/><br/><br/>
-          <a href="" id="forgot_pass">Forgot password ?</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <input id="sign_in" type="submit" name="submit" value="Sign in"/><br/><br/><br/>
-        </form><br/>
-        <span>Don't have an account ?<a id="sign_up" href="sign_up.html"> Sign up here</a>
-        </span><br/><br/>
+      <div id="authentication">
+        <div id="login_div" align="center">
+          <img src="../core/assets/logo-color.png" alt="Image not found"/>
+          <p><b>Sign into your ACME account</b></p>
+          <p id="error"></p>
+          <form action="" method="post" id="login_form">
+            <label for="email">Email</label><br/>
+            <input class="email" type="text" name="email" required/><br/><br/>
+            <label for="password">Password</label><br/>
+            <input class="password" type="password" name="password" required/><br/><br/>
+            <a href="" id="forgot_pass">Forgot password ?</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input id="sign_in" type="submit" name="submit" value="Sign in"/><br/><br/><br/>
+          </form><br/>
+          <span>Don't have an account ?<a id="sign_up" href="sign_up.html"> Sign up here</a>
+          </span><br/><br/>
+        </div>
       </div>
     </script>
 
