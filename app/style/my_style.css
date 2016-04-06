@@ -1,0 +1,259 @@
+.box1 {
+  background-image:url("../../core/assets/banner-top.jpg");
+  position: relative;
+}
+
+.photo_top{
+  vertical-align: top;
+  margin-left: 200px;
+}
+#box{
+  align-items: center;
+}
+
+#box1_1 {
+  display: inline-block;
+  color: #FFF;
+  font-size: 30px;
+  width: 400px;
+  margin-left: -150px;
+}
+
+.text_alb{
+  font-size: 30px;
+  font-weight: bold;
+  color: #FFF;
+  width: auto;
+
+}
+
+/* --- text style for box1_1*/
+#text_style {
+    font-size: 15px;
+    position: relative;
+}
+
+/*--- ul logo-uri din box1_1 */
+ul > li{
+  display: inline-block;
+  width: 70px;
+}
+ li img {
+   width: 100%;
+ }
+
+/* --formularul de inregistrare */
+#box1_2 {
+    display: inline-block;
+    background-color: #FFF;
+    font-size: 15px;
+    width: 200px;
+    padding: 20px;
+    margin: 20px 200px;
+    color: #000;
+    text-align: center;
+}
+
+.cell{
+  background-color: #A9A9A9;
+}
+
+.cell_text{
+  margin-left: -120px;
+}
+
+.buton{
+  background-color: #00BFFF;
+  border-radius: 6px;
+  height:34px;
+  width:150px;
+}
+
+/* --- BOX2 -- */
+.box2{
+  background-color: #FFF;
+  position: relative;
+
+
+}
+.text_gri {
+   color: #808080;
+   width: 400px;
+  margin: auto;
+  text-align: center;
+  font-size: 13px;
+}
+.text_negru{
+  text-align: center;
+  color: #000;
+  font-weight: bold;
+  font-size: 30px;
+}
+#box2_1{
+  text-align: center;
+  margin-top: 20px;
+}
+
+#box2_2{
+  display: inline-block;
+  text-align: center;
+  width: 200;
+}
+
+
+/*--- BOX3--- */
+.box3 {
+  position: relative;
+  background-image:url("../../core/assets/stars-bg.jpg");
+  font-size: 30px;
+  text-align: center;
+  color: #FFF;
+}
+
+.list_icon {
+  display: inline-block;
+}
+
+.mare{
+  width: 80px;
+}
+.mediu{
+  width: 50px;
+}
+.mic{
+  width: 30px;
+}
+
+.sus{
+  vertical-align: top;
+  margin-left: 30px;
+}
+
+.jos{
+  vertical-align: bottom;
+  margin-left: 30px;
+}
+
+.aranjare_icon{
+  margin-left: 200px;
+}
+
+#text_box3{
+  position: relative;
+  /*width: 600px; */
+  text-align: center;
+  font-size: 20px;
+
+}
+
+
+/*---BOX4 ---*/
+
+.box4{
+  text-align: center;
+  margin-bottom: 50px;
+}
+#table1{
+  position: relative;
+}
+
+table{
+  margin: auto;
+
+ }
+
+.table1{
+  border-collapse: collapse;
+  border: 1px solid #B0E0E6;
+
+}
+
+
+tr {
+border-bottom: 1px solid #B0E0E6;
+}
+
+
+.liniar{
+text-align: center;
+width: 100px;
+font-size: 15px;
+margin-top: -50px;
+margin-left: 60px;
+
+}
+
+.coloana{
+  display: list-item;
+  margin-top: 60px;
+}
+
+.imag_check{
+  margin-left: 50px;
+}
+
+.aliniere{
+  display: inline;
+}
+
+
+
+.table2{
+  background-color: #B0E0E6;
+
+}
+
+td,th{
+  border-bottom: 1px solid #87CEEB;
+}
+
+
+/* BOX5 */
+
+.box5{
+  background-color: #DCDCDC;
+  margin-top: 50px;
+}
+
+.box5_1{
+  width: 400px;
+  margin-left: 200px;
+}
+
+.photo_devices{
+  width: 600px;
+  display: inline-block;
+  margin-left: 1025px;
+  position: relative;
+  margin-top: -300px;
+
+}
+
+
+.text_negru2{
+  color: #000;
+  font-weight: bold;
+  font-size: 20px;
+
+}
+
+.align2{
+  margin-top: 100px;
+}
+
+.logo-fin{
+  width: 100px;
+  height: 60px;
+margin-right: 50px;
+margin-left: -50px;
+margin-top: 30px;
+}
+
+.footer2{
+  float: left;
+  position: relative;
+  margin-top: -20px;
+  margin-left: 200px;
+  font-size: 13px;
+  color: #808080;
+}

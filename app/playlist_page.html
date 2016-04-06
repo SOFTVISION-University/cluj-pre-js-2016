@@ -1,0 +1,122 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Playlist</title>
+  <link rel="stylesheet" type="text/css" href="style/style_playlist.css">
+  <link rel="stylesheet" type="text/css" href="style/style_formular.css">
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="http://backbonejs.org/test/vendor/underscore.js"></script>
+  <script src="http://backbonejs.org/test/vendor/jquery.js"></script>
+  <script src="http://backbonejs.org/docs/js/jquery.lazyload.js"></script>
+  <script src="http://backbonejs.org/backbone.js"></script>
+
+  <script type= "text/template" id= "playlist-view-items">
+    <img  class= "pozz" src= "<%= imageLarge %>" />
+    <span><%= title %></span><br>
+    <span><%= description %></span>
+    <button class="element-creator" id="afiseaza" onclick="afisare('theDiv')"> Explore playlist</button>
+  </script>
+</head>
+
+<body>
+
+  <script type= "text/template" id= "song-view-items">
+    <td class="tdSong"><img class= "tdSongImage" src= "<%= image %>" /></td>
+    <td class="tdSong"><%= songTitle %><br> By: <%= songAuthor %></td>
+    <td class="tdSong"><%= transformInMinutes(songLength) %></td>
+</script>
+
+<!-- <script type= "text/template" id="login-view-items">
+</script> -->
+  <script>
+   var transformInMinutes = function (val){
+   var minute;
+   if (val % 60 < 10){
+     minute = Math.floor(val/60) + ": 0" + val % 60;
+   } else
+         {
+            minute = Math.floor(val/60) + ":" + val % 60;
+       }
+   return minute;
+ };
+ </script>
+
+  <script>
+  function afisare(id){
+    var obj = document.getElementById(id);
+    var buton = document.getElementById('afiseaza');
+    if(obj.style.visibility == 'visible')
+      {
+        obj.style.visibility = 'hidden';
+    }  else
+       {
+       obj.style.visibility = 'visible';
+    }
+  }
+  </script>
+<div id = "containerLogin">
+  <div id = "box">
+    <img alt="this is a image" src="../core/assets/logo-color.png">
+    <p>Sign into your ACME account</p>
+    <p id = "mesageLogin"> </p>
+
+    <p>Don't have an account?
+    <a href="first_page.html">Sign up here</a></p>
+  </div>
+</div>
+
+   <div class="page">
+        <img class="photo_top" alt="this is a image" src="../core/assets/logo-top.png" />
+        <div class="search">
+          <form method=post >
+             <img alt="this is a image" src="../core/assets/search-icon.png" />
+             <input class="search-bar" style="text-indent:80px;" type="text" placeholder="Search Music" />
+             <input class="button1 text_alb_mic" type="submit" value="Sign in">
+          </form>
+        </div>
+
+        <div class="join">
+           <p class="text_alb">Ready to listen to endless music on your favorite device?</p>
+           <form method=post >
+              <input class="button-green text_alb_mic" type="submit" value="JOIN NOW">
+           </form>
+           <!-- <p class="text_alb_mare">Epic and debauched party mixes</p> -->
+           <p id= "moto" class = "text_alb_mare"> </p>
+        </div>
+
+  </div>
+
+
+<div class="bottom-page">
+
+  <div class="playlists-container"></div>
+
+
+    <div class="lista-melodi" id="theDiv">
+         <div class="top-lista" >
+           <img class="playlist-pozz" alt="this is a image" src="../core/assets/up-all-night-small.png" />
+            <p class="playlist-title" >Playing from: </p>
+            <p class="text-negru-playlist" >Up all night: The remixes radio</p>
+         </div>
+          <div >
+             <table class = "tableSongs">
+             <tr id = "topTable">
+                <td> SONG</td>
+                <td></td>
+                <td> LENGTH </td>
+                <td> LISTENED </td>
+                </tr>
+             </table>
+           <div class = "tableSongs showSongs"> </div>
+
+       </div>
+    </div>
+
+</div>
+  <p class= "text-gri footer"><br><br>@2016 ACME DEVISION. ALL RICHTS RESERVED<p>
+
+<script	type="text/javascript" src="js/playlists.js"></script>
+<script	type="text/javascript" src="js/api-test.js"></script>
+<script src="../build/bundle.js"> </script>
+</body>
+<html>
