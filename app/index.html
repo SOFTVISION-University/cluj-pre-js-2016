@@ -1,0 +1,90 @@
+ <html>
+  <head>
+        <script src="http://backbonejs.org/test/vendor/underscore.js"></script>
+        <script src="http://backbonejs.org/test/vendor/jquery.js"></script>
+        <script src="http://backbonejs.org/docs/js/jquery.lazyload.js"></script>
+        <script src="http://backbonejs.org/backbone.js"></script>
+        <script type="text/javascript" src="jquery-1.12.2.min.js"></script>
+        <script type="text/javascript" src="./Song/music.js"></script>
+        <script type="text/javascript" src="Song/SongListItemView.js"></script>
+        <script type="text/javascript" src="Song/SongModel.js"></script>
+        <script type="text/javascript" src="Song/SongCollection.js"></script>
+        <script type="text/javascript" src="Song/SongListView.js"></script>
+         <!-- <script type="text/javascript" src="Playlist/PlaylistCollection.js"></script>
+        <script type="text/javascript" src="Playlist/PlaylistView.js"></script>
+        <script type="text/javascript" src="Playlist/PlaylistModel.js"></script> -->
+        <!-- <script type="text/javascript" src="../build/bundle.js"></script> -->
+  </head>
+  <body>
+    <div id="playlist1">
+      <div>
+        <img src="../core/assets/up-all-night-small.png">
+      </div>
+      <div>
+        <p >Playing from:</p>
+        <h3>Up all night: The remixes radio</h3>
+      </div>
+
+      <table >
+            <tr>
+              <th>SONG </th>
+              <th>LENGTH </th>
+              <th>LISTENED</th>
+            </tr>
+      </table>
+      <script type="text/template" id="song-list-view">
+        <img src=<%= image %> />
+        <span class="name"><%= name %></span>
+        <span class="songAuthor"><%= songAuthor %></span>
+        <span class="songLength"><%= songLength %></span>
+        <span class="songListened"><%= songListened %></span>
+      </script>
+      <div id='plst'>
+
+
+      <div id="songs">
+      </div>
+    </div>
+    </div>
+
+    <script>
+      $(function Music() {
+      // var songsJSON = '[{"image":"../core/assets/2015-best-music.png","name":"love love enemies love","songAuthor":"Smiley","songLength":74,"songListened":82},{"image":"../core/assets/2015-best-music.png","name":"love love enemies pierdut","songAuthor":"Dr. Dre","songLength":186,"songListened":78},{"image":"../core/assets/2015-best-music.png","name":"ea money pierdut ea","songAuthor":"Andra","songLength":303,"songListened":94},{"image":"../core/assets/2015-best-music.png","name":"enemies el buletin ea","songAuthor":"Andra","songLength":359,"songListened":23},{"image":"../core/assets/2015-best-music.png","name":"buletin el buletin love","songAuthor":"Eminem","songLength":312,"songListened":11},{"image":"../core/assets/2015-best-music.png","name":"pierdut pierdut enemies ea","songAuthor":"Eminem","songLength":37,"songListened":9},{"image":"../core/assets/2015-best-music.png","name":"ea money enemies enemies","songAuthor":"Dr. Dre","songLength":325,"songListened":13},{"image":"../core/assets/2015-best-music.png","name":"enemies money el money","songAuthor":"Eminem","songLength":58,"songListened":10}]';
+      // const playlist1 = new SongCollection(JSON.parse(songsJSON));
+      //
+      // const songListView = new SongListView({ collection: playlist1 });
+      // songListView.render();
+      // //$('#songs').append(songListView.el);
+
+      const SongCollection = Backbone.Collection.extend({
+        model: SongModel,
+        url: 'http://localhost:3000/playlists',
+        parse(response) {
+      		// for( var i = 1; i < 5; i++){
+          // console.log(response[i]);
+          // $('#songs').append(response[i].imageLarge.el)
+      	}
+      });
+
+
+      var SongsCollection = new SongCollection();
+      SongsCollection.fetch({
+      	success(SongsCollection){
+
+
+          //document.getElementById('songs').innerHTML = "<span>" + response + "</span>" ;
+
+           //$('#songs').append(SongsCollection[0])
+      		//console.log(SongsCollection.toJSON());
+
+
+      	}
+      });
+    });
+
+
+
+    </script>
+
+  </body>
+  </html>

@@ -1,0 +1,49 @@
+<html>
+ <head>
+   <script src="http://backbonejs.org/test/vendor/underscore.js"></script>
+   <script src="http://backbonejs.org/test/vendor/jquery.js"></script>
+   <script src="http://backbonejs.org/docs/js/jquery.lazyload.js"></script>
+   <script src="http://backbonejs.org/backbone.js"></script>
+   <script type="text/javascript" src="jquery-1.12.2.min.js"></script>
+   <script type="text/javascript" src="User/UserView.js"></script>
+   <script type="text/javascript" src="User/UserModel.js"></script>
+   <script type="text/javascript" src="User/UserCollection.js"></script>
+
+ </head>
+ <body>
+
+
+     <div>
+
+       <h3>USERS</h3>
+     </div>
+
+     <table >
+           <tr>
+             <th>Server users</th>
+
+           </tr>
+     </table>
+
+     <div id='users'>
+
+     </div>
+
+
+   <script>
+   function insertReply(content) {
+    document.getElementById('users').innerHTML = content;
+}
+
+
+    var div = document.createElement('div');
+
+    div.src = 'http://localhost:3000/register';
+
+    document.getElementById('users').appendChild(div);
+
+
+   </script>
+
+ </body>
+ </html>
