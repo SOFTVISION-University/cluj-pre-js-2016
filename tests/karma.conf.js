@@ -10,7 +10,7 @@ module.exports = function(config) {
         autoWatch: true,
         singleRun: false,
         browsers: ['PhantomJS'],
-        preprocessors: { 'app/**/*.js': 'coverage','core/**/*.js': 'coverage' },
+        preprocessors: { 'core/**/*.js': 'coverage', 'app/**/*.js': 'coverage'},
         reporters: ['progress', 'coverage'],
         coverageReporter: {
             type: 'html',
